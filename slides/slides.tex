@@ -1,54 +1,90 @@
 \documentclass{beamer}
+
+% \documentclass[10pt]{ctexbeamer}
+
 \usepackage{ctex}
-% \usepackage{CJKutf8}
-% \usepackage{xeCJK}
-\usepackage{fontspec}
+% % \usepackage{CJKutf8}
+% % \usepackage{xeCJK}
+% \usepackage{fontspec}
 \usepackage[]{geometry}
 
-% \usepackage{CJKutf8}    % encode for Chinese
+% % \usepackage{CJKutf8}    % encode for Chinese
 \usepackage{times}      % font for english, Times New Roman
-\usepackage{amsmath, amsfonts, amssymb} % math equations, symbols
-\usepackage[english]{babel}
-\usepackage{color}      % color content
-\usepackage{graphicx}   % import figures
-\usepackage{url}        % hyperlinks
-\usepackage{bm}         % bold type for equations
-\usepackage{hyperref}   % bookmarks
+% \usepackage{amsmath, amsfonts, amssymb} % math equations, symbols
+% \usepackage[english]{babel}
+% \usepackage{color}      % color content
+% \usepackage{graphicx}   % import figures
+% \usepackage{url}        % hyperlinks
+% \usepackage{bm}         % bold type for equations
+% \usepackage{hyperref}   % bookmarks
 % \hypersetup{bookmarks, unicode} % unicode
 
-\usetheme{Madrid}
+% \usetheme{Madrid}
+% \usecolortheme{whale} %颜色主题为
+%\usetheme{Berkeley}  %演示主题为侧边导航条
+% \usetheme{default}    %默认主题
+% \usetheme[logo=NJUST]{ucas}
+\usepackage{subfig}
+\usepackage{amssymb,amsmath,mathtools}
+\usepackage{amsfonts,booktabs}
+\usepackage{lmodern,textcomp}
+\usepackage{color}
+\usepackage{tikz}
+% \usepackage[latin1]{inputenc}
+\usepackage{natbib}
+\usepackage{multicol}
+
+\usepackage{beamerthemesplit} % 加载主题宏包
+\usetheme{Warsaw} % 选用该主题
+
+\usepackage{graphicx}
+\graphicspath{ {./tikz/} }
 
 
+\def\Arg{{\mathrm{Arg}\;}}
+\def\arg{{\mathrm{arg}\;}}
 %Information to be included in the title page:
 \title{数学物理方法}
-\author{罗凯}
-\institute{南京理工大学理学院}
-\date{2023年}
+\author[罗凯 NJUST]{罗凯}
+% \institute[*]{南京理工大学理学院}
+% \institute[*]{School of Science,\\
+% Nanjing University of Science and Technology,\\
+% kluo@njust.edu.cn}
+\institute[*]{南京理工大学理学院\\
+kluo@njust.edu.cn}
+% \email{kluo@njust.edu.cn}
+\date{2023年秋季}
 
 \begin{document}
 % \begin{CJK}{UTF8}{song}
 
-\AtBeginSection[]
-{
+% \AtBeginSection[]
+% {
 
-% \begin{frame}
-%     \tableofcontents[currentsection,hideallsubsections]
-% \end{frame}
+% % \begin{frame}
+% %     \tableofcontents[currentsection,hideallsubsections]
+% % \end{frame}
 
-% \begin{frame}
-%    	\ftitle{Outline 目录}		% contents for better review
-%     \tableofcontents[currentsection, currentsubsection]
+% % \begin{frame}
+% %    	\ftitle{Outline 目录}		% contents for better review
+% %     \tableofcontents[currentsection, currentsubsection]
+% % \end{frame}
+% \begin{frame}[shrink]
+%     \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
 % \end{frame}
-\begin{frame}[shrink]
-    \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
-\end{frame}
-}
+% }
 
 
 
 \begin{frame}
     \titlepage	% make the cover page here
 \end{frame}
+
+\begin{frame}[t]
+    % \frametitle{目录}
+    \tableofcontents
+\end{frame}
+
 
 \input{chap01.tex}
 \input{chap02.tex}

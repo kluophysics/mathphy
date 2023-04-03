@@ -1,6 +1,108 @@
-\section{复变函数}
+\section{复数和复变函数}
+
+\subsection{复数与复数运算}
 
 \begin{frame}
-\frametitle{Sample frame title}
-This is some text in the first frame. This is some text in the first frame. This is some text in the first frame.
+\frametitle{复数(Complex Numbers)}
+
+\begin{block}{定义}
+    \begin{equation*}
+        z = x + \imath y, \quad \imath = \sqrt{-1}
+    \end{equation*} 
+\end{block}
+其中$x,y \in {\mathbb{R}}$。若记$z \equiv (x,y)$, 我们有
+$1 = (1,0), \imath = (0, 1)$。
+我们说$x,y$分别为复数$z$的{\bf 实部}(real part) 和{\bf 虚部}(imaginary part)。
+\begin{columns}
+\begin{column}{0.6\textwidth}
+    \begin{figure}
+        \includegraphics[scale=0.8]{complexplane.pdf}
+        \caption{Argand diagram:复数的极坐标表示(polar representation)。}
+    \end{figure}
+\end{column}
+\begin{column}{0.4\textwidth}   
+     在极坐标中, $z=\rho e^{i\varphi}$, $\rho = |z|=\sqrt{x^2 + y^2}$ 为复数的模(modulus), $\varphi$为复数的辐角(argument)，记作$\Arg z$。
+    \begin{align*}
+        & x = \rho \cos\varphi \\
+        & y = \rho \sin\varphi \\
+        & \varphi = \arctan y/x
+    \end{align*}
+\end{column}
+\end{columns}
 \end{frame}
+
+% \begin{figure}
+% \includegraphics[width=\linewidth*0.3]{tikz/complexplane.pdf}
+% \includegraphics[width=\linewidth*0.3]{complexplane.pdf}
+% \end{figure}
+
+\begin{frame}
+    \frametitle{多值问题}
+$z=\rho e^{\imath \varphi}$, 由于恒等式$e^{\imath 2\pi n} = 1$, $n = 0, \pm 1, \pm 2, \dots, \in \mathbb{Z}$, 辐角不能唯一确定。
+它们之间相差$2\pi$的整数倍。其中满足
+\begin{align*}
+    0 \leq \Arg z < 2\pi,
+\end{align*}
+的辐角为$z$的主辐角，记为$\arg z$。$\arg z$ 为$\Arg z$的主值。
+\begin{align*}
+    \Arg z = \arg z + 2 n \pi (n = 0, \pm 1, \pm 2\dots).
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{复数的运算}
+
+    % \begin{columns}
+    %     \begin{column}{0.7\textwidth}
+        \begin{block}{共轭(conjugation)}
+            \vspace*{-0.3cm}
+            \begin{equation*}
+                z^* = x -  \imath y
+            \end{equation*}
+        \end{block}
+            \begin{block}{加减法(addition/subtraction)}
+                \vspace*{-0.3cm}
+                \begin{equation*}
+                    z_1 \pm z_2 = x_1 \pm x_2 + \imath (y_1 \pm y_2)
+                \end{equation*}
+            \end{block}
+            \begin{block}{乘法(multiplication)}
+                \vspace*{-0.3cm}
+                \begin{eqnarray*}
+                    z_1 z_2&=& (x_1 +  \imath y_1 )  (x_2 +  \imath y_2 )
+                    \\ 
+                    &=& x_1 x_2 - y_1 y_2 + \imath  (y_1 x_2 + x_1 y_2)
+                \end{eqnarray*}
+            \end{block}
+    %     \end{column}
+    %     \begin{column}{0.4\textwidth}
+    %     \end{column}
+    % \end{columns}
+    \begin{block}{除法(division)}
+        \vspace*{-0.3cm}
+        \begin{eqnarray*}
+            \frac{z_1}{z_2} & = & \frac{x_1 +  \imath y_1 }{x_2 +  \imath y_2 }
+           = \frac{x_1 +  \imath y_1 }{x_2 +  \imath y_2 } \frac{x_2 -  \imath y_2 }{x_2 -  \imath y_2 }
+            \\
+            & = & \frac{x_1 x_2 - y_1 y_2} {x_2^2  +  y_2^2 }  + \imath \frac{y_1 x_2 - x_1 y_2} {x_2^2  +  y_2^2 } 
+        \end{eqnarray*}
+    \end{block}
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{复数}
+%     \begin{block}{复数的运算}
+%         \begin{itemize}
+%             \item  除法：   
+%             \begin{eqnarray}
+%                 \frac{z_1}{z_2} & = & \frac{x_1 +  \imath y_1 }{x_2 +  \imath y_2 }
+%                 \\
+%                 & = & \frac{x_1 +  \imath y_1 }{x_2 +  \imath y_2 } \frac{x_2 -  \imath y_2 }{x_2 -  \imath y_2 }
+%                 \\
+%                 & = & \frac{x_1 x_2 - y_1 y_2} {x_2^2  +  y_2^2 }  + \imath \frac{y_1 x_2 + x_1 y_2} {x_2^2  +  y_2^2 } 
+%             \end{eqnarray}
+%         \end{itemize}
+%     \end{block}
+% \end{frame}
