@@ -1,0 +1,60 @@
+%!TEX program = xelatex
+\documentclass{beamer}
+\usepackage{ctex}
+% \usepackage{CJKutf8}
+% \usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage[]{geometry}
+
+% \usepackage{titlesec}
+% \usepackage{titletoc}   
+
+% \usepackage{CJKutf8}    % encode for Chinese
+\usepackage{times}      % font for english, Times New Roman
+\usepackage{amsmath, amsfonts, amssymb} % math equations, symbols
+\usepackage[english]{babel}
+\usepackage{color}      % color content
+\usepackage{graphicx}   % import figures
+\usepackage{url}        % hyperlinks
+\usepackage{bm}         % bold type for equations
+\usepackage{hyperref}   % bookmarks
+% \hypersetup{bookmarks, unicode} % unicode
+
+\usetheme{Madrid}
+
+
+%Information to be included in the title page:
+\title{数学物理方法}
+\author{罗凯}
+\institute{南京理工大学理学院}
+\date{2023年}
+
+\begin{document}
+% \begin{CJK}{UTF8}{song}
+
+\AtBeginSection[]
+{
+
+% \begin{frame}
+%     \tableofcontents[currentsection,hideallsubsections]
+% \end{frame}
+
+% \begin{frame}
+%    	\ftitle{Outline 目录}		% contents for better review
+%     \tableofcontents[currentsection, currentsubsection]
+% \end{frame}
+\begin{frame}[shrink]
+    \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+\end{frame}
+}
+
+
+
+\begin{frame}
+    \titlepage	% make the cover page here
+\end{frame}
+
+\input{chap01.tex}
+
+% \end{CJK}
+\end{document}
