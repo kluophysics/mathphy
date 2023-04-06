@@ -23,6 +23,7 @@
 \usepackage{fourier-orns} % 
 \usepackage{hyperref}   % bookmarks
 \usepackage{url}        % hyperlinks
+\usepackage{amssymb,amsmath,mathtools}
 
 
 \hypersetup{
@@ -45,6 +46,11 @@
 \begin{document}
 
 \pagestyle{fancy}
+
+% \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\CTEXthesection\quad #1}}
+% \renewcommand{\sectionmark}[1]{\markleft{\CTEXthesection\quad #1}}
+
 % \fancyhf{}
 % \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
 % \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
@@ -52,7 +58,10 @@
 %... then configure it.
 \fancyhead{} % clear all header fields
 % \fancyhead[LE]{\textbf{PHYS}}
-\fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+\fancyhead[LE]{\textbf{\leftmark}}
 \fancyhead[RO]{\textbf{\rightmark}}
 
 % \fancyhead[LO]{\textbf{Kai Luo}}
@@ -65,7 +74,7 @@
 % \fancyfoot[CE,CO]{\rightmark}
 % \fancyfoot[LO,CE]{}
 % \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
-\fancyfoot[CO,RE]{\thepage}
+\fancyfoot[C]{\thepage}
 % \fancyfoot[CE,O]{\thechapter}
 
 \ctexset{
@@ -95,7 +104,7 @@
 		%name用于设置章节编号前后的词语
 		%前、后词语用英文状态下,分开
 		%如果没有前或后词语可以不填
-		name = {},
+		% name = {},
 		%number用于设置章节编号数字输出格式
 		%输出section编号为中文
 		number = 第\chinese{section}章,
@@ -110,6 +119,7 @@
 		% aftername = \hspace{10pt}
 	},
 	subsection={
+		format + = \centering,
 		% format+ = \zihao{5} \kaishu \raggedright,
 		% format+ = \zihao{4}, %\raggedright,
 		%仅输出subsection编号且为中文
@@ -123,6 +133,7 @@
 	subsubsection={
 		%设置对齐方式为居中对齐
 		% format+ = \zihao{5} \fangsong \centering,
+		% format + = \centering,
 		%仅输出subsubsection编号，格式为阿拉伯数字，打字机字体
 		% number = \ttfamily\arabic{subsubsection},
         number = 第\arabic{subsection}.\arabic{subsubsection}讲,
@@ -134,16 +145,9 @@
 }
 
 
-% \title{数学物理方法}
-% \author[罗凯 NJUST]{罗凯}
-% % \institute[*]{南京理工大学理学院}
-% % \institute[*]{School of Science,\\
-% % Nanjing University of Science and Technology,\\
-% % kluo@njust.edu.cn}
-% % \institute[*]{南京理工大学理学院\\
-% % kluo@njust.edu.cn}
-% % \email{kluo@njust.edu.cn}
-% \date{2023年秋季}
+\def\Arg{{\mathrm{Arg}\;}}
+\def\arg{{\mathrm{arg}\;}}
+
 
 \include{cover.tex}
 
@@ -151,9 +155,9 @@
 \setcounter{tocdepth}{4}
 % \newpage
 \tableofcontents
-
+% \newpage
 % \end{enumerate}
-\include{prerequiste.tex}
+% \include{prerequiste.tex}
 \include{complex_variable.tex}
 
 % \input{lec1.tex}
