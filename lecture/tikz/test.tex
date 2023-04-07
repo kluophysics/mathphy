@@ -1,9 +1,37 @@
-\documentclass[options]{ctexbook}
-\usepackage[options]{mwe}
-\begin{document}
-\tableofcontents
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{framed}
+% \newcommand{\solutionbox}[1]{
+%   \fbox{\parbox{\textwidth}{\textbf{Solution}: #1}}
+% }
 
-\chapter{ceshi}
-\blindtext
-\blinddocument
+
+
+\newcommand{\solutionbox}[1]{
+  \begin{framed}
+    \setlength{\fboxrule}{2pt}
+    \setlength{\fboxsep}{10pt}
+    \setlength{\FrameSep}{20pt}
+    % \setlength{\cornersize}{0.3cm}
+    \noindent\textbf{Solution}: #1
+  \end{framed}
+}
+
+\begin{document}
+
+\begin{flushleft}
+\textbf{Example 1.} Find the value of $x$ if $2x + 5 = 13$.
+
+\bigskip
+
+\solutionbox{
+  \begin{align*}
+  2x + 5 &= 13 \\
+  2x &= 8 \\
+  x &= 4
+  \end{align*}
+}
+
+\end{flushleft}
+
 \end{document}

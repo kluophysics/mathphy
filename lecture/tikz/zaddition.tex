@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=0.8]
+    % Define the vectors
+    \path (3, 2.0) coordinate (z1);
+    \path (1, -1.0) coordinate (z2);
+    \path (4, 1) coordinate (z1pz2);
+    \path (2, 3) coordinate (z1mz2);
+
+    \draw[-{Stealth[length=2mm]}] (0,0) -- (z1) node[midway, above]{$z_1$};
+    \draw[-{Stealth[length=2mm]}] (0,0) -- (z2) node[left]{$z_2$};
+    % Draw the vector addition
+    \draw[-{Stealth[length=2mm]}, text=blue, thick] (0,0) -- (z1pz2) node[midway, below]{$z_1 + z_2$};
+    \draw[-{Stealth[length=2mm]}, text=blue, dashed] (z1) -- (z1pz2) node[midway, right]{$z_2$};
+
+    % Draw the vector subtraction
+    \draw[-{Stealth[length=2mm]}, text=blue, thick] (0,0) -- (z1mz2) node[midway, left]{$z_1 - z_2$};
+    \draw[-{Stealth[length=2mm]}, text=blue, dashed] (z1) -- (z1mz2) node[midway, right]{$- z_2$};
+    \path (0,0) coordinate (origin);
+  
+    \draw[->] (-0.2,0) --(4.2,0) node[right] {$\Re$};
+    \draw[->] (0,-2.5) --(0,2.5) node[above] {$\Im$};
+    \node at (origin) [left] {$O$};
+
+  \end{tikzpicture}

@@ -17,14 +17,15 @@
 \end{equation}
 $\imath$为{\bf 虚数}，将定义域扩展到复数，二次方程就有确定的两个解，当$\Delta < 0$时，方程有两个复数解:
 \begin{equation}
-    x = \frac{-b \pm i \sqrt{-\Delta}}{2a} \textrm{。}
+    x = \frac{-b \pm \imath \sqrt{-\Delta}}{2a} \textrm{。}
 \end{equation}
 复数$z$定义为
 \begin{equation}
+    \label{eq:complex_alg}
     z = x + \imath \; y \textrm{，}
 \end{equation}
 $x,y \in {\mathbb{R}}$。$x,y$分别为复数$z$的{\bf 实部}(real part) 和{\bf 虚部}(imaginary part)。
-复数域常用$\mathbb{C}$来表示。若将$z$看成是由$x,y$组成的有序对$(x,y)$，记为
+上式\eqref{eq:complex_alg}成为复数的代数式。复数域常用$\mathbb{C}$来表示。若将$z$看成是由$x,y$组成的有序对$(x,y)$，记为
 \begin{equation}
     z \equiv (x,y)\textrm{，}
 \end{equation}
@@ -32,30 +33,7 @@ $x,y \in {\mathbb{R}}$。$x,y$分别为复数$z$的{\bf 实部}(real part) 和{\
 形成的平面叫做{\bf 复数平面}，坐标轴成为{\bf 实轴}和{\bf 虚轴}。
 \begin{figure}[htb]
     \centering
-\usetikzlibrary{quotes,angles}
-\usetikzlibrary {arrows.meta}
-\begin{tikzpicture}[scale=1.5]
-    \path (0,0) coordinate (origin);
-    \path (4, 0) coordinate (x) ;
-    \path (0, 2.5) coordinate (y) ;
-    \path (4, 2.5) coordinate (z);
-    \path (2.5, 2) coordinate (rho);
-  
-    \draw[->] (-0.2,0) --(4.2,0) node[right] {$\Re$};
-    \draw[->] (0,-0.2) --(0,3.2) node[above] {$\Im$};
-    \draw[solid, text=blue, thick, -{Stealth[length=2mm]}] (origin) -- (z) node[above] {$z=\rho e^{\imath \varphi}$};
-    \draw[text=red, dashed]  (x) --(z) node[above]  {};
-    \draw[text=red, dashed] (y) --(z) node[above] {};
-  
-    \node at (origin) [below] {$O$};
-    \node at (x) [below ]{$x$};
-    \node at (y) [left ]{ $y$};
-    \node at (rho) [right] {$\rho$};
-    \draw[color=red, fill=red] (z) circle (0.05);
-  
-    \draw pic["$\varphi$",draw, ->, angle eccentricity=1.2, angle radius=0.8cm]{angle = x--origin--z};
-  
-  \end{tikzpicture}
+    \input{tikz/complex_plane.tex}
   \caption{复数的平面表示。} \label{fig:complex_plane}
 \end{figure} 
 自然我们可以改用极坐标来表示，
@@ -122,17 +100,101 @@ $z^{-1} \cdot z = 1$，于是有 $z^{-1} =e^{-\imath \varphi}/\rho  $。
     z_1 z_2 = \rho_1 e^{\imath \varphi_1 } \rho_2 e^{\imath \varphi_2 } = \rho_1 \rho_2 e^{\imath (\varphi_1 + \varphi_2)}
 \end{align}
 
-此外，复数还有一种运算较为特殊，成为{\bf 共轭}(complex conjugation)运算。共轭运算表示为
+此外，复数还有一种运算较为特殊，称为{\bf 共轭}(complex conjugation)运算。共轭运算表示为
 \begin{align}
     z^{*} \equiv (x, -y) = x - \imath y \textrm{。}
 \end{align}
 为了得到$z$的模，我们可以利用共轭运算，$|z| = \sqrt{zz^{*}}$。注意区分$|z|^2$和$z^2$的不同。
-\subsection{复数运算的几何表示}
 
-\subsubsection{表示}
+部分复数运算可以映射到复平面上。如共轭运算可以理解为对$z$以实轴为对称轴的镜面对称。对任意的$z_1,z_2$，它们的加减
+同向量的加减完全等价，由三角形的三边关系可得
+\begin{equation}
+    \left| |z|- |z'| \right| \leq |z \pm z'| \leq |z| + |z'| \textrm{。}
+\end{equation}
+很显然，$z+z^{*} = 2 \Re z$， $z-z^{*} = 2\imath \Im z$。
+\begin{figure}
+% \begin{minipage}{0.5\textwidth}
+% \begin{figure}[htb]
+    \centering
+    \input{tikz/zminus.tex}
+%   \caption{共轭的几何表示。} \label{fig:zminus}
+% \end{figure} 
+% \end{minipage}
+\quad 
+% \begin{minipage}{0.5\textwidth}
+    % \begin{figure}[htb]
+        % \centering
+        \input{tikz/zaddition.tex}
+    %   \caption{共轭的几何表示。} \label{fig:zminus}
+    % \end{figure} 
+% \end{minipage}
+        \caption{左图:共轭$z^{*}$与$z$的关系; 右图:$z_1, z_2$的加减关系。}
+    \end{figure}
+\begin{examplebox}{讨论$\Re \frac{1}{z} = 2$在复平面上的意义。}
+    \begin{align*}
+        \Re \frac{1}{z} &= 2\\
+        \Re \frac{1}{x+\imath y} &  = 2 \\
+        \frac{x}{x^2 +y^2} & = 2
+    \end{align*}
+    因此，我们得到方程
+    \begin{equation*}
+        (x-\frac{1}{4})^2 + y^2 = \left( \frac{1}{4}\right)^2\textrm{，}
+    \end{equation*}
+    它表示以$(\frac{1}{4},0)$为圆心，$\frac{1}{4}$为半径的圆上各点集合。
+    \end{examplebox}
+        
+    % \subsection{复数运算的几何表示}
+\subsubsection{三角函数和双曲函数}
+通过复数的引入，我们很容易定义三角函数(trigonometric functions)，如正余弦函数(sine/cosine function)可以表示为互为共轭的指数函数的和差
+\begin{align}
+    \cos \varphi = \frac{e^{\imath \varphi} + e^{ -\imath \varphi} }{2}
+    \\
+    \sin \varphi = \frac{e^{\imath \varphi} - e^{ -\imath \varphi} }{2\imath}
+\end{align}
+而双曲函数(hyperbolic functions)中正余函数(hyperbolic sine/cosine function)则表达为
+\begin{align}
+    \cosh \varphi = \frac{e^{\varphi} + e^{ - \varphi} }{2}
+    \\
+    \sinh \varphi = \frac{e^{\varphi} - e^{ - \varphi} }{2} \textrm{。}
+\end{align}
+比较两组方程可以得到
+\begin{align}
+    \cosh iz = \cos z
+    \\
+    \sinh iz = i \sin z\textrm{。}
+\end{align}
+我们可以用两种方式表示$\exp(\imath n \varphi)$，于是有
+\begin{align}
+    \cos n \varphi + \imath \sin n\varphi = (\cos \varphi + i \sin \varphi)^n  \textrm{。}
+\end{align}
+于是可以验证
+\begin{align}
+    \sin(2\varphi) = 2\sin\varphi \cos\varphi\textrm{，} \quad \cos (2\varphi) = \cos^2\varphi - \sin^2\varphi \textrm{。}
+\end{align}
+利用$\sin \theta = \sqrt{1 - \sin ^2 \theta }$(取正)，可以得到
+\begin{equation}
+  e^{\imath \theta} = \sqrt{ 1 - \sin ^2 \theta } + \imath \sin \theta \textrm{。}  
+\end{equation} 
+令$\sin \theta = z$，$\theta = \sin^{-1} (z)$，对两边同时求对数得到
+\begin{equation}
+    \sin^{-1} (z) = -\imath \ln \left[ \imath z + \sqrt{1-z^2} \right]
+\end{equation}
+类似的，
+\begin{equation}
+    \begin{array}{cc}
+    \sin ^{-1}(z)=-i \ln \left[i z+\sqrt{1-z^2}\right], \quad \tan ^{-1}(z)=\frac{i}{2}[\ln (1-i z)-\ln (1+i z)], \\
+    \sinh ^{-1}(z)=\ln \left[z+\sqrt{1+z^2}\right], \quad \tanh ^{-1}(z)=\frac{1}{2}[\ln (1+z)-\ln (1-z)] .
+    \end{array}
+\end{equation}
 
+\subsubsection{}
 \section{复变函数}
+\begin{figure}
+    \centering
 
+    \input{tikz/branch_cut.tex}
+
+\end{figure}
 \section{解析函数}
 
 

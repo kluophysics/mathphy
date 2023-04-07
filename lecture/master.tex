@@ -24,7 +24,13 @@
 \usepackage{hyperref}   % bookmarks
 \usepackage{url}        % hyperlinks
 \usepackage{amssymb,amsmath,mathtools}
+\usepackage{framed}
+\usepackage{tcolorbox}
 
+
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary{decorations.markings}
 
 \hypersetup{
     colorlinks=true,
@@ -42,6 +48,26 @@
 \renewcommand{\headrule}{%
 \vspace{-8pt}\hrulefill
 \raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newtcolorbox{examplebox}[1]{
+  colbacktitle=yellow!50!white,
+  coltitle=black,
+  colback=white,
+  colframe=yellow!75!black,
+  fonttitle=\bfseries,
+  title={例:#1}
+}
+
+\newcommand{\solutionbox}[1]{
+  \begin{framed}
+    \setlength{\fboxrule}{2pt}
+    \setlength{\fboxsep}{10pt}
+    \setlength{\FrameSep}{20pt}
+    % \setlength{\cornersize}{0.3cm}
+    \noindent\textbf{解}: #1
+  \end{framed}
+}
 
 \begin{document}
 

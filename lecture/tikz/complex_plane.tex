@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=1.5]
+    \path (0,0) coordinate (origin);
+    \path (4, 0) coordinate (x) ;
+    \path (0, 2.5) coordinate (y) ;
+    \path (4, 2.5) coordinate (z);
+    \path (2.5, 2) coordinate (rho);
+  
+    \draw[->] (-0.2,0) --(4.2,0) node[right] {$\Re$};
+    \draw[->] (0,-0.2) --(0,3.2) node[above] {$\Im$};
+    \draw[solid, text=blue, thick, -{Stealth[length=2mm]}] (origin) -- (z) node[above] {$z=\rho e^{\imath \varphi}$};
+    \draw[text=red, dashed]  (x) --(z) node[above]  {};
+    \draw[text=red, dashed] (y) --(z) node[above] {};
+  
+    \node at (origin) [below] {$O$};
+    \node at (x) [below ]{$x$};
+    \node at (y) [left ]{ $y$};
+    \node at (rho) [right] {$\rho$};
+    \draw[color=red, fill=red] (z) circle (0.05);
+  
+    \draw pic["$\varphi$",draw, ->, angle eccentricity=1.2, angle radius=0.8cm]{angle = x--origin--z};
+  
+  \end{tikzpicture}
