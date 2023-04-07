@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=1.0]
+    \def\sin60{}
+    \path (0,0) coordinate (origin);
+    \path (0, 1) coordinate (z1) ;
+    \path ({-sqrt(3)/2}, -0.5 ) coordinate (z2) ;
+    \path ({sqrt(3)/2},  -0.5) coordinate (z3);
+  
+    \draw[->] (-2,0) --(2,0) node[right] {$\Re$};
+    \draw[->] (0,-2) --(0,2) node[above] {$\Im$};
+    \draw[solid, text=blue, thick, -{Stealth[length=2mm]}] (origin) -- (z1) node[above] {$z_1$};
+    \draw[solid, text=blue, thick, -{Stealth[length=2mm]}] (origin) -- (z2) node[below] {$z_2$};
+    \draw[solid, text=blue, thick, -{Stealth[length=2mm]}] (origin) -- (z3) node[below] {$z_3$};
+    % \draw[text=red, dashed] (y) --(z) node[above] {};
+  
+    % \node at (origin) [left] {$O$};
+    % \node at (rho) [right] {$\rho$};
+    \draw[color=red, dashed] (origin) circle (1);
+    % \draw
+    \draw[color=red, fill=red] (z1) circle (0.05);
+    \draw[color=red, fill=red] (z2) circle (0.05);
+    \draw[color=red, fill=red] (z3) circle (0.05);
+    % \draw pic["$\varphi$",draw, ->, angle eccentricity=1.2, angle radius=0.8cm]{angle = x--origin--z};
+    % \draw pic["$\varphi$",draw, <-, angle eccentricity=1.2, angle radius=0.8cm]{angle = zminus--origin--x};
+
+  \end{tikzpicture}
