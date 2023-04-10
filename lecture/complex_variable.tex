@@ -177,15 +177,15 @@ $z^{-1} \cdot z = 1$，于是有 $z^{-1} =e^{-\imath \varphi}/\rho  $。
 \end{align}
 而双曲函数(hyperbolic functions)中正余函数(hyperbolic sine/cosine function)则表达为
 \begin{align}
-    \cosh \varphi = \frac{e^{\varphi} + e^{ - \varphi} }{2}
+    \cosh \varphi &= \frac{e^{\varphi} + e^{ - \varphi} }{2}
     \\
-    \sinh \varphi = \frac{e^{\varphi} - e^{ - \varphi} }{2} \textrm{。}
+    \sinh \varphi &= \frac{e^{\varphi} - e^{ - \varphi} }{2} \textrm{。}
 \end{align}
 比较两组方程可以得到
 \begin{align}
-    \cosh iz = \cos z
+    \cosh iz &= \cos z
     \\
-    \sinh iz = i \sin z\textrm{。}
+    \sinh iz &= i \sin z\textrm{。}
 \end{align}
 我们可以用两种方式表示$\exp(\imath n \varphi)$，于是有
 \begin{align}
@@ -235,10 +235,83 @@ $z^{-1} \cdot z = 1$，于是有 $z^{-1} =e^{-\imath \varphi}/\rho  $。
     \\
     &= \frac{\sinh x + \imath \sin y} {\cosh x + \cos y} \textrm{。}  
 \end{align*}
+证毕。
 \end{examplebox}
 
-\subsubsection{}
-\section{复变函数}
+% \subsubsection{}
+\subsection{复变函数}
+\label{sub:complexfunctions}
+
+\subsubsection{复变函数的定义}
+\label{subsub:cmplx_func_def}
+
+存在复数平面的点集$Z$，每一点$z\in Z$有一个或多个复数值$w$与之对应，则称$w$为$z$的函数--复变函数。$z$称为$w$的宗量，定义域为$Z$，记作
+\begin{equation}
+    w = w(z)\textrm{，} z\in Z \textrm{。}
+\end{equation}
+任意一个复变函数$w(z)$，$z=x + \imath y$，我们可以写称实部和虚部的组合，
+\begin{align}
+    w(z) = u(x,y) +\imath \; v(x,y) \textrm{，}
+\end{align}
+其中$u(x,y), v(x,y)$为纯实函数。它们可以类似的写成
+\begin{align}
+    \Re w(z) = u(x,y)\textrm{，} \quad \Im w(z) = v(x,y) \textrm{，}
+\end{align}
+$w(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$。取决于$w(z)$，二者可能相等也可能不等。
+
+这里我们列举一些常见复变函数。
+\begin{itemize}
+    \item 多项式:
+        \begin{equation}
+            a_0 + a_1 z + a_2 z^2 + \cdots + a_n z^n \textrm{，} \quad n\in \mathbb{Z}^+ \textrm{，}
+        \end{equation}
+    \item 有理分式:       
+         \begin{equation}
+        \frac{a_0 + a_1 z + a_2 z^2 + \cdots + a_n z^n}{{b_0 + b_1 z + b_2 z^2 + \cdots + b_m z^m}} \textrm{，} \quad  n,m\in \mathbb{Z}^+ \textrm{，}
+        \end{equation}
+    \item 根式:
+        \begin{equation}
+            (z-a)^{m/n} \textrm{，} \quad  n,m\in \mathbb{Z}^+ \textrm{，}
+        \end{equation}
+    \item 正余弦，正余切函数 
+        \begin{equation}
+            \sin z , \cos z , \tan z, \cot z \textrm{，}
+        \end{equation}
+    \item 双曲正余弦， 双曲正余切函数
+        \begin{equation}
+            \sinh z , \cosh z , \tanh z, \coth z \textrm{，}
+        \end{equation}
+    \item 对数、指数
+        \begin{equation}
+            \ln z = \ln |z| + \imath \Arg z, \quad z^s = e^{s\ln z} \textrm{。}
+        \end{equation}
+\end{itemize}
+以上所有出现的常数均为复数。
+
+\begin{examplebox}{验证\begin{equation*}
+    |\sin z|=\frac{1}{2} \sqrt{\left(e^{2 y}+e^{-2 y}\right)+2\left(\sin ^2 x-\cos ^2 x\right)} .
+    \end{equation*}
+    }
+    由正弦函数定义得
+    \begin{align*}
+        \sin z &= \frac{e^{iz} - e^{-iz}}{2i} 
+        \\ 
+        & = \frac{e^{ix - y} - e^{-ix + y}}{2i}
+        \\
+        & = \frac{1}{2i}\left( e^{-y} (\cos x + i \sin x ) - e^{y} (\cos x - i \sin x ) \right) 
+        \\
+        & = \frac{1}{2i} \left( \cos x (e^{-y} - e^{y}) + i \sin x (e^{-y} + e^{y}) \right)
+    \end{align*}
+    取模后可得，
+    \begin{align*}
+        |\sin z | &= \frac{1}{2}\sqrt{ \cos^2x (e^{2y} + e^{-2y} -2) + \sin^2 x (e^{2y} + e^{-2y} +2) }
+        \\
+        &=\frac{1}{2}\sqrt{\left(e^{2 y}+e^{-2 y}\right)+2\left(\sin ^2 x-\cos ^2 x\right)}
+    \end{align*}
+    可见，与实函数不同的是，$|\sin z|$的取值完全可以大于$1$。
+\end{examplebox}
+
+复数
 \begin{figure}
     \centering
 
