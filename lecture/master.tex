@@ -27,6 +27,8 @@
 \usepackage{framed}
 \usepackage{tcolorbox}
 
+\usepackage{import}
+
 
 \usetikzlibrary{quotes,angles}
 \usetikzlibrary {arrows.meta}
@@ -184,10 +186,16 @@
 % \newpage
 % \end{enumerate}
 % \include{prerequiste.tex}
-\include{complex_variable.tex}
+
+% \def\input@path{{./chap01/}}
+
+% \include{chap01.tex}
+% \include{complex_function.tex}
 
 % \input{lec1.tex}
 % \input{lec2.tex}
 % \input{lec3.tex}
+
+\subimport{chap01}{chap01.tex}
 
 \end{document}
