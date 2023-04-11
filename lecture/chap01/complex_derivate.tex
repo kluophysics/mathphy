@@ -31,10 +31,23 @@ $(f+g)' = f' + g', (fg)' =f'g + fg'$等。与实变函数求导不同的是，�
     \caption{逼近$z_0$的两种特殊方式。}
     \label{fig:limits}
 \end{figure}
-按照\ref{fig:limits}两种方式逼近$z_0$，我们可以得到
+按照图(\ref{fig:limits})两种方式逼近$z_0$，可以得到
 \begin{align}
     \lim _{\delta z \rightarrow 0} \frac{\delta f}{\delta z} &=\lim _{\delta x \rightarrow 0}\left(\frac{\delta u}{\delta x}+i \frac{\delta v}{\delta x}\right)=\frac{\partial u}{\partial x}+i \frac{\partial v}{\partial x},
 \\
     \lim _{\delta z \rightarrow 0} \frac{\delta f}{\delta z} &=\lim _{\delta y \rightarrow 0}\left(-i \frac{\delta u}{\delta y}+\frac{\delta v}{\delta y}\right)=-i \frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}
 \end{align}
-于是
+于是，令实部虚部分别相等，即
+\begin{equation}
+    \begin{cases}
+        \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} \\
+        \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} \textrm{。}
+    \end{cases}
+\end{equation}
+这就是著名的{\bf 柯西-黎曼条件}(Cauchy-Riemann conditions)，是复变函数可导的必要条件。
+% \begin{equation}
+%     \left\{\begin{array}{l}
+%     \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} \\
+%     \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}
+%     \end{array}\right.
+% \end{equation}
