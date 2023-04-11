@@ -1,0 +1,10 @@
+\begin{tikzpicture}[scale=3]
+    \draw[->] (-0.2,0) -- (1.2,0) node[right] {$\operatorname{Re}(z)$};
+    \draw[->] (0,-0.2) -- (0,1.0) node[above] {$\operatorname{Im}(z)$};
+    % \draw[dashed] (0.5,-1.5) -- (0.5,1.5);
+    % \draw[dashed] (-1.5,0.5) -- (1.5,0.5);
+    \draw[-latex] (1.0,0.3) -- (1.0,0.8) node[midway, right] {$\substack{\delta y\to 0\\\delta x=0}$};
+    \draw[-latex] (0.3,0.8) -- (1.0,0.8) node[midway, above] {$\substack{\delta x\to 0\\\delta y=0}$};
+    \filldraw [fill=none] (1,0.8) circle (0.02) node[above right] {$z_0$};
+    \node at (0,0) [below left] {$O$};
+\end{tikzpicture}

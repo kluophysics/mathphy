@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=2]
+    % draw the main circle
+    \draw[fill=gray!20,dashed] (0,0) circle (1);
+    % draw a point inside the circle
+    \filldraw[black] (0.3,0.4) circle (0.03) node[below] {$z_0$};
+    \node at (0.3, 0.4) [below left=0.3cm] {内点};
+    % draw a point outside the circle
+    \filldraw[black] (1.4,0.4) circle (0.03) node[above right] {外点};
+    % draw a point on the circle
+    \filldraw[black] (-0.6,-0.8) circle (0.03) node[below left] {边界点};
+    % draw a small circle around the inside point
+    % \draw[dashed] (0.3,0.4) circle (0.4) node[above] {邻域};
+    \draw[dashed] (0.3,0.4) circle (0.2) node[above left=0.3cm] {邻域};
+    % label the radius of the neighborhood
+    \draw[<->] (0.3,0.4) -- node[right]{$\epsilon$} (0.3,0.6);
+\end{tikzpicture}

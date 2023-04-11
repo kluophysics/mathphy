@@ -1,6 +1,7 @@
 
-\subsection{复数的定义和基本性质}
-\subsubsection{定义}
+\subsection{复数}
+
+\subsubsection{复数的定义}
 一元二次方程$a x^2 + b x + c = 0 (a\neq 0, b,c \in \mathbb{R})$的求解大家一定都不陌生。当$\Delta \equiv b^2 - 4 a c \geq 0$时，方程有解，求根公式可得
 \begin{equation}
     x = \frac{-b \pm \sqrt{\Delta}}{2a} \textrm{。}
@@ -83,7 +84,7 @@ $\rho = |z|$ 为复数的{\bf 模}(modulus), $\varphi$为复数的{\bf 辐角}(a
     % \end{figure}
 \end{examplebox}
 
-\subsubsection{基本性质}
+\subsubsection{复数的基本性质}
 我们可以利用有序实数对的方式对复数进行基本运算: 加减乘除运算。{\bf 加法}运算可以定义为
 \begin{align}
     z_1 + z_2 = (x_1, y_1) + (x_2, y_2) = (x_1 + x_2, y_1 + y_2) \textrm{。}
@@ -153,85 +154,15 @@ $z^{-1} \cdot z = 1$，于是有 $z^{-1} =e^{-\imath \varphi}/\rho  $。
     \begin{align*}
         \Re \frac{1}{z} &= 2\\
         \Re \frac{1}{x+\imath y} &  = 2 \\
-        \frac{x}{x^2 +y^2} & = 2
+        \frac{x}{x^2 +y^2} & = 2 \textrm{。}
     \end{align*}
-    因此，我们得到方程
-    \begin{equation*}
-        (x-\frac{1}{4})^2 + y^2 = \left( \frac{1}{4}\right)^2\textrm{，}
-    \end{equation*}
-    它表示以$(\frac{1}{4},0)$为圆心，$\frac{1}{4}$为半径的圆上各点集合。
-    \end{examplebox}
+因此，我们得到方程
+\begin{equation*}
+    (x-\frac{1}{4})^2 + y^2 = \left( \frac{1}{4}\right)^2\textrm{，}
+\end{equation*}
+它表示以$(\frac{1}{4},0)$为圆心，$\frac{1}{4}$为半径的圆上各点集合。
+\end{examplebox}
         
     % \subsection{复数运算的几何表示}
-\subsubsection{三角函数和双曲函数}
-通过复数的引入，我们很容易定义三角函数(trigonometric functions)，如正余弦函数(sine/cosine function)可以表示为互为共轭的指数函数的和差
-\begin{align}
-    \cos \varphi = \frac{e^{\imath \varphi} + e^{ -\imath \varphi} }{2}
-    \\
-    \sin \varphi = \frac{e^{\imath \varphi} - e^{ -\imath \varphi} }{2\imath}
-\end{align}
-而双曲函数(hyperbolic functions)中正余函数(hyperbolic sine/cosine function)则表达为
-\begin{align}
-    \cosh \varphi &= \frac{e^{\varphi} + e^{ - \varphi} }{2}
-    \\
-    \sinh \varphi &= \frac{e^{\varphi} - e^{ - \varphi} }{2} \textrm{。}
-\end{align}
-比较两组方程可以得到
-\begin{align}
-    \cosh iz &= \cos z
-    \\
-    \sinh iz &= i \sin z\textrm{。}
-\end{align}
-我们可以用两种方式表示$\exp(\imath n \varphi)$，于是有
-\begin{align}
-    \cos n \varphi + \imath \sin n\varphi = (\cos \varphi + i \sin \varphi)^n  \textrm{。}
-\end{align}
-于是可以验证
-\begin{align}
-    \sin(2\varphi) = 2\sin\varphi \cos\varphi\textrm{，} \quad \cos (2\varphi) = \cos^2\varphi - \sin^2\varphi \textrm{。}
-\end{align}
-利用$\sin \theta = \sqrt{1 - \sin ^2 \theta }$(取正)，可以得到
-\begin{equation}
-  e^{\imath \theta} = \sqrt{ 1 - \sin ^2 \theta } + \imath \sin \theta \textrm{。}  
-\end{equation} 
-令$\sin \theta = z$，$\theta = \sin^{-1} (z)$，对两边同时求对数得到
-\begin{equation}
-    \sin^{-1} (z) = -\imath \ln \left[ \imath z + \sqrt{1-z^2} \right]
-\end{equation}
-类似的，
-\begin{equation}
-    \begin{array}{cc}
-    \sin ^{-1}(z)=-i \ln \left[i z+\sqrt{1-z^2}\right], \quad \tan ^{-1}(z)=\frac{i}{2}[\ln (1-i z)-\ln (1+i z)], \\
-    \sinh ^{-1}(z)=\ln \left[z+\sqrt{1+z^2}\right], \quad \tanh ^{-1}(z)=\frac{1}{2}[\ln (1+z)-\ln (1-z)] .
-    \end{array}
-\end{equation}
-
-\begin{examplebox}{证明
-    \begin{equation*}\tanh \frac{z}{2}=\frac{\sinh x+i \sin y}{\cosh x+\cos y} \textrm{。}  
-    \end{equation*}
-}
-根据双曲正切函数的定义
-\begin{align*}
-    \tanh \frac{z}{2} &= \frac{\sinh \frac{z}{2} }{ \cosh \frac{z}{2}}
-    \\
-    &= \frac{e^{\frac{z}{2}} - e^{-\frac{z}{2}}}{e^{\frac{z}{2}} + e^{-\frac{z}{2}}}
-    \\
-    &= \frac{e^{z} - 1}{e^{z} + 1} 
-    \\
-    &= \frac{e^{x+\imath y } -1 } { e^{x + \imath y } + 1}
-    \\
-    &=\frac{e^{\imath y } -e^{-x} } { e^{\imath y } + e^{-x}}
-\end{align*}   
-分子分母同乘以分母的复共轭可得
-\begin{align*}
-    &=\frac{e^{\imath y } -e^{-x} } { e^{\imath y } + e^{-x}} \frac{e^{-\imath y } + e^{-x}} { e^{-\imath y } + e^{-x}}
-    \\
-    &=\frac{-1+e^{-2x} + 2 \imath \sin y e^{-x}}{1+ e^{-2x} + 2 \cos y e^{-x} }
-    \\
-    &= \frac{\sinh x + \imath \sin y} {\cosh x + \cos y} \textrm{。}  
-\end{align*}
-证毕。
-\end{examplebox}
-
 
 
