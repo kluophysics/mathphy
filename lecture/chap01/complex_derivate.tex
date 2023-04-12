@@ -1,6 +1,8 @@
-\subsubsection{导数}
+\subsection{导数}
 
-首先，我们来讨论一下函数的极限和连续性问题。设$w=f(z)$在$z_0$的邻域有定义，对于
+首先，我们来讨论一下函数的极限和连续性问题。
+\begin{Definition}
+    设$w=f(z)$在$z_0$的邻域有定义，对于
 $\epsilon > 0$，存在$\delta > 0$，使得$|z-z_0| < \epsilon$，有
 \begin{equation}
     |f(z) - w_0| < \delta \textrm{，}
@@ -9,6 +11,7 @@ $\epsilon > 0$，存在$\delta > 0$，使得$|z-z_0| < \epsilon$，有
 \begin{equation}
     \lim_{z\to z_0} f(z) = w_0 \textrm{。}
 \end{equation}
+\end{Definition}
 当$z$以任意方式趋近$z_0$时都有$ \lim_{z\to z_0} f(z) = w_0$，称$f(z)$在$z_0$点{\bf 连续}。
 如果$f(z)$ 在$z_0=x_0 + \imath y_0$点连续，可以等价为
 \begin{align}
@@ -44,10 +47,35 @@ $(f+g)' = f' + g', (fg)' =f'g + fg'$等。与实变函数求导不同的是，�
         \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} \textrm{。}
     \end{cases}
 \end{equation}
-这就是著名的{\bf 柯西-黎曼条件}(Cauchy-Riemann conditions)，是复变函数可导的必要条件。
+这就是著名的{\bf 柯西-黎曼条件}(Cauchy-Riemann conditions)或{\bf 柯西-黎曼方程}，是复变函数可导的必要条件。
 % \begin{equation}
 %     \left\{\begin{array}{l}
 %     \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} \\
 %     \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}
 %     \end{array}\right.
 % \end{equation}
+下面我们证明:若$u(x,y), v(x,y)$偏微分存在且连续，并满足柯西-黎曼条件，则$f(z)$可导。
+\begin{proof}
+    由于$u,v$偏微分连续，可得
+    \begin{equation*}
+        \delta f=\left(\frac{\partial u}{\partial x}+\imath \frac{\partial v}{\partial x}\right) \delta x+\left(\frac{\partial u}{\partial y}+ \imath \frac{\partial v}{\partial y}\right) \delta y
+    \end{equation*}
+    利用柯西-黎曼方程，将上式转换为
+    \begin{equation*}
+        \begin{aligned}
+        \delta f & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \delta x+\left(-\frac{\partial v}{\partial x}+ \imath\frac{\partial u}{\partial x}\right) \delta y \\
+        & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right)(\delta x+ \imath \delta y) 
+        \\
+        & = \left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \delta z
+        \end{aligned}
+    \end{equation*}
+可以看到右式与$\delta z\to 0$的方式无关，因此根据可导的定义判断$f(z)$可导。
+\end{proof}
+对于极坐标系，我们也可以得到相应的柯西-黎曼方程，
+\begin{equation}
+    \left\{\begin{array}{l}
+    \frac{\partial u}{\partial \rho}=\frac{1}{\rho} \frac{\partial v}{\partial \varphi} \\
+    \frac{1}{\rho} \frac{\partial u}{\partial \varphi}=-\frac{\partial v}{\partial \rho}
+    \end{array}\right.
+    \end{equation}
+其中两种推导作为习题。

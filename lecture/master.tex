@@ -24,12 +24,15 @@ headheight=14pt,% Set \headheight to 10mm
 \usepackage{hyperref}   % bookmarks
 \usepackage{url}        % hyperlinks
 \usepackage{amssymb,amsmath,mathtools}
+\usepackage{amsthm}
+
 \usepackage{framed}
 \usepackage{tcolorbox}
 
 \usepackage{import}
 
 \raggedbottom
+
 
 
 \usetikzlibrary{quotes,angles}
@@ -63,6 +66,15 @@ headheight=14pt,% Set \headheight to 10mm
   fonttitle=\bfseries,
   title={例:#1}
 }
+% \newtheorem{Definition}{\hspace{2em}定义}[subsection]
+% \newtheorem{Definition}{\hspace{2em}定义}[section]
+% \newtheorem{Definition}{\hspace{2em}定义}[chapter]
+\newtheorem{Definition}{\hspace{2em}定义}[]
+\renewcommand{\proofname}{\indent\bf 证明:}
+\renewcommand{\qedsymbol}{$\blacksquare$}    % 证毕符号改成黑色的正方形
+
+\newenvironment{solution}{\begin{proof}[\indent\bf 解]}{\end{proof}}
+
 
 \newcommand{\solutionbox}[1]{
   \begin{framed}
@@ -113,7 +125,7 @@ headheight=14pt,% Set \headheight to 10mm
         % format+ = \zihao{-2} \heiti \raggedright,
         % format+ = \zihao{-1} \heiti,
         name = {},
-        % number = 第\chinese{part}篇,
+        number = 第\chinese{part}篇,
         % beforeskip = 1.0ex plus 0.2ex minus .2ex,
         % afterskip = 1.0ex plus 0.2ex minus .2ex,
         % aftername = \hspace{15pt}
@@ -122,7 +134,7 @@ headheight=14pt,% Set \headheight to 10mm
         % format+ = \zihao{-2} \heiti \raggedright,
         % format+ = \zihao{-2} \heiti,
         name = {},
-        number = 第\chinese{chapter}篇,
+        number = 第\chinese{chapter}章,
 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
 		% aftername = \hspace{10pt}
@@ -138,7 +150,7 @@ headheight=14pt,% Set \headheight to 10mm
 		% name = {},
 		%number用于设置章节编号数字输出格式
 		%输出section编号为中文
-		number = 第\chinese{section}章,
+		number = 第\chinese{section}节
 		% %beforeskip用于设置章节标题前的垂直间距
 		% %ex为当前字号下字母x的高度
 		% %基础高度为1.0ex，可以伸展到1.2ex，也可以收缩到0.8ex
@@ -150,12 +162,12 @@ headheight=14pt,% Set \headheight to 10mm
 		% aftername = \hspace{10pt}
 	},
 	subsection={
-		format + = \centering,
+		% format + = \centering,
 		% format+ = \zihao{5} \kaishu \raggedright,
 		% format+ = \zihao{4}, %\raggedright,
 		%仅输出subsection编号且为中文
 		% number = \arabic{subsection}, %\chinese{subsection},
-        number = 第\arabic{subsection}节,
+        number = 第\arabic{section}.\arabic{subsection}讲,
 		% name = {,.},
 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
@@ -167,7 +179,7 @@ headheight=14pt,% Set \headheight to 10mm
 		% format + = \centering,
 		%仅输出subsubsection编号，格式为阿拉伯数字，打字机字体
 		% number = \ttfamily\arabic{subsubsection},
-        number = 第\arabic{subsection}.\arabic{subsubsection}讲,
+        % number = 第\arabic{subsection}.\arabic{subsubsection}讲,
 		% name = {},
 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
