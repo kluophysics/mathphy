@@ -1,6 +1,29 @@
 \subsection{幂级数(Power Series)}
-本讲专门讨论在复数级数中非常重要的一类级数，叫做幂级数。幂级数的各项都是幂函数，
+本讲专门讨论在函数项级数中非常重要的一类级数，叫做幂级数。幂级数的各项都是幂函数，
 \begin{equation}
     \sum_{k=0}^{\infty} a_k\left(z-z_0\right)^k=a_0+a_1\left(z-z_0\right)+a_2\left(z-z_0\right)^2+\cdots
 \end{equation}
 其中$z_0, a_i$都是复常数。这样的级数称为以 $z_0$ 为中心的幂级数。
+该幂级数可能收敛，也可能发散。如果幂级数是收敛的，称$z_0$为该级数的\textbf{收敛点}；反之若它是发散的，称$z_0$为该级数的\textbf{发散点}。
+函数项级数式的所有收敛点的集合称为其\textbf{收敛域}，所有发散点的集合称为其\textbf{发散域}。
+
+现在利用达朗贝尔比值判定法，如果
+\begin{equation}
+    \lim _{k \rightarrow \infty} \frac{\left|a_{k+1}\right|\left|z-z_0\right|^{k+1}}{\left|a_k\right|\left|z-z_0\right|^k}
+    =\lim _{k \rightarrow \infty}\left|\frac{a_{k+1}}{a_k}\right|\left|z-z_0\right|<1
+\end{equation}
+则级数绝对收敛。若记
+\begin{equation}
+    \lim_{k \rightarrow \infty} \left|\frac{a_{k+1}}{a_k}\right| = R^{-1},
+\end{equation}
+那么当$|z-z_0| < R$时，级数绝对收敛。若$|z-z_0| > R$时, 级数的模越来越大，级数发散。对于$|z-z_0| = R$的时候，无法简单判定。
+例如幂级数$\sum_{k=0} \frac{1}{k} |z-z_0|^k$,可知$R=1$。$|z-z_0|=1$有两种情况:当$z-z_0 = +1$时， 由调和级数知道，该级数发散;而
+当$z-z_0 = -1$时，由莱布尼兹判定法可知该级数收敛。
+
+以$z_0$ 为圆心作一个半径为$R$的圆$C_R$。幂级数在圆的内部绝对收敛, 在圆外发散. 这个圆因而称为幂级数的\textbf{收敛圆}, 
+它的半径则称为\textbf{收敛半径}。至于在收敛圆周上的收敛情况则需要具体分析。
+
+\begin{examplebox}{求幂级数$1 - z^2 + z^4 - z^6\cdots$的收敛圆，$z$为复变数。}
+    将$z^2$记作$t$,则本例的级数化成$1-t + t^2 - t^3\cdots$。系数$a_k =(-1)^k$, 因此t平面上收敛半径$R=1$。 
+    因此$z$平面上收敛半径为$\sqrt{R}=1$。
+\end{examplebox}
