@@ -1,18 +1,23 @@
 \subsection[定义和性质]{复变函数的积分}
 有了复变函数微分的基础，我们现在来讨论积分。复变函数的积分的定义可以同实变函数积分的类比得到。
-在复平面上取一个路径$\ell$,起终点为$z_0,z'_0$，沿着该路径定义了一连续函数$f(z)$，用$n-1$个点$z_1, z_2, z_{n-1}$将该路径
-$\ell$分成$n$个线段。函数$f(z)$在线段$z_{i-1}\rightarrow z_{i}$上任意一点$\xi_i$的值乘上线段的长度$\Delta z_i = z_i - z_{i-1}$并求和，即
+在复平面上取一个路径$\ell$,起终点为$A(z_0),B(z_n)$，沿着该路径定义了一连续函数$f(z)$，用$n-1$个点$z_1, z_2,\cdot, z_{n-1}$将该路径
+$\ell$分成$n$个线段(见图\ref{fig:complex_integral})。函数$f(z)$在线段$z_{k-1}\rightarrow z_{k}$上任意一点$\xi_k$的值乘上线段的长度$\Delta z_k = z_k - z_{k-1}$并求和，即
 \begin{equation}
-    S_n = \sum_{i=1}^{n} f(\xi_i) (z_{i} - z_{i-1}) \textrm{。}
+    S_n = \sum_{k=1}^{n} f(\xi_k) (z_{k} - z_{k-1}) \textrm{。}
 \end{equation}
+\begin{figure}[htbp]
+    \centering
+    \input{tikz/integral.tex}
+    \caption{复变函数积分示意图。光滑曲线$\ell$上取一系列点$z_k$将其分成$n$小段。}
+    \label{fig:complex_integral}
+\end{figure}
 当$n\to \infty$， 求和则转化为积分。当这个和的极限存在且
-与$\xi_i$的选取无关时，这个极限称为
+与$\xi_k$的选取无关时，这个极限称为
 函数$f(z)$沿着路径$\ell$的\textbf{路径积分}(Contour integral)， 记作
 $\int_{\ell} f(z) dz$,即
 \begin{equation}
-    \int_{\ell} f(z) dz = \lim_{n\to \infty} \sum_{i=1}^{n} f(\xi_i) (z_{i} - z_{i-1}) \textrm{。} 
+    \int_{\ell} f(z) dz = \lim_{n\to \infty} \sum_{i=k}^{n} f(\xi_k) (z_{k} - z_{k-1}) \textrm{。} 
 \end{equation}
-
 其实，我们还可以将该定义用实虚部的方式表达出来，
 \begin{align}
     \int_{\ell} f(z) dz  & = \int_{\ell} \left( u(x,y) + \imath v(x,y) \right) (dx + \imath dy) 
@@ -20,3 +25,5 @@ $\int_{\ell} f(z) dz$,即
     & = \int_{\ell} \left( u(x,y) dx  -  v(x,y) dy \right) + \imath \int_{\ell}  \left( v(x,y) dx  + u(x,y)dy \right) 
 \end{align}
 这样一来，复变函数的路径积分就转化成了两个实变函数的线积分。因此，很多实函数线积分的性质可以应用在路径积分上。
+
+
