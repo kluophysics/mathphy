@@ -104,13 +104,15 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$。取决于$f(z)$，二者可�
 
 
 \subsection{三角函数和双曲函数}
-通过复数的引入，我们很容易定义三角函数(trigonometric functions)，如正余弦函数(sine/cosine function)可以表示为互为共轭的指数函数的和差
+双曲函数(hyperbolic functions)为三角函数(trigonometric functions)的复数类比。
+许多同三角函数一样的等式和积分上都可以类似的应用在双曲函数上。
+通过复数的引入，我们很容易定义三角函数，如正余弦函数(sine/cosine function)可以表示为互为共轭的指数函数的和差
 \begin{align}
     \cos \varphi = \frac{e^{\imath \varphi} + e^{ -\imath \varphi} }{2}
     \\
     \sin \varphi = \frac{e^{\imath \varphi} - e^{ -\imath \varphi} }{2\imath}
 \end{align}
-而双曲函数(hyperbolic functions)中正余函数(hyperbolic sine/cosine function)则表达为
+正余函数(hyperbolic sine/cosine function)表达为
 \begin{align}
     \cosh \varphi &= \frac{e^{\varphi} + e^{ - \varphi} }{2}
     \\
@@ -172,6 +174,16 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$。取决于$f(z)$，二者可�
 \end{align*}
 证毕。
 \end{examplebox}
+
+此外，类似于三角函数，我们有以下双曲函数
+\begin{equation}
+    \begin{aligned}
+    \tanh z & =\frac{\sinh z}{\cosh z}=\frac{e^z-e^{-z}}{e^z+e^{-z}}, \\
+    \operatorname{sech} z & =\frac{1}{\cosh z}=\frac{2}{e^z+e^{-z}}, \\
+    \operatorname{cosech} z & =\frac{1}{\sinh z}=\frac{2}{e^z-e^{-z}}, \\
+    \operatorname{coth} z & =\frac{1}{\tanh z}=\frac{e^z+e^{-z}}{e^z-e^{-z}} \textrm{。} 
+    \end{aligned}
+\end{equation}
 
 
 % \begin{figure}

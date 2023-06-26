@@ -1,0 +1,102 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\pagestyle{fancy}
+
+% \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\CTEXthesection\quad #1}}
+% \renewcommand{\sectionmark}[1]{\markleft{\CTEXthesection\quad #1}}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+\fancyhead[LR]{\textbf{\leftmark}}
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+ 
+
+
+
+\title{课后习题01}
+\author{截止日期: }
+% \author{罗凯\\
+% 数学物理方法}
+\date{}
+\maketitle
+ 
+% \begin{problem}{1.1}
+% 找出满足方程\[z - 2 = 3 \frac{1+ \imath t}{1-\imath t}, -\infty < t <\infty\]的所有点$z$。
+% \end{problem}
+
+\begin{problem}{1.1}
+将下列复数用代数式、三角式和指数式表示出来。
+\begin{enumerate}
+  \item $1 + \imath \sqrt{3}$,
+  \item $\frac{1-\imath}{1+\imath}$,
+  \item $e^{1+\imath}$.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}{1.2}
+  找出复平面上满足方程\[|z - \imath a|  = \lambda | z + \imath a|, \lambda > 0,\]
+  的所有点$z = x + \imath y$。请分$\lambda$的三种情况(1) $\lambda<1$, (2) $\lambda >1$，(3) $\lambda = 1$分别绘制图形。
+\end{problem}
+
+% \begin{proof}[Solution]
+% Write a solution here
+% \begin{align*}
+% x &= y
+% \end{align*}
+% \begin{tabular}{| >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} |>{\centering\arraybackslash}m{1in} |}
+% \hline 
+%   \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} &\textbf{E} \\[8pt]
+%   \hline
+%   a & b & c & d & e \\[8pt]
+%   \hline
+%   f & g &h & i & j \\[8pt]
+%   \hline
+% \end{tabular}
+% \end{proof}
+
+\end{document}
