@@ -1,2 +1,10 @@
 \subsection{奇点的分类}
 \label{subsec:singular_points}
+利用函数$f(z)$的在$z=z_0$处的洛朗级数展开，我们可以刻画函数在此处的行为。
+容易知道，若$f(z)$在$z=z_0$处解析，那么所有负幂项系数为零，即$a_k = 0$, $k<0$。
+若$f(z)$在$z=z_0$处非解析，那么两种情况会出现。
+\begin{enumerate}
+    \item 能找到整数$p$使得$a_{-p} \neq =0$, $a_{-p - k}>0$，$k>0$。
+    \item 无法找到上述最小的$-p$。
+\end{enumerate}
+对于第一种情况，$f(z)$在$z=z_0$处有$p$阶极点。$a_{-1}$称为$f(z)$在极点$z=z_0$处的\textbf{留数}(residue)。
