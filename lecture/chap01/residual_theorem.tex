@@ -1,5 +1,27 @@
 \subsection{留数定理}
 \label{subsec:residual_theorem}
+柯西定理指出，若被积函数$f(z)$在回路$\ell$所围区域是解析的，则回路积分$\oint_\ell f(z) dz$为零。下面讨论所围区域包含奇点的情况。
+假设一个含有$m$阶极点$z=z_0$的函数，它可以展开为洛朗级数
+\[
+  f(z) = \sum_{k = -m} ^{\infty} a_k (z - z_0)^k  
+\]
+取圆环内包含$z_0$的闭合回路，由柯西定理可知，回路积分$\oint_\ell f(z) dz = \oint_C f(z) dz$, 将洛朗展开带入逐项积分，可得
+\[
+\oint_\ell f(z) dz = \sum_{k = -m} ^{\infty} \oint_C  (z - z_0)^k dz,
+\]
+由前面例题可知，只有$a_{-1}$项不为零，其他项为零。而$a_{-1}$项的积分为$2\pi\imath$。因此，我们得到
+\begin{equation}
+    \oint_\ell f(z) dz = 2\pi \imath a_{-1} \textrm{。}
+\end{equation}
+又因为$a_{-1}$为函数$f(z)$在$z=z_0$处的留数,记为$Res f(z_0)$。于是有
+\begin{equation}
+    \oint_\ell f(z) dz = 2\pi \imath Res f(z_0) \textrm{。}
+\end{equation}
+扩展到多个奇点的情况，不难得到
+\begin{equation}
+    \oint_\ell f(z) dz = 2\pi \imath \sum_{j=1}^{n} Res f(z_j) \textrm{。}
+\end{equation}
+上式为\textbf{留数定理}的数学表达式，即回路积分可以写成被积函数在回路所围区域上各个奇点的留数之和。
 
 
 \subsection{留数定理的应用}
