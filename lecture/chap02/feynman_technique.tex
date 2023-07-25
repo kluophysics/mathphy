@@ -1,0 +1,60 @@
+\section{Feynman技巧}
+我们将讨论下面几个计算定积分的技巧。
+
+\subsection{复变量代换}
+以一个例子说明复变量代换的方法。求解定积分
+\[
+    I =  \int_0^{\infty} e^{-a x} \cos b x d x \\
+\]
+利用$\cos{bx} = \frac{1}{2}\left( e^{\imath b x} + e^{-\imath bx}\right)$
+\[    \begin{aligned}
+    I= & \frac{1}{2} \int_{0}^{\infty} \left(e^{-(a-\imath b) x} + e^{-(a + \imath b) x} \right)  d x \\
+    = & \frac{1}{2} \left( \frac{1}{a-\imath b} +  \frac{1}{a+\imath b} \right)\\
+    = & \frac{a}{a^2+b^2}
+\end{aligned}
+\]
+
+\subsection{参数微分}
+求解定积分
+\[
+    I =  \int_0^{\infty} x e^{-a x} \cos b x d x \\
+\]
+我们令
+\[
+  S(a) =   \int_0^{\infty} e^{-a x} \cos b x d x 
+\]
+已知 $S(a) = \frac{a}{a^2+b^2}$，通过对$S(a)$对$a$的求导得到
+\[
+    I = - S'(a)  = \frac{a^2 - b^2}{(a^2 +b^2)^2}    
+\]
+对于一般的含参数的微分，我们有
+\begin{equation}
+    \begin{aligned}
+    \frac{d}{d \alpha} \int_{x_1(\alpha)}^{x_2(\alpha)} f(x, \alpha) d x= & \int_{x_1}^{x_2} \frac{\partial}{\partial \alpha} f(x, \alpha) d x \\
+    & \left[\frac{d x_2(\alpha)}{d \alpha} \right] f(x_2, \alpha)- 
+    \left[\frac{d x_1(\alpha)}{d \alpha}\right] f(x_1, \alpha)
+    \end{aligned}
+\end{equation}
+
+\subsection{被积函数添加函数因子}
+求解定积分
+\[
+    I =  \int_0^{\infty} \frac{\sin{x}}{x} d x 
+\]
+可以通过乘以一个函数因子$e^{-a x}$来构造参数函数
+\[
+ S(a) =     \int_0^{\infty}  e^{-a x} \frac{\sin{x}}{x} d x 
+\]
+这样我们有
+\[
+  S'(a) = -  \int_0^{\infty}  e^{-a x} \sin{x} d x  = \frac{1}{1+a^2}
+\]
+对于$a \to \infty$, 有 $S(\infty) = 0$。
+而$\frac{1}{1+x^2}$的原函数为$\arctan{x}$，因此
+\[S(a) = - \arctan{a} + C\]
+可确定$C = \frac{\pi}{2}$,因此我们有$S(a) = \frac{\pi}{2} - \arctan{\alpha}$。
+因此,
+\[
+  I = S(0) = \frac{\pi}{2} \textrm{。}    
+\]
+该结果我们已通过留数定理求得。
