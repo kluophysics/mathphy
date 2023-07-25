@@ -94,4 +94,45 @@ $z f(z)$ 一致地 $\to 0$。
 \end{examplebox}
 
 
- \subsection{带复E指数的定积分}
+ \subsection{带复指数的定积分}
+ 考虑以下类型的定积分
+ \begin{equation}
+    I=\int_{-\infty}^{\infty} f(x) e^{\imath m x} d x
+\end{equation}
+其中，$m$为正实数;$f(z)$在上半平面除有限个奇点外是解析的，且$\lim_{|z|\to \infty} f(z) = 0, 0 \leq arg z \leq \pi$。
+我们使用同样的半圆路径，类似的可以通过留数定理将实轴的积分转换为环路积分求得。
+为了使用留数定理，我们先需要证明在半圆上的路径积分为零，这里就要用到\textbf{约旦引理}。
+即证明
+\begin{equation}
+    \lim _{R \rightarrow \infty} \int_{C_R} F(z) \mathrm{e}^{\imath m z} \mathrm{~d} z=0 .
+\end{equation}
+当$R$足够大时，我们有$|f(z)| < \epsilon$。半圆积分
+\begin{align}
+    I_R&=\int_0^\pi f\left(R e^{\imath \theta}\right) 
+    e^{\imath m R \cos \theta- m R \sin \theta} \imath R e^{\imath \theta} d \theta
+    \\
+    &\leq \epsilon R \int_0^\pi e^{-m R \sin \theta} d \theta=2 \epsilon R \int_0^{\pi / 2} e^{-m R \sin \theta} d \theta,
+\end{align}
+可以发现在$\left[ 0, \pi/2\right]$时，
+\begin{equation}
+    \frac{2}{\pi}\theta \leq \sin{\theta},
+\end{equation}
+于是有
+\begin{equation}
+    I_R \leq 2 \epsilon R \int_0^{\pi / 2} e^{-2 m R \theta / \pi} d \theta=2 \epsilon R \frac{1-e^{-m R}}{2 m R / \pi}<\frac{\pi}{m} \epsilon
+\end{equation}
+即
+\begin{equation}
+    \lim_{R\to \infty} I_R = 0\textrm{。}
+\end{equation}
+回到定积分$I$，可以得
+\begin{equation}
+    I=\int_{-\infty}^{\infty} f(x) e^{ \imath m x} d x = 2\pi \imath \sum Res e^{\imath m z} f(z)
+\end{equation}
+
+对于以下类型的积分，可以利用上述结论。如
+\begin{equation}
+    \int_{0}^{\infty} F(x) \cos {m x} dx, \int_{0}^{\infty} G(x) \sin{m x} dx
+\end{equation}
+其中，$F(z)$为偶函数，$G(z)$为奇函数，它们在实轴上没有奇点，上半平面上除有限个奇点外解析。
+很容易通过$\cos{mx} = \frac{1}{2}\left( e^{\imath m x} + e^{-\imath mx}\right)$等变换得到。
