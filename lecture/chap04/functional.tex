@@ -14,5 +14,83 @@ J[u] = \int_{x_1}^{x_2} \sqrt{ 1 + u'(x)^2} dx
 \]
 其中 $u'(x) = du(x)/dx$，满足边界条件$u(x_1) = y_1, u(x_2) = y_2$。因此，我们的问题即求如何找到函数$u(x)$使得
 $J$最小化。这里的方括号区别于函数的圆括号，用来表示这里的映射是函数$\to$数的。这种函数的函数称为\textbf{泛函}。
+具体的求解我们下面介绍。
+理论力学上，最小作用量原理可以导出牛顿力学方程。我们定义的体系的动能为$K = \half m \bv^2$,
+势能为$V = V(\br)$, 定义作用量
+\begin{equation}
+  A = \int \left[ \half m \left( \frac{d\br}{dt} \right)^2 - V(\br) \right] dt 
+\end{equation}
+上式利用了定义$\vec{\bv} = \frac{d\br}{dt}$。 对作用量$A$进行最小化将得到$\br$满足的方程，即牛顿第二定律方程。
+
+对于一般的情况，有函数到数的映射写成
+\begin{equation}
+  J[u] = \int_{a}^{b}  dx L(u, u', u'', \cdots| x)， 
+\end{equation}
+其中$L(u, u', u'',\cdots | x)$为$u$的局域泛函， $u' \equiv du/dx, u'' \equiv = du^2/dx^2$。
+对于不包含一阶以上的导数时，即$L = L(u,u')$，对函数$u(x)$作一微小变化$\delta u(x)$，在积分上下限处，
+有$\delta u(a) = \delta u(b) = 0$。$J[u]$取最小值时，需满足$\delta J[u] \equiv = J[u + \delta u] - J[u]$
+为零。利用$\delta u' = \funcpd{}{x} \delta u$和$fg' = (fg)' - f'g$,
+\begin{align}
+  J[u + \delta u] &= \int_{a}^{b}  dx L(u + \delta u, u' + \delta u'| x) 
+    \nonumber \\ 
+    &= \int_{a}^{b} dx \left[ L(u, u'| x) + \funcpd{L}{u} \delta u + \funcpd{L}{u'} \delta u' \right]  
+    \nonumber \\ 
+    &= \int_{a}^{b} dx \left[ L(u, u'| x) + \funcpd{L}{u} \delta u + \funcpd{}{x}\left( \funcpd{L}{u'} \delta u \right)
+    -  \funcpd{}{x}\left( \funcpd{L}{u'} \right) \delta u  \right]  
+    \nonumber \\ 
+    &= \int_{a}^{b} dx \left[ L(u, u'| x) + \left( \funcpd{L}{u} -  \funcpd{}{x}\left( \funcpd{L}{u'} \right)   \right) \delta u \right]  
+        + \left. \funcpd{L}{u'} \delta u \right|_{a}^{b} 
+     \nonumber %\\ 
+\end{align}
+于是，结合边界条件我们有
+\begin{align}
+  \delta J[u] = \int_{a}^{b} dx \left[ \funcpd{L}{u} -  \funcpd{}{x}\left( \funcpd{L}{u'} \right)   \right] \delta u 
+\end{align}
+被积函数对任意变化$\delta u$都需要满足$\delta J[u] = 0$，于是我们得到
+\begin{equation}
+  \funcpd{L}{u} -  \funcpd{}{x}\left( \funcpd{L}{u'} \right) = 0 \textrm{。}
+\end{equation}
+这就是著名的\textbf{欧拉-拉格朗日方程}(Euler-Lagrange Equation)。
+
+利用该方程，可以得到两点之间距离最短满足
+\[
+  0 = - \funcd{}{x} \frac{u'}{\sqrt{1 + u'^2}} = \frac{-u''}{(1+ u'^2)^{3/2}}
+\]
+也就是
+\[ u'' = 0\]
+也就是解为直线方程$ u = k x + b$，$k,b$的值由边界条件确定。
+
+对最小作用量原理问题，可以得到
+\[
+  0 = - \funcd {V(\br)}{\br} - \funcd{}{t} \left[ m \frac{d\br}{dt} \right]
+\]
+若质量$m$不依赖于时间，得到牛顿方程，
+\[
+  m \frac{d^2\br}{dt^2} = - \funcd {V(\br)}{\br} \equiv \bF \textrm{。}
+\]
+
+\subsubsection{约束问题}
+我们常常遇到的一类问题是$u$满足其他的约束条件，比如上述两点之间曲线长度问题可以增加一个约束条件，
+所构成的曲线所围面积为定值$A$，即$\int u(x) dx = A$。通常的做法是利用拉格朗日乘子法，即对
+目标函数$J[u]$添加一项$\mu\left( \int u(x) dx - A \right)$。 这里的$\mu$称为拉格朗日乘子。
+这样拉式量内包含了这一约束。对于该例子，我们得到
+\[
+  \mu - \funcd{}{x} \frac{u'}{\sqrt{1 + u'^2}} = 0,
+\]
+可以求得
+\[
+  \mu x-\frac{u'}{\sqrt{1+u'^2}}=c \quad \textrm{或} u'=\frac{\mu x-c}{\sqrt{1-(\mu x-c)^2}}
+ \]
+最终得到方程
+\[
+  (\mu x - c)^2 + (\mu x -d)^2 = 1
+\]
+其中$c,d,\mu$由$u(x_1)=y_1, u(x_2) = y_2$ 和$\int u(x) dx = A$决定。在这样的约束条件下，最短路径是一段圆弧！
+% \subsection{Euler-Lagrange方程}
+% 上式的求解其实可以归结
+
+% \subsubsection{二维问题}
+
+
 \subsection{泛函的导数和应用}
 \label{subsec:functional_applications}
