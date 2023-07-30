@@ -1,0 +1,48 @@
+\subsection{傅里叶级数}
+\label{subsec:fourier_series}
+Fourier曾试图解决一个问题，在此过程中发展了傅里叶级数的概念。此问题处理长度为$\ell$的一维均匀棒的热传播过程，即
+给定初始温度分布，求解在$t$时刻，$x$处的温度，$T(x,t)$。该温度场满足微分方程
+\[
+\frac{\partial^2}{\partial x^2} T(x,t) = \frac{\partial}{\partial t} T(x,t), \quad  T(0,t) = T(\ell,t) = 0 \textrm{。}  
+\]
+该微分方程的一特殊解可以由分离变量法得到，具体方法后面会学习。令$T(x,t) = f(x) g(t)$，代入该方程有
+\[
+  f''(x) g(t) = f(x) g'(t) ,
+\]
+两边同除以$f(x)g(t)$得到
+\[
+\frac{f''(x)}{f(x)} = \frac{g'(t)}{g(t)}   \textrm{。}
+\]
+由于左式是与$t$无关的，而右边是与$x$无关的，于是唯一可能相等的情况为二者皆为同一个常数$c$。
+这时候若$c>0$，可知$\lim_{t\to \infty} g(t) = \infty$，因此我们令$c=-k^2$。
+那么可以知道
+\[
+f(x) =  A \sin{k x} + B \cos{k x},    
+\]
+由边界条件确定$B = 0$，且$k = \frac{n\pi}{\ell}$。求解$g(t)$得 $g(t) = e^{-k^2 t}$。
+该方程的解可以表示为
+\[
+T(x,t) = A \sin{\left( \frac{n\pi}{\ell} x \right)} e^{-\frac{n^2\pi^2}{\ell^2} t}  
+\]
+其中$A$由其他条件确定。
+可以知道$t=0$时，$T$为一个正弦函数，节点数由$n$决定。但是，更普遍的情况是起始时刻的温度分布并不是正弦函数。
+那该如何决定稍后某时刻$t$的分布呢？傅里叶发现我们并不需要对此问题反反复复求解。
+对于线性微分方程可以知道若$T_1(x,t)$和$T_2(x,t)$满足微分方程
+\[
+    \frac{\partial^2}{\partial x^2} T(x,t) = \frac{\partial}{\partial t} T(x,t)
+\]
+那么二者的任意线性组合
+\[
+T_3 = \alpha T_1  + \beta T_2  
+\]
+也是其解。
+傅里叶得到结论，对于任意一种光滑的温度分布，其解总可以写成一系列有着不同振幅和模式的正弦函数的线性叠加，即
+\[
+  T(x,t) = \sum_{n=1}^{\infty} A_n \sin {\left( \frac{n\pi}{\ell} x \right)} e^{-\frac{n^2\pi^2}{\ell^2} t} \textrm{。}     
+\]
+若初始温度分布函数为$f(x) = T(x,0)$，那么
+\[
+  f(x) =      \sum_{n=1}^{\infty} A_n \sin {\left( \frac{n\pi}{\ell} x \right)}
+\]
+上式什么样的函数可以表示为正弦和余弦函数的叠加呢？每个模式的振幅$A_n$该如何计算呢？
+这就利用了正余弦函数的特征。
