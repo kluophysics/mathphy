@@ -1,4 +1,4 @@
-\subsection{傅里叶级数}
+\subsection{傅里叶级数的引入}
 \label{subsec:fourier_series}
 Fourier曾试图解决一个问题，在此过程中发展了傅里叶级数的概念。此问题处理长度为$\ell$的一维均匀棒的热传播过程，即
 给定初始温度分布，求解在$t$时刻，$x$处的温度，$T(x,t)$。该温度场满足微分方程
@@ -46,3 +46,109 @@ T_3 = \alpha T_1  + \beta T_2
 \]
 上式什么样的函数可以表示为正弦和余弦函数的叠加呢？每个模式的振幅$A_n$该如何计算呢？
 这就利用了正余弦函数的特征。
+
+记
+\begin{equation}
+  \braket{f|g} = \int_0^{2\pi} f^{*}(x) g(x) dx\,,
+\end{equation}
+
+可以验证
+\[
+\braket{\sin{ n x }|\sin{m x }}  =  \braket{\cos{ n x }|\cos {m x }}  =  \delta_{mn}\pi  \; (m\neq 0, n\neq 0)
+\]
+
+\[
+\braket{\sin{ n x }|\cos{m x }}  =  0
+\]
+将上式代入，注意修改积分变量上下限可以得到振幅系数
+\begin{equation}
+  A_n = \frac{2}{\ell} \int_0^{\ell} f(x) \sin{ \left( \frac{n\pi}{\ell} x \right) } dx 
+\end{equation}
+$A_n$称为傅里叶级数的\textbf{系数}。若所有系数都求得后，我们就得到了$f(x)$。原则上，所有的平滑的单值函数并没有什么问题，
+但似乎缺乏数学的严谨。自然，越多的级数项对函数的逼近也就越好。
+
+\subsection{傅里叶定理}
+\label{subsec:fourier_theorem}
+对于任意一个以$2\ell$为周期的函数，
+\[
+   f(x + 2\ell) = f(x),  
+\]
+我们可以通过三角函数族进行级数展开
+\begin{equation}
+  f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos{ \frac{n\pi}{\ell} x } + b_n \sin{ \frac{n\pi}{\ell} x } \right] 
+\end{equation}
+利用三角函数族的正交性，可以得到展开系数
+\begin{align}
+  a_n = \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \cos {  \left( \frac{n\pi}{\ell} x \right) } dx
+  \\
+  b_n = \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \sin {  \left( \frac{n\pi}{\ell} x \right) } dx
+\end{align}
+上述傅里叶级数展开的成立条件被称为狄里希利条件 (Dirichlet conditions)，即$f(x)$在$\left[-\ell, \ell\right]$区间内只有有限个间断点，且每个周期内有有限个极值点。满足
+这两个条件的函数称为分段平常。
+满足狄里希利条件的函数$f(x)$在点$x_0$出间断，那么其傅里叶级数在此点的值为该函数左右值的算术平均
+\begin{equation}
+  \textrm{级数和}(x_0) = \lim_{\epsilon \to 0} \half \left[
+     f(x_0 + \epsilon) + f(x_0  - \epsilon) \right]
+\end{equation}
+
+对于奇函数和偶函数的傅里叶展开，不难发现，奇函数的展开为
+
+\begin{equation}
+  f(x) = \sum_{n=1}^{\infty} b_n \sin {  \left( \frac{n\pi}{\ell} x \right) }
+\end{equation}
+称为\textbf{傅里叶正弦级数}。
+而偶函数的展开为
+\begin{equation}
+  f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}  a_n \cos{  \left( \frac{n\pi}{\ell} x \right) }
+\end{equation}
+称为\textbf{傅里叶余弦级数}。
+
+对于复指数的展开，不难发现可以写成
+\begin{equation}
+  f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\imath \frac{n\pi}{\ell} x},
+\end{equation}
+其中
+$c_n = \half(a_n - \imath b_n)$, $c_{-n} = \half (a_n + \imath b_n)$, $n>0$， $c_0 = \half a_0$。
+写出来为
+\begin{equation}
+  c_n = \frac{1}{2\ell} \int_{-\ell}^{\ell} f(x) e^{-\imath \frac{n\pi}{\ell} x} dx ,
+\end{equation}
+尽管$f(x)$是实数，但其傅里叶系数却可能是复数，还可以看出$c_{-n} = c_{n}^*$。
+复指数函数族也是正交的
+\[
+  \braket{ e^{\imath \frac{n\pi}{\ell} x } | e^{\imath \frac{m\pi}{\ell} x } } = \delta_{mn} \textrm{。}
+\]
+
+\begin{examplebox}{
+对于锯齿函数
+\[  
+f(x)= \begin{cases}
+  x + \ell,   &  -\ell < x \leq  0 
+  \\
+  x - \ell,   & 0 < x \leq \ell
+\end{cases}
+\]
+求其傅里叶级数。
+}
+不难判定该函数为奇函数，根据傅里叶展开系数公式，可以得
+\begin{align}
+b_n &=   \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \sin {  \left( \frac{n\pi}{\ell} x \right) } dx \nonumber
+\\
+&= \frac{1}{\ell} \int_{-\ell}^{0} (x + \ell) \sin {  \left( \frac{n\pi}{\ell} x \right) } dx \nonumber
+  \\ & \quad +
+ \frac{1}{\ell} \int_{0}^{\ell} (x - \ell) \sin {  \left( \frac{n\pi}{\ell} x \right) } dx \nonumber
+ \\ 
+ &= \frac{1}{\ell} \int_{-\ell}^{\ell} x \sin {  \left( \frac{n\pi}{\ell} x \right) } dx \nonumber
+ \\ & \quad 
+ + \frac{1}{\ell} \left( \int_{-\ell}^0 - \int_{0}^{\ell} \right) \sin {  \left( \frac{n\pi}{\ell} x \right) } dx \nonumber
+ \\
+ & = \frac{2\ell}{n\pi} (-1)^{n+1} + \frac{2}{n\pi} \left[ -1 - (-1)^{n+1}\right] \nonumber
+ \\
+ & = \frac{2}{n\pi}  \left[ (-1)^{n+1} (\ell -1)  -1 \right] , \nonumber
+\end{align}
+因此，该级数为
+\[
+f(x) =  \sum_{n=1}^{\infty} \frac{2}{n\pi}  \left[ (-1)^{n+1} (\ell -1)  -1 \right] \frac{\sin{nx}}{n} \textrm{。}   
+\]
+\end{examplebox}
+
