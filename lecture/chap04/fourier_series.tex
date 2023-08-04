@@ -131,7 +131,7 @@ f(x)= \begin{cases}
 \]
 求其傅里叶级数。
 }
-不难判定该函数为奇函数，根据傅里叶展开系数公式，可以得
+不难判定通过解析延拓，该函数为奇函数，根据傅里叶展开系数公式，可以得
 \begin{align}
 b_n &=   \frac{1}{\ell} \int_{0}^{2\ell} f(x) \sin {  \left( \frac{n\pi}{\ell} x \right) } dx \nonumber
 \\
@@ -174,3 +174,24 @@ $\int_0^1 \frac{d x}{1+x^2}=\left.\tan ^{-1} x\right|_0 ^1=\frac{\pi}{4}$,和被
 \end{examplebox}
 
 
+\subsection{能量定理}
+由函数的复数傅里叶级数展开可以得到
+\begin{equation}
+  E = \frac{1}{2\ell} \int_{-\ell}^{\ell} dx f(x)^* f(x) 
+ = \frac{1}{2\ell} \int_{-\ell}^{\ell} dx  \sum c_n e^{\imath \frac{n\pi}{\ell} x} \sum c_m e^{-\imath \frac{m\pi}{\ell} x}
+ = \sum |c_n|^2
+\end{equation}
+其物理意义指的是，一复杂波形分解为许多波幅为$c_n$的正（余）弦波的叠加，该波所携带的总能量为各个成分波强度的求和。
+作为习题，证明对于矩形波，
+$\begin{array}{ll}f(x)=-1 & \text { for } x<0 \\ f(x)=+1 & \text { for } x>0\end{array}$其傅里叶级数为
+$$
+f(x)=\frac{4}{\pi} \sin \pi x+\frac{4}{3 \pi} \sin 3 \pi+\frac{4}{5 \pi} \sin 5 x+\cdots
+$$
+可以发现对于矩形波，其对应的能量为$1$，于是我们有
+$$
+|f(x)|^2=1=\frac{16}{\pi^2}\left[\frac{1}{2} \frac{1}{1^2}+\frac{1}{2} \frac{1}{3^2}+\frac{1}{2} \frac{1}{5^2}+\cdots\right]
+$$
+即
+\[
+\sum_{n=0} \frac{1}{(2n+1)^2} = \frac{\pi^2}{8} \textrm{。}
+\]
