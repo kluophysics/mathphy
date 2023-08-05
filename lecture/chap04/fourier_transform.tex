@@ -1,2 +1,45 @@
 \subsection{傅里叶变换}
 \label{subsec:fourier_transform}
+前面我们讨论了周期性体系的傅里叶级数展开。现在我们希望研究非周期性函数的傅里叶展开问题。
+假设$f(x)$是定义在$-\infty < x < \infty$的实函数，我们依旧对该函数进行傅里叶级数展开，
+该级数必须理解为周期$2\ell$扩展至$\infty$的极限情况。
+由于三角函数族的变量为
+\[
+ \frac{n\pi x}{\ell}    
+\]
+引入非连续变量
+\[\omega_n = \frac{n\pi} {\ell}, \quad k = 0,1,2,\cdots
+    \]
+可知$\omega_n = n \omega_0$, 其中$\omega_0 = \frac{\pi}{\ell}$为基础频率(Fundamental Frequency),
+\[\Delta \omega_n = \omega_n - \omega_{n-1} = \omega_0 \textrm{。} \] 
+有
+\begin{equation}
+    f(x) = \lim_{\ell\to \infty} \sum_{n=-\infty}^{\infty} \left[
+        c_n e^{\imath \omega_n x}
+        % \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos \omega_n x + b_n \sin \omega_n x \right)
+    \right]
+\end{equation}
+其中系数
+\begin{equation}
+    c_n = \frac{1}{2\ell} \int_{-\ell}^{\ell} f(x) e^{-\imath \omega_n x} dx 
+\end{equation}
+取$\ell\to \infty$的极限，则
+\[
+  \sum_n \to  \frac{ \ell}{\pi}  \int d\omega 
+\]
+傅里叶系数记为$\varphi(\omega)$,
+有
+\begin{equation}
+    f(x) = \int_{-\infty}^{\infty} \frac{d \omega }{2\pi}\varphi(\omega) e^{\imath \omega x}, % \quad \varphi (\omega) \equiv 2\ell c_n
+\end{equation}
+% $\varphi (\omega) \equiv 2\ell c_n$。
+其中
+\begin{equation}
+    \varphi (\omega) \equiv 2\ell c_n = \int_{-\infty}^{\infty} e^{-\imath \omega x} f(x) dx,
+\end{equation}
+这被称为\textbf{逆傅里叶变换}(inverse Fourier transform)。
+% \begin{align}
+%     a_n =  \lim_{\ell\to \infty} \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \cos {  \omega_n x  } dx
+%     \\
+%     b_n = \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \sin {   \omega_n x } dx
+% \end{align}
