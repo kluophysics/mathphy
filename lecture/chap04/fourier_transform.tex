@@ -27,15 +27,16 @@
 \[
   \sum_n \to  \frac{ \ell}{\pi}  \int d\omega 
 \]
-傅里叶系数记为$\varphi(\omega)$,
+傅里叶系数记为$F(\omega)$,
 有
 \begin{equation}
-    f(x) = \int_{-\infty}^{\infty} \frac{d \omega }{2\pi}\varphi(\omega) e^{\imath \omega x}, % \quad \varphi (\omega) \equiv 2\ell c_n
+    f(x) = \int_{-\infty}^{\infty} \frac{d \omega }{2\pi}F(\omega) e^{\imath \omega x}, % \quad F (\omega) \equiv 2\ell c_n
 \end{equation}
-% $\varphi (\omega) \equiv 2\ell c_n$。
+上式的积分称为\textbf{傅里叶积分}(Fourier integral)，是$f(x)$的\textbf{傅里叶变换}(Fourier transform)。
+% $F (\omega) \equiv 2\ell c_n$。
 其中
 \begin{equation}
-    \varphi (\omega) \equiv 2\ell c_n = \int_{-\infty}^{\infty} e^{-\imath \omega x} f(x) dx,
+    F (\omega) \equiv 2\ell c_n = \int_{-\infty}^{\infty} e^{-\imath \omega x} f(x) dx,
 \end{equation}
 这被称为\textbf{逆傅里叶变换}(inverse Fourier transform)。
 % \begin{align}
@@ -43,3 +44,55 @@
 %     \\
 %     b_n = \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \sin {   \omega_n x } dx
 % \end{align}
+
+若采用正余弦展开，
+
+\begin{equation}
+    f(x) =\int_{0}^{\infty} A(\omega) \cos {\omega x} d\omega + \int_{0}^{\infty} B(\omega) \sin {\omega x} d\omega
+\end{equation}
+其中
+\begin{equation}
+    \left\{\begin{array}{l}
+    A(\omega)=\frac{1}{\pi} \int_{-\infty}^{\infty} f(x) \cos \omega x d x, \\
+    B(\omega)=\frac{1}{\pi} \int_{-\infty}^{\infty} f(x) \sin \omega x d x .
+    \end{array}\right.
+\end{equation}
+
+上式还可以写成
+
+\begin{equation}
+    f(x)=\int_0^{\infty} C(\omega) \cos [\omega x-\varphi(\omega)] \mathrm{d} \omega,
+\end{equation}
+
+其中
+$$
+\begin{gathered}
+C(\omega)=\sqrt{[A(\omega)]^2+[B(\omega)]^2} \\
+\varphi(\omega)=\arctan [B(\omega) / A(\omega)] .
+\end{gathered}
+$$
+$C(\omega)$ 称为 $f(x)$ 的振幅谱, $\varphi(\omega)$ 称为 $f(x)$ 的相位谱。如果$f(x)$是奇函数或偶函数，
+对应的级数为\textbf{傅里叶余弦积分}或\textbf{傅里叶正弦积分}。
+
+复数形式的傅里叶积分可以写成对称的形式，
+\begin{equation}
+    \begin{aligned}
+    f(x) & =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} F(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{~d} \omega, \\
+    F(\omega) & =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x)\left[\mathrm{e}^{\mathrm{i} \omega x}\right]^* \mathrm{~d} x .
+    \end{aligned}
+\end{equation}
+并常用符号简写为
+$$
+F(\omega)=\mathcal{F}[f(x)], \quad f(x)=\mathcal{F}^{-1}[F(\omega)] \textrm{。}
+$$
+$f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textbf{像函数}。
+
+\begin{examplebox}{
+求以下函数的复数傅里叶变换。
+\begin{enumerate}
+    \item $f(x) = e^{-\alpha |x|}, \alpha > 0$;
+    \item $f(x) = \delta (x)$;
+    \item $f(x) = e^{-\alpha x^2}, \alpha > 0$。
+\end{enumerate}
+}
+\end{examplebox}
