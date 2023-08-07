@@ -77,8 +77,8 @@ $C(\omega)$ 称为 $f(x)$ 的振幅谱, $\varphi(\omega)$ 称为 $f(x)$ 的相�
 复数形式的傅里叶积分可以写成对称的形式，
 \begin{equation}
     \begin{aligned}
-    f(x) & =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} F(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{~d} \omega, \\
-    F(\omega) & =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x)\left[\mathrm{e}^{\mathrm{i} \omega x}\right]^* \mathrm{~d} x .
+    f(x) & =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} F(\omega)e^{\imath \omega x} d \omega, \\
+    F(\omega) & =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x)\left[e^{\imath \omega x}\right]^* d x .
     \end{aligned}
 \end{equation}
 并常用符号简写为
@@ -95,4 +95,86 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
     \item $f(x) = e^{-\alpha x^2}, \alpha > 0$。
 \end{enumerate}
 }
+\begin{enumerate}
+    \item 对$x$分段进行处理，利用对称形式的傅里叶变换有
+    \begin{align}
+        F(\omega) &=
+        \sqrt{\frac{1}{2 \pi}} \int_{-\infty}^0 e^{\alpha x+i \omega t} dx \nonumber
+        % \\ &
+        +
+        \sqrt{\frac{1}{2 \pi}} \int_0^{\infty} e^{-\alpha x+i \omega t} dx  \nonumber
+        \\
+        &= \sqrt{\frac{1}{2 \pi}} \left[\frac{1}{\alpha + \imath \omega } + \frac{1}{\alpha - \imath \omega } \right] \nonumber
+        \\
+        &= \sqrt{\frac{1}{2 \pi}} \frac{2\alpha}{\alpha^2 + \omega^2}, \nonumber
+    \end{align}
+    越大的$\alpha$则$f(x)$越窄，集中在$x=0$附近，也就是越局域，而其傅里叶变换则越弥散。当$f(x)$是偶函数时，傅里叶变换的像函数为实函数。
+
+    \item 代入
+    \begin{align}
+        F(\omega) &=
+        \sqrt{\frac{1}{2 \pi}} \int_{-\infty}^{\infty} \delta(x) e^{+\imath \omega x} d x = \sqrt{\frac{1}{2 \pi}} \textrm{，}
+    \end{align}
+    $f(x)$无限局域对应的傅里叶变换为无限弥散。
+
+    \item 类似的，  
+    \begin{align}
+        F(\omega) &=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-\alpha x^2} e^{\imath \omega x} d x \nonumber
+        % \\ &
+        % \\
+        % & 
+        = \frac{ e^{-\omega^2 / 4\alpha }}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-\alpha  \left( x - \frac{\imath \omega}{2\alpha} \right)^2}  d x
+        \nonumber
+        % \\ & 
+        \\
+        & = \frac{ e^{-\omega^2 / 4\alpha }}{\sqrt{2 \pi}} \int_{-\infty - \imath \omega / 2\alpha}^{\infty - \imath \omega / 2\alpha} e^{-\alpha t^2} dt
+        \nonumber
+        % \\ &
+        \\
+        & = \frac{ e^{-\omega^2 / 4\alpha }}{\sqrt{2 \pi}} \sqrt{\frac{\pi}{\alpha}} 
+        \nonumber
+        % \\ &
+        \\
+            & = \frac{1}{\sqrt{2\alpha}} e^{- \frac{\omega^2}{4\alpha}} \nonumber \textrm{。}
+        % \\ &
+    \end{align}
+    上式用了变量代换$t = x - \imath \omega /2 \alpha$，高斯函数的像函数还是高斯函数。
+\end{enumerate}
 \end{examplebox}
+
+
+\subsection{傅里叶变换基本性质}
+傅里叶变换满足以下基本性质。假定$f(x)$的傅里叶变换存在，记为$\mathcal{F}[f(x)] = F(\omega)$。
+
+\begin{enumerate}
+    \item 导数定理
+    \begin{equation}
+        \mathcal{F} [f'(x)] = \imath \omega F(\omega)
+    \end{equation}
+
+    \item 积分定理
+    \begin{equation}
+        \mathcal{F} [ \int^{x} f(x) dx ] = \frac{1}{\imath \omega} F(\omega)
+    \end{equation}
+
+    \item 相似性定理
+    \begin{equation}
+        \mathcal{F} [ f(ax) ] = \frac{1}{a} F(\frac{\omega}{a}),
+    \end{equation}
+    \item 延迟定理
+    \begin{equation}
+        \mathcal{F} [ f(x - x_0 ) ] = e^{-\imath \omega x_0} F(\omega),
+    \end{equation}
+    \item 位移定理
+    \begin{equation}
+        \mathcal{F} [ e^{\imath \omega x_0} f(x) ] = f(\omega - \omega_0),
+    \end{equation}
+    \item 卷积定理， 如果
+    \[
+        \mathcal{F} [f_1(x)] =  F_1(\omega), \mathcal{F} [f_2(x)] =  F_2(\omega), 
+    \]
+    有
+    \begin{equation}
+        \mathcal{F} [f_1(x) f_2(x) ] = F_1(\omega) F_2(\omega).
+    \end{equation}
+\end{enumerate}
