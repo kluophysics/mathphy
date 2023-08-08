@@ -183,8 +183,9 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
     \]
     有
     \begin{equation}
-        \mathcal{F} [f_1(x) f_2(x) ] = F_1(\omega) F_2(\omega).
+        \mathcal{F} [f_1(x)\star f_2(x) ] = F_1(\omega) F_2(\omega).
     \end{equation}
+    其中 $f_1(x) \star f_2(x)=\int_{-\infty}^{\infty} f_1(\alpha) f_2(\alpha-x) d \alpha$ 称为 $f_1(x)$ 与 $f_2(x)$ 的卷积。
 \end{enumerate}
 
 \subsection{高维傅里叶变换}
