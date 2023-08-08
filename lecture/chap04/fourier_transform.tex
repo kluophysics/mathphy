@@ -33,12 +33,20 @@
     f(x) = \int_{-\infty}^{\infty} \frac{d \omega }{2\pi}F(\omega) e^{\imath \omega x}, % \quad F (\omega) \equiv 2\ell c_n
 \end{equation}
 上式的积分称为\textbf{傅里叶积分}(Fourier integral)，是$f(x)$的\textbf{傅里叶变换}(Fourier transform)。
-% $F (\omega) \equiv 2\ell c_n$。
 其中
 \begin{equation}
     F (\omega) \equiv 2\ell c_n = \int_{-\infty}^{\infty} e^{-\imath \omega x} f(x) dx,
 \end{equation}
 这被称为\textbf{逆傅里叶变换}(inverse Fourier transform)。
+
+傅里叶积分存在的条件由\textbf{傅里叶积分定理}判定: 
+若函数 $f(x)$ 在区间 $(-\infty, \infty)$ 上满足条件: $(1) f(x)$ 在 任一有限区间上满足狄里希利条件; (2) $f(x)$ 在 $(-\infty, \infty)$ 
+上绝对可积 (即 $\int_{-\infty}^{\infty}|f(x)| dx$ 收敛), 则 $f(x)$ 可表示成傅里叶积分, 且
+$$
+\textrm{傅里叶积分值} = \lim_{\epsilon\to 0} \half \left[ f(x+\epsilon) + f(x-\epsilon) \textrm{。} \right]
+$$
+% $F (\omega) \equiv 2\ell c_n$。
+
 % \begin{align}
 %     a_n =  \lim_{\ell\to \infty} \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \cos {  \omega_n x  } dx
 %     \\
@@ -61,7 +69,7 @@
 上式还可以写成
 
 \begin{equation}
-    f(x)=\int_0^{\infty} C(\omega) \cos [\omega x-\varphi(\omega)] \mathrm{d} \omega,
+    f(x)=\int_0^{\infty} C(\omega) \cos [\omega x-\varphi(\omega)] d \omega,
 \end{equation}
 
 其中
@@ -178,3 +186,52 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
         \mathcal{F} [f_1(x) f_2(x) ] = F_1(\omega) F_2(\omega).
     \end{equation}
 \end{enumerate}
+
+\subsection{高维傅里叶变换}
+
+二维连续函数 $f(x, y)$ 的傅里叶变换定义如下:
+设 $f(x, y)$ 是两个独立变量 $x, y$ 的函数, 且在 $\pm \infty$ 上绝对可 积, 则定义积分
+$$
+F\left(k_1, k_2\right)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y) e^{-\imath\left(k_1 x+k_2 y\right)} d x d y
+$$
+为二维连续函数 $f(x, y)$ 的傅里叶变换, 并定义
+$$
+f(x, y)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F\left(k_1, k_2\right) e^{\imath\left(k_1 x+k_2 y\right)} d k_1 d k_2
+$$
+为 $F\left(k_1, k_2\right)$ 的逆变换。
+$f(x, y)$ 和 $F\left(k_1, k_2\right)$ 称为傅里叶变换对。
+
+\begin{examplebox}{
+    求函数 $f(x, y)= \begin{cases}A, & |x| \leq X,|y| \leq Y \\ 0, & |x|>X,|y|>Y\end{cases}$ 的傅里叶变换 (矩孔费琅和夫衍射)。
+}
+由傅里叶变换关系
+$$
+F\left(k_1, k_2\right)=\frac{1}{(2 \pi)^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y) e^{-i\left(k_1 x+k_2 y\right)} d x d y
+$$
+有
+$$
+\begin{aligned}
+F\left(k_1, k_2\right) & =\frac{A}{2 \pi} \int_X^X e^{-i k_1 x} d x \int_Y^X e^{-i k_2 y} d y \\
+& =\left.\left.\frac{A}{2 \pi} \frac{1}{-i k_1} e^{-i k_1 x}\right|_{-X} ^X \frac{1}{-i k_2} e^{-i k_2 y}\right|_{-Y} ^Y \\
+& =\frac{2A}{\pi} \frac{1}{i 2 k_1}\left(e^{i k_1 X}-e^{-i k_1 X}\right) \frac{1}{i 2 k_2}\left(e^{i k_2 Y}-e^{-i k_2 Y}\right) \\
+& =\frac{2A X Y}{\pi} \frac{\sin \left(k_1 X\right)}{k_1 X} \frac{\sin \left(k_2 Y\right)}{k_2 Y}
+\end{aligned}
+$$
+\end{examplebox}
+
+对于三维情况，$\vec{k}=\left(k_1, k_2, k_3\right), \vec{r}=(x, y, z)$,
+\begin{equation}
+    F(\vec{k})=\frac{1}{(2 \pi)^3} \iiint_{-\infty}^{\infty} f(\vec{r}) e^{-\imath  \vec{k} \cdot \vec{r}} d^3 \vec{r} \\
+\end{equation}
+或者
+\begin{equation}
+    F\left(k_1, k_2, k_3\right)=\frac{1}{(2 \pi)^3} \iiint_{\infty}^{\infty} f(x, y, z) e^{-\imath\left(k_1 x+k_2 y+k_3 z\right)} d x d y d z 
+\end{equation}
+逆变换为
+\begin{equation}
+     f(\vec{r})=\iiint_{-\infty}^{\infty} F(k) e^{\imath \vec{k} \cdot \vec{r}} d^3 \vec{k} 
+\end{equation}  
+或
+\begin{equation}
+f(x, y, z)=\iiint_{-\infty}^{\infty} F\left(k_1, k_2, k_3\right) e^{\imath\left(k_1 x+k_2 y+k_3 z\right)} d k_1 d k_2 d k_3 
+\end{equation} 
