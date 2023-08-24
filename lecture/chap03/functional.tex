@@ -69,28 +69,13 @@ $J$最小化。这里的方括号区别于函数的圆括号，用来表示这�
   m \frac{d^2\br}{dt^2} = - \funcd {V(\br)}{\br} \equiv \bF \textrm{。}
 \]
 
-\subsubsection{约束问题}
-我们常常遇到的一类问题是$u$满足其他的约束条件，比如上述两点之间曲线长度问题可以增加一个约束条件，
-所构成的曲线所围面积为定值$A$，即$\int u(x) dx = A$。通常的做法是利用拉格朗日乘子法，即对
-目标函数$J[u]$添加一项$\mu\left( \int u(x) dx - A \right)$。 这里的$\mu$称为拉格朗日乘子。
-这样拉式量内包含了这一约束。对于该例子，我们得到
-\[
-  \mu - \funcd{}{x} \frac{u'}{\sqrt{1 + u'^2}} = 0,
-\]
-可以求得
-\[
-  \mu x-\frac{u'}{\sqrt{1+u'^2}}=c \quad \textrm{或} u'=\frac{\mu x-c}{\sqrt{1-(\mu x-c)^2}}
- \]
-最终得到方程
-\[
-  (\mu x - c)^2 + (\mu x -d)^2 = 1
-\]
-其中$c,d,\mu$由$u(x_1)=y_1, u(x_2) = y_2$ 和$\int u(x) dx = A$决定。在这样的约束条件下，最短路径是一段圆弧！
-% \subsection{Euler-Lagrange方程}
-% 上式的求解其实可以归结
+对于如多目标变量的$J(u_1, u_2, \cdots, u_n, u_1', u_2', \cdots, u_n'|x)$, 对于每一个$u_i$， $i=1,2,\dots,n$都有独立的欧拉方程
 
-% \subsubsection{二维问题}
+\begin{equation}
+  \funcpd{L}{u_i} -  \funcpd{}{x}\left( \funcpd{L}{u'_i} \right) = 0 \textrm{。}
+\end{equation}
 
 
-\subsection{泛函的导数和应用}
-\label{subsec:functional_applications}
+
+
+
