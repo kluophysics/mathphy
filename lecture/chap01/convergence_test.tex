@@ -1,29 +1,29 @@
 \subsection{级数的收敛判定法}
 
 \subsubsection{柯西判据}
-柯西判据(Cauchy criterion)说的是，对于$\epsilon>0$， 总存在固定的$N$使得$|s_j - s_i|< \epsilon$， 其中$i,j$是任意大于$N$的整数。也就是说，若$j>i$,
+柯西判据(Cauchy criterion)说的是，对于$\epsilon>0$， 总存在固定的$N$使得$|s_j - s_i|< \epsilon$， 其中$i,j$是任意大于$N$的整数.也就是说，若$j>i$,
 \begin{equation}
     | w_{i+1} + w_{i+2} + \cdots + w_{j} | < \epsilon ,
 \end{equation}
-直观地理解，也就是说某项以后的所有求和可以忽略不计，即部分求和趋于某一值，级数收敛。对于复数项级数，一样成立。如果将复数项级数的每一项都取模组成新的级数，
+直观地理解，也就是说某项以后的所有求和可以忽略不计，即部分求和趋于某一值，级数收敛.对于复数项级数，一样成立.如果将复数项级数的每一项都取模组成新的级数，
 记为
 \begin{equation}
     \sum_{k=1} |w_k| = \sum_{k=1}\sqrt { u_k^2 + v_k^2},
 \end{equation}
-若该级数收敛，则称原级数\textbf{绝对收敛}。绝对收敛的级数必然是收敛的。如果级数收敛，但非绝对收敛，那么我们称它为\textbf{条件收敛}。
+若该级数收敛，则称原级数\textbf{绝对收敛}.绝对收敛的级数必然是收敛的.如果级数收敛，但非绝对收敛，那么我们称它为\textbf{条件收敛}.
 \subsubsection{比较判定法}
-如果我们有某一已知正项级数 $\sum_k a_k$收敛，若级数的每一项都满足 $0 \leq w_k \leq a_k$, 那么可以判定$\sum_k w_k$收敛。
-这可以利用柯西判据进行证明。相反的, 若同发散级数$\sum_{k} a_k$比较有，$0 \leq a_k  \leq w_k$， 那么可以判定$\sum_k w_k$发散。
-对于复数项级数，比较判据可以表示为$0 \leq |w_k| \leq a_k$。
+如果我们有某一已知正项级数 $\sum_k a_k$收敛，若级数的每一项都满足 $0 \leq w_k \leq a_k$, 那么可以判定$\sum_k w_k$收敛.
+这可以利用柯西判据进行证明.相反的, 若同发散级数$\sum_{k} a_k$比较有，$0 \leq a_k  \leq w_k$， 那么可以判定$\sum_k w_k$发散.
+对于复数项级数，比较判据可以表示为$0 \leq |w_k| \leq a_k$.
 
-\begin{examplebox}{试判定级数$\sum_{k=1} k^{-p}, p\leq 1$收敛还是发散。}
-    已知调和级数$\sum_{k=1}1/k$是发散的,而 $k^{-p} > k^{-1}$, 根据比较判定法,可知该级数发散。
+\begin{examplebox}{试判定级数$\sum_{k=1} k^{-p}, p\leq 1$收敛还是发散.}
+    已知调和级数$\sum_{k=1}1/k$是发散的,而 $k^{-p} > k^{-1}$, 根据比较判定法,可知该级数发散.
 \end{examplebox}
 
 \subsubsection{达朗贝尔判据}
-% 级数$\sum_{n} w_n$，对足够大的$N$和与$N$无关的常数$r$，若满足条件$w_{n+1} / w_{n} \leq r < 1$，那么该级数收敛。反之，若$w_{n+1} / w_{n} \geq >= 1$,
-% ，该级数发散。
-达朗贝尔方法又称比值判定法(D'Alembert Ratio Criterion)。
+% 级数$\sum_{n} w_n$，对足够大的$N$和与$N$无关的常数$r$，若满足条件$w_{n+1} / w_{n} \leq r < 1$，那么该级数收敛.反之，若$w_{n+1} / w_{n} \geq >= 1$,
+% ，该级数发散.
+达朗贝尔方法又称比值判定法(D'Alembert Ratio Criterion).
 若任意项级数 $\sum_{n=1}^{\infty} w_n$ 通项满足:
 $$
 \lim _{n \to \infty}\left|\frac{w_{n+1}}{w_n}\right|=q ,
@@ -31,20 +31,20 @@ $$
 \begin{enumerate}
     \item 当 $q<1$ 时, 级数绝对收敛;
     \item 当 $q>1$ 时, 级数发散;
-    \item 当 $q=1$ 时, 此方法无效,需要其他方法判定。
+    \item 当 $q=1$ 时, 此方法无效,需要其他方法判定.
 \end{enumerate}
 
-\begin{examplebox}{试判断级数$\sum_{k=1} k/2^k$的收敛性。}
+\begin{examplebox}{试判断级数$\sum_{k=1} k/2^k$的收敛性.}
     利用比值判定法
     \[ 
         \lim_{k\to \infty} \frac{w_{k+1}}{w_k}=\lim_{k\to \infty} \frac{k+1}{2^{k+1}} / \frac{k}{2^{k}}=\frac{1}{2} 
         = \lim_{k\to \infty} \frac{1}{2}\left(1+\frac{1}{k}\right) 
         = \half < 1
     \]
-    可见该级数是收敛的。
+    可见该级数是收敛的.
 \end{examplebox}
 % $\frac{w_{k+1}}{w_k}=r ， r 5 k$ 死关，
-% 世東 $r<1$ ，那昍数收斂。
+% 世東 $r<1$ ，那昍数收斂.
 % 当 $r=1$ ，榇弅
 % $$
 % \frac{a_{k+1}}{a_k}=\frac{k}{k+1}<
@@ -57,7 +57,7 @@ $$
 % $$
 
 % \subsubsection{莱布尼兹判据(Leibniz Criterion)}
-此外，还有很多其他判定方法，如对于交错级数可以利用莱布尼兹判据(Leibniz Criterion)。
+此外，还有很多其他判定方法，如对于交错级数可以利用莱布尼兹判据(Leibniz Criterion).
 % \begin{enumerate}
 %     \item 
 % \end{enumerate}

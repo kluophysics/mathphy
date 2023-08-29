@@ -1,14 +1,14 @@
 \subsection{柯西积分公式}
 \label{subsec:cauchy_formula}
-复变函数理论中最重要的一个公式是柯西积分公式。若$f(z)$在一闭合回路围成的区域内解析，$z_0$为区域内一点，
+复变函数理论中最重要的一个公式是柯西积分公式.若$f(z)$在一闭合回路围成的区域内解析，$z_0$为区域内一点，
 则有
 \begin{equation}
     f\left(z_0\right)=\frac{1}{2 \pi i} \oint_C \frac{f(z)}{z-z_0} d z .  
 \end{equation}
-柯西公式将解析函数在任何一内点 $z_0$ 的值 $f(z_0)$ 用沿边界线 $l$ 的回路积分 表示了出来。
-也就是说，一个解析函数在闭合回路$C$内任意点$z_0$的值完全由该路径上的值决定的。 
-这看起来不可思议。从物理上说, 解析函数紧密联系于平面标量场, 而平面场的边界条件决定着区域内部的场。
-我们可以通过前面提到的柯西定理来证明。我们需要围绕$z_0$选取一个半径为$r$的内圆$\gamma$，由于$f(z)/(z-z_0)$在
+柯西公式将解析函数在任何一内点 $z_0$ 的值 $f(z_0)$ 用沿边界线 $l$ 的回路积分 表示了出来.
+也就是说，一个解析函数在闭合回路$C$内任意点$z_0$的值完全由该路径上的值决定的. 
+这看起来不可思议.从物理上说, 解析函数紧密联系于平面标量场, 而平面场的边界条件决定着区域内部的场.
+我们可以通过前面提到的柯西定理来证明.我们需要围绕$z_0$选取一个半径为$r$的内圆$\gamma$，由于$f(z)/(z-z_0)$在
 内圆与$C$形成的区域解析，故我们有
 \[ \frac{1}{2 \pi \imath} \oint_C \frac{f(z)}{z-z_0} d z = \frac{1}{2 \pi \imath} \oint_\gamma \frac{f(z)}{z-z_0} d z
     \]
@@ -22,7 +22,7 @@
         & = \imath \int _0 ^{2\pi} f(z_0 + re^{\imath \theta}) d\theta
     \end{aligned}
 \end{equation}
-现令内圆半径$r\to 0$,则有$I\to 2\pi\imath f(z_0)$，得证。
+现令内圆半径$r\to 0$,则有$I\to 2\pi\imath f(z_0)$，得证.
 由于$z_0$的任意性，我们可以改写成$z$，而把积分变量改成$\zeta$，则有
 \begin{equation}
     f(z) = \frac{1}{2\pi \imath} \oint_C \frac{f(\zeta)}{\zeta - z} d \zeta.
@@ -41,9 +41,9 @@
 \end{equation}
 % 这是因为解析函数在各点的值通过柯西 - 黎曼方程相互联系着. 
 
-下面介绍柯西公式的重要推论。
+下面介绍柯西公式的重要推论.
 
-\textbf{模数原理} $f(z)$在闭区域上解析，$|f(z)|$只能在边界线上取极大值。
+\textbf{模数原理} $f(z)$在闭区域上解析，$|f(z)|$只能在边界线上取极大值.
 
 由$f(z)^n = \frac{1}{2\pi \imath} \oint_C \frac{f(\zeta)^n}{\zeta - z} d \zeta$,若$|f(\zeta)|$在$C$上极大值为$M$,
 $|\zeta - z|$的极小值为$\delta$， $C$的长度为$s$，则
@@ -54,12 +54,12 @@ $|\zeta - z|$的极小值为$\delta$， $C$的长度为$s$，则
 \[
     |f(z)| \leq M \left( \frac{s}{2\pi \delta} \right)^{\frac{1}{n}},
 \]
-令$n\to \infty$,$|f(z)| \leq M$。证毕。
+令$n\to \infty$,$|f(z)| \leq M$.证毕.
 
-\textbf{刘维尔(Liouville)定理} \quad 如$f(z)$在全平面上解析且有界，则$|f(z)|$必为常数。
+\textbf{刘维尔(Liouville)定理} \quad 如$f(z)$在全平面上解析且有界，则$|f(z)|$必为常数.
 
 \textbf{证} \quad $f$有界，即$|f(z)| \leq N$, 对$f'(z)$取模，取以$z$为圆心半径为$R$的圆周，可得
 \[
   |f'(z)| \leq \frac{1}{2\pi} \frac{N} {R^2} 2\pi R = \frac{N}{R},
 \]
-由于$R$任意选定，令$R\to \infty$,有$f'(z) \equiv 0$,所以$f(z)$为常数。
+由于$R$任意选定，令$R\to \infty$,有$f'(z) \equiv 0$,所以$f(z)$为常数.

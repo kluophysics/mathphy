@@ -4,12 +4,12 @@
 傅里叶变换在分析信号的频谱等方面是十分有效的，但在系统分析方面有不足之处:
 
 \begin{itemize}
-    \item 对时间函数限制严格，绝对可积是充分条件，不少函数不能直接按定义求，如$e^{\alpha t}, \alpha > 0$，其傅里叶变换不存在。
+    \item 对时间函数限制严格，绝对可积是充分条件，不少函数不能直接按定义求，如$e^{\alpha t}, \alpha > 0$，其傅里叶变换不存在.
 
     \item  
 \end{itemize}
-为了解决上述问题拓宽应用范围，人们发现适当地改造满足傅里叶变换的条件。
-拉普拉斯变换常用于初始值问题, 即已知某个物理量在初始时刻 $t=0$ 的 值 $f(0)$, 而求解它在初始时刻之后的变化情况 $f(t)$。
+为了解决上述问题拓宽应用范围，人们发现适当地改造满足傅里叶变换的条件.
+拉普拉斯变换常用于初始值问题, 即已知某个物理量在初始时刻 $t=0$ 的 值 $f(0)$, 而求解它在初始时刻之后的变化情况 $f(t)$.
  至于它在初始时刻之前 的值, 我们置
 $$
 f(t)=0 \quad(t<0) .
@@ -18,7 +18,7 @@ $$
 $$
 g(t) =e^{-\sigma t} f(t)
 $$
-则$g(t)$绝对可积。于是对$g(t)$进行傅里叶变换:
+则$g(t)$绝对可积.于是对$g(t)$进行傅里叶变换:
 \begin{equation}
     G(\omega) = \sqrt{\frac{1}{2\pi} } \int_{-\infty}^{\infty} g(t) e^{-\imath \omega t} dt 
     = \sqrt{\frac{1}{2\pi} } \int_{0}^{\infty} f(t) e^{-(\sigma + \imath \omega) t} dt  
@@ -28,18 +28,18 @@ $$
 \begin{equation}
     F(p) = \mathcal{L} \{ f(t) \} = \int_0 ^{\infty} e^{-pt} f(t) dt .
 \end{equation}
-该积分称为拉普拉斯积分，$\mathcal{L}$称为\textbf{拉普拉斯变换算符}。$e^{-pt}$称为拉普拉斯变换的\textbf{核}。注意
-这里的积分上下限。
+该积分称为拉普拉斯积分，$\mathcal{L}$称为\textbf{拉普拉斯变换算符}.$e^{-pt}$称为拉普拉斯变换的\textbf{核}.注意
+这里的积分上下限.
 
 拉普拉斯变换存在的条件是 
 \begin{enumerate}
     \item[(1)]  在 $0 \leqslant t<\infty$ 的任一有限区间上; 除了有限个间断点外, 函数 $f(t)$ 及其导数是处处连续的;
     \item[(2)]  存在常数 $M>0$ 和 $\sigma \geqslant 0$, 使对任何 $t$ 值 $(0 \leqslant t<\infty)$, 有
     $$
-    |f(t)|<M \mathrm{e}^{\sigma t} \text {。 }
+    |f(t)|<M \mathrm{e}^{\sigma t} \text {. }
     $$
 \end{enumerate}
-$\sigma$ 的下界称为收敛横标, 用 $\sigma_0$ 表示. 在实际应用中, 大多数函数都满足 这个充分条件。
+$\sigma$ 的下界称为收敛横标, 用 $\sigma_0$ 表示. 在实际应用中, 大多数函数都满足 这个充分条件.
 
 \begin{examplebox}{求以下函数的拉普拉斯变换
     \begin{enumerate}
@@ -47,7 +47,7 @@ $\sigma$ 的下界称为收敛横标, 用 $\sigma_0$ 表示. 在实际应用中,
         \item $f(t) = t$,
         \item $f(t) =e^{s t}, \textrm{s为常数}$,
         \item $f(t) = t e^{s t}, \textrm{s为常数}$,
-        \item $f(t) = \cosh {k t}$, $g(t)= \sinh {kt}$。
+        \item $f(t) = \cosh {k t}$, $g(t)= \sinh {kt}$.
     \end{enumerate}}
 
     \begin{enumerate}
@@ -55,17 +55,17 @@ $\sigma$ 的下界称为收敛横标, 用 $\sigma_0$ 表示. 在实际应用中,
             $$\int_{0}^{\infty} 1 \cdot e^{-p t} dt = \frac{1}{p}$$
         \item  $\Re p > 0$, 
             $$\int_{0}^{\infty} t \cdot e^{-p t} dt = \frac{1}{p^2}$$
-            因此类似有$\mathcal{L}[t^n] = \frac{n!}{p^{n+1}}$。
+            因此类似有$\mathcal{L}[t^n] = \frac{n!}{p^{n+1}}$.
         \item $$
             \int_{0}^{\infty} t \cdot e^{s t} e^{-p t} dt = \frac{1}{p-s} , 
         $$
-        要求$\Re (p-s) > 0$。
+        要求$\Re (p-s) > 0$.
         \item 
         $$
         \int_{0}^{\infty} t \cdot t e^{s t} e^{-p t} dt = \frac{1}{(p-s)^2} ,
         $$
-        要求$\Re (p-s) > 0$。  
-    类似有 $\mathcal{L}[t^n e^{s t}] = \frac{n!}{(p-s)^{n+1}}$。
+        要求$\Re (p-s) > 0$.  
+    类似有 $\mathcal{L}[t^n e^{s t}] = \frac{n!}{(p-s)^{n+1}}$.
         \item 利用
         $$
          \cosh{k t}  = \frac{1}{2} \left[ e^{kt} + e^{-kt}\right] \quad 

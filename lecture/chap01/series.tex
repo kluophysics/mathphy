@@ -1,5 +1,5 @@
 \subsection{级数的基本性质}
-物理学和工程学中的一些函数常常可以用无穷级数来表示。一个很有用的例子，
+物理学和工程学中的一些函数常常可以用无穷级数来表示.一个很有用的例子，
 \begin{equation}
     1+ x + x^2 + x^3 + \cdots = \frac{1}{1-x} .
 \end{equation}
@@ -30,7 +30,7 @@
 \begin{equation}
     S(x) = 1 - \frac{x}{2} + \frac{x^2}{3} - \frac{x^3}{4} + \cdots
 \end{equation}
-为了将上式化简，我们需要把它转换成一个我们熟知的形式。由于分母比较特殊，我们想办法摆脱这些数字。为此，我们对$x S(x)$求导，得到
+为了将上式化简，我们需要把它转换成一个我们熟知的形式.由于分母比较特殊，我们想办法摆脱这些数字.为此，我们对$x S(x)$求导，得到
 \begin{align}
     \frac{d}{dx} ( x S(x))  &=   \frac{d}{dx} \left( x- \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} \right)
     \nonumber \\ 
@@ -40,7 +40,7 @@
 \end{align}
 于是我们有，$
     x S(x) = \ln (1 + x) + C .$
-当$x=0$， $S(x) = 1, \ln (1+x) = 0$， 有$C=0$。最终我们得到了
+当$x=0$， $S(x) = 1, \ln (1+x) = 0$， 有$C=0$.最终我们得到了
 \begin{equation}
     \ln (1+x) = x -  \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} = \sum_{k=1}^{\infty} \frac{(-1)^{k+1} x^k}{k} .
 \end{equation}
@@ -48,32 +48,32 @@
 \begin{equation}
     e^{x} = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + \frac{x}{1} + \frac{x^2}{2} + \frac{x^3}{3} + \cdots 
 \end{equation}
-来求解正余弦函数的级数表示。
+来求解正余弦函数的级数表示.
 \begin{enumerate}
-    \item 几何级数: $ 1 + x + x^2 + x^3 + \cdots + x^n$， 对$|x|<1$，收敛于$\frac{1}{1-x}$。
-    \item 调和级数: $ 1 + \half + \frac{1}{3} + \cdot +\frac{1}{k} = \sum_{k=1} \frac{1}{k}$，发散。
+    \item 几何级数: $ 1 + x + x^2 + x^3 + \cdots + x^n$， 对$|x|<1$，收敛于$\frac{1}{1-x}$.
+    \item 调和级数: $ 1 + \half + \frac{1}{3} + \cdot +\frac{1}{k} = \sum_{k=1} \frac{1}{k}$，发散.
 \end{enumerate}
 
-值得注意的是，以上的求和表示实际上假定了$|x|<1$这个条件。容易验证，$|x|\geq 1$，级数是发散的。
+值得注意的是，以上的求和表示实际上假定了$|x|<1$这个条件.容易验证，$|x|\geq 1$，级数是发散的.
 
 随着，$n\to \infty$，部分求和趋于一个定值$S$，即
 \begin{equation}
     \lim_{n\to \infty} s_n = S ,
 \end{equation}
-我们称无穷级数 $\sum_{k=1}^{n} w_{k}${\bf 收敛}并趋于$S$。如果级数的求和趋于$\pm \infty$，级数{\bf 发散}。对于如
+我们称无穷级数 $\sum_{k=1}^{n} w_{k}${\bf 收敛}并趋于$S$.如果级数的求和趋于$\pm \infty$，级数{\bf 发散}.对于如
 \begin{equation}
     \sum_{k=1}^{\infty} (-1)^k = 1 - 1 + 1 - 1 \cdots 
 \end{equation}
-这样的级数取值在$\pm 1$之间振荡，我们也称其发散。级数收敛的必要条件很显然是$\lim_{k\to \infty} w_k = 0$。对于级数是否收敛，在什么条件下收敛显得十分重要。
-对级数收敛的充分条件寻找，派生出了各种各样的判据。
+这样的级数取值在$\pm 1$之间振荡，我们也称其发散.级数收敛的必要条件很显然是$\lim_{k\to \infty} w_k = 0$.对于级数是否收敛，在什么条件下收敛显得十分重要.
+对级数收敛的充分条件寻找，派生出了各种各样的判据.
 一般的，我们将复数的概念拓展到级数，
 \begin{equation}
     s_n = \sum_{k=1}^{n} w_{k}
 \end{equation}
-若级数通项每一个都是函数形式$w_k(z)$，我们称之为\textbf{函数项级数}。
+若级数通项每一个都是函数形式$w_k(z)$，我们称之为\textbf{函数项级数}.
 对于函数项级数，我们记部分求和$s_n(z)$的极限为
 \begin{equation}
-    S(z) = \lim_{n\to \infty} s_n(z) =  \sum_{k=1}^{\infty} w_k (z)。 
+    S(z) = \lim_{n\to \infty} s_n(z) =  \sum_{k=1}^{\infty} w_k (z). 
 \end{equation}
 
 

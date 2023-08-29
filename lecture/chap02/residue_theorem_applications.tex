@@ -13,7 +13,7 @@ $$
 $$
 I=\oint_{|z|=1} R\left(\frac{z+z^{-1}}{2}, \frac{z-z^{-1}}{2 \mathrm{i}}\right) \frac{d z}{\mathrm{i} z}
 $$
-利用留数定理即可求得。
+利用留数定理即可求得.
 
 \begin{examplebox}{求定积分\[I=\int_0^{2 \pi} \frac{d \theta}{1+a \cos \theta}, \quad|a|<1 \]}
     根据上面的方法，可得
@@ -27,7 +27,7 @@ $$
     \[
         z_1=-\frac{1+\sqrt{1-a^2}}{a} \quad \text {和} \quad z_2=-\frac{1-\sqrt{1-a^2}}{a}
     \]
-    不难看出，$z_1$在单位圆外，$z_2$在单位圆内。积分可以写成
+    不难看出，$z_1$在单位圆外，$z_2$在单位圆内.积分可以写成
     \[
       \oint \frac{dz}{(z-z_1)(z-z_2)}   
     \]
@@ -44,23 +44,23 @@ $$
  \[
     \int_{-\infty}^{\infty} f(x) dx
  \]
- 我们先讨论复变函数 $f(z)$ 在实轴上没有奇点的情况，有奇点的情况后面讨论。 
+ 我们先讨论复变函数 $f(z)$ 在实轴上没有奇点的情况，有奇点的情况后面讨论. 
 被积函数在上半平面除有限个奇点外是解析的; 当 $z$ 在上半平面及实轴上 $\to \infty$ 时, 
-$z f(z)$ 一致地 $\to 0$。
+$z f(z)$ 一致地 $\to 0$.
 
-取如图所示的上半平面的半径为$R$的半圆路径$\ell$。路径积分可以写成两部分的和
+取如图所示的上半平面的半径为$R$的半圆路径$\ell$.路径积分可以写成两部分的和
 \begin{equation}
     \oint_l f(z) d z=\int_{-R}^R f(x) d x+\int_{C_R} f(z) d z .
 \end{equation}
-根据留数定理，上式等于$2\pi \imath  \sum_j Res f(z_j)$。
+根据留数定理，上式等于$2\pi \imath  \sum_j Res f(z_j)$.
 %\input{tikz/semicircle.tex}
 \begin{figure}[htb!]
     \centering
     \input{tikz/semicircle.tex}
-    \caption{半圆路径。}
+    \caption{半圆路径.}
     \label{fig:semicircle}
 \end{figure}
-下面证明上式第二项为零。一般的对于任意$\theta_1 \leq \theta \leq \theta_2$, 
+下面证明上式第二项为零.一般的对于任意$\theta_1 \leq \theta \leq \theta_2$, 
 有$\lim_{R\to \infty} zf(z) = 0$，可以证明对于该角度对应的圆弧$C$有，
 \begin{equation}
     \lim_{R \rightarrow \infty} \int_C f(z) dz = 0 .
@@ -81,16 +81,16 @@ $z f(z)$ 一致地 $\to 0$。
     I = \int_{-\infty}^{\infty} \frac{dx}{1 + x^2}   .
     \]}
     由$f(z) = \frac{1}{1+ x^2} = \frac{1}{(z-\imath)(z+\imath)}$可知
-    其单极点$\pm \imath$，其中$\imath$在上半平面。
+    其单极点$\pm \imath$，其中$\imath$在上半平面.
     \[
       Res f(+\imath) = \frac{1}{2\imath}  
     \]
-    因此，$I = 2\pi \imath  \frac{1}{2\imath} = \pi$。由于该积分是一个常见积分
-    亦可以通过原函数$\arctan(x)$得到。留数定理的还可以计算这样的积分，
+    因此，$I = 2\pi \imath  \frac{1}{2\imath} = \pi$.由于该积分是一个常见积分
+    亦可以通过原函数$\arctan(x)$得到.留数定理的还可以计算这样的积分，
     \[
       I\int_{-\infty}^{\infty} \frac{dx}{(1 + x^2)^n} 
     \]
-    具体求解过程参考梁昆淼数学物理方法的解。
+    具体求解过程参考梁昆淼数学物理方法的解.
 \end{examplebox}
 
 
@@ -99,14 +99,14 @@ $z f(z)$ 一致地 $\to 0$。
  \begin{equation}
     I=\int_{-\infty}^{\infty} f(x) e^{\imath m x} d x
 \end{equation}
-其中，$m$为正实数;$f(z)$在上半平面除有限个奇点外是解析的，且$\lim_{|z|\to \infty} f(z) = 0, 0 \leq arg z \leq \pi$。
-我们使用同样的半圆路径，类似的可以通过留数定理将实轴的积分转换为环路积分求得。
-为了使用留数定理，我们先需要证明在半圆上的路径积分为零，这里就要用到\textbf{约旦引理}。
+其中，$m$为正实数;$f(z)$在上半平面除有限个奇点外是解析的，且$\lim_{|z|\to \infty} f(z) = 0, 0 \leq arg z \leq \pi$.
+我们使用同样的半圆路径，类似的可以通过留数定理将实轴的积分转换为环路积分求得.
+为了使用留数定理，我们先需要证明在半圆上的路径积分为零，这里就要用到\textbf{约旦引理}.
 即证明
 \begin{equation}
     \lim _{R \rightarrow \infty} \int_{C_R} F(z) \mathrm{e}^{\imath m z} \mathrm{~d} z=0 .
 \end{equation}
-当$R$足够大时，我们有$|f(z)| < \epsilon$。半圆积分
+当$R$足够大时，我们有$|f(z)| < \epsilon$.半圆积分
 \begin{align}
     I_R&=\int_0^\pi f\left(R e^{\imath \theta}\right) 
     e^{\imath m R \cos \theta- m R \sin \theta} \imath R e^{\imath \theta} d \theta
@@ -130,9 +130,9 @@ $z f(z)$ 一致地 $\to 0$。
     I=\int_{-\infty}^{\infty} f(x) e^{ \imath m x} d x = 2\pi \imath \sum Res e^{\imath m z} f(z)
 \end{equation}
 
-对于以下类型的积分，可以利用上述结论。如
+对于以下类型的积分，可以利用上述结论.如
 \begin{equation}
     \int_{0}^{\infty} F(x) \cos {m x} dx, \int_{0}^{\infty} G(x) \sin{m x} dx
 \end{equation}
-其中，$F(z)$为偶函数，$G(z)$为奇函数，它们在实轴上没有奇点，上半平面上除有限个奇点外解析。
-很容易通过$\cos{mx} = \frac{1}{2}\left( e^{\imath m x} + e^{-\imath mx}\right)$等变换得到。
+其中，$F(z)$为偶函数，$G(z)$为奇函数，它们在实轴上没有奇点，上半平面上除有限个奇点外解析.
+很容易通过$\cos{mx} = \frac{1}{2}\left( e^{\imath m x} + e^{-\imath mx}\right)$等变换得到.

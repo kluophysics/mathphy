@@ -1,8 +1,8 @@
 \subsection{傅里叶变换}
 \label{subsec:fourier_transform}
-前面我们讨论了周期性体系的傅里叶级数展开。现在我们希望研究非周期性函数的傅里叶展开问题。
+前面我们讨论了周期性体系的傅里叶级数展开.现在我们希望研究非周期性函数的傅里叶展开问题.
 假设$f(x)$是定义在$-\infty < x < \infty$的实函数，我们依旧对该函数进行傅里叶级数展开，
-该级数必须理解为周期$2\ell$扩展至$\infty$的极限情况。
+该级数必须理解为周期$2\ell$扩展至$\infty$的极限情况.
 由于三角函数族的变量为
 \[
  \frac{n\pi x}{\ell}    
@@ -32,12 +32,12 @@
 \begin{equation}
     f(x) = \int_{-\infty}^{\infty} \frac{d \omega }{2\pi}F(\omega) e^{\imath \omega x}, % \quad F (\omega) \equiv 2\ell c_n
 \end{equation}
-上式的积分称为\textbf{傅里叶积分}(Fourier integral)，是$f(x)$的\textbf{傅里叶变换}(Fourier transform)。
+上式的积分称为\textbf{傅里叶积分}(Fourier integral)，是$f(x)$的\textbf{傅里叶变换}(Fourier transform).
 其中
 \begin{equation}
     F (\omega) \equiv 2\ell c_n = \int_{-\infty}^{\infty} e^{-\imath \omega x} f(x) dx,
 \end{equation}
-这被称为\textbf{逆傅里叶变换}(inverse Fourier transform)。
+这被称为\textbf{逆傅里叶变换}(inverse Fourier transform).
 
 傅里叶积分存在的条件由\textbf{傅里叶积分定理}判定: 
 若函数 $f(x)$ 在区间 $(-\infty, \infty)$ 上满足条件: $(1) f(x)$ 在 任一有限区间上满足狄里希利条件; (2) $f(x)$ 在 $(-\infty, \infty)$ 
@@ -45,7 +45,7 @@
 $$
 \textrm{傅里叶积分值} = \lim_{\epsilon\to 0} \half \left[ f(x+\epsilon) + f(x-\epsilon) . \right]
 $$
-% $F (\omega) \equiv 2\ell c_n$。
+% $F (\omega) \equiv 2\ell c_n$.
 
 % \begin{align}
 %     a_n =  \lim_{\ell\to \infty} \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \cos {  \omega_n x  } dx
@@ -79,8 +79,8 @@ C(\omega)=\sqrt{[A(\omega)]^2+[B(\omega)]^2} \\
 \varphi(\omega)=\arctan [B(\omega) / A(\omega)] .
 \end{gathered}
 $$
-$C(\omega)$ 称为 $f(x)$ 的振幅谱, $\varphi(\omega)$ 称为 $f(x)$ 的相位谱。如果$f(x)$是奇函数或偶函数，
-对应的级数为\textbf{傅里叶余弦积分}或\textbf{傅里叶正弦积分}。
+$C(\omega)$ 称为 $f(x)$ 的振幅谱, $\varphi(\omega)$ 称为 $f(x)$ 的相位谱.如果$f(x)$是奇函数或偶函数，
+对应的级数为\textbf{傅里叶余弦积分}或\textbf{傅里叶正弦积分}.
 
 复数形式的傅里叶积分可以写成对称的形式，
 \begin{equation}
@@ -93,14 +93,14 @@ $C(\omega)$ 称为 $f(x)$ 的振幅谱, $\varphi(\omega)$ 称为 $f(x)$ 的相�
 $$
 F(\omega)=\mathcal{F}[f(x)], \quad f(x)=\mathcal{F}^{-1}[F(\omega)] .
 $$
-$f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textbf{像函数}。
+$f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textbf{像函数}.
 
 \begin{examplebox}{
-求以下函数的复数傅里叶变换。
+求以下函数的复数傅里叶变换.
 \begin{enumerate}
     \item $f(x) = e^{-\alpha |x|}, \alpha > 0$;
     \item $f(x) = \delta (x)$;
-    \item $f(x) = e^{-\alpha x^2}, \alpha > 0$。
+    \item $f(x) = e^{-\alpha x^2}, \alpha > 0$.
 \end{enumerate}
 }
 \begin{enumerate}
@@ -116,14 +116,14 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
         \\
         &= \sqrt{\frac{1}{2 \pi}} \frac{2\alpha}{\alpha^2 + \omega^2}, \nonumber
     \end{align}
-    越大的$\alpha$则$f(x)$越窄，集中在$x=0$附近，也就是越局域，而其傅里叶变换则越弥散。当$f(x)$是偶函数时，傅里叶变换的像函数为实函数。
+    越大的$\alpha$则$f(x)$越窄，集中在$x=0$附近，也就是越局域，而其傅里叶变换则越弥散.当$f(x)$是偶函数时，傅里叶变换的像函数为实函数.
 
     \item 代入
     \begin{align}
         F(\omega) &=
         \sqrt{\frac{1}{2 \pi}} \int_{-\infty}^{\infty} \delta(x) e^{+\imath \omega x} d x = \sqrt{\frac{1}{2 \pi}} ,
     \end{align}
-    $f(x)$无限局域对应的傅里叶变换为无限弥散。
+    $f(x)$无限局域对应的傅里叶变换为无限弥散.
 
     \item 类似的，  
     \begin{align}
@@ -146,13 +146,13 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
             & = \frac{1}{\sqrt{2\alpha}} e^{- \frac{\omega^2}{4\alpha}} \nonumber .
         % \\ &
     \end{align}
-    上式用了变量代换$t = x - \imath \omega /2 \alpha$，高斯函数的像函数还是高斯函数。
+    上式用了变量代换$t = x - \imath \omega /2 \alpha$，高斯函数的像函数还是高斯函数.
 \end{enumerate}
 \end{examplebox}
 
 
 \subsection{傅里叶变换基本性质}
-傅里叶变换满足以下基本性质。假定$f(x)$的傅里叶变换存在，记为$\mathcal{F}[f(x)] = F(\omega)$。
+傅里叶变换满足以下基本性质.假定$f(x)$的傅里叶变换存在，记为$\mathcal{F}[f(x)] = F(\omega)$.
 
 \begin{enumerate}
     \item 导数定理
@@ -185,7 +185,7 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
     \begin{equation}
         \mathcal{F} [f_1(x)\star f_2(x) ] = F_1(\omega) F_2(\omega).
     \end{equation}
-    其中 $f_1(x) \star f_2(x)=\int_{-\infty}^{\infty} f_1(\alpha) f_2(\alpha-x) d \alpha$ 称为 $f_1(x)$ 与 $f_2(x)$ 的卷积。
+    其中 $f_1(x) \star f_2(x)=\int_{-\infty}^{\infty} f_1(\alpha) f_2(\alpha-x) d \alpha$ 称为 $f_1(x)$ 与 $f_2(x)$ 的卷积.
 \end{enumerate}
 
 \subsection{高维傅里叶变换}
@@ -199,11 +199,11 @@ $$
 $$
 f(x, y)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F\left(k_1, k_2\right) e^{\imath\left(k_1 x+k_2 y\right)} d k_1 d k_2
 $$
-为 $F\left(k_1, k_2\right)$ 的逆变换。
-$f(x, y)$ 和 $F\left(k_1, k_2\right)$ 称为傅里叶变换对。
+为 $F\left(k_1, k_2\right)$ 的逆变换.
+$f(x, y)$ 和 $F\left(k_1, k_2\right)$ 称为傅里叶变换对.
 
 \begin{examplebox}{
-    求函数 $f(x, y)= \begin{cases}A, & |x| \leq X,|y| \leq Y \\ 0, & |x|>X,|y|>Y\end{cases}$ 的傅里叶变换 (矩孔费琅和夫衍射)。
+    求函数 $f(x, y)= \begin{cases}A, & |x| \leq X,|y| \leq Y \\ 0, & |x|>X,|y|>Y\end{cases}$ 的傅里叶变换 (矩孔费琅和夫衍射).
 }
 由傅里叶变换关系
 $$
