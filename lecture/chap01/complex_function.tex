@@ -6,31 +6,47 @@
 \label{sub:domain}
 在解析函数论中， 函数的定义域或者值域不是一般的点集，而是满足一定条件的点集，称为{\bf 区域}，用 $B$ 表示。
 为了说明区域的概念， 首先介绍邻域、内点、外点以及边界点的概念。
+
 \begin{itemize}
 \item {\bf 邻域} \quad 以复数 $z_0$ 为圆心, 以任意小正实数 $\varepsilon$ 为半径作一圆, 则圆内所有 点的集合称为 $z_0$ 的邻域.
 \item {\bf 内点} \quad 若 $z_0$ 及其邻域均属于点集 $Z$, 则称 $z_0$ 为该点集的内点。
 \item {\bf 外点} \quad 若 $z_0$ 及其邻域均不属于点集 $Z$, 则称 $z_0$ 为该点集的外点。
-\item {\bf 边界点}  \quad 若在 $z_0$ 的每个邻域内, 既有属于 $Z$ 的点, 也有不属于 $Z$ 的点, 则称 $z_0$ 为该点集的边界点, 它既不是 $Z$ 的内点, 也不是 $Z$ 的外点。 边界点的 全体称为边界线。
-
-现在介绍区域的概念。 直观地说, 区域就是宗量 $z$ 在复数平面上的取值范 围。 确切地说，区域是指满足下列两个条件的点集:
-    \begin{enumerate}
-        \item 全由内点组成;
-        \item 具有连通性, 即点集中的任意两点都可以用一条折线连接起来, 且 折线上的点全都属于该点集。
-    \end{enumerate}
-\item {\bf 闭区域} 区域$B$ 及其边界线所组成的点集称为闭区域，以 $\bar{B}$ 表示。区域可以是各种各样的, 例如圆形域及环形域。 
-圆形域可以用不等式 $\left|z-z_0\right|<r$ 来表示, 式中 $z_0$ 为圆心, $r$ 为半径; 
-环形域可以用 $a<\left|z-z_0\right|<b$ 来表示, $z_0$ 为环心, 式中 $a$ 为内半径, $b$ 为外半径。
- 若将其中的 “<” 换成 $“ \leqslant ”$, 则这两个式子分别表示闭圆域和闭环域。
+\item {\bf 边界点}  \quad 若在 $z_0$ 的每个邻域内, 既有属于 $Z$ 的点, 也有不属于 $Z$ 的点, 
+        则称 $z_0$ 为该点集的边界点, 它既不是 $Z$ 的内点, 也不是 $Z$ 的外点。 边界点的 全体称为边界线。
 \end{itemize}
 
 \begin{figure}
     \centering
     \input{tikz/region.tex}
-    \quad
-    \input{tikz/annular.tex}
-    \caption{左图:邻域、内点、外点、边界点和区域示意图。右图:圆形区域$\left|z-z_0\right|<r$和环形区域$a<\left|z-z_0\right|<b$示意图 。}
+    \caption{邻域、内点、外点、边界点和区域示意图。}
+    \label{fig:region}
 \end{figure}
 
+现在介绍区域的概念。 
+
+\textbf{区域} \quad 直观地说,  区域就是宗量 $z$ 在复数平面上的取值范围,用$B$表示。 
+确切地说，区域是指满足下列两个条件的点集:
+    \begin{enumerate}
+        \item 全由内点组成;
+        \item 具有连通性, 即点集中的任意两点都可以用一条折线连接起来, 且 折线上的点全都属于该点集。
+    \end{enumerate}
+
+% \item {\bf 闭区域} 
+\textbf{闭区域} \quad 区域$B$ 及其边界线所组成的点集称为闭区域，以 $\bar{B}$ 表示。区域可以是各种各样的, 例如圆形域及环形域(如图\ref{fig:annular}所示)。 
+圆形域可以用不等式 $\left|z-z_0\right|<r$ 来表示, 式中 $z_0$ 为圆心, $r$ 为半径; 
+环形域可以用 $a<\left|z-z_0\right|<b$ 来表示, $z_0$ 为环心, 式中 $a$ 为内半径, $b$ 为外半径。
+ 若将其中的 “<” 换成 $“ \leqslant ”$, 则这两个式子分别表示闭圆域和闭环域。
+
+\begin{figure}
+    \centering
+
+    % \input{tikz/region.tex}
+    % \quad
+    \input{tikz/annular.tex}
+    % \caption{左图:邻域、内点、外点、边界点和区域示意图。右图:圆形区域$\left|z-z_0\right|<r$和环形区域$a<\left|z-z_0\right|<b$示意图 。}
+    \caption{圆形区域$\left|z-z_0\right|<r$和环形区域$a<\left|z-z_0\right|<b$示意图 。}
+    \label{fig:annular}
+\end{figure}
 
 
 \subsection{复变函数定义}
@@ -108,15 +124,15 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$。取决于$f(z)$，二者可�
 许多同三角函数一样的等式和积分上都可以类似的应用在双曲函数上。
 通过复数的引入，我们很容易定义三角函数，如正余弦函数(sine/cosine function)可以表示为互为共轭的指数函数的和差
 \begin{align}
-    \cos \varphi = \frac{e^{\imath \varphi} + e^{ -\imath \varphi} }{2}
+    \cos \theta = \frac{e^{\imath \theta} + e^{ -\imath \theta} }{2}
     \\
-    \sin \varphi = \frac{e^{\imath \varphi} - e^{ -\imath \varphi} }{2\imath}
+    \sin \theta = \frac{e^{\imath \theta} - e^{ -\imath \theta} }{2\imath}
 \end{align}
 正余函数(hyperbolic sine/cosine function)表达为
 \begin{align}
-    \cosh \varphi &= \frac{e^{\varphi} + e^{ - \varphi} }{2}
+    \cosh \theta &= \frac{e^{\theta} + e^{ - \theta} }{2}
     \\
-    \sinh \varphi &= \frac{e^{\varphi} - e^{ - \varphi} }{2} \textrm{。}
+    \sinh \theta &= \frac{e^{\theta} - e^{ - \theta} }{2} \textrm{。}
 \end{align}
 比较两组方程可以得到
 \begin{align}
@@ -124,15 +140,16 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$。取决于$f(z)$，二者可�
     \\
     \sinh iz &= i \sin z\textrm{。}
 \end{align}
-我们可以用两种方式表示$\exp(\imath n \varphi)$，于是有
+对于三角函数，有一很重要的de Moivre's定理。我们可以用两种方式表示$\exp(\imath n \theta)$，于是有
 \begin{align}
-    \cos n \varphi + \imath \sin n\varphi = (\cos \varphi + i \sin \varphi)^n  \textrm{。}
+    \cos n \theta + \imath \sin n\theta = (\cos \theta + i \sin \theta)^n  \textrm{。}
 \end{align}
 于是可以验证
 \begin{align}
-    \sin(2\varphi) = 2\sin\varphi \cos\varphi, \quad \cos (2\varphi) = \cos^2\varphi - \sin^2\varphi \textrm{。}
+    \sin(2\theta) = 2\sin\theta \cos\theta, \quad \cos (2\theta) = \cos^2\theta - \sin^2\theta \textrm{。}
 \end{align}
-利用$\sin \theta = \sqrt{1 - \sin ^2 \theta }$(取正)，可以得到
+
+利用$\cos \theta = \sqrt{1 - \sin ^2 \theta }$(取正)，可以得到
 \begin{equation}
   e^{\imath \theta} = \sqrt{ 1 - \sin ^2 \theta } + \imath \sin \theta \textrm{。}  
 \end{equation} 
@@ -140,6 +157,7 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$。取决于$f(z)$，二者可�
 \begin{equation}
     \sin^{-1} (z) = -\imath \ln \left[ \imath z + \sqrt{1-z^2} \right]
 \end{equation}
+这样我们便通过对数函数表示出三角函数的反函数。
 类似的，
 \begin{equation}
     \begin{array}{cc}
