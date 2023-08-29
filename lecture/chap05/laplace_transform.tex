@@ -26,14 +26,14 @@ $$
 将$\sigma + \imath \omega$记作$p$，令$F(p)=\sqrt{2\pi}G(\omega)$，则有
 函数$f(t)$的拉普拉斯变换$F(p)$为
 \begin{equation}
-    F(p) = \mathcal{L} \{ f(t) \} = \int_0 ^{\infty} e^{-pt} f(t) dt \textrm{。}
+    F(p) = \mathcal{L} \{ f(t) \} = \int_0 ^{\infty} e^{-pt} f(t) dt .
 \end{equation}
 该积分称为拉普拉斯积分，$\mathcal{L}$称为\textbf{拉普拉斯变换算符}。$e^{-pt}$称为拉普拉斯变换的\textbf{核}。注意
 这里的积分上下限。
 
 拉普拉斯变换存在的条件是 
 \begin{enumerate}
-    \item[(1)]  在 $0 \leqslant t<\infty$ 的任一有限区间上; 除了有限个间断点外, 函数 $f(t)$ 及其导数是处处连续的；
+    \item[(1)]  在 $0 \leqslant t<\infty$ 的任一有限区间上; 除了有限个间断点外, 函数 $f(t)$ 及其导数是处处连续的;
     \item[(2)]  存在常数 $M>0$ 和 $\sigma \geqslant 0$, 使对任何 $t$ 值 $(0 \leqslant t<\infty)$, 有
     $$
     |f(t)|<M \mathrm{e}^{\sigma t} \text {。 }
@@ -57,12 +57,12 @@ $\sigma$ 的下界称为收敛横标, 用 $\sigma_0$ 表示. 在实际应用中,
             $$\int_{0}^{\infty} t \cdot e^{-p t} dt = \frac{1}{p^2}$$
             因此类似有$\mathcal{L}[t^n] = \frac{n!}{p^{n+1}}$。
         \item $$
-            \int_{0}^{\infty} t \cdot e^{s t} e^{-p t} dt = \frac{1}{p-s} \textrm{，} 
+            \int_{0}^{\infty} t \cdot e^{s t} e^{-p t} dt = \frac{1}{p-s} , 
         $$
         要求$\Re (p-s) > 0$。
         \item 
         $$
-        \int_{0}^{\infty} t \cdot t e^{s t} e^{-p t} dt = \frac{1}{(p-s)^2} \textrm{，}
+        \int_{0}^{\infty} t \cdot t e^{s t} e^{-p t} dt = \frac{1}{(p-s)^2} ,
         $$
         要求$\Re (p-s) > 0$。  
     类似有 $\mathcal{L}[t^n e^{s t}] = \frac{n!}{(p-s)^{n+1}}$。
@@ -73,10 +73,10 @@ $\sigma$ 的下界称为收敛横标, 用 $\sigma_0$ 表示. 在实际应用中,
         $$
 
         $$
-        \mathcal{L}[ \cosh{k t} ] = \half \left( \frac{1}{s-k} + \frac{1}{s+k} \right) = \frac{s}{s^2 - k^2} \textrm{，}
+        \mathcal{L}[ \cosh{k t} ] = \half \left( \frac{1}{s-k} + \frac{1}{s+k} \right) = \frac{s}{s^2 - k^2} ,
         $$
         $$
-        \mathcal{L}[ \sinh{k t} ] = \half \left( \frac{1}{s-k} - \frac{1}{s+k} \right) = \frac{k}{s^2 - k^2} \textrm{。}
+        \mathcal{L}[ \sinh{k t} ] = \half \left( \frac{1}{s-k} - \frac{1}{s+k} \right) = \frac{k}{s^2 - k^2} .
         $$
     \end{enumerate}
 \end{examplebox}

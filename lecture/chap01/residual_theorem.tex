@@ -11,15 +11,15 @@
 \]
 由前面例题可知，只有$a_{-1}$项不为零，其他项为零。而$a_{-1}$项的积分为$2\pi\imath$。因此，我们得到
 \begin{equation}
-    \oint_\ell f(z) dz = 2\pi \imath a_{-1} \textrm{。}
+    \oint_\ell f(z) dz = 2\pi \imath a_{-1} .
 \end{equation}
 又因为$a_{-1}$为函数$f(z)$在$z=z_0$处的留数,记为$Res f(z_0)$。于是有
 \begin{equation}
-    \oint_\ell f(z) dz = 2\pi \imath Res f(z_0) \textrm{。}
+    \oint_\ell f(z) dz = 2\pi \imath Res f(z_0) .
 \end{equation}
 扩展到多个奇点的情况，不难得到
 \begin{equation}
-    \oint_\ell f(z) dz = 2\pi \imath \sum_{j=1}^{n} Res f(z_j) \textrm{。}
+    \oint_\ell f(z) dz = 2\pi \imath \sum_{j=1}^{n} Res f(z_j) .
 \end{equation}
 上式为\textbf{留数定理}的数学表达式，即回路积分可以写成被积函数在回路所围区域上各个奇点的留数之和。
 
@@ -44,7 +44,7 @@ $n$阶极点$z_0$，那么有
     \begin{enumerate}
         \item $\frac{1}{\sin z}$在$z=0$处的留数为$\lim_{z\to 0} \frac{z}{\sin{z}} = 1$。
         \item $\frac{\ln{z}}{z^2 + 4}$在$z=2e^{\imath \pi}$处的留数为$\lim_{z\to 2e^{\imath \pi}} \frac{(z-2e^{\imath \pi})\ln{z} }{z^2 + 4} = 
-        \frac{\ln 2 + \imath \pi}{4\imath} = \frac{\pi}{4} - \frac{\imath\ln{2}}{4}\textrm{。}$
+        \frac{\ln 2 + \imath \pi}{4\imath} = \frac{\pi}{4} - \frac{\imath\ln{2}}{4}.$
         \item $f(z) = \frac{\cot{\pi z}}{z(z+2)}$在$z=0$处的留数。\\
             \[
               f(z) = \frac{1}{z} \left[\frac{1}{\pi z} + O(z) \right]\frac{1}{2} \left[1 - \frac{z}{2} + O(z^2)\right]  
@@ -58,11 +58,11 @@ $n$阶极点$z_0$，那么有
         \[
             \begin{aligned}
                 \operatorname{Res} f(1) & =\lim _{z \to 1}\left[(z-1) \frac{1}{(z-1)\left(z^{n-1}+z^{n-2}+\cdots+z+1\right)}\right] \\
-                & =\lim _{z \to 1} \frac{1}{z^{n-1}+z^{n-2}+\cdots+z+1}=\frac{1}{n} \textrm{。}
+                & =\lim _{z \to 1} \frac{1}{z^{n-1}+z^{n-2}+\cdots+z+1}=\frac{1}{n} .
             \end{aligned}
         \]
         或者用 $$
-        \lim _{z \to 1}\left[\frac{1}{\left(z^n-1\right)^{\prime}}\right]=\lim _{z \to 1} \frac{1}{n z^{n-1}}=\frac{1}{n} \textrm{。}
+        \lim _{z \to 1}\left[\frac{1}{\left(z^n-1\right)^{\prime}}\right]=\lim _{z \to 1} \frac{1}{n z^{n-1}}=\frac{1}{n} .
         $$ 因此，此函数在$z=1$处的留数为$1/n$。
     \end{enumerate}
 \end{examplebox}
