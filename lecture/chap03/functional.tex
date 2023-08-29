@@ -1,34 +1,34 @@
 \subsection{泛函和变分法}
 \label{subsec:functional}
-变分法在数学、物理、工程和其它学科有广泛应用价值.通过以下的几个例子，我们可以了解变分法具体解决什么问题.
+变分法在数学、物理、工程和其它学科有广泛应用价值.通过以下的几个例子,我们可以了解变分法具体解决什么问题.
 
-如图所示，现在寻找在两点$(x_1, y_1)$和$(x_2,y_2)$间找一个最短的路径$u(x)$.常识告诉我们，两点之间直线最短.
-数学上表示出来为直线方程，
+如图所示,现在寻找在两点$(x_1, y_1)$和$(x_2,y_2)$间找一个最短的路径$u(x)$.常识告诉我们,两点之间直线最短.
+数学上表示出来为直线方程,
 \[
   y = k x + b = \frac{y_2 - y_1}{x_2 - x_1} ( x - x_1) + y_1  
 \]
-这样的常识其实在数学上等价为一个最小化问题.对于任意路径，我们利用微积分求得该路径的长度.
-$ds^2 = dx^2 + dy^2$，
+这样的常识其实在数学上等价为一个最小化问题.对于任意路径,我们利用微积分求得该路径的长度.
+$ds^2 = dx^2 + dy^2$,
 \[
 J[u] = \int_{x_1}^{x_2} \sqrt{ 1 + u'(x)^2} dx    
 \]
-其中 $u'(x) = du(x)/dx$，满足边界条件$u(x_1) = y_1, u(x_2) = y_2$.因此，我们的问题即求如何找到函数$u(x)$使得
-$J$最小化.这里的方括号区别于函数的圆括号，用来表示这里的映射是函数$\to$数的.这种函数的函数称为\textbf{泛函}.
+其中 $u'(x) = du(x)/dx$,满足边界条件$u(x_1) = y_1, u(x_2) = y_2$.因此,我们的问题即求如何找到函数$u(x)$使得
+$J$最小化.这里的方括号区别于函数的圆括号,用来表示这里的映射是函数$\to$数的.这种函数的函数称为\textbf{泛函}.
 具体的求解我们下面介绍.
-理论力学上，最小作用量原理可以导出牛顿力学方程.我们定义的体系的动能为$K = \half m \bv^2$,
+理论力学上,最小作用量原理可以导出牛顿力学方程.我们定义的体系的动能为$K = \half m \bv^2$,
 势能为$V = V(\br)$, 定义作用量
 \begin{equation}
   A = \int \left[ \half m \left( \frac{d\br}{dt} \right)^2 - V(\br) \right] dt 
 \end{equation}
-上式利用了定义$\vec{\bv} = \frac{d\br}{dt}$. 对作用量$A$进行最小化将得到$\br$满足的方程，即牛顿第二定律方程.
+上式利用了定义$\vec{\bv} = \frac{d\br}{dt}$. 对作用量$A$进行最小化将得到$\br$满足的方程,即牛顿第二定律方程.
 
-对于一般的情况，有函数到数的映射写成
+对于一般的情况,有函数到数的映射写成
 \begin{equation}
-  J[u] = \int_{a}^{b}  dx L(u, u', u'', \cdots| x)， 
+  J[u] = \int_{a}^{b}  dx L(u, u', u'', \cdots| x), 
 \end{equation}
-其中$L(u, u', u'',\cdots | x)$为$u$的局域泛函， $u' \equiv du/dx, u'' \equiv = du^2/dx^2$.
-对于不包含一阶以上的导数时，即$L = L(u,u')$，对函数$u(x)$作一微小变化$\delta u(x)$，在积分上下限处，
-有$\delta u(a) = \delta u(b) = 0$.$J[u]$取最小值时，需满足$\delta J[u] \equiv = J[u + \delta u] - J[u]$
+其中$L(u, u', u'',\cdots | x)$为$u$的局域泛函, $u' \equiv du/dx, u'' \equiv = du^2/dx^2$.
+对于不包含一阶以上的导数时,即$L = L(u,u')$,对函数$u(x)$作一微小变化$\delta u(x)$,在积分上下限处,
+有$\delta u(a) = \delta u(b) = 0$.$J[u]$取最小值时,需满足$\delta J[u] \equiv = J[u + \delta u] - J[u]$
 为零.利用$\delta u' = \funcpd{}{x} \delta u$和$fg' = (fg)' - f'g$,
 \begin{align}
   J[u + \delta u] &= \int_{a}^{b}  dx L(u + \delta u, u' + \delta u'| x) 
@@ -42,34 +42,34 @@ $J$最小化.这里的方括号区别于函数的圆括号，用来表示这里�
         + \left. \funcpd{L}{u'} \delta u \right|_{a}^{b} 
      \nonumber %\\ 
 \end{align}
-于是，结合边界条件我们有
+于是,结合边界条件我们有
 \begin{align}
   \delta J[u] = \int_{a}^{b} dx \left[ \funcpd{L}{u} -  \funcpd{}{x}\left( \funcpd{L}{u'} \right)   \right] \delta u 
 \end{align}
-被积函数对任意变化$\delta u$都需要满足$\delta J[u] = 0$，于是我们得到
+被积函数对任意变化$\delta u$都需要满足$\delta J[u] = 0$,于是我们得到
 \begin{equation}
   \funcpd{L}{u} -  \funcpd{}{x}\left( \funcpd{L}{u'} \right) = 0 .
 \end{equation}
 这就是著名的\textbf{欧拉-拉格朗日方程}(Euler-Lagrange Equation).
 
-利用该方程，可以得到两点之间距离最短满足
+利用该方程,可以得到两点之间距离最短满足
 \[
   0 = - \funcd{}{x} \frac{u'}{\sqrt{1 + u'^2}} = \frac{-u''}{(1+ u'^2)^{3/2}}
 \]
 也就是
 \[ u'' = 0\]
-也就是解为直线方程$ u = k x + b$，$k,b$的值由边界条件确定.
+也就是解为直线方程$ u = k x + b$,$k,b$的值由边界条件确定.
 
-对最小作用量原理问题，可以得到
+对最小作用量原理问题,可以得到
 \[
   0 = - \funcd {V(\br)}{\br} - \funcd{}{t} \left[ m \frac{d\br}{dt} \right]
 \]
-若质量$m$不依赖于时间，得到牛顿方程，
+若质量$m$不依赖于时间,得到牛顿方程,
 \[
   m \frac{d^2\br}{dt^2} = - \funcd {V(\br)}{\br} \equiv \bF .
 \]
 
-对于如多目标变量的$J(u_1, u_2, \cdots, u_n, u_1', u_2', \cdots, u_n'|x)$, 对于每一个$u_i$， $i=1,2,\dots,n$都有独立的欧拉方程
+对于如多目标变量的$J(u_1, u_2, \cdots, u_n, u_1', u_2', \cdots, u_n'|x)$, 对于每一个$u_i$, $i=1,2,\dots,n$都有独立的欧拉方程
 
 \begin{equation}
   \funcpd{L}{u_i} -  \funcpd{}{x}\left( \funcpd{L}{u'_i} \right) = 0 .

@@ -4,8 +4,8 @@
 
 \subsection{区域的概念}
 \label{sub:domain}
-在解析函数论中， 函数的定义域或者值域不是一般的点集，而是满足一定条件的点集，称为{\bf 区域}，用 $B$ 表示.
-为了说明区域的概念， 首先介绍邻域、内点、外点以及边界点的概念.
+在解析函数论中, 函数的定义域或者值域不是一般的点集,而是满足一定条件的点集,称为{\bf 区域},用 $B$ 表示.
+为了说明区域的概念, 首先介绍邻域、内点、外点以及边界点的概念.
 
 \begin{itemize}
 \item {\bf 邻域} \quad 以复数 $z_0$ 为圆心, 以任意小正实数 $\varepsilon$ 为半径作一圆, 则圆内所有 点的集合称为 $z_0$ 的邻域.
@@ -25,14 +25,14 @@
 现在介绍区域的概念. 
 
 \textbf{区域} \quad 直观地说,  区域就是宗量 $z$ 在复数平面上的取值范围,用$B$表示. 
-确切地说，区域是指满足下列两个条件的点集:
+确切地说,区域是指满足下列两个条件的点集:
     \begin{enumerate}
         \item 全由内点组成;
         \item 具有连通性, 即点集中的任意两点都可以用一条折线连接起来, 且 折线上的点全都属于该点集.
     \end{enumerate}
 
 % \item {\bf 闭区域} 
-\textbf{闭区域} \quad 区域$B$ 及其边界线所组成的点集称为闭区域，以 $\bar{B}$ 表示.区域可以是各种各样的, 例如圆形域及环形域(如图\ref{fig:annular}所示). 
+\textbf{闭区域} \quad 区域$B$ 及其边界线所组成的点集称为闭区域,以 $\bar{B}$ 表示.区域可以是各种各样的, 例如圆形域及环形域(如图\ref{fig:annular}所示). 
 圆形域可以用不等式 $\left|z-z_0\right|<r$ 来表示, 式中 $z_0$ 为圆心, $r$ 为半径; 
 环形域可以用 $a<\left|z-z_0\right|<b$ 来表示, $z_0$ 为环心, 式中 $a$ 为内半径, $b$ 为外半径.
  若将其中的 “<” 换成 $“ \leqslant ”$, 则这两个式子分别表示闭圆域和闭环域.
@@ -52,11 +52,11 @@
 \subsection{复变函数定义}
 \label{sub:cmplx_func_def}
 
-存在复数平面的点集$Z$，每一点$z\in Z$有一个或多个复数值$w$与之对应，则称$w$为$z$的函数--复变函数.$z$称为$w$的宗量，定义域为$Z$，记作
+存在复数平面的点集$Z$,每一点$z\in Z$有一个或多个复数值$w$与之对应,则称$w$为$z$的函数--复变函数.$z$称为$w$的宗量,定义域为$Z$,记作
 \begin{equation}
     w = f(z), z\in Z .
 \end{equation}
-任意一个复变函数$f(z)$，$z=x + \imath y$，我们可以写称实部和虚部的组合，
+任意一个复变函数$f(z)$,$z=x + \imath y$,我们可以写称实部和虚部的组合,
 \begin{align}
     f(z) = u(x,y) +\imath \; v(x,y) ,
 \end{align}
@@ -64,7 +64,7 @@
 \begin{align}
     \Re f(z) = u(x,y), \quad \Im f(z) = v(x,y) ,
 \end{align}
-$f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$，二者可能相等也可能不等.
+$f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$,二者可能相等也可能不等.
 
 这里我们列举一些常见复变函数.
 \begin{itemize}
@@ -84,11 +84,11 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$，二者可能�
         \begin{equation}
             \ln z = \ln |z| + \imath \Arg z, \quad z^s = e^{s\ln z} ,
         \end{equation}
-    \item 正余弦，正余切函数 
+    \item 正余弦,正余切函数 
         \begin{equation}
             \sin z , \cos z , \tan z, \cot z ,
         \end{equation}
-    \item 双曲正余弦， 双曲正余切函数
+    \item 双曲正余弦, 双曲正余切函数
         \begin{equation}
             \sinh z , \cosh z , \tanh z, \coth z  .
         \end{equation}
@@ -109,20 +109,20 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$，二者可能�
         \\
         & = \frac{1}{2\imath} \left( \cos x (e^{-y} - e^{y}) + \imath \sin x (e^{-y} + e^{y}) \right)
     \end{align*}
-    取模后可得，
+    取模后可得,
     \begin{align*}
         |\sin z | &= \frac{1}{2}\sqrt{ \cos^2x (e^{2y} + e^{-2y} -2) + \sin^2 x (e^{2y} + e^{-2y} +2) }
         \\
         &=\frac{1}{2}\sqrt{\left(e^{2 y}+e^{-2 y}\right)+2\left(\sin ^2 x-\cos ^2 x\right)}
     \end{align*}
-    可见，与实函数不同的是，$|\sin z|$的取值完全可以大于$1$.
+    可见,与实函数不同的是,$|\sin z|$的取值完全可以大于$1$.
 \end{examplebox}
 
 
 \subsection{三角函数和双曲函数}
 双曲函数(hyperbolic functions)为三角函数(trigonometric functions)的复数类比.
 许多同三角函数一样的等式和积分上都可以类似的应用在双曲函数上.
-通过复数的引入，我们很容易定义三角函数，如正余弦函数(sine/cosine function)可以表示为互为共轭的指数函数的和差
+通过复数的引入,我们很容易定义三角函数,如正余弦函数(sine/cosine function)可以表示为互为共轭的指数函数的和差
 \begin{align}
     \cos \theta = \frac{e^{\imath \theta} + e^{ -\imath \theta} }{2}
     \\
@@ -140,7 +140,7 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$，二者可能�
     \\
     \sinh iz &= i \sin z.
 \end{align}
-对于三角函数，有一很重要的de Moivre's定理.我们可以用两种方式表示$\exp(\imath n \theta)$，于是有
+对于三角函数,有一很重要的de Moivre's定理.我们可以用两种方式表示$\exp(\imath n \theta)$,于是有
 \begin{align}
     \cos n \theta + \imath \sin n\theta = (\cos \theta + i \sin \theta)^n  .
 \end{align}
@@ -149,16 +149,16 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$，二者可能�
     \sin(2\theta) = 2\sin\theta \cos\theta, \quad \cos (2\theta) = \cos^2\theta - \sin^2\theta .
 \end{align}
 
-利用$\cos \theta = \sqrt{1 - \sin ^2 \theta }$(取正)，可以得到
+利用$\cos \theta = \sqrt{1 - \sin ^2 \theta }$(取正),可以得到
 \begin{equation}
   e^{\imath \theta} = \sqrt{ 1 - \sin ^2 \theta } + \imath \sin \theta .  
 \end{equation} 
-令$\sin \theta = z$，$\theta = \sin^{-1} (z)$，对两边同时求对数得到
+令$\sin \theta = z$,$\theta = \sin^{-1} (z)$,对两边同时求对数得到
 \begin{equation}
     \sin^{-1} (z) = -\imath \ln \left[ \imath z + \sqrt{1-z^2} \right]
 \end{equation}
 这样我们便通过对数函数表示出三角函数的反函数.
-类似的，
+类似的,
 \begin{equation}
     \begin{array}{cc}
     \sin ^{-1}(z)=-i \ln \left[i z+\sqrt{1-z^2}\right], \quad \tan ^{-1}(z)=\frac{i}{2}[\ln (1-i z)-\ln (1+i z)], \\
@@ -193,7 +193,7 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$，二者可能�
 证毕.
 \end{examplebox}
 
-此外，类似于三角函数，我们有以下双曲函数
+此外,类似于三角函数,我们有以下双曲函数
 \begin{equation}
     \begin{aligned}
     \tanh z & =\frac{\sinh z}{\cosh z}=\frac{e^z-e^{-z}}{e^z+e^{-z}}, \\

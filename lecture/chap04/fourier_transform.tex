@@ -1,7 +1,7 @@
 \subsection{傅里叶变换}
 \label{subsec:fourier_transform}
 前面我们讨论了周期性体系的傅里叶级数展开.现在我们希望研究非周期性函数的傅里叶展开问题.
-假设$f(x)$是定义在$-\infty < x < \infty$的实函数，我们依旧对该函数进行傅里叶级数展开，
+假设$f(x)$是定义在$-\infty < x < \infty$的实函数,我们依旧对该函数进行傅里叶级数展开,
 该级数必须理解为周期$2\ell$扩展至$\infty$的极限情况.
 由于三角函数族的变量为
 \[
@@ -23,7 +23,7 @@
 \begin{equation}
     c_n = \frac{1}{2\ell} \int_{-\ell}^{\ell} f(x) e^{-\imath \omega_n x} dx 
 \end{equation}
-取$\ell\to \infty$的极限，则
+取$\ell\to \infty$的极限,则
 \[
   \sum_n \to  \frac{ \ell}{\pi}  \int d\omega 
 \]
@@ -32,7 +32,7 @@
 \begin{equation}
     f(x) = \int_{-\infty}^{\infty} \frac{d \omega }{2\pi}F(\omega) e^{\imath \omega x}, % \quad F (\omega) \equiv 2\ell c_n
 \end{equation}
-上式的积分称为\textbf{傅里叶积分}(Fourier integral)，是$f(x)$的\textbf{傅里叶变换}(Fourier transform).
+上式的积分称为\textbf{傅里叶积分}(Fourier integral),是$f(x)$的\textbf{傅里叶变换}(Fourier transform).
 其中
 \begin{equation}
     F (\omega) \equiv 2\ell c_n = \int_{-\infty}^{\infty} e^{-\imath \omega x} f(x) dx,
@@ -53,7 +53,7 @@ $$
 %     b_n = \frac{1}{\ell} \int_{-\ell}^{\ell} f(x) \sin {   \omega_n x } dx
 % \end{align}
 
-若采用正余弦展开，
+若采用正余弦展开,
 
 \begin{equation}
     f(x) =\int_{0}^{\infty} A(\omega) \cos {\omega x} d\omega + \int_{0}^{\infty} B(\omega) \sin {\omega x} d\omega
@@ -79,10 +79,10 @@ C(\omega)=\sqrt{[A(\omega)]^2+[B(\omega)]^2} \\
 \varphi(\omega)=\arctan [B(\omega) / A(\omega)] .
 \end{gathered}
 $$
-$C(\omega)$ 称为 $f(x)$ 的振幅谱, $\varphi(\omega)$ 称为 $f(x)$ 的相位谱.如果$f(x)$是奇函数或偶函数，
+$C(\omega)$ 称为 $f(x)$ 的振幅谱, $\varphi(\omega)$ 称为 $f(x)$ 的相位谱.如果$f(x)$是奇函数或偶函数,
 对应的级数为\textbf{傅里叶余弦积分}或\textbf{傅里叶正弦积分}.
 
-复数形式的傅里叶积分可以写成对称的形式，
+复数形式的傅里叶积分可以写成对称的形式,
 \begin{equation}
     \begin{aligned}
     f(x) & =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} F(\omega)e^{\imath \omega x} d \omega, \\
@@ -104,7 +104,7 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
 \end{enumerate}
 }
 \begin{enumerate}
-    \item 对$x$分段进行处理，利用对称形式的傅里叶变换有
+    \item 对$x$分段进行处理,利用对称形式的傅里叶变换有
     \begin{align}
         F(\omega) &=
         \sqrt{\frac{1}{2 \pi}} \int_{-\infty}^0 e^{\alpha x+i \omega t} dx \nonumber
@@ -116,7 +116,7 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
         \\
         &= \sqrt{\frac{1}{2 \pi}} \frac{2\alpha}{\alpha^2 + \omega^2}, \nonumber
     \end{align}
-    越大的$\alpha$则$f(x)$越窄，集中在$x=0$附近，也就是越局域，而其傅里叶变换则越弥散.当$f(x)$是偶函数时，傅里叶变换的像函数为实函数.
+    越大的$\alpha$则$f(x)$越窄,集中在$x=0$附近,也就是越局域,而其傅里叶变换则越弥散.当$f(x)$是偶函数时,傅里叶变换的像函数为实函数.
 
     \item 代入
     \begin{align}
@@ -125,7 +125,7 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
     \end{align}
     $f(x)$无限局域对应的傅里叶变换为无限弥散.
 
-    \item 类似的，  
+    \item 类似的,  
     \begin{align}
         F(\omega) &=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-\alpha x^2} e^{\imath \omega x} d x \nonumber
         % \\ &
@@ -146,13 +146,13 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
             & = \frac{1}{\sqrt{2\alpha}} e^{- \frac{\omega^2}{4\alpha}} \nonumber .
         % \\ &
     \end{align}
-    上式用了变量代换$t = x - \imath \omega /2 \alpha$，高斯函数的像函数还是高斯函数.
+    上式用了变量代换$t = x - \imath \omega /2 \alpha$,高斯函数的像函数还是高斯函数.
 \end{enumerate}
 \end{examplebox}
 
 
 \subsection{傅里叶变换基本性质}
-傅里叶变换满足以下基本性质.假定$f(x)$的傅里叶变换存在，记为$\mathcal{F}[f(x)] = F(\omega)$.
+傅里叶变换满足以下基本性质.假定$f(x)$的傅里叶变换存在,记为$\mathcal{F}[f(x)] = F(\omega)$.
 
 \begin{enumerate}
     \item 导数定理
@@ -177,7 +177,7 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
     \begin{equation}
         \mathcal{F} [ e^{\imath \omega x_0} f(x) ] = f(\omega - \omega_0),
     \end{equation}
-    \item 卷积定理， 如果
+    \item 卷积定理, 如果
     \[
         \mathcal{F} [f_1(x)] =  F_1(\omega), \mathcal{F} [f_2(x)] =  F_2(\omega), 
     \]
@@ -220,7 +220,7 @@ F\left(k_1, k_2\right) & =\frac{A}{2 \pi} \int_X^X e^{-i k_1 x} d x \int_Y^X e^{
 $$
 \end{examplebox}
 
-对于三维情况，$\vec{k}=\left(k_1, k_2, k_3\right), \vec{r}=(x, y, z)$,
+对于三维情况,$\vec{k}=\left(k_1, k_2, k_3\right), \vec{r}=(x, y, z)$,
 \begin{equation}
     F(\vec{k})=\frac{1}{(2 \pi)^3} \iiint_{-\infty}^{\infty} f(\vec{r}) e^{-\imath  \vec{k} \cdot \vec{r}} d^3 \vec{r} \\
 \end{equation}

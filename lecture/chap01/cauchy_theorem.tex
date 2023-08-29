@@ -1,28 +1,28 @@
 \subsection{柯西积分定理}
 \label{subsec:cauchy_theorem}
-柯西积分定理（简称柯西定理）说的是，如果$f(z)$是解析函数，$f'(z)$在闭合路径$C$%构成的单连通
-区域内任一点连续，有
+柯西积分定理（简称柯西定理）说的是,如果$f(z)$是解析函数,$f'(z)$在闭合路径$C$%构成的单连通
+区域内任一点连续,有
 \begin{equation}
     \oint_C f(z) dz = 0.
 \end{equation}
-所有的闭合回路的积分我们用$\oint$来表示.证明会用到格林公式和柯西-黎曼条件，具体参考其他书目，其中
+所有的闭合回路的积分我们用$\oint$来表示.证明会用到格林公式和柯西-黎曼条件,具体参考其他书目,其中
 格林公式为
 \begin{equation}
     \oint_\ell P dx + Q dy = \iint_S \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} dx dy \right)
 \end{equation}
-对于某些区域有奇点的情况，我们可以取一绕过奇点的闭合路径，如图\ref{fig:complexregion}所示的情况.柯西定理重要的应用在于将沿某一路径积分转化为
-另一个或多个路径积分的求和.通常这样来规定正方向，当观察者沿着该方向前进时，区域总是在观察者的左侧.
+对于某些区域有奇点的情况,我们可以取一绕过奇点的闭合路径,如图\ref{fig:complexregion}所示的情况.柯西定理重要的应用在于将沿某一路径积分转化为
+另一个或多个路径积分的求和.通常这样来规定正方向,当观察者沿着该方向前进时,区域总是在观察者的左侧.
 \begin{figure}
     \centering
     \input{tikz/complex_region.tex}
     \caption{复杂路径示意图.}
     \label{fig:complexregion}
 \end{figure}
-由于$\ell_{in}$和$\ell_{out}$与割线$AB,A'B'$组成了闭合回路，根据柯西定理，我们有
+由于$\ell_{in}$和$\ell_{out}$与割线$AB,A'B'$组成了闭合回路,根据柯西定理,我们有
 \[
     \left[ \oint _{\ell_{out}} + \int _{\ell_{AB}} + \oint _{\ell_{in}} + \int _{\ell_{B'A'}} \right] f(z) dz = 0 .
 \]   
-由于割线$AB$与$A'B'$可以无限接近，可以看出二者方向相反，这两项互相抵消.于是我们有
+由于割线$AB$与$A'B'$可以无限接近,可以看出二者方向相反,这两项互相抵消.于是我们有
 \[
     \left[ \oint _{\ell_{out}} + \oint _{\ell_{in}}  \right] f(z) dz = 0,
 \]
@@ -30,16 +30,16 @@
 \[
     \oint_{\ell_{out}} f(z) dz = - \oint _{\ell_{in}}f(z) dz .
 \]
-若用逆时针方向积分表示，并考虑多个内边界$\ell_{i}$，我们有
+若用逆时针方向积分表示,并考虑多个内边界$\ell_{i}$,我们有
 \begin{equation}
     \ointctrclockwise_{\ell_{out}} f(z) dz = \sum_{i=1}^{n} \ointctrclockwise_{\ell_{in}} f(z) dz .
 \end{equation}
-就是说，外边界逆时针方向积分等于所有内边界逆时针方向积分之和.只要积分起点和终点固定，当积分路径连续变形时（即不跳过奇点）,函数的积分值不变.
+就是说,外边界逆时针方向积分等于所有内边界逆时针方向积分之和.只要积分起点和终点固定,当积分路径连续变形时（即不跳过奇点）,函数的积分值不变.
 
 下面给出一个重要的例题.
-\begin{examplebox}{计算积分\[ I = \oint_\ell (z-\alpha)^n dz， \]其中$n$为整数.}
-首先，有柯西定理易知，若回路$\ell$不包含$\alpha$,则被积函数在$\ell$所围区域上是解析的，故积分值为零.下面讨论$\ell$包围$\alpha$的情形.
-如果$n\geq 0$,被积函数在$\ell$所围区域是解析的，积分为零.若$n<0$，则有一个奇点$\alpha$.取以$\alpha$为圆心半径为$R$的圆周$C$，$R$大小任意.
+\begin{examplebox}{计算积分\[ I = \oint_\ell (z-\alpha)^n dz, \]其中$n$为整数.}
+首先,有柯西定理易知,若回路$\ell$不包含$\alpha$,则被积函数在$\ell$所围区域上是解析的,故积分值为零.下面讨论$\ell$包围$\alpha$的情形.
+如果$n\geq 0$,被积函数在$\ell$所围区域是解析的,积分为零.若$n<0$,则有一个奇点$\alpha$.取以$\alpha$为圆心半径为$R$的圆周$C$,$R$大小任意.
 于是圆周上有$z-\alpha = Re^{\imath \theta}$.
 \begin{equation}
 \begin{aligned}
@@ -49,8 +49,8 @@
      & = 0 \quad \textrm{if} \quad n\neq -1.
 \end{aligned}
 \end{equation}
-当$n = -1$时， $I = 2\pi \imath$.其实，从原函数的角度来看，这个结果很容易理解.当$n\neq -1$，原函数为$(z-\alpha)^{n+1}/(n+1)$, 绕$\alpha$一周
-原函数变化量为零.而当$n=-1$时，原函数时$\ln(z-\alpha)$, 绕一周变化量为$2\pi \imath$.因此我们得到了非常重要的表达式
+当$n = -1$时, $I = 2\pi \imath$.其实,从原函数的角度来看,这个结果很容易理解.当$n\neq -1$,原函数为$(z-\alpha)^{n+1}/(n+1)$, 绕$\alpha$一周
+原函数变化量为零.而当$n=-1$时,原函数时$\ln(z-\alpha)$, 绕一周变化量为$2\pi \imath$.因此我们得到了非常重要的表达式
 \begin{equation}
     \begin{aligned}
         & \frac{1}{2 \pi \mathrm{i}} \oint_l \frac{\mathrm{d} z}{z-\alpha}= \begin{cases}0 & (l \text { 不包围 } \alpha), \\
