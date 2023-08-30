@@ -1,6 +1,6 @@
 \subsection{多值函数}
 在定义解析函数的时候,其中一个条件就是要求函数为单值的.
-然而除了单值函数外,还有许多多值函数,例如对数函数和指数函数等.
+然而除了单值函数外,还有许多多值函数,例如对数函数和根式函数等.
 碰巧的是,解析函数的许多性质仍然可以应用到多值函数上,但前提是要到
 多值函数的支点 (branch points).
 
@@ -10,18 +10,18 @@
 以$f(z) = z^{1/2}$为例,我们来介绍多值函数的性质.
 
 易知,\[
-    f(z) = r e^{\imath \half  \Arg z}
-    =  r e^{\imath \left( \half \arg z + n \pi \right)}
+    f(z) = \sqrt{r} e^{\imath \half  \Arg z}
+    =  \sqrt{r} e^{\imath \left( \half \arg z + n \pi \right)}
     \],
 于是,对于$n= 2k$和$n=2k+1$,$f(z)$有两个值.
 \begin{equation}
     \left\{\begin{aligned}
-    f_1(z) & =r e^{\imath(\arg z) / 2} \\
-    f_2(z) & =-r e^{\imath(\arg z) / 2} \\
+    f_1(z) & =\sqrt{r}  e^{\imath(\arg z) / 2} \\
+    f_2(z) & =-\sqrt{r}  e^{\imath(\arg z) / 2} \\
     \end{aligned}\right.
 \end{equation}
 这两个函数成为$f(z)= z^{1/2}$的两个\textbf{单值分支}.可以发现,
-取任意包含$z=0$的闭合路径$C$,沿着该路径绕行一圈,辐角增加$2\pi$,
+取任意包含$z=0$的闭合路径(或围道)$C$,沿着该路径绕行一圈,辐角增加$2\pi$,
 可以发现$f(z)$从其一单值分支$f_1(z)$进入到另一单值分支$f_2(z)$.
 若绕行两周,则回归原分支$f_1(z)$.根据定义,可知$z=0$为该函数的支点,且
 为1阶支点.

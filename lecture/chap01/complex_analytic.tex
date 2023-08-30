@@ -10,7 +10,7 @@
  \begin{examplebox}{说明$f(z)=z^2$是完全函数,而$f(z)=|z|^2$的奇点数有无数个.}
     首先,$f(z) =z^2 = (x^2 + y ^2) + \imath 2 x y$,实部和虚部分别为$u(x,y) = x^2+ y^2, v(x,y)=2x y$,
 连续条件和柯西-黎曼条件在全实数域均满足,可知$f(z)$在全复平面每点均可导.因此,$f(z)=z^2$是完全函数.
-类似的,我们可以知道$f(z)=|z|^n, n\in N$的也是完全函数.\\
+类似的,我们可以知道$f(z)=z^n, n\in N$的也是完全函数.\\
     接着,我们来看$f(z) = |z|^2 = (x^2 + y ^2)$,可以知道只有在$(0,0)$处满足可导条件,其他点均不解析.因此,$f(z)=|z|^2$的奇点数有无数个.
  \end{examplebox}
 
@@ -19,7 +19,7 @@
     \label{eq:Laplace_eq}
     \frac{\partial^2 \psi}{\partial x^2}+\frac{\partial^2 \psi}{\partial y^2}=0
  \end{equation}
-上式可以利用柯西-黎曼条件进行验证,作为作业.$u,v$被成为谐函数(harmonic functions)（注意不要同球谐函数spherical harmonics混淆）.
+上式可以利用柯西-黎曼条件进行验证,作为作业.$u,v$被成为调和函数或谐函数(harmonic functions)（注意不要同球谐函数spherical harmonics混淆）.
 
 第二要义就是,满足$u(x,y) = C_1$和$v(x,y)= C_2$的曲线为正交曲线族.
 再次利用柯西-黎曼条件,可以验证梯度$\nabla u $和$\nabla v$正交,
@@ -30,6 +30,15 @@
 由于$\nabla u, \nabla v$代表两曲线的法向矢量,因此两曲线是正交的.
 
 第三要义就是,当解析函数的实部（或虚部）给定,可以根据柯西-黎曼条件求解相应的虚部（或实部）,进而确定该解析函数.
+如已知实部，可以发现
+\begin{equation}
+    d v = \funcpd{v}{x} dx + \funcpd{v}{y} dy = -\funcpd{u}{y} dx + \funcpd{u}{x} dy
+\end{equation}
+可以验证 
+$$
+\funcpd{}{y} \left( - \funcpd{u}{y} \right) = \funcpd{}{x} \left( \funcpd{u}{x} \right) , 
+$$
+可知, $dv$是一全微分, $v = \int dv$.
 
 \begin{examplebox}{解析函数实部为$u(x,y) = x^2 - y^2$,求解该解析函数.}
 首先,可以验证$u$为调和函数.然后,利用柯西-黎曼条件可得

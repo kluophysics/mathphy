@@ -2,8 +2,8 @@
 
 首先,我们来讨论一下函数的极限和连续性问题.
 \begin{Definition}
-    设$w=f(z)$在$z_0$的邻域有定义,对于
-$\epsilon > 0$,存在$\delta > 0$,使得$|z-z_0| < \epsilon$,有
+    设$w=f(z)$在$z_0$的邻域有定义,对于任意
+$\epsilon > 0$,存在$\delta > 0$,使得$|z-z_0| < \delta$时,有
 \begin{equation}
     |f(z) - w_0| < \delta ,
 \end{equation}
@@ -22,11 +22,11 @@ $\epsilon > 0$,存在$\delta > 0$,使得$|z-z_0| < \epsilon$,有
 \begin{align}
     \label{eq:derivative_def}
     f'(z) = \frac{df}{dz} 
-    \equiv\lim_{\delta z \to 0} \frac{\delta w} {\delta z} 
-    = \lim_{\delta z\to 0} \frac{f(z+\delta z) - f(z) } {(z+\delta z ) - z}
+    \equiv\lim_{\Delta z \to 0} \frac{\Delta w} {\Delta z} 
+    = \lim_{\Delta z\to 0} \frac{f(z+\Delta z) - f(z) } {(z+\Delta z ) - z}
 \end{align}
-这里的前提条件是该极限与$\delta z \to 0$的方式无关.该极限为函数$f(z)$在$z$点的导数.通过该定义,实函数的求导公式对于复变函数同样试用,如
-$(f+g)' = f' + g', (fg)' =f'g + fg'$等.与实变函数求导不同的是,复变函数导数存在条件是$\delta z$以任意方式趋于$0$,因而可导条件的要求比较严格.
+这里的前提条件是该极限与$\Delta z \to 0$的方式无关.该极限为函数$f(z)$在$z$点的导数.通过该定义,实函数的求导公式对于复变函数同样试用,如
+$(f+g)' = f' + g', (fg)' =f'g + fg'$等.与实变函数求导不同的是,复变函数导数存在条件是$\Delta z$以任意方式趋于$0$,因而可导条件的要求比较严格.
 
 \begin{figure}
     \centering
@@ -36,9 +36,9 @@ $(f+g)' = f' + g', (fg)' =f'g + fg'$等.与实变函数求导不同的是,复变
 \end{figure}
 按照图(\ref{fig:limits})两种方式逼近$z_0$,可以得到
 \begin{align}
-    \lim _{\delta z \rightarrow 0} \frac{\delta f}{\delta z} &=\lim _{\delta x \rightarrow 0}\left(\frac{\delta u}{\delta x}+i \frac{\delta v}{\delta x}\right)=\frac{\partial u}{\partial x}+i \frac{\partial v}{\partial x},
+    \lim _{\Delta z \rightarrow 0} \frac{\Delta f}{\Delta z} &=\lim _{\Delta x \rightarrow 0}\left(\frac{\Delta u}{\Delta x}+i \frac{\Delta v}{\Delta x}\right)=\frac{\partial u}{\partial x}+i \frac{\partial v}{\partial x},
 \\
-    \lim _{\delta z \rightarrow 0} \frac{\delta f}{\delta z} &=\lim _{\delta y \rightarrow 0}\left(-i \frac{\delta u}{\delta y}+\frac{\delta v}{\delta y}\right)=-i \frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}
+    \lim _{\Delta z \rightarrow 0} \frac{\Delta f}{\Delta z} &=\lim _{\Delta y \rightarrow 0}\left(-i \frac{\Delta u}{\Delta y}+\frac{\Delta v}{\Delta y}\right)=-i \frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}
 \end{align}
 于是,令实部虚部分别相等,即
 \begin{equation}
@@ -47,7 +47,7 @@ $(f+g)' = f' + g', (fg)' =f'g + fg'$等.与实变函数求导不同的是,复变
         \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} .
     \end{cases}
 \end{equation}
-这就是著名的{\bf 柯西-黎曼条件}(Cauchy-Riemann conditions)或{\bf 柯西-黎曼方程},是复变函数可导的必要条件.
+这就是著名的{\bf 柯西-黎曼条件}(Cauchy-Riemann conditions)或{\bf 柯西-黎曼方程},是复变函数可导的必要条件,但不是充分条件.
 % \begin{equation}
 %     \left\{\begin{array}{l}
 %     \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} \\
@@ -58,18 +58,18 @@ $(f+g)' = f' + g', (fg)' =f'g + fg'$等.与实变函数求导不同的是,复变
 \begin{proof}
     由于$u,v$偏微分连续,可得
     \begin{equation*}
-        \delta f=\left(\frac{\partial u}{\partial x}+\imath \frac{\partial v}{\partial x}\right) \delta x+\left(\frac{\partial u}{\partial y}+ \imath \frac{\partial v}{\partial y}\right) \delta y
+        \Delta f=\left(\frac{\partial u}{\partial x}+\imath \frac{\partial v}{\partial x}\right) \Delta x+\left(\frac{\partial u}{\partial y}+ \imath \frac{\partial v}{\partial y}\right) \Delta y
     \end{equation*}
     利用柯西-黎曼方程,将上式转换为
     \begin{equation*}
         \begin{aligned}
-        \delta f & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \delta x+\left(-\frac{\partial v}{\partial x}+ \imath\frac{\partial u}{\partial x}\right) \delta y \\
-        & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right)(\delta x+ \imath \delta y) 
+        \Delta f & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \Delta x+\left(-\frac{\partial v}{\partial x}+ \imath\frac{\partial u}{\partial x}\right) \Delta y \\
+        & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right)(\Delta x+ \imath \Delta y) 
         \\
-        & = \left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \delta z
+        & = \left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \Delta z
         \end{aligned}
     \end{equation*}
-可以看到右式与$\delta z\to 0$的方式无关,因此根据可导的定义判断$f(z)$可导.
+可以看到右式与$\Delta z\to 0$的方式无关,因此根据可导的定义判断$f(z)$可导.
 \end{proof}
 对于极坐标系,我们也可以得到相应的柯西-黎曼方程,
 \begin{equation}
