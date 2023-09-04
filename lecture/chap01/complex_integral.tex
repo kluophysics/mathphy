@@ -16,7 +16,7 @@ $\ell$分成$n$个线段(见图\ref{fig:complex_integral}).函数$f(z)$在线段
 函数$f(z)$沿着路径$\ell$的\textbf{路径积分}(Contour integral), 记作
 $\int_{\ell} f(z) dz$,即
 \begin{equation}
-    \int_{\ell} f(z) dz = \lim_{n\to \infty} \sum_{i=k}^{n} f(\xi_k) (z_{k} - z_{k-1}) . 
+    \int_{\ell} f(z) dz = \lim_{n\to \infty} \sum_{k=1}^{n} f(\xi_k) (z_{k} - z_{k-1}) . 
 \end{equation}
 其实,我们还可以将该定义用实虚部的方式表达出来,
 \begin{align}
@@ -24,6 +24,6 @@ $\int_{\ell} f(z) dz$,即
     \\
     & = \int_{\ell} \left( u(x,y) dx  -  v(x,y) dy \right) + \imath \int_{\ell}  \left( v(x,y) dx  + u(x,y)dy \right) 
 \end{align}
-这样一来,复变函数的路径积分就转化成了两个实变函数的线积分.因此,很多实函数线积分的性质可以应用在路径积分上.
+这样一来,复变函数的路径积分就转化成了两个实变函数的线积分.因此,很多实函数线积分的性质可以应用在复变函数路径积分上.
 
 

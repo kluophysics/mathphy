@@ -8,7 +8,7 @@
 所有的闭合回路的积分我们用$\oint$来表示.证明会用到格林公式和柯西-黎曼条件,具体参考其他书目,其中
 格林公式为
 \begin{equation}
-    \oint_\ell P dx + Q dy = \iint_S \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} dx dy \right)
+    \oint_\ell P dx + Q dy = \iint_S \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}  \right) dx dy
 \end{equation}
 对于某些区域有奇点的情况,我们可以取一绕过奇点的闭合路径,如图\ref{fig:complexregion}所示的情况.柯西定理重要的应用在于将沿某一路径积分转化为
 另一个或多个路径积分的求和.通常这样来规定正方向,当观察者沿着该方向前进时,区域总是在观察者的左侧.
@@ -41,21 +41,22 @@
 首先,有柯西定理易知,若回路$\ell$不包含$\alpha$,则被积函数在$\ell$所围区域上是解析的,故积分值为零.下面讨论$\ell$包围$\alpha$的情形.
 如果$n\geq 0$,被积函数在$\ell$所围区域是解析的,积分为零.若$n<0$,则有一个奇点$\alpha$.取以$\alpha$为圆心半径为$R$的圆周$C$,$R$大小任意.
 于是圆周上有$z-\alpha = Re^{\imath \theta}$.
-\begin{equation}
+$$
 \begin{aligned}
     I &= \oint_\ell (z-\alpha)^n dz\\
      &= \oint_c R^n e^{\imath n \theta} d (\alpha + R e^{\imath \theta})\\
      & =  \imath R^{n+1} \int_0^{2\pi} e^{\imath (n+1)\theta}  d\theta \\
      & = 0 \quad \textrm{if} \quad n\neq -1.
 \end{aligned}
-\end{equation}
+$$
+
 当$n = -1$时, $I = 2\pi \imath$.其实,从原函数的角度来看,这个结果很容易理解.当$n\neq -1$,原函数为$(z-\alpha)^{n+1}/(n+1)$, 绕$\alpha$一周
 原函数变化量为零.而当$n=-1$时,原函数时$\ln(z-\alpha)$, 绕一周变化量为$2\pi \imath$.因此我们得到了非常重要的表达式
-\begin{equation}
+$$
     \begin{aligned}
         & \frac{1}{2 \pi \mathrm{i}} \oint_l \frac{\mathrm{d} z}{z-\alpha}= \begin{cases}0 & (l \text { 不包围 } \alpha), \\
         1 & (l \text { 包围 } \alpha) . \end{cases} \\
         & \frac{1}{2 \pi \mathrm{i}} \oint_l(z-\alpha)^n \mathrm{~d} z=0 \quad(n \neq-1) .
         \end{aligned}
-\end{equation}
+$$
 \end{examplebox}
