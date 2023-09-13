@@ -1,0 +1,183 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{9.21}
+\pagestyle{fancy}
+
+% \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\CTEXthesection\quad #1}}
+% \renewcommand{\sectionmark}[1]{\markleft{\CTEXthesection\quad #1}}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法11044102}
+\fancyhead[R]{课后习题}
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+
+
+% \title{习题01}
+% \author{截止日期: }
+% \author{罗凯\\
+% 数学物理方法}
+% \date{截止日期:}
+% \maketitle
+ 
+% \begin{problem}{1.1}
+% 找出满足方程\[z - 2 = 3 \frac{1+ \imath t}{1-\imath t}, -\infty < t <\infty\]的所有点$z$.
+% \end{problem}
+
+
+\begin{problem}{3.1}
+  设 $\Psi(t, x)=e^{ \left(2 t x-t^2\right)}$, $t$是复变数, 试证: 
+  $$
+  \left.\frac{\partial^n \Psi(t, x)}{\partial t^n}\right|_{t=0}=(-1)^n e^{x^2} \frac{d^n}{d x^n} e^{-x^2}
+  $$
+  提示: 对回路积分进行积分变数的代换 $\xi=(z-x) / z$.
+\end{problem}
+
+\begin{problem}{3.2}
+  $f(z)$ 在全平面解析, 且 $|f(z)| \geq 1$, 证明 $f(z)$ 为常数.
+  \\
+  提示:考虑$F(z) = \frac{1}{f(z)}$.
+\end{problem}
+
+\begin{problem}{3.3}
+  根据模最大原理,
+  求 $|\sin z|$ 在闭区域 $0 \leq \Re z \leq 2 \pi, 0 \leq \Im z \leq 2 \pi$ 中的最大值.
+\end{problem}
+
+\begin{problem}{3.4}
+  设 $f(z)$ 在区域 $B$ 内解析, $C$ 为 $B$ 内任一简单闭曲线, 证明对于 $G$ 内, 
+  但不在 $C$ 上的 任一点 $z$, 
+  $$
+  \oint_C \frac{f^{\prime}(\xi)}{\xi-z} d \xi=\oint_C \frac{f(\xi)}{(\xi-z)^2} d \xi.
+  $$ 
+  \end{problem}
+
+
+  
+\begin{problem}{3.5}
+  计算:
+  \begin{itemize}
+    \item 
+    (i) $\int_{|z|=1} \frac{d z}{z}$;
+    (ii) $\int_{|z|=1} \frac{d z}{|z|}$;
+    (iii) $\int_{|z|=1} \frac{|d z|}{z}$;
+    (iv) $\int_{|z|=1}\left|\frac{d z}{z}\right|$ .
+
+    \item  $\oint_C \frac{\sin \frac{\pi z}{4}}{z^2-1} d z, C$ 分别为
+
+    (i) $|z|=\frac{1}{2}$,
+    (ii) $|z-1|=1$,
+    (iii) $|z|=3$.
+    
+  \end{itemize}
+
+\end{problem}
+
+
+\begin{problem}{3.6}
+  写出$\sin{z},\cos{z}$的级数展开,并写出各自的前4项.
+  \end{problem}
+  
+
+
+
+\begin{problem}{3.7}
+  判断下列级数的收敛性及绝对收敛性:
+  \begin{enumerate}
+    \item $\sum \frac{i^n}{\ln n}$;
+    \item $\sum \frac{i^n}{n}$.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}{3.8}
+  确定下列级数的收敛半径（或收敛区域):
+  \begin{enumerate}
+    \item $\sum z^n$;
+    \item $\sum \frac{1}{2^n n^n} z^n$;
+    \item $\sum \frac{n !}{n^n} z^n$;
+    \item $\sum n^{\ln{n}} z^n$;
+    \item $\sum 2^n \sin \frac{z}{3^n}$;
+    \item $\sum \frac{\ln \left(n^n\right)}{n !} z^n$.
+  \end{enumerate}
+
+\end{problem}
+
+
+\begin{problem}{3.9}
+  已知幂级数 $\sum a_n z^n$ 和 $\sum b_n z^n$ 的收敛半径分别为 $R_1, R_2$, 
+  试讨论下列幂级数的收敛半径
+  \begin{enumerate}
+    \item $\sum\left(a_n+b_n\right) z^n$;
+    \item $\sum a_n b_n z^n$.
+  \end{enumerate}
+\end{problem}
+
+% \begin{proof}[Solution]
+% Write a solution here
+% \begin{align*}
+% x &= y
+% \end{align*}
+% \begin{tabular}{| >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} |>{\centering\arraybackslash}m{1in} |}
+% \hline 
+%   \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} &\textbf{E} \\[8pt]
+%   \hline
+%   a & b & c & d & e \\[8pt]
+%   \hline
+%   f & g &h & i & j \\[8pt]
+%   \hline
+% \end{tabular}
+% \end{proof}
+
+\end{document}

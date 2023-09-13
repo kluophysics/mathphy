@@ -2,13 +2,13 @@
 \label{subsec:residual_theorem}
 柯西定理指出,若被积函数$f(z)$在回路$\ell$所围区域是解析的,则回路积分$\oint_\ell f(z) dz$为零.下面讨论所围区域包含奇点的情况.
 假设一个含有$m$阶极点$z=z_0$的函数,它可以展开为洛朗级数
-\[
+$$
   f(z) = \sum_{k = -m} ^{\infty} a_k (z - z_0)^k  
-\]
+$$
 取圆环内包含$z_0$的闭合回路,由柯西定理可知,回路积分$\oint_\ell f(z) dz = \oint_C f(z) dz$, 将洛朗展开带入逐项积分,可得
-\[
+$$
 \oint_\ell f(z) dz = \sum_{k = -m} ^{\infty} \oint_C  (z - z_0)^k dz,
-\]
+$$
 由前面例题可知,只有$a_{-1}$项不为零,其他项为零.而$a_{-1}$项的积分为$2\pi\imath$.因此,我们得到
 \begin{equation}
     \oint_\ell f(z) dz = 2\pi \imath a_{-1} .
@@ -46,21 +46,21 @@ $n$阶极点$z_0$,那么有
         \item $\frac{\ln{z}}{z^2 + 4}$在$z=2e^{\imath \pi}$处的留数为$\lim_{z\to 2e^{\imath \pi}} \frac{(z-2e^{\imath \pi})\ln{z} }{z^2 + 4} = 
         \frac{\ln 2 + \imath \pi}{4\imath} = \frac{\pi}{4} - \frac{\imath\ln{2}}{4}.$
         \item $f(z) = \frac{\cot{\pi z}}{z(z+2)}$在$z=0$处的留数.\\
-            \[
+            $$
               f(z) = \frac{1}{z} \left[\frac{1}{\pi z} + O(z) \right]\frac{1}{2} \left[1 - \frac{z}{2} + O(z^2)\right]  
-            \]
+            $$
             可以得到该函数的留数为$-1/(4\pi)$.
         \item $f(z) = \frac{1}{z^n - 1}$在$z=1$处的留数可通过如下方法.可知
-        \[
+        $$
             f(z)=\frac{1}{z^n-1}=\frac{1}{(z-1)\left(z^{n-1}+z^{n-2}+\cdots+z+1\right)},
-        \]
+        $$
         因此,有
-        \[
+        $$
             \begin{aligned}
                 \operatorname{Res} f(1) & =\lim _{z \to 1}\left[(z-1) \frac{1}{(z-1)\left(z^{n-1}+z^{n-2}+\cdots+z+1\right)}\right] \\
                 & =\lim _{z \to 1} \frac{1}{z^{n-1}+z^{n-2}+\cdots+z+1}=\frac{1}{n} .
             \end{aligned}
-        \]
+        $$
         或者用 $$
         \lim _{z \to 1}\left[\frac{1}{\left(z^n-1\right)^{\prime}}\right]=\lim _{z \to 1} \frac{1}{n z^{n-1}}=\frac{1}{n} .
         $$ 因此,此函数在$z=1$处的留数为$1/n$.
