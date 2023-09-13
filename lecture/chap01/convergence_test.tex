@@ -10,7 +10,7 @@
 \begin{equation}
     \sum_{k=1} |w_k| = \sum_{k=1}\sqrt { u_k^2 + v_k^2},
 \end{equation}
-若该级数收敛,则称原级数\textbf{绝对收敛}.绝对收敛的级数必然是收敛的.如果级数收敛,但非绝对收敛,那么我们称它为\textbf{条件收敛}.
+
 \subsubsection{比较判定法}
 如果我们有某一已知正项级数 $\sum_k a_k$收敛,若级数的每一项都满足 $0 \leq w_k \leq a_k$, 那么可以判定$\sum_k w_k$收敛.
 这可以利用柯西判据进行证明.相反的, 若同发散级数$\sum_{k} a_k$比较有,$0 \leq a_k  \leq w_k$, 那么可以判定$\sum_k w_k$发散.
@@ -56,8 +56,25 @@ $$
 % \end{gathered}
 % $$
 
-% \subsubsection{莱布尼兹判据(Leibniz Criterion)}
-此外,还有很多其他判定方法,如对于交错级数可以利用莱布尼兹判据(Leibniz Criterion).
+\subsubsection{根式判别法}
+对极限
+$$
+\lim_{k\to \infty} \sqrt[n]{w_n} = r,
+$$
+若$r<1$则级数收敛,若$r\geq 1$,则级数发散. 证明可以通过对通项取$n$次幂,通过比较判别法确定.
+
+
+
+\subsubsection{莱布尼兹判据(Leibniz Criterion)}
+此外,还有很多其他判定方法， 对于交错级数可以利用莱布尼兹判据(Leibniz Criterion).
+交错级数的形式为$\sum_{n=1} (-1)^{n+1} w_n, w_n >0$. 莱布尼兹判据说的是对于交错级数通项$w_n$单调递减且极限为零,则级数收敛.
+
+若该级数收敛,则称原级数\textbf{绝对收敛}.绝对收敛的级数必然是收敛的.如果级数收敛,但非绝对收敛,那么我们称它为\textbf{条件收敛}.
+试着自己验证一下交错调和级数
+\begin{equation}
+    \sum_{n=1}^{\infty}(-1)^{n-1} n^{-1}=1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots+\frac{(-1)^{n-1}}{n}+\cdots
+\end{equation}
+是条件收敛的.
 % \begin{enumerate}
 %     \item 
 % \end{enumerate}
