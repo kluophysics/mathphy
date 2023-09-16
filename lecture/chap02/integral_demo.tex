@@ -1,1 +1,104 @@
-\subsection{积分求解实例}
+\section{积分求解实例}
+
+\begin{itemize}
+    \item 计算定积分 
+    $$
+    I=\int_0^{\infty} x^{\alpha-1} \frac{1}{1+x} d x \quad(0<\alpha<1).
+    $$
+
+    解 将被积函数 $x^{\alpha-1} /(1+x)$ 从实轴延拓到复数 $z$ 平面得到 
+    $f(z)=z^{\alpha-1} /(1+z)$. 由于 $f(z)$ 含 有 $z^{\alpha-1}$ ，
+    而 $\alpha$ 不是整数，所以 $f(z)$ 是多值函数, 它有两个支点：原点和无限远点. 
+    $z$ 每绕原点或 无限远点一圈, 辐角增加 $2 \pi, z^{\alpha-1}$ 多出因子 
+    $e^{\imath 2 \pi(\alpha-1)}$ 亦即 $e^{\imath 2 \pi \alpha}$,
+     从而 $f(z)$ 也多出这么一个 因子.
+    从原点沿着正实轴直至无限远作割线.   
+    
+    $$
+\oint_l f(z) d z=\int_{\epsilon}^R \frac{x^{\alpha-1}}{1+x} d x+\int_{C_R} f(z) d z+\int_R^{\epsilon} \frac{x^{\alpha-1} e^{\imath 2 \pi \alpha}}{1+x} d x+\int_{C_{\epsilon}} f(z) d z .
+$$
+令 $R \rightarrow \infty, \epsilon \rightarrow 0$.
+ 上式左边按照留数定理应为 $2 \pi i\{f(z)$ 在有限远各奇点留数之和\}
+  右边第一个积分成为所求的 $I$, 第三个积分则成为 $-e^{\imath 2 \pi \alpha} I$. 
+  可以证明第 二个和第四个积分则成为零. 事实上,
+  $$
+\begin{aligned}
+\left|\int_{C_R} \frac{z^{\alpha-1}}{1+z} d z\right| & =\left|\int_{C_R} \frac{z^\alpha}{1+z} \frac{d z}{z}\right| \leqslant \max _{\left(C_R \text { 上 }\right)}\left|\frac{z^\alpha}{1+z}\right| \frac{\int|d z|}{|z|} \\
+= & \max \frac{R^\alpha}{|1+z|} \cdot \frac{2 \pi R}{R}=2 \pi \max \frac{R^\alpha}{|1+z|} \\
+& \sim 2 \pi \frac{1}{R^{1-\alpha} \rightarrow 0} \quad(\text { 于 } R \rightarrow \infty) .
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\left|\int_{C_{\epsilon}} \frac{z^{\alpha-1}}{1+z} d z\right|= & \left|\int_{C_{\epsilon}} \frac{z^\alpha}{1+z} \frac{d z}{z}\right| \leqslant \max _{\left(C_{\epsilon} \text { 上 }\right)}\left|\frac{z^\alpha}{1+z}\right| \frac{\int|d z|}{|z|} \\
+= & \max \frac{\epsilon^\alpha}{|1+z|} \cdot \frac{2 \pi \epsilon}{\epsilon}=2 \pi \max \frac{\epsilon^\alpha}{|1+z|} \\
+& \sim 2 \pi \frac{\epsilon^\alpha}{1} \rightarrow 0 \quad(\text { 于 } \epsilon \rightarrow 0) .
+\end{aligned}
+$$
+于是 $\left(1-e^{\imath 2 \pi \alpha}\right) I=2 \pi \imath\{f(z)$ 在有限远各奇点留数之和 $\}$.
+$f(z)=z^{\alpha-1}(1+z)^{-1}$ 只有一个单极点 $z_0=-1=e^{\imath \pi}$, 而
+$$
+Res f(-1)=\lim _{z \rightarrow-1}[(z+1) f(z)]=\lim _{z \rightarrow-1}\left[z^{\alpha-1}\right]=e^{\imath(\alpha \pi-\pi)}=-e^{\imath \alpha \pi} \text {. }
+$$
+因此
+$$
+\begin{aligned}
+I & =-\frac{2 \pi \imath e^{\imath \pi \alpha}}{1-e^{\imath 2 \pi \alpha}}=-\frac{2 \pi \imath e^{\imath \pi \alpha}}{e^{\imath \pi \alpha}\left(e^{-\imath \pi \alpha}-e^{\imath \pi \alpha}\right)} \\
+& =\frac{2 \pi \imath}{\left(e^{-\imath \pi \alpha}-e^{\imath \pi \alpha}\right)}=\frac{2 \pi \imath}{2 \sin \pi \alpha}=\frac{\pi}{\sin \pi \alpha} .
+\end{aligned}
+$$
+
+    \item 计算菲涅耳积分
+    $$
+    I_1=\int_0^{\infty} \sin \left(x^2\right) \mathrm{d} x \text { 及 } I_2=\int_0^{\infty} \cos \left(x^2\right) \mathrm{d} x \text {. }
+    $$
+
+    解 由于 $\sin \left(x^2\right)=\operatorname{Im} e^{\imath x^2}$, 而 $\cos \left(x^2\right)=\operatorname{Re} e^{\imath x^2}$, 所以
+$$
+I_2+\imath I_1=\int_0^{\infty} e^{\imath x^2} d x .
+$$
+取图 4-10 所示回路 $l$. 由于 $e^{\mathrm{iz}^2}$ 没有有限远奇点, 所以根据留数定理得
+$$
+\oint_l e^{\imath z^2} d z=0,
+$$
+即 $\int_0^R e^{\imath x^2} d x+\int_{C_R} e^{\imath z^2} d z+\int_R^0 e^{\imath\left(\rho e^{\imath \pi / 4}\right)^2} d\left(\rho e^{\imath \pi / 4}\right)=0$,
+
+令 $R \rightarrow \infty$. 第一个积分即所求的 $I_2+\imath I_1$. 第三个积分不难如下算出 :
+$$
+\begin{aligned}
+\lim _{R \rightarrow \infty} \int_R^0 e^{\imath\left(\rho^2 \imath\right)} e^{\imath \pi / 4} d \rho & =\lim _{R \rightarrow \infty}\left(-e^{\imath \pi / 4}\right) \int_0^R e^{-\rho^2} d \rho=-e^{\imath \pi / 4} \int_0^{\infty} e^{-\rho^2} d \rho \\
+& =-\frac{\sqrt{\pi}}{2} e^{\imath \pi / 4}=-(1+\imath) \sqrt{\frac{\pi}{8}} .
+\end{aligned}
+$$
+可以证明第二个积分成为零. 为此, 先作一次分部积分,
+$$
+\int_{C_R} e^{\imath z^2} d z=\left.\frac{e^{\imath z^2}}{2 \imath z}\right|_{z=R} ^{R e^{\imath \pi / 4}}+\int_{C_R} e^{\imath z^2} \frac{\mathrm{d} z}{2 \imath z^2},
+$$
+其中已积出部分的模
+$$
+\left|\frac{e^{-R^2}}{2 \imath R e^{\imath \pi / 4}}-\frac{e^{\imath R^2}}{2 \imath R}\right| \leqslant \frac{e^{-R^2}}{2 R}+\frac{1}{2 R} \rightarrow 0 \quad(\text { 于 } R \rightarrow \infty),
+$$
+未积出部分的模
+$$
+\begin{aligned}
+\left|\int_{C_R} \frac{e^{\imath 2^2}}{2 \mathrm{iz}^2} d z\right| & =\left|\int_{C_R} \frac{e^{-R^2 \sin 2 \varphi+\imath^2 \cos 2 \varphi}}{2 \imath R^2 e^{\imath 2 \varphi}} R e^{\imath \varphi} \mathrm{id} \varphi\right| \\
+& \leqslant \int_{C_R} \frac{e^{-R^2 \sin 2 \varphi}}{2 R^2} R d \varphi \leqslant \max \left(\frac{e^{-R^2 \sin 2 \varphi}}{2 R}\right) \frac{\pi}{4}
+\\
+&=\frac{1}{2 R} \frac{\pi}{4} \rightarrow 0 \quad(\text { 于 } R \rightarrow \infty) .
+\end{aligned}
+$$
+于是
+$$
+\begin{gathered}
+I_2+\imath I_1-\sqrt{\frac{\pi}{8}}(1+\imath)=0, \\
+I_1=\sqrt{\frac{\pi}{8}}, \quad I_2=\sqrt{\frac{\pi}{8}} .
+\end{gathered}
+$$
+
+\item 
+    \item ；
+    \item ；
+    \item ；
+    \item 
+\end{itemize}
