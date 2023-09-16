@@ -56,10 +56,20 @@ $|\zeta - z|$的极小值为$\delta$, $C$的长度为$s$,则
 \]
 令$n\to \infty$,$|f(z)| \leq M$.证毕.
 
-\textbf{刘维尔(Liouville)定理} \quad 如$f(z)$在全平面上解析且有界,则$|f(z)|$必为常数.
+\textbf{刘维尔(Liouville)定理} \quad 如$f(z)$在全平面上解析且有界,则$f(z)$必为常数.
 
 \textbf{证} \quad $f$有界,即$|f(z)| \leq N$, 对$f'(z)$取模,取以$z$为圆心半径为$R$的圆周,可得
 \[
   |f'(z)| \leq \frac{1}{2\pi} \frac{N} {R^2} 2\pi R = \frac{N}{R},
 \]
 由于$R$任意选定,令$R\to \infty$,有$f'(z) \equiv 0$,所以$f(z)$为常数.
+
+刘维尔定理的一个应用是可以证明代数基本定理，即对任意$n$阶多项式(Polynomial)
+\begin{equation}
+    P(z) = \sum_{k=0}^{n} a_k z^k (n>0, a_n \neq 0)
+    \label{eq:poly}
+\end{equation}
+有$n$个根满足$P(z) = 0$. 它的证明可以通过反证的方法. 假设$P(z)$没有零点,即$P(z)\neq 0$, 则$1/P(z)$是解析
+且有界的,根据刘维尔定理可知$1/P(z)$为常数,即$P(z)$为常数,与$a_n\neq 0$矛盾.可以知道,$P(z)$至少有一个根,记为$\lambda_1$,
+那么对$P(z)/(z-\lambda_1)$这一$n-1$阶多项式进行上述论证,我们可以降次直至一阶多项式，共计$n$个根,因此$n$阶多项式
+有$n$个根.
