@@ -78,3 +78,20 @@
 \end{equation}
 
 
+% 现在讨论函数项级数
+% $$
+% \sum_{k=0}^{\infty} w_k(z)=w_0(z)+w_1(z)+w_2(z)+\cdots+w_k(z)+\cdots,
+% $$
+如果函数项级数$\sum w_k(z)$在某个区域 $B$ 上所有的点, 级数都收敛, 则称级数在 $B$ 上收敛. 应用柯西判据, 级数在 $B$上收敛的充分必要条件是, 在 $B$ 上各点 $z$, 对于任一给定的小正数 $\epsilon$, 必有 $N(z)$ 存在, 使得当 $n>N(z)$ 时,
+$$
+\left|\sum_{k=n+1}^{n+p} w_k(z)\right|<\epsilon,
+$$
+式中 $p$ 为任意正整数. 若 $N$ 跟 $z$ 无关, 则称级数在 $B$ 上\textbf{一致收敛}.
+对于一致收敛的级数,可以逐项求导
+$$
+S' (z) = [ \sum_{k=0}^{\infty} w_k(z)]' =\sum_{k=0}^{\infty}  w_k'(z),
+$$
+和积分
+$$
+\int_l S(z) dz = \int_l \sum_{k=0}^{\infty} w_k(z) dz=\sum_{k=0}^{\infty} \int_l w_k(z) dz .
+$$
