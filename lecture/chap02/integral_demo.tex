@@ -1,4 +1,4 @@
-\section{积分求解实例}
+\subsection{积分求解实例}
 
 \begin{itemize}
     \item 计算定积分 
@@ -49,7 +49,7 @@ I & =-\frac{2 \pi \imath e^{\imath \pi \alpha}}{1-e^{\imath 2 \pi \alpha}}=-\fra
 \end{aligned}
 $$
 
-    \item 计算菲涅耳积分
+    \item 计算菲涅耳积分(Fresnel integrals)
     $$
     I_1=\int_0^{\infty} \sin \left(x^2\right) \mathrm{d} x \text { 及 } I_2=\int_0^{\infty} \cos \left(x^2\right) \mathrm{d} x \text {. }
     $$
@@ -82,7 +82,7 @@ $$
 未积出部分的模
 $$
 \begin{aligned}
-\left|\int_{C_R} \frac{e^{\imath 2^2}}{2 \mathrm{iz}^2} d z\right| & =\left|\int_{C_R} \frac{e^{-R^2 \sin 2 \varphi+\imath^2 \cos 2 \varphi}}{2 \imath R^2 e^{\imath 2 \varphi}} R e^{\imath \varphi} \mathrm{id} \varphi\right| \\
+\left|\int_{C_R} \frac{e^{\imath 2^2}}{2 \imath {z}^2} d z\right| & =\left|\int_{C_R} \frac{e^{-R^2 \sin 2 \varphi+\imath^2 \cos 2 \varphi}}{2 \imath R^2 e^{\imath 2 \varphi}} R e^{\imath \varphi} \imath d \varphi\right| \\
 & \leqslant \int_{C_R} \frac{e^{-R^2 \sin 2 \varphi}}{2 R^2} R d \varphi \leqslant \max \left(\frac{e^{-R^2 \sin 2 \varphi}}{2 R}\right) \frac{\pi}{4}
 \\
 &=\frac{1}{2 R} \frac{\pi}{4} \rightarrow 0 \quad(\text { 于 } R \rightarrow \infty) .
@@ -95,10 +95,55 @@ I_2+\imath I_1-\sqrt{\frac{\pi}{8}}(1+\imath)=0, \\
 I_1=\sqrt{\frac{\pi}{8}}, \quad I_2=\sqrt{\frac{\pi}{8}} .
 \end{gathered}
 $$
+\item 考虑用Feynman技巧来计算
+$$
+I = \int_0^1 \frac{x^2-1}{\log x} d x
+$$
+设计这样的函数
+$$
+G(t):=\int_0^1 \frac{x^t-1}{\log x} d x
+$$
+$G(0) = 0$,于是问题变为求$G(2)$.不难验证
+$$
+G^{\prime}(t)=\int_0^1 x^t d x=\frac{1}{t+1}
+$$
+对$t$求积分后得到
+$$
+G(2)=\int_0^2 G^{\prime}(t) d t=\int_0^2 \frac{d t}{t+1}=\log 3.
+$$
 
-\item 
-    \item ；
-    \item ；
-    \item ；
-    \item 
+\item 考虑用Feynman技巧来验证高斯积分:
+$$
+\int_0^{\infty} e^{-x^2} d x = \frac{\sqrt{\pi}}{2}.
+$$
+\\
+定义一个$t$的函数
+$$
+I(t):=\int_0^{\infty} \frac{e^{-x^2}}{1+(x / t)^2} d x, t>0. 
+$$
+于是菲涅尔积分就是求$I_1 = I(\infty)$.
+做代换$x/t=y$后,并换回积分变量为$x$有 $$
+I(t)=t \int_0^{\infty} \frac{e^{-t^2 x^2}}{1+x^2} d x
+$$
+可以得到 $$
+\lim _{t \rightarrow 0} \frac{I(t)}{t}=\frac{\pi}{2}.
+$$
+为了能利用上面的技巧,我们将考虑
+$$
+e^{-t^2} I(t)=t \int_0^{\infty} \frac{e^{-t^2\left(1+x^2\right)}}{1+x^2} d x
+$$
+对于
+$$
+\frac{d}{d t}\left(t^{-1} e^{-t^2} I(t)\right)=\int_0^{\infty}-2 t e^{-t^2\left(1+x^2\right)} d x=-2 e^{-t^2} \int_0^{\infty} e^{-u^2} d u=-2 e^{-t^2} I(\infty)
+$$
+
+两边积分
+$$
+\underbrace{\int_0^{\infty} \frac{d}{d t}\left(t^{-1} e^{-t^2} I(t)\right) d t}_{=-\lim _{t \rightarrow 0} \frac{I(t)}{t}}=\underbrace{\int_0^{\infty}-2 e^{-t^2} I(\infty) d t}_{=-2 I(\infty)^2}
+$$
+得到
+$$
+I(\infty) = \sqrt{\frac{\pi}{4}} = \frac{\sqrt{\pi}}{2}.
+$$
+
 \end{itemize}
