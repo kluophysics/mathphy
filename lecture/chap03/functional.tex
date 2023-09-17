@@ -1,8 +1,8 @@
-\subsection{泛函和变分法}
+\subsection{泛函}
 \label{subsec:functional}
-变分法在数学、物理、工程和其它学科有广泛应用价值.通过以下的几个例子,我们可以了解变分法具体解决什么问题.
+通过以下的几个例子,我们可以了解变分法具体解决什么问题.
 
-如图所示,现在寻找在两点$(x_1, y_1)$和$(x_2,y_2)$间找一个最短的路径$u(x)$.常识告诉我们,两点之间直线最短.
+如图所示,现在寻找在两点$(x_1, y_1)$和$(x_2,y_2)$间找一个最短的路径$y=u(x)$.常识告诉我们,两点之间直线最短.
 数学上表示出来为直线方程,
 \[
   y = k x + b = \frac{y_2 - y_1}{x_2 - x_1} ( x - x_1) + y_1  
@@ -13,22 +13,61 @@ $ds^2 = dx^2 + dy^2$,
 J[u] = \int_{x_1}^{x_2} \sqrt{ 1 + u'(x)^2} dx    
 \]
 其中 $u'(x) = du(x)/dx$,满足边界条件$u(x_1) = y_1, u(x_2) = y_2$.因此,我们的问题即求如何找到函数$u(x)$使得
-$J$最小化.这里的方括号区别于函数的圆括号,用来表示这里的映射是函数$\to$数的.这种函数的函数称为\textbf{泛函}.
-具体的求解我们下面介绍.
-理论力学上,最小作用量原理可以导出牛顿力学方程.我们定义的体系的动能为$K = \half m \bv^2$,
-势能为$V = V(\br)$, 定义作用量
-\begin{equation}
-  A = \int \left[ \half m \left( \frac{d\br}{dt} \right)^2 - V(\br) \right] dt 
-\end{equation}
-上式利用了定义$\vec{\bv} = \frac{d\br}{dt}$. 对作用量$A$进行最小化将得到$\br$满足的方程,即牛顿第二定律方程.
+$J$最小化.具体的求解我们下面介绍.这里的方括号区别于函数的圆括号,用来表示这里的映射是函数$\to$数的.
+这种$J$和整个函数$u(x)$的依赖关系成为\textbf{泛函关系}.
+设对于 (某一函数集合内的) 任意一个函数 $u(x)$, 
+有另一个数 $J[y]$ 与之对应, 则称 $J[y]$ 为 $u(x)$ 的\textbf{泛函}. 
+这里的函数集合, 即泛函的定义域, 通常包含要求 $u(x)$ 满足一定的边界条件,
+并且具有连 续的二阶导数. 这样的 $u(x)$ 称为可取函数. 
+% 这种函数的函数称为\textbf{泛函}.
+
+
+\begin{itemize}
+  \item \textbf{最速降线问题}(rachistochrone problem) 一质点在重力作用下无摩擦的沿着某一起终点高度差恒定的轨道下降,初速度为零,如何设计
+  轨道形状使得所需下降时间最短.
+  \begin{equation}
+    T[u] = \int_{(x_0,y_0)}^{(x_1, y_1)} \frac{ds}{\sqrt{2 g(y_0 - u)}} = \int_{x_0}^{x_1} \frac{\sqrt{1+u'^2}}{\sqrt{2 g (y_0 - u)}} dx.
+  \end{equation}
+
+  \item \textbf{最小作用量原理}(least action principle) 理论力学上,它可以导出牛顿力学方程.我们定义的体系的动能为$K = \half m \bv^2$,
+  势能为$V = V(\br)$, 定义作用量
+  \begin{equation}
+    A[\br] = \int \left[ \half m \left( \frac{d\br}{dt} \right)^2 - V(\br) \right] dt 
+  \end{equation}
+  上式利用了定义$\vec{\bv} = \frac{d\br}{dt}$. 对作用量$A$进行最小化将得到$\br$满足的方程,即牛顿第二定律方程.
+
+  \item \textbf{悬链线问题} \quad 有一质地均匀、柔软的绳索，两端固定，绳索仅受重力的作用而下垂.试问该绳索在平衡状态时是怎样的曲线？\\
+  % 设绳索的最低点为$A$ .设绳索曲线的方程为$y=\phi(x)$,
+  % 考虑绳索上点$A$到另一点$M$间的一段弧$AM$,设其长为s.假定绳索的线密度为$\rho$,则弧$AM$所受重力为$\rho gs$.由于绳索是柔软的，因而在点$A$
+  % 处的张力沿水平的切线方向(该点导数为零),设其大小设为$H$;在点$M$处的张力沿该点处的切线方向,设其倾角为$\theta$,
+  % 其大小为$T$,因为作用于弧$AM$的外力相互平衡,把作用于弧$AM$上的力沿竖直及水平两方向分解，得:
+  % $$T \sin \theta=\rho g s, T \cos \theta=H$$
+  % 于是有,
+  % $$
+  %   y^{\prime}=a \int_0^x \sqrt{1+y^{\prime 2}} \mathrm{~d} x
+  % $$  
+  假设重力加速度恒为 $\mathrm{g}$ ，则某物体重力势能可表述为 $U=m g h$. 设绳子两端点距离为 $\mathrm{L}$.
+建立 $x-y$ 坐标系， $y$ 表示高度， $y(x)$ 代表绳索形成的曲线，绳索关于 $y$ 轴对称。绳子上每个点的重力势 能个表示为重力势能公式两边求导的结果： $d U=d(m g \cdot y(x))=g \cdot y(x) \cdot d m$.
+设绳索单位长度质量为 $\rho$ ，则根据其定义， $\frac{d m}{d s}=\rho$ ，所以
+$d m=\rho \sqrt{d x^2+d y^2}=\rho \sqrt{1+\left(\frac{d y}{d x}\right)^2} d x$
+代入得 $d U=\rho g \sqrt{1+\left(\frac{d y}{d x}\right)^2} d x \cdot y(x)$
+作用于整条绳索上的重力势能表示为:
+$$
+U[y(x)]=\int_{-L / 2}^{L / 2} \rho g \sqrt{1+y^{\prime}(x)^2} \cdot y(x) d x,
+$$
+悬链线就是在此情形中重力势能最小的曲线. 
+
+\end{itemize}
+
+\subsection{泛函的极值}
 
 对于一般的情况,有函数到数的映射写成
 \begin{equation}
   J[u] = \int_{a}^{b}  dx L(u, u', u'', \cdots| x), 
 \end{equation}
 其中$L(u, u', u'',\cdots | x)$为$u$的局域泛函, $u' \equiv du/dx, u'' \equiv = du^2/dx^2$.
-对于不包含一阶以上的导数时,即$L = L(u,u')$,对函数$u(x)$作一微小变化$\delta u(x)$,在积分上下限处,
-有$\delta u(a) = \delta u(b) = 0$.$J[u]$取最小值时,需满足$\delta J[u] \equiv = J[u + \delta u] - J[u]$
+对于不包含一阶以上的导数时,即$L = L(u,u')$,对函数$u(x)$作一微小变化$\delta u(x)$,称为$u(x)$的\textbf{变分},在积分上下限处,
+有$\delta u(a) = \delta u(b) = 0$. $J[u]$取最小值时,需满足$\delta J[u] \equiv = J[u + \delta u] - J[u]$
 为零.利用$\delta u' = \funcpd{}{x} \delta u$和$fg' = (fg)' - f'g$,
 \begin{align}
   J[u + \delta u] &= \int_{a}^{b}  dx L(u + \delta u, u' + \delta u'| x) 
