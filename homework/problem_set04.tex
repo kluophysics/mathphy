@@ -87,7 +87,7 @@
 \end{problem}
 
 \begin{problem}{4.2}
-  在指定环域上(可挖去除奇点$z_0$)将下列函数展开为洛朗级数.
+  在指定环域上(或可挖去除奇点$z_0$处)将下列函数展开为洛朗级数.
   \begin{enumerate}
     \item$1 / z^2(z-1)$ 在 $z_0=1$;
     \item $1 /(z-2)(z-3)$ 在 $|z|>3$;
@@ -112,77 +112,32 @@
 
   
 \begin{problem}{4.5}
-  计算:
-  \begin{itemize}
-    \item 
-    (i) $\int_{|z|=1} \frac{d z}{z}$;
-    (ii) $\int_{|z|=1} \frac{d z}{|z|}$;
-    (iii) $\int_{|z|=1} \frac{|d z|}{z}$;
-    (iv) $\int_{|z|=1}\left|\frac{d z}{z}\right|$ .
-
-    \item  $\oint_C \frac{\sin \frac{\pi z}{4}}{z^2-1} d z, C$ 分别为
-
-    (i) $|z|=\frac{1}{2}$,
-    (ii) $|z-1|=1$,
-    (iii) $|z|=3$.
-    
-  \end{itemize}
-
+分情况讨论 $F(z)=\frac{f^{\prime}(z)}{f(z)}=\frac{d}{d z} \ln f(z)$ 在 $z=a$ 点的性质, 
+  若 $a$ 点是 $f(z)$ 的: 
+  \\
+  (1) $m$ 阶零 点; 
+  \\
+  (2) $m$ 阶极点.
+  \\
+  如果 $z=a$ 是 $F(z)$ 的孤立奇点的话, 则求出函数 $F(z)$ 在该点的留数.
 \end{problem}
 
 
 \begin{problem}{4.6}
-  写出$\sin{z},\cos{z}$的级数展开,并写出各自的前4项.
-  \end{problem}
+  计算下列积分值
+  \begin{enumerate}
+    \item $\oint_C \frac{d z}{1+z^4}, C$ 为 $|z-1|=1$;
+    \item $\oint_{|z|=2} \frac{1}{z^3\left(z^{10}-2\right)} d z$;
+    \item $\oint_{|z|=1} \frac{e^z}{z^3} d z$; 
+    \item $\int_0^{2 \pi} \frac{d x}{(a+b \cos x)^2}, \quad a>b>0$;
+    \item $\int_0^{2 \pi} \frac{d x}{(a+b \cos x)^2}, \quad a>b>0$;
+    \item $\int_{-\infty}^{\infty} \frac{x^2 d x}{\left(x^2+1\right)\left(x^2-2 x \cos \theta+1\right)}, \theta$ 为实数, 且 $\sin \theta \neq 0$.
+  \end{enumerate}
+
+\end{problem}
   
 
 
 
-\begin{problem}{4.7}
-  判断下列级数的收敛性及绝对收敛性:
-  \begin{enumerate}
-    \item $\sum \frac{i^n}{\ln n}$;
-    \item $\sum \frac{i^n}{n}$.
-  \end{enumerate}
-\end{problem}
-
-\begin{problem}{4.8}
-  确定下列级数的收敛半径（或收敛区域):
-  \begin{enumerate}
-    \item $\sum z^n$;
-    \item $\sum \frac{1}{2^n n^n} z^n$;
-    \item $\sum \frac{n !}{n^n} z^n$;
-    \item $\sum n^{\ln{n}} z^n$;
-    \item $\sum 2^n \sin \frac{z}{3^n}$;
-    \item $\sum \frac{\ln \left(n^n\right)}{n !} z^n$.
-  \end{enumerate}
-
-\end{problem}
-
-
-\begin{problem}{4.9}
-  已知幂级数 $\sum a_n z^n$ 和 $\sum b_n z^n$ 的收敛半径分别为 $R_1, R_2$, 
-  试讨论下列幂级数的收敛半径
-  \begin{enumerate}
-    \item $\sum\left(a_n+b_n\right) z^n$;
-    \item $\sum a_n b_n z^n$.
-  \end{enumerate}
-\end{problem}
-
-% \begin{proof}[Solution]
-% Write a solution here
-% \begin{align*}
-% x &= y
-% \end{align*}
-% \begin{tabular}{| >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} |>{\centering\arraybackslash}m{1in} |}
-% \hline 
-%   \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} &\textbf{E} \\[8pt]
-%   \hline
-%   a & b & c & d & e \\[8pt]
-%   \hline
-%   f & g &h & i & j \\[8pt]
-%   \hline
-% \end{tabular}
-% \end{proof}
 
 \end{document}
