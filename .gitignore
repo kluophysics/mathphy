@@ -5,4 +5,9 @@
 *.pdf
 *.aux
 *.bbl
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.log
 
