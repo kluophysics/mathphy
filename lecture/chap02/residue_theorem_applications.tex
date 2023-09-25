@@ -4,7 +4,7 @@
 \begin{equation}
     \int_{0}^{2\pi} R(\cos{x}, \sin{x}) dx,
 \end{equation}
-当实变数 $x$ 从 0 变到 $2 \pi$ 时, 复变数 $z=\mathrm{e}^{\mathrm{i} x}$ 从 $z=1$ 出发沿单位圆 $|z|=1$ 逆时针 走一圈又回到 $z=1$,
+当实变数 $x$ 从 0 变到 $2 \pi$ 时, 复变数 $z=e^{\mathrm{i} x}$ 从 $z=1$ 出发沿单位圆 $|z|=1$ 逆时针 走一圈又回到 $z=1$,
 实变定积分化为复变回路积分, 就可以应用留数定理了. 至于实变定积分里的 $\cos x, \sin x$ 和 $d x$, 作如下变换:
 $$
 \cos x=\frac{1}{2}\left(z+z^{-1}\right), \quad \sin x=\frac{1}{2 \mathrm{i}}\left(z-z^{-1}\right), \quad d x=\frac{1}{\mathrm{i} z} \mathrm{~d} z .
@@ -52,7 +52,7 @@ $z f(z)$ 一致地 $\to 0$.
 \begin{equation}
     \oint_l f(z) d z=\int_{-R}^R f(x) d x+\int_{C_R} f(z) d z .
 \end{equation}
-根据留数定理,上式等于$2\pi \imath  \sum_j Res f(z_j)$.
+根据留数定理,上式等于$2\pi \imath  \sum_j \Res f(z_j)$.
 %\input{tikz/semicircle.tex}
 \begin{figure}[htb!]
     \centering
@@ -74,7 +74,7 @@ $z f(z)$ 一致地 $\to 0$.
 \]
 也就是说,
 \begin{equation}
-    \int_{-R}^R f(x) d x = 2\pi \imath  \sum_{z_j\in \textrm{上半平面}} Res f(z_j),
+    \int_{-R}^R f(x) d x = 2\pi \imath  \sum_{z_j\in \textrm{上半平面}} \Res f(z_j),
 \end{equation}
 
 \begin{examplebox}{计算\[ 
@@ -83,7 +83,7 @@ $z f(z)$ 一致地 $\to 0$.
     由$f(z) = \frac{1}{1+ x^2} = \frac{1}{(z-\imath)(z+\imath)}$可知
     其单极点$\pm \imath$,其中$\imath$在上半平面.
     \[
-      Res f(+\imath) = \frac{1}{2\imath}  
+      \Res f(+\imath) = \frac{1}{2\imath}  
     \]
     因此,$I = 2\pi \imath  \frac{1}{2\imath} = \pi$.由于该积分是一个常见积分
     亦可以通过原函数$\arctan(x)$得到.留数定理的还可以计算这样的积分,
@@ -104,7 +104,7 @@ $z f(z)$ 一致地 $\to 0$.
 为了使用留数定理,我们先需要证明在半圆上的路径积分为零,这里就要用到\textbf{约旦引理}.
 即证明
 \begin{equation}
-    \lim _{R \rightarrow \infty} \int_{C_R} F(z) \mathrm{e}^{\imath m z} \mathrm{~d} z=0 .
+    \lim _{R \rightarrow \infty} \int_{C_R} f(z) e^{\imath m z} d z=0 .
 \end{equation}
 当$R$足够大时,我们有$|f(z)| < \epsilon$.半圆积分
 \begin{align}
@@ -127,7 +127,7 @@ $z f(z)$ 一致地 $\to 0$.
 \end{equation}
 回到定积分$I$,可以得
 \begin{equation}
-    I=\int_{-\infty}^{\infty} f(x) e^{ \imath m x} d x = 2\pi \imath \sum Res e^{\imath m z} f(z)
+    I=\int_{-\infty}^{\infty} f(x) e^{ \imath m x} d x = 2\pi \imath \sum_{z_j \in \text{上半平面}} \Res e^{\imath m z_j} f(z_j)
 \end{equation}
 
 对于以下类型的积分,可以利用上述结论.如
