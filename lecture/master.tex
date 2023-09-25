@@ -32,7 +32,7 @@ headheight=14pt,% Set \headheight to 10mm
 \usepackage{import}
 \usepackage{natbib}
 \usepackage{txfonts} % for \ointctrclockwise
-
+\usepackage{appendix} %加入附录需使用appendix宏包
 \raggedbottom
 
 
@@ -124,74 +124,74 @@ headheight=14pt,% Set \headheight to 10mm
 \fancyfoot[C]{\thepage}
 % \fancyfoot[CE,O]{\thechapter}
 
-\ctexset{
-    part={
-        % format+ = \zihao{-2} \heiti \raggedright,
-        % format+ = \zihao{-1} \heiti,
-        % format+ =  \heiti  \centering,
-        name = {},
-        number = 第\chinese{part}篇,
-        % beforeskip = 1.0ex plus 0.2ex minus .2ex,
-        % afterskip = 1.0ex plus 0.2ex minus .2ex,
-        % aftername = \hspace{15pt}
-    },
-    chapter={
-        % format+ = \zihao{-2} \heiti \raggedright,
-        % format+ = \zihao{-2} \heiti,
-        name = {},
-        number = 第\chinese{chapter}章,
-		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-		% aftername = \hspace{10pt}
-    },
-	section={
-		%format用于设置章节标题全局格式,作用域为标题和编号
-		%字号为小三,字体为黑体,左对齐
-		%+号表示在原有格式下附加格式命令
-		% format+ = \zihao{-3} \heiti, %\raggedright,
-		%name用于设置章节编号前后的词语
-		%前、后词语用英文状态下,分开
-		%如果没有前或后词语可以不填
-		% name = {},
-		%number用于设置章节编号数字输出格式
-		%输出section编号为中文
-		number = 第\chinese{section}节
-		% %beforeskip用于设置章节标题前的垂直间距
-		% %ex为当前字号下字母x的高度
-		% %基础高度为1.0ex,可以伸展到1.2ex,也可以收缩到0.8ex
-		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-		% %afterskip用于设置章节标题后的垂直间距
-		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-		% %aftername用于控制编号和标题之间的格式
-		% %\hspace用于增加水平间距
-		% aftername = \hspace{10pt}
-	},
-	subsection={
-		% format + = \centering,
-		% format+ = \zihao{5} \kaishu \raggedright,
-		% format+ = \zihao{4}, %\raggedright,
-		%仅输出subsection编号且为中文
-		% number = \arabic{subsection}, %\chinese{subsection},
-        number = 第\arabic{section}.\arabic{subsection}讲,
-		% name = {,.},
-		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-		% aftername = \hspace{3pt}
-	},
-	subsubsection={
-		%设置对齐方式为居中对齐
-		% format+ = \zihao{5} \fangsong \centering,
-		% format + = \centering,
-		%仅输出subsubsection编号,格式为阿拉伯数字,打字机字体
-		% number = \ttfamily\arabic{subsubsection},
-        % number = 第\arabic{section}.\arabic{subsection}.\arabic{subsubsection}点,
-        number = 第\arabic{section}.\arabic{subsection}.\arabic{subsubsection}条,
-		% name = {},
-		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-		% aftername = \hspace{0pt}
-	}
-}
+% \ctexset{
+%     part={
+%         % format+ = \zihao{-2} \heiti \raggedright,
+%         % format+ = \zihao{-1} \heiti,
+%         % format+ =  \heiti  \centering,
+%         name = {},
+%         number = 第\chinese{part}篇,
+%         % beforeskip = 1.0ex plus 0.2ex minus .2ex,
+%         % afterskip = 1.0ex plus 0.2ex minus .2ex,
+%         % aftername = \hspace{15pt}
+%     },
+%     chapter={
+%         % format+ = \zihao{-2} \heiti \raggedright,
+%         % format+ = \zihao{-2} \heiti,
+%         name = {},
+%         number = 第\chinese{chapter}章,
+% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% aftername = \hspace{10pt}
+%     },
+% 	section={
+% 		%format用于设置章节标题全局格式,作用域为标题和编号
+% 		%字号为小三,字体为黑体,左对齐
+% 		%+号表示在原有格式下附加格式命令
+% 		% format+ = \zihao{-3} \heiti, %\raggedright,
+% 		%name用于设置章节编号前后的词语
+% 		%前、后词语用英文状态下,分开
+% 		%如果没有前或后词语可以不填
+% 		% name = {},
+% 		%number用于设置章节编号数字输出格式
+% 		%输出section编号为中文
+% 		number = 第\chinese{section}节
+% 		% %beforeskip用于设置章节标题前的垂直间距
+% 		% %ex为当前字号下字母x的高度
+% 		% %基础高度为1.0ex,可以伸展到1.2ex,也可以收缩到0.8ex
+% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% %afterskip用于设置章节标题后的垂直间距
+% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% %aftername用于控制编号和标题之间的格式
+% 		% %\hspace用于增加水平间距
+% 		% aftername = \hspace{10pt}
+% 	},
+% 	subsection={
+% 		% format + = \centering,
+% 		% format+ = \zihao{5} \kaishu \raggedright,
+% 		% format+ = \zihao{4}, %\raggedright,
+% 		%仅输出subsection编号且为中文
+% 		% number = \arabic{subsection}, %\chinese{subsection},
+%         number = 第\arabic{section}.\arabic{subsection}讲,
+% 		% name = {,.},
+% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% aftername = \hspace{3pt}
+% 	},
+% 	subsubsection={
+% 		%设置对齐方式为居中对齐
+% 		% format+ = \zihao{5} \fangsong \centering,
+% 		% format + = \centering,
+% 		%仅输出subsubsection编号,格式为阿拉伯数字,打字机字体
+% 		% number = \ttfamily\arabic{subsubsection},
+%         % number = 第\arabic{section}.\arabic{subsection}.\arabic{subsubsection}点,
+%         number = 第\arabic{section}.\arabic{subsection}.\arabic{subsubsection}条,
+% 		% name = {},
+% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
+% 		% aftername = \hspace{0pt}
+% 	}
+% }
 
 
 
@@ -232,4 +232,6 @@ headheight=14pt,% Set \headheight to 10mm
 % \subimport{chap09/}{chap09.tex}
 % \subimport{chap10/}{chap10.tex}
 % \subimport{chap11/}{chap11.tex}
+
+\subimport{appendix/}{appendix.tex}
 \end{document}
