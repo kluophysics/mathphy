@@ -67,6 +67,33 @@ $n$阶极点$z_0$,那么有
     \end{enumerate}
 \end{examplebox}
 
+留数的概念还可以帮助求解裂项分解时的待定系数,如
+$$
+    f(z) = \frac{1}{(z-1)(z-2)(z-3)} = \frac{A}{z-1} + \frac{B}{z-2} + \frac{C}{z-3},
+$$
+中求待定系数$A,B,C$这样的只包含一阶极点的问题. 不难看出$A,B,C$分别对应$f(z)$在$z=1,2,3$的留数.
+于是有
+\begin{eqnarray*}
+    A &=& Res f(1) = \lim_{z\to 1} (z-1) f(z) = \half,
+    \\
+    B &=& Res f(2) = \lim_{z\to 2} (z-2) f(z) = -1,
+    \\
+    C &=& Res f(3) = \lim_{z\to 3} (z-3) f(z) = \half.
+\end{eqnarray*}
+对于高阶极点的情况，可以类似处理.
+$$
+\frac{1}{(z-1)^2(z-2)(z-3)}=\frac{A}{(z-1)^2}+\frac{B}{z-1}+\frac{C}{z-2}+\frac{D}{z-3}
+$$
+注意$A$的处理
+\begin{eqnarray*}
+    A &=& Res  (z-1) f(z) |_{z=1}  = \half,
+    \\
+    B &=& Res f(1) =  \lim_{z\to 1} \frac{d}{dz} \left[ (z-1) f(z) \right] = \frac{3}{4},
+    \\
+    C &=& Res f(2) = \lim_{z\to 2} (z-2) f(z) = -1,
+    \\
+    D &=& Res f(3) = \lim_{z\to 3} (z-3) f(z) = \frac{1}{4}.
+\end{eqnarray*}
 
 % \subsection{留数定理的应用}
 % \label{subsec:residual_theorem_applications}
