@@ -4,14 +4,14 @@
 
 如图所示,现在寻找在两点$(x_1, y_1)$和$(x_2,y_2)$间找一个最短的路径$y=u(x)$.常识告诉我们,两点之间直线最短.
 数学上表示出来为直线方程,
-\[
+$$
   y = k x + b = \frac{y_2 - y_1}{x_2 - x_1} ( x - x_1) + y_1  
-\]
+$$
 这样的常识其实在数学上等价为一个最小化问题.对于任意路径,我们利用微积分求得该路径的长度.
 $ds^2 = dx^2 + dy^2$,
-\[
+$$
 J[u] = \int_{x_1}^{x_2} \sqrt{ 1 + u'(x)^2} dx    
-\]
+$$
 其中 $u'(x) = du(x)/dx$,满足边界条件$u(x_1) = y_1, u(x_2) = y_2$.因此,我们的问题即求如何找到函数$u(x)$使得
 $J$最小化.具体的求解我们下面介绍.这里的方括号区别于函数的圆括号,用来表示这里的映射是函数$\to$数的.
 这种$J$和整个函数$u(x)$的依赖关系成为\textbf{泛函关系}.
@@ -92,27 +92,51 @@ $$
 这就是著名的\textbf{欧拉-拉格朗日方程}(Euler-Lagrange Equation).
 
 利用该方程,可以得到两点之间距离最短满足
-\[
+$$
   0 = - \funcd{}{x} \frac{u'}{\sqrt{1 + u'^2}} = \frac{-u''}{(1+ u'^2)^{3/2}}
-\]
+$$
 也就是
-\[ u'' = 0\]
+$$ u'' = 0$$
 也就是解为直线方程$ u = k x + b$,$k,b$的值由边界条件确定.
 
 对最小作用量原理问题,可以得到
-\[
+$$
   0 = - \funcd {V(\br)}{\br} - \funcd{}{t} \left[ m \frac{d\br}{dt} \right]
-\]
+$$
 若质量$m$不依赖于时间,得到牛顿方程,
-\[
+$$
   m \frac{d^2\br}{dt^2} = - \funcd {V(\br)}{\br} \equiv \bF .
-\]
+$$
 
 对于如多目标变量的$J(u_1, u_2, \cdots, u_n, u_1', u_2', \cdots, u_n'|x)$, 对于每一个$u_i$, $i=1,2,\dots,n$都有独立的欧拉方程
 
 \begin{equation}
   \funcpd{L}{u_i} -  \funcpd{}{x}\left( \funcpd{L}{u'_i} \right) = 0 .
 \end{equation}
+
+对于多变量的情况,$u(x,y)$, 如
+\begin{equation}
+J[u]=\iint_R F\left(x, y, u, u_x, u_y\right) d x d y .
+\end{equation}
+对应的Euler方程为
+\begin{equation}
+F_u-\frac{\partial}{\partial x} F_{u_x}-\frac{\partial}{\partial y} F_{u_y}=0.
+\end{equation}
+例如,对于肥皂泡构成的膜,物理上表面张力要求该膜形成的膜面积最小, 对应的能量可以用$E(u)$来表示,
+用合适的单位,可以表示
+$$
+E(u)=\iint_S\left[1+\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2\right]^{1 / 2} d x d y
+$$
+Euler方程为最小面积方程
+$$
+-\frac{\partial}{\partial x}\left(\frac{1}{\sqrt{A}} \frac{\partial u}{\partial x}\right)-\frac{\partial}{\partial y}\left(\frac{1}{\sqrt{A}} \frac{\partial u}{\partial y}\right)=0
+$$
+其中
+$$
+A=1+\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2
+$$
+
+
 
 
 

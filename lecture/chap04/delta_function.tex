@@ -1,7 +1,7 @@
-\subsection{$\delta$函数}
+\section{$\delta$函数}
 \label{sub:delta_function}
 
-\subsubsection{$\delta$函数的概念}
+\subsection{$\delta$函数的概念}
 
 物理学常常要研究一个物理量在空间或时间中分布的密度, 例如质量密度 (通常简称为密度)、电荷密度、每单位时间传递的动量 (即力) 等等. 但是物 理学又常常运用质点、点电荷、瞬时力等抽象模型, 它们不是连续分布于空间 或时间中, 而是集中在空间的某一点或时间的某一瞬时. 它们的密度又该如何 描述呢?
 我们知道, 若质量 $m$ 均匀分布在长为 $l$ 的线段 $[-l / 2, l / 2]$ 上, 则其线密 度 $\rho_l(x)$ 可表为
@@ -35,7 +35,7 @@ $$
 1 & (a<0<b) .\end{cases}
 \end{gathered}
 $$
-\subsubsection{$\delta$函数的性质}
+\subsection{$\delta$函数的性质}
 $\delta$函数的很多性质可以用在实际的计算中,方便实用. 首先它是满足积分为单位1.
 $$
 \int_{-\infty}^{\infty} \delta(x) d x=1
@@ -78,9 +78,29 @@ $\delta$函数是一种广义函数，常常可以看作是以下函数的极限
     \end{aligned}
 \end{equation}
 
-\subsubsection{$\delta$ 函数的傅里叶变换}
+\subsection{其他}
+$\delta$ 函数的傅里叶变换: 用复数形式的傅里叶积分表示$\delta$函数,
+$$
+\delta(x)=\int_{-\infty}^{\infty} C(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{~d} \omega,
+$$
+其中变换
+$$
+C(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \delta(x) \mathrm{e}^{-\mathrm{i} \omega x} \mathrm{~d} x=\frac{1}{2 \pi} \mathrm{e}^{-\mathrm{i} \omega \cdot 0}=\frac{1}{2 \pi} .
+$$
+因此，有$\delta$函数的傅里叶积分为
+$$
+\delta(x)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i \omega x} \mathrm{~d} \omega .
+$$
 
-
-
-
-
+多维的 $\delta$ 函数:
+$$
+\begin{aligned}
+& \vec{\br}=(x,y,z), \delta (\vec{\br})= \begin{cases}0, & \vec{\br} \neq 0) \\
+\infty, & (\vec{\br}=0)\end{cases} \\
+& \iiint_V \boldsymbol{\delta}(\vec{\br})d^3 \vec{\br}=\iiint_{-\infty}^{\infty} \delta(\vec{\br}) d x d y d z=1
+\end{aligned}
+$$
+在直角坐标系中, 这样的三维 $\delta$ 函数往往用三个一维 $\delta$ 函数的乘积表示:
+$$
+\delta(\br)=\delta(x) \delta(y) \delta(z).
+$$
