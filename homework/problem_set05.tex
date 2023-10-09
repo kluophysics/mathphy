@@ -18,7 +18,7 @@
 \raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
 
 
-\newcommand{\duedate}{10.13}
+\newcommand{\duedate}{10.20}
 \pagestyle{fancy}
 
 % \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
@@ -77,66 +77,96 @@
 % \end{problem}
 
 
-\begin{problem}{4.1}
-  在指定的点 $z_0$ 的邻域上将下列函数展开为泰勒级数.
-  \begin{enumerate}
-    \item $\arctan z$的主值, 在 $z_0=0$;(提示:试着利用级数展开然后逐项积分.)
-    \item $\ln z$ 在 $z_0=\imath$;
-    \item $\ln \left(1+e^z\right)$ 在 $z_0=0$.
-  \end{enumerate}
+
+
+\begin{problem}{5.1}
+计算积分
+$$
+\int_0^{2 \pi} \cos ^{2 n} x \mathrm{~d} x \text {. }
+$$
 \end{problem}
 
-\begin{problem}{4.2}
-  在指定环域上(或可挖去除奇点$z_0$处)将下列函数展开为洛朗级数.
-  \begin{enumerate}
-    \item$1 / z^2(z-1)$ 在 $z_0=1$;
-    \item $1 /(z-2)(z-3)$ 在 $|z|>3$;
-    \item $\ln \left(1+e^z\right)$ 在 $z_0=0$;
-    \item $\frac{1}{z(z+1)}$, 在 $1<|z-i|<\sqrt{2}$.
-  \end{enumerate}
-\end{problem}
-
-\begin{problem}{4.3}
- 求下列函数在指定点 $z_0$ 的留数:
-
- \begin{enumerate}
-  \item  $\frac{e^{z^2}}{z-1}, z_0=1$;
-  \item $\frac{e^{z^2}}{(z-1)^2}, \quad z_0=1$;
-  \item $\left(\frac{z}{1-\cos z}\right)^2, z_0=0$;
-  \item  $\frac{1+e^z}{z^4}, z_0=0$;
-  \item $\frac{1}{z^2 \sin z}, z_0=0$.
- \end{enumerate}
-
-\end{problem}
-
-
+\begin{problem}{5.2}
+  计算积分
+  $$
+  \int_{-\infty}^{\infty} \frac{e^{\imath m x}}{x-\imath \alpha} d x,
+  $$
+  和
+  $$
+  \int_{-\infty}^{\infty} \frac{e^{\imath m x}}{x+\imath \alpha} d x.
+  $$
+  其中,$m>0, \Re \alpha > 0$.
+  \end{problem}
   
-\begin{problem}{4.5}
-分情况讨论 $F(z)=\frac{f^{\prime}(z)}{f(z)}=\frac{d}{d z} \ln f(z)$ 在 $z=a$ 点的性质, 
-  若 $a$ 点是 $f(z)$ 的: 
-  \\
-  (1) $m$ 阶零 点; 
-  \\
-  (2) $m$ 阶极点.
-  \\
-  如果 $z=a$ 是 $F(z)$ 的孤立奇点的话, 则求出函数 $F(z)$ 在该点的留数.
+\begin{problem}{5.3}
+    使用费曼技巧计算
+    $$
+    I = \int_0^1 \frac{x^\alpha-1}{\log x} d x . 
+    $$
+  \end{problem}
+   
+\begin{problem}{5.4}
+     使用费曼技巧计算
+     $$
+     \int_0^{\infty} x^2 e^{-\left(4 x^2+\frac{9}{x^2}\right)} d x .
+     $$
+\end{problem}
+
+\begin{problem}{5.5}
+试推导多目标变量泛函$J\left(u_1, u_2, \cdots, u_n, u_1^{\prime}, u_2^{\prime}, \cdots, u_n^{\prime} \mid x\right)$
+取极值的欧拉方程是
+$$
+\frac{\partial L}{\partial u_i}-\frac{\partial}{\partial x}\left(\frac{\partial L}{\partial u_i^{\prime}}\right)=0 .
+$$
 \end{problem}
 
 
-\begin{problem}{4.6}
-  计算下列积分值
-  \begin{enumerate}
-    \item $\oint_C \frac{d z}{1+z^4}, C$ 为 $|z-1|=1$;
-    \item $\oint_{|z|=2} \frac{1}{z^3\left(z^{10}-2\right)} d z$;
-    \item $\oint_{|z|=1} \frac{e^z}{z^3} d z$; 
-    \item $\int_0^{2 \pi} \frac{d x}{(a+b \cos x)^2}, \quad a>b>0$;
-    \item $\int_{-\infty}^{\infty} \frac{d x}{(x^2 + a^2)(x^2+b^2)}, \quad a>0, b>0$;
-    \item $\int_{-\infty}^{\infty} \frac{x^2 d x}{\left(x^2+1\right)\left(x^2-2 x \cos \theta+1\right)}, \theta$ 为实数, 且 $\sin \theta \neq 0$.
-  \end{enumerate}
+\begin{problem}{5.5}
+  过二已知点 $\left(x_1, y_1\right),\left(x_2, y_2\right)$ 作一曲线, 使此曲线绕 $x$ 轴旋转所得曲面面积最小, 求曲线满足的微分方程.
+\end{problem}
 
+\begin{problem}{5.6}
+请求解最速降线
+和等高悬链线问题
+的解.
+她们对应的泛函表示为
+$$
+T[u] = \int_{x_0}^{x_1} \frac{\sqrt{1+u^{\prime 2}}}{\sqrt{2 g\left(y_0-u\right)}} d x, 
+$$
+和
+$$
+U[y(x)]= \rho g  \int_{-L / 2}^{L / 2} \sqrt{1+y^{\prime}(x)^2} \cdot y(x) d x. 
+$$
+\end{problem}
+
+
+
+\begin{problem}{5.7}
+在无轨道密度泛函里体系的总能量可以表示为密度$n(\mathbf{r})$的泛函$E[n]$,
+$$
+E[n] = T_s[n] + E_H[n] + \int dr^3 v_{ext}(\mathbf{r}) n[\mathbf{r}] + E_{xc}[n]
+$$
+其中动能部分 $T_s[n]$有常见两种近似:
+\begin{enumerate}
+  \item 托马斯-费米 (Thomas-Fermi) 理论里
+  $$
+  T_s[n] = c_{T F} \int d \mathbf{r} n^{5 / 3}(\mathbf{r});
+  $$ 
+  \item 冯-瓦塞克 (von Weisz\"acher)理论里
+  $$
+  T_s[n] =  \frac{1}{8} \int d \mathbf{r} \frac{|\nabla n(\mathbf{r})|^2}{n(\mathbf{r})}.
+  $$
+\end{enumerate}
+经典电子云之间的作用能为Hartree能量
+$$
+E_H[n] = 
+ \frac{1}{2} 
+ \int \frac{n(\mathbf{r}) n(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}
+ dr^3 dr'^3
+$$
+交换关联能$ E_{xc}[n]$这里忽略. 请对 $T_s[n]$常见两种近似下的总能量进行变分求解能量最小对应的欧拉方程.
 \end{problem}
   
-
 
 
 
