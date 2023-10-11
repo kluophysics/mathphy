@@ -21,10 +21,16 @@ $J$最小化.具体的求解我们下面介绍.这里的方括号区别于函数
 并且具有连 续的二阶导数. 这样的 $u(x)$ 称为可取函数. 
 % 这种函数的函数称为\textbf{泛函}.
 
-
 \begin{itemize}
   \item \textbf{最速降线问题}(rachistochrone problem) 一质点在重力作用下无摩擦的沿着某一起终点高度差恒定的轨道下降,初速度为零,如何设计
   轨道形状使得所需下降时间最短.
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth,height=15em]{fastest_track.png}
+    \caption{最速降线坐标表示.}
+    \label{fig:rachistochrone}
+  \end{figure}
+  如图\ref{fig:rachistochrone}所示建立坐标,根据动能定理任意时刻的速度可以得到,进而得到总时间
   \begin{equation}
     T[u] = \int_{(x_0,y_0)}^{(x_1, y_1)} \frac{ds}{\sqrt{2 g(y_0 - u)}} = \int_{x_0}^{x_1} \frac{\sqrt{1+u'^2}}{\sqrt{2 g (y_0 - u)}} dx.
   \end{equation}
@@ -36,7 +42,7 @@ $J$最小化.具体的求解我们下面介绍.这里的方括号区别于函数
   \end{equation}
   上式利用了定义$\vec{\bv} = \frac{d\br}{dt}$. 对作用量$A$进行最小化将得到$\br$满足的方程,即牛顿第二定律方程.
 
-  \item \textbf{悬链线问题} \quad 有一质地均匀、柔软的绳索，两端固定，绳索仅受重力的作用而下垂.试问该绳索在平衡状态时是怎样的曲线？\\
+  \item \textbf{悬链线问题} (catenary problem) \quad 自然界中有许多出现悬链线形状的地方,如雨后的蜘蛛网, 路边的铁链, 高压输电线等(如图\ref{fig:catenary_example}), 有一质地均匀、柔软的绳索，两端固定，绳索仅受重力的作用而下垂.试问该绳索在平衡状态时是怎样的曲线？
   % 设绳索的最低点为$A$ .设绳索曲线的方程为$y=\phi(x)$,
   % 考虑绳索上点$A$到另一点$M$间的一段弧$AM$,设其长为s.假定绳索的线密度为$\rho$,则弧$AM$所受重力为$\rho gs$.由于绳索是柔软的，因而在点$A$
   % 处的张力沿水平的切线方向(该点导数为零),设其大小设为$H$;在点$M$处的张力沿该点处的切线方向,设其倾角为$\theta$,
@@ -45,7 +51,16 @@ $J$最小化.具体的求解我们下面介绍.这里的方括号区别于函数
   % 于是有,
   % $$
   %   y^{\prime}=a \int_0^x \sqrt{1+y^{\prime 2}} \mathrm{~d} x
-  % $$  
+  % $$ 
+  \begin{figure}
+    \centering
+
+    \includegraphics[width=0.45\linewidth]{roadside.png}
+    \includegraphics[width=0.45\linewidth]{cobweb.png}
+    \caption{雨后蜘蛛网和路边的铁链.}
+    \label{fig:catenary_example}
+  \end{figure}
+
   假设重力加速度恒为 $\mathrm{g}$ ，则某物体重力势能可表述为 $U=m g h$. 设绳子两端点距离为 $\mathrm{L}$.
 建立 $x-y$ 坐标系， $y$ 表示高度， $y(x)$ 代表绳索形成的曲线，绳索关于 $y$ 轴对称。绳子上每个点的重力势 能个表示为重力势能公式两边求导的结果： $d U=d(m g \cdot y(x))=g \cdot y(x) \cdot d m$.
 设绳索单位长度质量为 $\rho$ ，则根据其定义， $\frac{d m}{d s}=\rho$ ，所以
@@ -56,6 +71,7 @@ $$
 U[y(x)]=\int_{-L / 2}^{L / 2} \rho g \sqrt{1+y^{\prime}(x)^2} \cdot y(x) d x,
 $$
 悬链线就是在此情形中重力势能最小的曲线. 
+
 
 \end{itemize}
 
@@ -125,15 +141,15 @@ F_u-\frac{\partial}{\partial x} F_{u_x}-\frac{\partial}{\partial y} F_{u_y}=0.
 例如,对于肥皂泡构成的膜,物理上表面张力要求该膜形成的膜面积最小, 对应的能量可以用$E(u)$来表示,
 用合适的单位,可以表示
 $$
-E(u)=\iint_S\left[1+\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2\right]^{1 / 2} d x d y
+E(u)=\iint_S\left[1+\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2\right]^{1 / 2} d x d y.
 $$
 Euler方程为最小面积方程
 $$
--\frac{\partial}{\partial x}\left(\frac{1}{\sqrt{A}} \frac{\partial u}{\partial x}\right)-\frac{\partial}{\partial y}\left(\frac{1}{\sqrt{A}} \frac{\partial u}{\partial y}\right)=0
+-\frac{\partial}{\partial x}\left(\frac{1}{\sqrt{A}} \frac{\partial u}{\partial x}\right)-\frac{\partial}{\partial y}\left(\frac{1}{\sqrt{A}} \frac{\partial u}{\partial y}\right)=0,
 $$
 其中
 $$
-A=1+\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2
+A=1+\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2.
 $$
 
 
