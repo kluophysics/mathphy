@@ -80,27 +80,35 @@ $\delta$函数是一种广义函数，常常可以看作是以下函数的极限
 
 \subsection{其他}
 $\delta$ 函数的傅里叶变换: 用复数形式的傅里叶积分表示$\delta$函数,
-$$
-\delta(x)=\int_{-\infty}^{\infty} C(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{~d} \omega,
-$$
+\begin{equation}
+\delta(x)=\int_{-\infty}^{\infty} C(\omega) e^{\imath\omega x} \mathrm{~d} \omega,
+\end{equation}
 其中变换
 $$
-C(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \delta(x) \mathrm{e}^{-\mathrm{i} \omega x} \mathrm{~d} x=\frac{1}{2 \pi} \mathrm{e}^{-\mathrm{i} \omega \cdot 0}=\frac{1}{2 \pi} .
+C(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \delta(x) e^{-\imath\omega x} \mathrm{~d} x=\frac{1}{2 \pi} e^{-\imath\omega \cdot 0}=\frac{1}{2 \pi} .
 $$
 因此，有$\delta$函数的傅里叶积分为
-$$
+\begin{equation}
 \delta(x)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i \omega x} \mathrm{~d} \omega .
-$$
+\end{equation}
 
 多维的 $\delta$ 函数:
 $$
 \begin{aligned}
-& \vec{\br}=(x,y,z), \delta (\vec{\br})= \begin{cases}0, & \vec{\br} \neq 0) \\
-\infty, & (\vec{\br}=0)\end{cases} \\
-& \iiint_V \boldsymbol{\delta}(\vec{\br})d^3 \vec{\br}=\iiint_{-\infty}^{\infty} \delta(\vec{\br}) d x d y d z=1
+& \br=(x,y,z), \quad \delta (\br)= \begin{cases}0,  & \br \neq 0) \\
+\infty, & (\br=0)\end{cases} \\
+& \iiint_V \delta(\br)d^3 \br=\iiint_{-\infty}^{\infty} \delta(\br) dx dy dz=1
 \end{aligned}
 $$
 在直角坐标系中, 这样的三维 $\delta$ 函数往往用三个一维 $\delta$ 函数的乘积表示:
-$$
-\delta(\br)=\delta(x) \delta(y) \delta(z).
-$$
+\begin{equation}
+    \delta(\br)=\delta(x) \delta(y) \delta(z),
+\end{equation}
+在柱坐标系中,
+\begin{equation}
+    \delta(\br)=\frac{1}{\rho} \delta(\varphi)\delta(z),
+\end{equation}
+在球坐标系中,
+\begin{equation}
+    \delta(\br)=\frac{1}{r^2\sin{\theta}} \delta(r) \delta(\theta) \delta(\varphi).
+\end{equation}
