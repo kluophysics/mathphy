@@ -95,7 +95,7 @@ $$
   $$
   \int_{-\infty}^{\infty} \frac{e^{\imath m x}}{x+\imath \alpha} d x.
   $$
-  其中,$m>0, \Re \alpha > 0$.
+  其中$m>0, \Re \alpha > 0$.
   \end{problem}
   
 \begin{problem}{5.3}
@@ -140,19 +140,20 @@ $$
 
 
 \begin{problem}{5.8}
-在无轨道密度泛函里体系的总能量可以表示为密度$n(\mathbf{r})$的泛函$E[n]$,
+在无轨道密度泛函(orbital-free density functional theory)里体系的总能量可以表示为密度$n(\mathbf{r})$的泛函$E[n]$,
 $$
-E[n] = T_s[n] + E_H[n] + \int dr^3 v_{ext}(\mathbf{r}) n[\mathbf{r}] + E_{xc}[n]
+E[n] = T_s[n] + E_H[n] + \int dr^3 v_{ext}(\mathbf{r}) n(\mathbf{r}) + E_{xc}[n]
 $$
-其中动能部分 $T_s[n]$有常见两种近似:
+密度满足$\int n(\mathbf{r}) dr^3 = N$这一约束, 其中$N$为总电子数.
+动能部分 $T_s[n]$有常见两种近似:
 \begin{enumerate}
   \item 托马斯-费米 (Thomas-Fermi) 理论里
   $$
-  T_s[n] = c_{T F} \int d \mathbf{r} n^{5 / 3}(\mathbf{r});
+  T_s[n] = c_{T F} \int dr^3 n^{5 / 3}(\mathbf{r});
   $$ 
   \item 冯-瓦塞克 (von Weisz\"acker)理论里
   $$
-  T_s[n] =  \frac{1}{8} \int d \mathbf{r} \frac{|\nabla n(\mathbf{r})|^2}{n(\mathbf{r})}.
+  T_s[n] =  \frac{1}{8} \int dr^3 \frac{|\nabla n(\mathbf{r})|^2}{n(\mathbf{r})}.
   $$
 \end{enumerate}
 经典电子云之间的作用能为Hartree能量
