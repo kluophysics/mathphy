@@ -1,0 +1,154 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{10.26}
+\pagestyle{fancy}
+
+% \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\CTEXthesection\quad #1}}
+% \renewcommand{\sectionmark}[1]{\markleft{\CTEXthesection\quad #1}}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法11044102}
+\fancyhead[R]{课后习题}
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+
+
+% \title{习题01}
+% \author{截止日期: }
+% \author{罗凯\\
+% 数学物理方法}
+% \date{截止日期:}
+% \maketitle
+ 
+% \begin{problem}{1.1}
+% 找出满足方程\[z - 2 = 3 \frac{1+ \imath t}{1-\imath t}, -\infty < t <\infty\]的所有点$z$.
+% \end{problem}
+
+
+
+
+\begin{problem}{6.1}
+  
+计算矩形波$$
+\begin{aligned}
+& f(x)=0, \quad-\pi<x<0, \\
+& f(x)=h, \quad 0<x<\pi .
+\end{aligned}
+$$
+的傅里叶级数展开.注意观察级数展开在间断点的取值是否为预期.
+\end{problem}
+
+\begin{problem}{6.2}
+  将 $\delta(x)$ 展为实数形式的傅里叶积分.
+\end{problem}
+  
+\begin{problem}{6.3}
+证明傅里叶变换$\mathcal{F}[f(x)] = F(\omega)$ 满足以下定理.
+\begin{enumerate}
+  \item 导数定理
+  $$
+      \mathcal{F} [f'(x)] = \imath \omega F(\omega)
+  $$
+
+  \item 积分定理
+  $$
+      \mathcal{F} [ \int^{x} f(x) dx ] = \frac{1}{\imath \omega} F(\omega)
+  $$
+  \item 位移定理
+  $$
+      \mathcal{F} [ e^{\imath \omega x_0} f(x) ] = f(\omega - \omega_0),
+  $$
+  \item 卷积定理
+  $$
+      \mathcal{F} [f_1(x)\star f_2(x) ] = F_1(\omega) F_2(\omega).
+  $$
+\end{enumerate}
+\end{problem}
+   
+\begin{problem}{6.4}
+对于屏蔽效应的描述可以使用Yukawa势来表示
+$$
+V(\mathbf{r}) = \frac{e^{-\alpha r}}{r}
+$$
+其中$\alpha$描述屏蔽的强弱.
+\begin{enumerate}
+  \item 试在球坐标系下求出三维傅里叶变换;
+  \item 当$\alpha=Z$时, 函数$e^{-Zr}$可描述类氢原子的$1s$轨道, 对其傅里叶变换关于$Z$求片导
+  $-\frac{\partial}{\partial Z} \mathcal{F} \left[ \frac{e^{-Z r}}{r}\right]$;
+  \item 若是三维高斯形式$V(\mathbf{r}) = e^{-\alpha r^2}$,求其傅里叶变换.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{6.5}
+  \begin{enumerate}
+  \item 验证$f(x)=x^{-1 / 2}$ 在Fourier傅里叶余弦和正弦变换下互易;即
+  $$
+  \begin{aligned}
+  & \sqrt{\frac{2}{\pi}} \int_0^{\infty} x^{-1 / 2} \cos x t d x=t^{-1 / 2} \\
+  & \sqrt{\frac{2}{\pi}} \int_0^{\infty} x^{-1 / 2} \sin x t d s=t^{-1 / 2}
+  \end{aligned}
+  $$
+  \item 使用上述结果计算菲涅耳积分(Fresnel integrals)
+  $$
+  \int_0^{\infty} \cos \left(y^2\right) d y \text { , } \int_0^{\infty} \sin \left(y^2\right) d y
+  $$
+\end{enumerate}
+
+\end{problem}
+
+
+
+
+\end{document}
