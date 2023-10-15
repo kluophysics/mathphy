@@ -1,2 +1,61 @@
 \subsection{拉普拉斯反变换}
 \label{subsec:inverse_laplace_transform}
+
+对于象函数的导数, $f(t)$是满足Laplace变换的充分条件,那么$F(p)$在
+$\Re p > s_0$的半平面解析,
+于是求$n$阶导数得
+$$
+F^{(n)}(p)=\frac{\mathrm{d}^{\mathrm{n}}}{\mathrm{d} p^n} \int_0^{\infty} f(t) \mathrm{e}^{-p t} \mathrm{~d} t=\int_0^{\infty}(-t)^n f(t) \mathrm{e}^{-p t} \mathrm{~d} t
+$$
+所以有
+\begin{equation}
+    F^{(n)}(p)=(-t)^n f(t)
+\end{equation}
+不难发现,
+\begin{equation}
+    \begin{aligned}
+    & \frac{1}{p^2}=-\frac{\mathrm{d}}{\mathrm{d} p} \frac{1}{p} \risingdotseq  t \\
+    & \frac{1}{p^3}=\frac{1}{2} \frac{\mathrm{d}^2}{\mathrm{~d} p^2} \frac{1}{p} \risingdotseq \frac{1}{2} t^2 .
+    \end{aligned}
+\end{equation}
+
+例如,
+\begin{equation}
+    \begin{aligned}
+    \frac{1}{p^3(p+\alpha)} & =\frac{1}{\alpha} \frac{1}{p^3}-\frac{1}{\alpha^2} \frac{1}{p^2}+\frac{1}{\alpha^3} \frac{1}{p}-\frac{1}{\alpha^3} \frac{1}{p+\alpha} \\
+    & \risingdotseq \frac{1}{2 \alpha} t^2+\frac{1}{\alpha^2} t+\frac{1}{\alpha^3}-\frac{1}{\alpha^3} \mathrm{e}^{-\alpha t}
+    \end{aligned}
+\end{equation}
+
+如果 $\int_v^{\infty} F(q) \mathrm{d} q$ 存在, 且当$t\to 0$时, $|f(t)/t|$有界,则
+\begin{equation}
+    \int_{p}^{\infty} F(q) dq \risingdotseq \frac{f(t)}{t} . 
+\end{equation}
+
+$\frac{\sin \omega t}{t} \fallingdotseq \int_p^{\infty} \frac{\omega}{q^2+\omega^2} \mathrm{~d} q=\frac{\pi}{2}-\arctan \frac{p}{\omega}$.
+
+当$p\to 0$时, 有
+\begin{equation}
+    \int_0^{\infty} F(p) \mathrm{d} p=\int_0^{\infty} \frac{f(t)}{t} \mathrm{~d} t
+\end{equation}
+一个例子如
+$$
+\int_0^{\infty} \frac{\sin t}{t} \mathrm{~d} t=\int_0^{\infty} \frac{1}{p^2+1} \mathrm{~d} p=\frac{\pi}{2}
+$$
+不仅如此, 有些积分无法用留数定理计算,如
+$$
+\int_0^{\infty} \frac{\cos a t-\cos b t}{t} \mathrm{~d} t \quad a>0, b>0
+$$
+使用以上等式可得
+
+$$
+\begin{gathered}
+\int_0^{\infty} \frac{\cos a t-\cos b t}{t} \mathrm{~d} t \fallingdotseq \int_0^{\infty}\left(\frac{p}{p^2+a^2}-\frac{p}{p^2+b^2}\right) \mathrm{d} p \\
+=\left.\frac{1}{2} \ln \frac{p^2+a^2}{p^2+b^2}\right|^{\infty}=\ln b-\ln a .
+\end{gathered}
+$$
+
+\textbf{推广的约当引理} 设 $C_R$ 是以 $p=0$ 为圆心, 以 $R$ 为半径的圆周在直线 $\operatorname{Re} p=a(>0)$ 左侧的圆弧. 若当 $|p| \rightarrow \infty$ 时, $\bar{f}(p)$ 在 $\frac{\pi}{2}-\delta \leqslant \operatorname{Arg} p \leqslant \frac{3}{2} \pi+\delta$ 中一致趋于零 ( $\delta$ 是小于 $\frac{\pi}{2}$ 的任意正数), 则
+$$
+\lim _{R \rightarrow \infty} \int_{C_R} \bar{f}(p) \mathrm{e}^{p t} \mathrm{~d} p=0 \quad(t>0) .
+$$

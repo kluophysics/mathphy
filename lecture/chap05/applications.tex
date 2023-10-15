@@ -1,2 +1,29 @@
 \subsection{积分变换的应用}
 \label{subsec:applications}
+
+\begin{examplebox}{利用拉普拉斯变换求解简谐振子方程的解.}
+    质量为$m$的质点在弹性系数为$k$的弹簧牵引下做简谐运动,满足方程为
+    $$
+m \frac{d^2 X(t)}{d t^2}+k X(t)=0
+$$
+初始条件取
+$$
+X(0)=X_0, \quad X^{\prime}(0)=0
+$$
+应用拉氏变换到该方程上得到
+$$
+m \mathcal{L}\left\{\frac{d^2 X}{d t^2}\right\}+k \mathcal{L}\{X(t)\}=0
+$$
+用$x(s)$表示未知变换$\mathcal{L}\{ X(t)\}$,于是有
+$$
+m s^2 x(s)-m s X_0+k x(s)=0 ,
+$$
+化简为
+$$
+x(s)=X_0 \frac{s}{s^2+\omega_0^2}, \quad \text { with } \omega_0^2 \equiv \frac{k}{m} .
+$$
+查表得
+$$
+X(t)=X_0 \cos \omega_0 t .
+$$
+\end{examplebox}
