@@ -182,11 +182,16 @@ $\int_0^1 \frac{d x}{1+x^2}=\left.\tan ^{-1} x\right|_0 ^1=\frac{\pi}{4}$,和被
  = \frac{1}{2\ell} \int_{-\ell}^{\ell} dx  \sum c_n e^{\imath \frac{n\pi}{\ell} x} \sum c_m e^{-\imath \frac{m\pi}{\ell} x}
  = \sum |c_n|^2
 \end{equation}
+利用前面的等式$c_n = \half(a_n - \imath b_n)$,  $c_{-n} = \half (a_n + \imath b_n)$, $n>0$, $c_0 = \half a_0$ 可得
+\begin{equation}
+  E = \frac{a_0^2}{4}+\sum_{n=1}^{\infty}\left(\frac{a_n^2}{2}+\frac{b_n^2}{2}\right) .
+\end{equation}
+称为\textbf{Parseval等式}(Parseval's identity).
 其物理意义指的是,一复杂波形分解为许多波幅为$c_n$的正(余)弦波的叠加,该波所携带的总能量为各个成分波强度的求和.
 作为习题,证明对于矩形波,
-$\begin{array}{ll}f(x)=-1 & \text { for } x<0 \\ f(x)=+1 & \text { for } x>0\end{array}$其傅里叶级数为
+$f(x)=\left\{ \begin{array}{ll}-1, & x<0 \\ +1, &  x>0\end{array}\right.$, 其傅里叶级数为
 $$
-f(x)=\frac{4}{\pi} \sin \pi x+\frac{4}{3 \pi} \sin 3 \pi+\frac{4}{5 \pi} \sin 5 x+\cdots
+f(x)=\frac{4}{\pi} \left[  \sin \pi x+\frac{1}{3} \sin 3 \pi+\frac{1}{5 } \sin 5 x+\cdots \right]
 $$
 可以发现对于矩形波,其对应的能量为$1$,于是我们有
 $$
