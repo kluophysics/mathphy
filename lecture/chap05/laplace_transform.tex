@@ -20,45 +20,47 @@ g(t) =e^{-\sigma t} f(t)
 $$
 则$g(t)$绝对可积.于是对$g(t)$进行傅里叶变换:
 \begin{equation}
-    G(\omega) = \sqrt{\frac{1}{2\pi} } \int_{-\infty}^{\infty} g(t) e^{-\imath \omega t} dt 
-    = \sqrt{\frac{1}{2\pi} } \int_{0}^{\infty} f(t) e^{-(\sigma + \imath \omega) t} dt  
+    g(\omega) = \frac{1}{2\pi}  \int_{-\infty}^{\infty} g(t) e^{-\imath \omega t} dt 
+    = \frac{1}{2\pi}  \int_{0}^{\infty} f(t) e^{-(\sigma + \imath \omega) t} dt  
 \end{equation}
-将$\sigma + \imath \omega$记作$p$,令$F(p)=\sqrt{2\pi}G(\omega)$,则有
-函数$f(t)$的拉普拉斯变换$F(p)$为
+将$\sigma + \imath \omega$记作$p$,令$\bar{f}(p)=2\pi g(\omega)$,则有
+函数$f(t)$的拉普拉斯变换$\bar{f}(p)$为
 \begin{equation}
-    F(p) = \mathcal{L} \{ f(t) \} = \int_0 ^{\infty} e^{-pt} f(t) dt .
+    \bar{f}(p) = \mathcal{L} \{ f(t) \} = \int_0 ^{\infty} e^{-pt} f(t) dt .
 \end{equation}
-该积分称为拉普拉斯积分,$\mathcal{L}$称为\textbf{拉普拉斯变换算符}.$e^{-pt}$称为拉普拉斯变换的\textbf{核}.注意
+该积分称为\textbf{拉普拉斯积分},$\mathcal{L}$称为\textbf{拉普拉斯变换算符}.$e^{-pt}$称为拉普拉斯变换的\textbf{核}.注意
 这里的积分上下限.
 
-$G(\omega)$ 的傅里叶逆变换是
+$g(\omega)$ 的傅里叶逆变换是
 $$
-g(t)=\int_{-\infty}^{\infty} G(\omega) \mathrm{e}^{\imath \omega t} \mathrm{~d} \omega=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \bar{f}(\sigma+\imath \omega) \mathrm{e}^{\imath \omega t} \mathrm{~d} \omega,
+g(t)=\int_{-\infty}^{\infty} g(\omega) e^{\imath \omega t} d \omega=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \bar{f}(\sigma+\imath \omega) e^{\imath \omega t} d \omega,
 $$
 即
 $$
-f(t)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \bar{f}(\sigma+\imath \omega) \mathrm{e}^{(\sigma+\imath \omega)} d \omega
+f(t)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \bar{f}(\sigma+\imath \omega) e^{(\sigma+\imath \omega)t} d \omega
 $$
 由 $\sigma+\imath \omega=p$, 有 $d \omega=\frac{1}{\imath} d p$. 所以
-$$
-f(t)=\frac{1}{2 \pi \imath} \int_{\sigma-\imath \infty}^{\sigma+\imath \infty} \bar{f}(p) \mathrm{e}^{\imath p} \mathrm{~d} p .
-$$
+\begin{equation}
+    \label{eq:fourier_mellin_integral}
+    f(t)=\frac{1}{2 \pi \imath} \int_{\sigma-\imath \infty}^{\sigma+\imath \infty} \bar{f}(p) e^{ p t} d p .
+\end{equation}
 $\bar{f}(p)$ 又称为\textbf{像函数}, 而 $f(t)$ 称为\textbf{原函数}, 它们之间的关系常用简单的符号写为
-$$
+\begin{equation}
 \begin{aligned}
 & \bar{f}(p)=\mathcal{L}[f(t)], \\
 & f(t)=\mathcal{L}^{-1}[\bar{f}(p)]
 \end{aligned}
-$$
+\end{equation}
 或
-$$
+\begin{equation}
 \begin{aligned}
 & \bar{f}(p) \risingdotseq f(t), \\
 & f(t) \fallingdotseq \bar{f}(p) .
 \end{aligned}
-$$
+\end{equation}
 
-% 拉普拉斯变换存在的条件是 
+
+拉普拉斯变换存在的充分条件是 
 \begin{enumerate}
     \item[(1)]  在 $0 \leqslant t<\infty$ 的任一有限区间上; 除了有限个间断点外, 函数 $f(t)$ 及其导数是处处连续的;
     \item[(2)]  存在常数 $M>0$ 和 $\sigma \geqslant 0$, 使对任何 $t$ 值 $(0 \leqslant t<\infty)$, 有
@@ -67,11 +69,23 @@ $$
     $$
 \end{enumerate}
 $\sigma$ 的下界称为收敛横标, 用 $\sigma_0$ 表示. 在实际应用中, 大多数函数都满足 这个充分条件.
-但一个反例是$e^{t^2}$.
-不难看出拉普拉斯变换为\textbf{线性}变换即满足
+但一个反例是$e^{t^2}$. 对于满足拉普拉斯变换存在条件的函数,通过证明可以知道$\lim_{p\to \infty} \bar{f}(p) = 0$.
+也就意味着,若$\bar{f}(p)$在$p\to \infty$的渐近行为是$p$的正幂次,那么逆变换不存在. 且可以证明$\bar{f}(p)$在$\Re \sigma > \sigma_0$的半平面是解析的(具体证明
+见梁昆淼书).
+不难看出拉普拉斯变换为\textbf{线性变换}即满足
 $$
 \mathcal{L}\{a f(t)+b g(t)\}=a \mathcal{L}\{f(t)\}+b \mathcal{L}\{g(t)\} \,.
 $$
+
+对于$\delta$函数,易知
+$$
+\mathcal{L}\left\{\delta\left(t-t_0\right)\right\}=\int_0^{\infty} e^{-s t} \delta\left(t-t_0\right) d t=e^{-s t_0},  \quad t_0>0 .
+$$
+% 通过反复迭代
+% 可以验证
+% $$
+% \mathcal{L}\left\{F^{(n)}(t)\right\}=s^n \mathcal{L}\{F(t)\}-s^{n-1} F(+0)-\cdots-F^{(n-1)}(+0) .
+% $$
 \begin{examplebox}{求以下函数的拉普拉斯变换
     \begin{enumerate}
         \item $f(t) = 1$,
@@ -88,12 +102,12 @@ $$
             $$\int_{0}^{\infty} t \cdot e^{-p t} dt = \frac{1}{p^2}$$
             因此类似有$\mathcal{L}[t^n] = \frac{n!}{p^{n+1}}$.
         \item $$
-            \int_{0}^{\infty} t \cdot e^{s t} e^{-p t} dt = \frac{1}{p-s} , 
+            \int_{0}^{\infty} e^{s t} e^{-p t} dt = \frac{1}{p-s} , 
         $$
         要求$\Re (p-s) > 0$.
         \item 
         $$
-        \int_{0}^{\infty} t \cdot t e^{s t} e^{-p t} dt = \frac{1}{(p-s)^2} ,
+        \int_{0}^{\infty} t e^{s t} e^{-p t} dt = \frac{1}{(p-s)^2} ,
         $$
         要求$\Re (p-s) > 0$.  
     类似有 $\mathcal{L}[t^n e^{s t}] = \frac{n!}{(p-s)^{n+1}}$.
@@ -111,77 +125,93 @@ $$
         $$
     \end{enumerate}
 \end{examplebox}
-对于$\delta$函数,易知
-$$
-\mathcal{L}\left\{\delta\left(t-t_0\right)\right\}=\int_0^{\infty} e^{-s t} \delta\left(t-t_0\right) d t=e^{-s t_0}, \quad \text { 对 } \quad t_0>0
-$$
+
 \subsection{拉普拉斯变换的性质}
 与傅里叶变换类似,拉氏变换$\bar{f}(p)$也满足很多基本性质.
 \begin{enumerate}
     \item 导数定理
-        $$
-        f^{\prime}(t) \fallingdotseq  p \bar{f}(p)-f(0)
-        $$
+        \begin{equation}
+        f^{\prime}(t) \fallingdotseq  p \bar{f}(p)-f(0),
+        \end{equation}
+        对于高阶导数有递推关系
+        \begin{equation}
+            f^{(n)}(t) \fallingdotseq p^n \bar{f}(p)-p^{n-1} f(0)-p^{n-2} f^{\prime}(0)-\cdots-p f^{(n-2)}(0)-f^{(n-1)}(0)
+        \end{equation}
     \item 积分定理
-        $$
+        \begin{equation}
         \int_0^t \psi(\tau) d \tau \fallingdotseq  \frac{1}{p} \mathcal{L}[\psi(t)]
-        $$
-    \item 相似性定理 $  f(a t) \fallingdotseq  \frac{1}{a} \bar{f}\left(\frac{p}{a}\right)$
+        \end{equation}
+    \item 相似性定理 
+    \begin{equation}
+         f(a t) \fallingdotseq  
+         \frac{1}{a} \bar{f}\left(\frac{p}{a}\right)
+    \end{equation}
+        
+    \item 位移定理 
+        \begin{equation}       
+         e^{-\lambda t} f(t) \fallingdotseq  \bar{f}(p+\lambda)
+        \end{equation}
 
-    \item 位移定理 $        e^{-\lambda t} f(t) \fallingdotseq  \bar{f}(p+\lambda)$
-    \item 延迟定理 $f\left(t-t_0\right) \fallingdotseq  e^{-p t_0} f(p)$.
-    \item 卷积定理 若  $f_1(t) \fallingdotseq  \bar{f}_1(p), f_2(t) \fallingdotseq  \bar{f}_2(p)$ , 则 $$f_1(t) * f_2(t) \fallingdotseq  \bar{f}_1(p) \bar{f}_2(p),$$
-    其中 $f_1(t) * f_2(t) \equiv \int_0^t f_1(\tau) f_2(t-\tau) d \tau$ 称为 $f_1(t)$ 与 $f_2(t)$ 的\textbf{卷积}.
+    \item 延迟定理 
+    \begin{equation}       
+        f\left(t-t_0\right) \fallingdotseq  e^{-p t_0} \bar{f}(p).
+    \end{equation}
+
+    \item 卷积定理 若  $f_1(t) \fallingdotseq  \bar{f}_1(p), f_2(t) \fallingdotseq  \bar{f}_2(p)$ , 则 
+    \begin{equation}       
+        f_1(t) * f_2(t) \fallingdotseq  \bar{f}_1(p) \bar{f}_2(p),
+    \end{equation}
+    其中
+    \begin{equation}        
+    f_1(t) * f_2(t) \equiv \int_0^t f_1(\tau) f_2(t-\tau) d \tau
+    \end{equation}
+    称为 $f_1(t)$ 与 $f_2(t)$ 的\textbf{卷积}.
 \end{enumerate}
-通过反复迭代
-可以验证
-$$
-\mathcal{L}\left\{F^{(n)}(t)\right\}=s^n \mathcal{L}\{F(t)\}-s^{n-1} F(+0)-\cdots-F^{(n-1)}(+0) .
-$$
-若 $f(t)$ 满足 Laplace 变换存在的充分条件, 则
-$$F(p) \rightarrow 0, \Re p=s \rightarrow+\infty$$.
+
+% 若 $f(t)$ 满足 Laplace 变换存在的充分条件, 则
+% $$\bar{f}(p) \rightarrow 0, \Re p=s \rightarrow+\infty$$.
 
 
 
-\begin{table}
-    \centering
-\begin{tabular}{|c|c|c|}
-    \hline No & 原 函 数 & 像 函 数 \\
-    \hline 1 & 1 & $\frac{1}{p}$ \\
-    3 & $t^n(n$ 为整数 $)$ & $\frac{n !}{p^{n+1}}$ \\
-    4 & $t^a(a>-1)$ & $\frac{\Gamma(a+1)}{p^{a+1}}$ \\
-    5 & $\sin \omega t$ & $\frac{1}{p-\lambda}$ \\
-    6 & $\cos \omega t$ & $\frac{\omega}{p^2+\omega^2}$ \\
-    7 & $\operatorname{sh} \omega t$ & $\frac{p}{p^2+\omega^2}$ \\
-    8 & $\operatorname{ch} \omega t$ & $\frac{\omega}{p^2-\omega^2}$ \\
-    & & $\frac{p}{p^2-\omega^2}$ \\
-    9 & $\frac{\omega}{(p+\lambda)^2+\omega^2}$ \\
-    10 & $e^{-\lambda t} \sin \omega t$ & $\frac{p+\lambda}{(p+\lambda)^2+\omega^2}$ \\
-    11 & $e^{-\lambda t} t^a$ & $\frac{\Gamma(a+1)}{(p+\lambda)^{a+1}}$ \\
-    12 & $\frac{1}{\sqrt{\pi t}}$ & $\frac{1}{\sqrt{p}}$ \\
-    13 & $\frac{1}{\sqrt{\pi t}} e^{-a^{2 / 4 t}}$ & $\frac{e^{-a \sqrt{p}}}{\sqrt{p}}$ \\
-    14 & $\frac{1}{\sqrt{\pi t}} e^{-2 a \sqrt{t}}$ & $\frac{1}{\sqrt{p}} e^{\frac{a^2}{p}} erfc\left(\frac{a}{\sqrt{p}}\right)$ \\
-    15 & $\frac{1}{\sqrt{\pi a}} \sin 2 \sqrt{a t}$ & $\frac{1}{p \sqrt{p}} e^{-\frac{a}{p}}$ \\
-    16 & $\frac{1}{\sqrt{\pi a}} \cos 2 \sqrt{a t}$ \\
-    17 & $erf(\sqrt{a t})$ & $\frac{1}{\sqrt{p}} e^{-\frac{a}{p}}$ \\
-    18 & $erfc\left(\frac{a}{2 \sqrt{t}}\right)$ & $\frac{\sqrt{a}}{p \sqrt{p+a}}$ \\
-    19 & $e^t erfc(\sqrt{t})$ & $\frac{1}{p} e^{-a \sqrt{p}}$ \\
-    20 & $\frac{1}{\sqrt{\pi t}}-e^t erfc(\sqrt{t})$ & $\frac{1}{p+\sqrt{p}}$ \\
-    21 & $\frac{1}{\sqrt{\pi t}} e^{-a t}+\sqrt{a} \operatorname{erf} \sqrt{a t}$ & $\frac{1}{1+\sqrt{p}}$ \\
-    & $\frac{\sqrt{p+a}}{p}$ \\
-    22 & $J_0(t)$ & $\frac{1}{\sqrt{p^2+1}}$ \\
-    23 & $J_n(t)$ & $\frac{\left(\sqrt{p^2+1}-p\right)^n}{\sqrt{p^2+1}}$ \\
-    24 & $\frac{J_n(a t)}{t}$ & $\frac{1}{n a^n}\left(\sqrt{p^2+a^2}-p\right)^n$ \\
-    26 & $e^{-a t} I_0(b t)$ & $\frac{1}{\sqrt{(p+a)^2-b^2}}$ \\
-    27 & $\lambda^n e^{-\lambda t} I_n(\lambda t)$ & $\frac{\left\{\sqrt{p^2+2 \lambda p}-(p+\lambda)\right\}^n}{\sqrt{p^2+2 \lambda p}}$ \\
-    28 & $t^n J_n(t)\left(n>-\frac{1}{2}\right)$ & $\frac{2^n \Gamma\left(n+\frac{1}{2}\right)}{\sqrt{\pi}} \frac{1}{\left(p^2+1\right)^{n+\frac{1}{2}}}$ \\
-    29 & $t^{\frac{n}{2}} J_n(2 \sqrt{t})$ & $\frac{1}{p^{n+1}} e^{-\frac{1}{p}}$ \\
-    30 & $J_0\left(a \sqrt{t^2-\tau^2}\right) H(t-\tau)$ & $\frac{1}{\sqrt{p^2+a^2}} e^{-\tau \sqrt{p^2+a^2}}$ \\
-    31 & $\frac{J_1\left(a \sqrt{t^2-\tau^2}\right)}{\sqrt{t^2-\tau^2}} H(t-\tau)$ & $\frac{e^{-\tau p}-e^{-\tau \sqrt{p^2+a^2}}}{a \tau}$ \\
-    32 & $\int_t^{\infty} \frac{J_0(t)}{t} \mathrm{~d} t$ & $\frac{1}{p} \ln \left(p+\sqrt{1+p^2}\right)$ \\
-    33 & $\frac{e^{b t}-e^{a t}}{t}$ & $\ln \frac{p-a}{p-b}$ \\
-    34 & $\frac{1}{\sqrt{\pi t}} \sin \frac{1}{2 t}$ & $\frac{1}{\sqrt{p}} e^{-\sqrt{p}} \sin \sqrt{p}$ \\
-    35 & $\frac{1}{\sqrt{\pi t}} \cos \frac{1}{2 t}$ & $\frac{1}{\sqrt{p}} e^{-\sqrt{p}} \cos \sqrt{p}$ \\
-    \hline
-\end{tabular}
-\end{table}
+% \begin{table}
+%     \centering
+% \begin{tabular}{|c|c|c|}
+%     \hline No & 原 函 数 & 像 函 数 \\
+%     \hline 1 & 1 & $\frac{1}{p}$ \\
+%     3 & $t^n(n$ 为整数 $)$ & $\frac{n !}{p^{n+1}}$ \\
+%     4 & $t^a(a>-1)$ & $\frac{\Gamma(a+1)}{p^{a+1}}$ \\
+%     5 & $\sin \omega t$ & $\frac{1}{p-\lambda}$ \\
+%     6 & $\cos \omega t$ & $\frac{\omega}{p^2+\omega^2}$ \\
+%     7 & $\operatorname{sh} \omega t$ & $\frac{p}{p^2+\omega^2}$ \\
+%     8 & $\operatorname{ch} \omega t$ & $\frac{\omega}{p^2-\omega^2}$ \\
+%     & & $\frac{p}{p^2-\omega^2}$ \\
+%     9 & $\frac{\omega}{(p+\lambda)^2+\omega^2}$ \\
+%     10 & $e^{-\lambda t} \sin \omega t$ & $\frac{p+\lambda}{(p+\lambda)^2+\omega^2}$ \\
+%     11 & $e^{-\lambda t} t^a$ & $\frac{\Gamma(a+1)}{(p+\lambda)^{a+1}}$ \\
+%     12 & $\frac{1}{\sqrt{\pi t}}$ & $\frac{1}{\sqrt{p}}$ \\
+%     13 & $\frac{1}{\sqrt{\pi t}} e^{-a^{2 / 4 t}}$ & $\frac{e^{-a \sqrt{p}}}{\sqrt{p}}$ \\
+%     14 & $\frac{1}{\sqrt{\pi t}} e^{-2 a \sqrt{t}}$ & $\frac{1}{\sqrt{p}} e^{\frac{a^2}{p}} erfc\left(\frac{a}{\sqrt{p}}\right)$ \\
+%     15 & $\frac{1}{\sqrt{\pi a}} \sin 2 \sqrt{a t}$ & $\frac{1}{p \sqrt{p}} e^{-\frac{a}{p}}$ \\
+%     16 & $\frac{1}{\sqrt{\pi a}} \cos 2 \sqrt{a t}$ \\
+%     17 & $erf(\sqrt{a t})$ & $\frac{1}{\sqrt{p}} e^{-\frac{a}{p}}$ \\
+%     18 & $erfc\left(\frac{a}{2 \sqrt{t}}\right)$ & $\frac{\sqrt{a}}{p \sqrt{p+a}}$ \\
+%     19 & $e^t erfc(\sqrt{t})$ & $\frac{1}{p} e^{-a \sqrt{p}}$ \\
+%     20 & $\frac{1}{\sqrt{\pi t}}-e^t erfc(\sqrt{t})$ & $\frac{1}{p+\sqrt{p}}$ \\
+%     21 & $\frac{1}{\sqrt{\pi t}} e^{-a t}+\sqrt{a} \operatorname{erf} \sqrt{a t}$ & $\frac{1}{1+\sqrt{p}}$ \\
+%     & $\frac{\sqrt{p+a}}{p}$ \\
+%     22 & $J_0(t)$ & $\frac{1}{\sqrt{p^2+1}}$ \\
+%     23 & $J_n(t)$ & $\frac{\left(\sqrt{p^2+1}-p\right)^n}{\sqrt{p^2+1}}$ \\
+%     24 & $\frac{J_n(a t)}{t}$ & $\frac{1}{n a^n}\left(\sqrt{p^2+a^2}-p\right)^n$ \\
+%     26 & $e^{-a t} I_0(b t)$ & $\frac{1}{\sqrt{(p+a)^2-b^2}}$ \\
+%     27 & $\lambda^n e^{-\lambda t} I_n(\lambda t)$ & $\frac{\left\{\sqrt{p^2+2 \lambda p}-(p+\lambda)\right\}^n}{\sqrt{p^2+2 \lambda p}}$ \\
+%     28 & $t^n J_n(t)\left(n>-\frac{1}{2}\right)$ & $\frac{2^n \Gamma\left(n+\frac{1}{2}\right)}{\sqrt{\pi}} \frac{1}{\left(p^2+1\right)^{n+\frac{1}{2}}}$ \\
+%     29 & $t^{\frac{n}{2}} J_n(2 \sqrt{t})$ & $\frac{1}{p^{n+1}} e^{-\frac{1}{p}}$ \\
+%     30 & $J_0\left(a \sqrt{t^2-\tau^2}\right) H(t-\tau)$ & $\frac{1}{\sqrt{p^2+a^2}} e^{-\tau \sqrt{p^2+a^2}}$ \\
+%     31 & $\frac{J_1\left(a \sqrt{t^2-\tau^2}\right)}{\sqrt{t^2-\tau^2}} H(t-\tau)$ & $\frac{e^{-\tau p}-e^{-\tau \sqrt{p^2+a^2}}}{a \tau}$ \\
+%     32 & $\int_t^{\infty} \frac{J_0(t)}{t} d t$ & $\frac{1}{p} \ln \left(p+\sqrt{1+p^2}\right)$ \\
+%     33 & $\frac{e^{b t}-e^{a t}}{t}$ & $\ln \frac{p-a}{p-b}$ \\
+%     34 & $\frac{1}{\sqrt{\pi t}} \sin \frac{1}{2 t}$ & $\frac{1}{\sqrt{p}} e^{-\sqrt{p}} \sin \sqrt{p}$ \\
+%     35 & $\frac{1}{\sqrt{\pi t}} \cos \frac{1}{2 t}$ & $\frac{1}{\sqrt{p}} e^{-\sqrt{p}} \cos \sqrt{p}$ \\
+%     \hline
+% \end{tabular}
+% \end{table}

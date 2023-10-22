@@ -1,6 +1,37 @@
 \subsection{积分变换的应用}
 \label{subsec:applications}
 
+
+
+如果 $\int_v^{\infty} \bar{f}(q) d q$ 存在, 且当$t\to 0$时, $|f(t)/t|$有界,则
+\begin{equation}
+    \int_{p}^{\infty} \bar{f}(q) dq \risingdotseq \frac{f(t)}{t} . 
+\end{equation}
+
+$\frac{\sin \omega t}{t} \fallingdotseq \int_p^{\infty} \frac{\omega}{q^2+\omega^2} d q=\frac{\pi}{2}-\arctan \frac{p}{\omega}$.
+
+当$p\to 0$时, 有
+\begin{equation}
+    \int_0^{\infty} \bar{f}(p) d p=\int_0^{\infty} \frac{f(t)}{t} d t
+\end{equation}
+一个例子如
+$$
+\int_0^{\infty} \frac{\sin t}{t} d t=\int_0^{\infty} \frac{1}{p^2+1} d p=\frac{\pi}{2}
+$$
+不仅如此, 有些积分无法用留数定理计算,如
+$$
+\int_0^{\infty} \frac{\cos a t-\cos b t}{t} d t \quad a>0, b>0
+$$
+使用以上等式可得
+
+$$
+\begin{gathered}
+\int_0^{\infty} \frac{\cos a t-\cos b t}{t} d t \fallingdotseq \int_0^{\infty}\left(\frac{p}{p^2+a^2}-\frac{p}{p^2+b^2}\right) d p \\
+=\left.\frac{1}{2} \ln \frac{p^2+a^2}{p^2+b^2}\right|^{\infty}=\ln b-\ln a .
+\end{gathered}
+$$
+
+
 \begin{examplebox}{利用拉普拉斯变换求解简谐振子方程的解.}
     质量为$m$的质点在弹性系数为$k$的弹簧牵引下做简谐运动,满足方程为
     $$
