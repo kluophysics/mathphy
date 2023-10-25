@@ -175,7 +175,7 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
     \end{equation}
     \item 位移定理
     \begin{equation}
-        \mathcal{F} [ e^{\imath \omega x_0} f(x) ] = f(\omega - \omega_0),
+        \mathcal{F} [ e^{\imath \omega x_0} f(x) ] = F(\omega - \omega_0),
     \end{equation}
     \item 卷积定理, 如果
     \[
@@ -212,7 +212,7 @@ $$
 有
 $$
 \begin{aligned}
-F\left(k_1, k_2\right) & =\frac{A}{2 \pi} \int_X^X e^{-i k_1 x} d x \int_Y^X e^{-i k_2 y} d y \\
+F\left(k_1, k_2\right) & =\frac{A}{2 \pi} \int_{-X}^X e^{-i k_1 x} d x \int_{-Y}^Y e^{-i k_2 y} d y \\
 & =\left.\left.\frac{A}{2 \pi} \frac{1}{-i k_1} e^{-i k_1 x}\right|_{-X} ^X \frac{1}{-i k_2} e^{-i k_2 y}\right|_{-Y} ^Y \\
 & =\frac{2A}{\pi} \frac{1}{i 2 k_1}\left(e^{i k_1 X}-e^{-i k_1 X}\right) \frac{1}{i 2 k_2}\left(e^{i k_2 Y}-e^{-i k_2 Y}\right) \\
 & =\frac{2A X Y}{\pi} \frac{\sin \left(k_1 X\right)}{k_1 X} \frac{\sin \left(k_2 Y\right)}{k_2 Y}
