@@ -1,14 +1,39 @@
-\subsection{积分变换的应用}
+\subsection{拉普拉斯积分变换的应用}
 \label{subsec:applications}
 
+\subsubsection{计算级数和}
+有时,拉普拉斯变换可以用来计算某些级数的和.以下面的例子说明.
 
+如计算级数和
+$$
+    \sum_{n=1} ^{\infty}  \frac{1}{n^2},
+$$
+由前面例题
+$$
+\int_0^{\infty} t \mathrm{e}^{-p^t} \mathrm{~d} t=\frac{1}{p^2}, \quad \operatorname{Re} p>0
+$$
 
+将级数化为
+$$
+\begin{aligned}
+\sum_{n= 1}^{\infty} \frac{1}{n^2} & =\sum_{n=1}^{\infty} \int_0^{\infty} t e^{-n t} \mathrm{~d} t \\
+& =\int_0^{\infty} t\left[\sum_{n=1}^{\infty} \mathrm{e}^{-n t}\right] \mathrm{d} t=\int_0^{\infty} \frac{t}{\mathrm{e}^t-1} \mathrm{~d} t
+\end{aligned}
+$$
+查表可得
+\begin{equation}
+    \sum_{n=1} ^{\infty}  \frac{1}{n^2} = \frac{\pi^2}{6}.
+\end{equation}
+
+\subsubsection{求解定积分}
 如果 $\int_v^{\infty} \bar{f}(q) d q$ 存在, 且当$t\to 0$时, $|f(t)/t|$有界,则
 \begin{equation}
     \int_{p}^{\infty} \bar{f}(q) dq \risingdotseq \frac{f(t)}{t} . 
 \end{equation}
-
-$\frac{\sin \omega t}{t} \fallingdotseq \int_p^{\infty} \frac{\omega}{q^2+\omega^2} d q=\frac{\pi}{2}-\arctan \frac{p}{\omega}$.
+比如
+$$
+\frac{\sin \omega t}{t} \fallingdotseq \int_p^{\infty} \frac{\omega}{q^2+\omega^2} d q=\frac{\pi}{2}-\arctan \frac{p}{\omega}.
+$$
 
 当$p\to 0$时, 有
 \begin{equation}
@@ -31,8 +56,9 @@ $$
 \end{gathered}
 $$
 
-
-\begin{examplebox}{利用拉普拉斯变换求解简谐振子方程的解.}
+\subsubsection{求解微分方程}
+给一个例子,利用拉普拉斯变换求解简谐振子方程的解.
+% \begin{examplebox}{利用拉普拉斯变换求解简谐振子方程的解.}
     质量为$m$的质点在弹性系数为$k$的弹簧牵引下做简谐运动,满足方程为
     $$
 m \frac{d^2 X(t)}{d t^2}+k X(t)=0
@@ -57,4 +83,4 @@ $$
 $$
 X(t)=X_0 \cos \omega_0 t .
 $$
-\end{examplebox}
+% \end{examplebox}
