@@ -1,0 +1,217 @@
+\section{二阶线性偏微分方程的分类}
+在前面各章,我们分别讨论了弦振动方程、热传导方程与拉普拉斯方程。
+这三类方程虽然形状很特殊,但是在二阶线性偏微分方程中,它们却是三个典型的代表。
+一般的二阶线性偏微分方程之间的共性与差异, 往往可以从对这三类方程的研究得到。
+本章中, 我们就以关于这三类方程的知识为基础, 研究一般的二阶线性偏微分方程, 并对这三类方程的性质进行比较深人的总结与讨论。在下面的讨论中, 常将二阶线性偏微分方程简称为二阶线性方程。
+
+
+把所有自变数 (包括空间坐标和时间坐标) 依次记作 $x_1, x_2, \cdots, x_n$. 二阶偏微分方程如果可以表为
+$$
+\sum_{j=1}^n \sum_{i=1}^n a_{i j} u_{x_i x_j}+\sum_{i=1}^n b_i u_{x_i}+c u+f=0, .
+$$
+
+其中 $a_{i j}, b_i, c, f$ 只是 $x_1, x_2, \cdots, x_n$ 的函数, 就叫作线性的方程. $\$ 7.1$ 导出的泛定方程以及许多常见的偏微分方程都是线性的.
+
+如 $f \equiv 0$, 则方程称为齐次的, 否则叫非齐次的. 从 87.1 导出的各方程来看, 大凡有源 (外力、热源、电荷等) 的方程为非齐次, 没有源的方程为齐次.不过, 这也不是绝对的. 
+例如, 扩散方程 (7.1.29) (7.1.30) 分别是有源和有汇的, 但仍然是齐次方程.
+
+如果泛定方程和定解条件都是线性的, 可以把定解问题的解看作几个部分的线性叠加,
+ 只要这些部分各自所满足的泛定方程和定解条件的相应的线性叠加正好是原来的泛定方程和定解条件就行. 
+ 这叫作叠加原理. 本书将经常引用叠加原理.
+
+ \subsection{两个自变数的方程分类}
+
+ 先研究两个自变数 $x$ 和 $y$ 的二阶线性偏微分方程
+$$
+a_{11} u_{x x}+2 a_{12} u_{x y}+a_{22} u_{y y}+b_1 u_x+b_2 u_y+c u+f=0,
+$$
+
+其中 $a_{11}, a_{12}, a_{22}, b_1, b_2, c, f$ 只是 $x$ 和 $y$ 的函数. 在以下的讨论中, 我们假定 $a_{11}, a_{12}, a_{22}, b_1, b_2, c, f$ 都是实数.
+试作自变数的代换
+$$
+\left\{\begin{array} { l } 
+{ x = x ( \xi , \eta ) , } \\
+{ y = y ( \xi , \eta ) , }
+\end{array} \text { 即 } \left\{\begin{array}{l}
+\xi=\xi(x, y), \\
+\eta=\eta(x, y),
+\end{array}\right.\right.
+$$
+
+代换的雅可比式
+$$\frac{\partial(\xi, \eta)}{\partial(x, y)} = \left|\begin{array}{ll}
+    \xi_x & \xi_y \\
+    \eta_x & \eta_y
+    \end{array}\right|
+\neq 0$$.
+ 通过代换 (7.3.3), $u\left(x, y_0\right)$ 成为 $\xi$ 和 $\eta$ 的函数. 这里, 还应把方程 (7.3.2) 改用新的自变数 $\xi$ 和 $\eta$ 表出. 为此, 作如下计算:
+$$
+\left\{\begin{array}{l}
+u_x=u_{\xi} \xi_x+u_\eta \eta_x \\
+u_y=u_{\xi} \xi_y+u_\eta \eta_y
+\end{array}\right.
+$$
+
+
+$$
+\left\{\begin{aligned}
+u_{x x} & =\left(u_{\xi \xi} \xi_x^2+u_{\xi \eta} \xi_x \eta_x+u_{\xi} \xi_{x x}\right)+\left(u_{\eta \xi} \eta_x \xi_x+u_{\eta \eta} \eta_x^2+u_\eta \eta_{x x}\right) \\
+& =u_{\xi \xi} \xi_x^2+2 u_{\xi \eta} \xi_x \eta_x+u_{\eta \eta} \eta_x^2+u_{\xi} \xi_{x x}+u_\eta \eta_{x x}, \\
+u_{x y} & =\left(u_{\xi \xi} \xi_x \xi_y+u_{\xi \eta} \xi_x \eta_y+u_{\xi} \xi_{x y}\right)+\left(u_{\eta \xi} \eta_x \xi_y+u_{\eta \eta} \eta_x \eta_y+u_\eta \eta_{x y}\right) \\
+& =u_{\xi \xi} \xi_x \xi_y+u_{\xi \eta} \cdot\left(\xi_x \eta_y+\xi_y \eta_x\right)+u_{\eta \eta} \eta_x \eta_y+u_{\xi} \xi_{x y}+u_\eta \eta_{x y}, \\
+u_{y y} & =\left(u_{\xi \xi} \xi_y^2+u_{\xi \eta} \xi_y \eta_y+u_{\xi} \xi_{y y}\right)+\left(u_{\eta \xi} \eta_y \xi_y+u_{\eta \eta} \eta_y^2+u_\eta \eta_{y y}\right) \\
+& =u_{\xi \xi} \xi_y^2+2 u_{\xi \eta} \xi_y \eta_y+u_{\eta \eta} \eta_y^2+u_{\xi} \xi_{y y}+u_\eta \eta_{y y} .
+\end{aligned}\right.
+$$
+
+把(7.3.4) 和(7.3.5) 代人 (7.3.2) 得到采用新自变数 $\xi$ 和 $\eta$ 后的方程
+$$
+A_{11} u_{\xi \xi}+2 A_{12} u_{\xi \eta}+A_{22} u_{\eta \eta}+B_1 u_{\xi}+B_2 u_\eta+C u+F=0 \text {, }
+$$
+
+其中系数
+$\left\{\begin{array}{l}A_{11}=a_{11} \xi_x^2+2 a_{12} \xi_x \xi_y+a_{22} \xi_y^2, \\ A_{12}=a_{11} \xi_x \eta_x+a_{12}\left(\xi_x \eta_y+\xi_y \eta_x\right)+a_{22} \xi_y \eta_y, \\ A_{22}=a_{11} \eta_x^2+2 a_{12} \eta_x \eta_y+a_{22} \eta_y^2, 
+    \\ B_1=a_{11} \xi_{x x}+2 a_{12} \xi_{x y}+a_{22} \xi_{y y}+b_1 \xi_x+b_2 \xi_y, \\ B_2=a_{11} \eta_{x x}+2 a_{12} \eta_{x y}+a_{22} \eta_{y y}+b_1 \eta_x+b_2 \eta_y, \\ C=c \\ F=f\end{array}\right.$
+
+方程 (7.3.6) 仍然是线性的.
+从(7.3.7) 可以看到, 如果取一阶偏微分方程
+$$
+a_{11} z_x^2+2 a_{12} z_x z_y+a_{22} z_y^2=0
+$$
+
+它的一个特解作为新自变数 $\xi$, 则 $a_{11} \xi_x^2+2 a_{12} \xi_x \xi_j+a_{22} \xi_y^2=0$, 从而 $A_{11}=$ 0 . 同理, 如果 (7.3.8) 的另一特解作为新自变数 $\eta$, 则 $A_{22}=0$. 这样, 方程 (7. 3. 6 ) 就得以化简.
+
+一阶偏微分方程 (7.3.8) 的求解可转化为常微分方程的求解. 事实上, (7.3.8) 可改写为
+$$
+a_{11}\left(-\frac{z_x}{z_y}\right)^2-2 a_{12}\left(-\frac{z_x}{z_y}\right)+a_{22}=0
+$$
+
+如果把
+$$
+z(x, y)=\text { 常数 }
+$$
+
+当作定义隐函数 $y(x)$ 的方程, 则 $\mathrm{d} y / \mathrm{d} x=-z_x / z_y$, 从而 (7.3.9) 正是
+$$
+a_{11}\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^2-2 a_{12} 
+\frac{\mathrm{d} y}{\mathrm{~d} x}+a_{22}=0 .
+$$
+
+常微分方程 (7.3.11) 叫作二阶线性偏微分方程 (7.3.2) 的特征方程, 
+特征方程的一般积分 “ $\xi(x, y)=$ 常数” 和 “ $\eta(x, y)=$ 常数” 叫做特征线.
+
+特征方程 (7.3.11) 可分为两个方程
+$$
+\begin{aligned}
+& \frac{\mathrm{d} y}{\mathrm{~d} x}=\frac{a_{12}+\sqrt{a_{12}^2-a_{11} a_{22}}}{a_{11}}, \\
+& \frac{\mathrm{d} y}{\mathrm{~d} x}=\frac{a_{12}-\sqrt{a_{12}^2-a_{11} a_{22}}}{a_{11}},
+\end{aligned}
+$$
+
+通常根据 (7.3.12) 和 (7.3.13) 的根号下的符号划分偏微分方程 (7.3.2) 的类型:
+$$
+\left\{\begin{array}{l}
+a_{12}^2-a_{11} a_{22}>0, \text { 双曲型; } \\
+a_{12}^2-a_{11} a_{22}=0, \text { 抛物型; } \\
+a_{12}^2-a_{11} a_{22}<0, \text { 椭圆型. }
+\end{array}\right.
+$$
+
+方程 (7.3.2) 的系数 $a_{11}, a_{12}$ 和 $a_{22}$ 可以是 $x$ 和 $y$ 的函数, 所以, 一个方程在自变数的某一区域上属于某一类型, 在另一区域上可能属于另一类型. 用 (7.3.7) 容易验证
+$$
+A_{12}^2-A_{11} A_{22}=\left(a_{12}^2-a_{11} a_{22}\right)\left(\xi_x \eta_y-\xi_y \eta_x\right)^2,
+$$
+
+(7.3.7) 容易验证
+$$
+A_{12}^2-A_{11} A_{22}=\left(a_{12}^2-a_{11} a_{22}\right)\left(\xi_x \eta_y-\xi_y \eta_x\right)^2,
+$$
+
+这是说, 作自变数的代换时, 方程的类型不变.
+
+
+\begin{enumerate}
+    \item \textbf{双曲型方程}
+
+$\xi(x, y)=$ 常数, $\eta(x, y)=$ 常数.
+取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)$ 作为新的自变数, 则 $A_{11}=0, A_{22}=0$. 从而自变数代换后的方程 (7.3.6) 成为
+$$
+u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right]
+$$
+
+或者, 在作自变数代换
+$$
+\left\{\begin{array} { l } 
+{ \xi = \alpha + \beta , } \\
+{ \eta = \alpha - \beta , }
+\end{array} \quad \text { 即 } \left\{\begin{array}{l}
+\alpha=\frac{1}{2}(\xi+\eta) \\
+\beta=\frac{1}{2}(\xi-\eta)
+\end{array}\right.\right.
+$$
+
+则方程 (7.3.14) 化为
+$$
+u_{\alpha \alpha}-u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\left(B_1-B_2\right) u_\beta+2 C u+2 F\right] .
+$$
+(7.3.14) 或 (7.3.15) 是双曲型方程的标准形式. 一维波动方程, 如弦振动方程 (7.1.6) 和 (7.1.7), 杆的纵振动方程 (7.1.9), 电报方程 (7.1.13) 和 (7.1.14) 等, 都是标准形式的双曲型方程.
+
+
+\item \textbf{抛物型方程}
+由于 $a_{12}^2-a_{11} a_{22}=0$, 特征方程 (7.3.12) 和 (7.3.13) 变成同一个方程:
+$$
+\frac{\mathrm{d} y}{\mathrm{~d} x}=\frac{a_{12}}{a_{11}},
+$$
+
+它们只能给出一族实的特征线
+$$
+\xi(x, y)=\text { 常数, }
+$$
+
+则 $\xi=\xi(x, y)$ 是 (7.3.9) 的解. 取 $\xi$ 作为新的自变数, 取与 $\xi(x, y)$ 无关的函数 $\eta=\eta(x, y)$ 作为另一新的自变数. 采用新自变数后, 将 $\xi_x / \xi_y=-\mathrm{d} y / \mathrm{d} x=$ $-a_{12} / a_{11}$ 和 $a_{12}= \pm \sqrt{a_{11} \cdot a_{22}}$ 代人 (7.3.7), 得方程的前三个系数为
+$$
+\begin{aligned}
+A_{11} & =\xi_y^2\left[a_{11}\left(\frac{\xi_x}{\xi_y}\right)^2+2 a_{12} \frac{\xi_x}{\xi_y}+a_{22}\right]=-\frac{\xi_y^2}{a_{11}}\left[a_{12}^2-a_{11} \cdot a_{22}\right]=0 \\
+A_{12} & =\xi_y\left[a_{11}\left(\frac{\xi_x}{\xi_y}\right)^2 \eta_y+a_{12}\left(\frac{\xi_x}{\xi_y} \eta_y+\eta_x\right)+a_{22} \eta_y\right] \\
+& =-\frac{\xi_y \eta_y}{a_{11}}\left[a_{12}^2-a_{11} \cdot a_{22}\right]=0 \\
+A_{22} & =\eta_y^2\left[a_{11}\left(\frac{\eta_x}{\eta_y}\right)^2+2 a_{12} \frac{\eta_x}{\eta_y}+a_{22}\right]=\eta_y^2\left[\sqrt{a_{11}}\left(\frac{\eta_x}{\eta_y}\right) \pm \sqrt{a_{22}}\right]^2 .
+\end{aligned}
+$$
+
+可见, 只要取 $\eta(x, y)$ 使 $\eta_x / \eta_y \neq \sqrt{a_{22}} / \sqrt{a_{11}}$, 即 $\eta$ 不满足特征方程 (7.3.16), 则 $A_{22} \neq 0$, 从而自变数代换后的方程 (7.3.6) 成为
+$$
+u_{\eta \eta}=-\frac{1}{A_{22}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right] .
+$$
+
+这是抛物型方程的标准形式. 一维输运方程, 如扩散方程 (7.1.26), 热传导方程 (7.1.33) 等, 都是标准形式的抛物型方程.
+
+
+\item \textbf{椭圆型方程}
+(7.3.12) 和 (7.3.13) 各给出一族复数的特征线
+$$
+\xi(x, y)=\text { 常数, } \eta(x, y)=\text { 常数, }
+$$
+
+而且 $\eta=\xi^*$. 取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)=\xi^*(x, y)$ 作为新的自变数, 则 $A_{11}=0, A_{22}=0$, 从而自变数代换后的方程 (7.3.6) 成为
+$$
+u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right] .
+$$
+
+这方程不同于 (7.3.14), 因为这里的 $\xi$ 和 $\eta$ 是复变数. 一般说来, 这是不方便的. 通常又作代换
+$$
+\left\{\begin{array} { l } 
+{ \xi = \alpha + \mathrm { i } \beta , } \\
+{ \eta = \alpha - \mathrm { i } \beta , }
+\end{array} \quad \text { 即 } \left\{\begin{array}{l}
+\alpha=\operatorname{Re} \xi=\frac{1}{2}(\xi+\eta), \\
+\beta=\operatorname{Im} \xi=\frac{1}{2 \mathrm{i}}(\xi-\eta) .
+\end{array}\right.\right.
+$$
+
+则方程 (7.3.18) 化为
+$$
+u_{\alpha \alpha}+u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\mathrm{i}\left(B_2-B_1\right) u_\beta+2 C u+F\right] .
+$$
+(7.3.18) 或 (7.3.19) 是椭圆型方程的标准形式. 平面稳定场方程, 如稳定浓度分布 (7.1.39), 稳定温度分布 (7.1.41), 静电场方程 (7.1.46) 和 (7.1.47), 无旋恒定电流场方程 (7.1.54) 和 (7.1.56), 无旋定常流动方程 (7.1.61) 和
+在二维情况下, 都是 (7.3.19)形式的椭圆型方程.
+\end{enumerate}

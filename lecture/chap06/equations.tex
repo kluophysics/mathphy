@@ -1,5 +1,349 @@
-\subsection{数学物理方程的推导}
+数学物理方程是该课程的重要组成部分.
+研究物理量在空间中的分布和在时间上的变化情况是物理规律要探讨的主要内容.
+\section{数学物理方程的推导}
+物理规律反映的是某个物理量在邻近地点和邻近时刻之间的联系,因此数
+学物理方程的导出步骤如下: 首先当然要确定研究哪一个物理量 $u$. 从所研究的系统中划出一个小部分, 
+根据物理规律分析邻近部分和这个小部分的相互作
+用 (抓住主要的作用, 略去不那么重要的因素), 这种相互作用在一个短时间段里怎样影响物理量 $u$.
+ 把这种影响用算式表达出来, 经简化整理就是数学物理方程.
+
+下面我们以三个典型的数理方程为例来演示推导过程.
+
+\subsection{弦振动方程}
+\textbf{弦振动方程}是在 18 世纪由达朗贝尔 (D'Alembert) 等人首先给予系统研究的.
+它是一大类偏微分方程的典型代表.下面先从物理问题出发来导出弦振动方程.
+
+给定一根两端固定的拉紧的均匀柔软的弦, 其长为 $l$, 在外力作用下在平衡位置附近作微小的横振动, 
+求弦上各点的运动规律.
+
+将实际问题归结为数学模型时,必须作一些理想化的假设, 以便抓住问题的最本质的特征.
+在考察弦振动问题时的基本假设为:
+\begin{enumerate}
+    \item  弦是均匀的, 弦的截面直径与弦的长度相比可以忽略, 因此弦可以视为一根曲线, 
+        它的(线) 密度 $\rho$ 是常数.
+    \item 弦在某一平面内作微小横振动, 即弦的位置始终在一直线段附近, 
+        而弦上各点均在同一平面内垂直于该直线的方向上作微小振动.
+    \item  弦是柔软的, 它在形变时不抵抗弯曲, 弦上各质点间的张力方向与弦的切线方向一致,
+        而弦的伸长形变与张力的关系服从胡克(Hooke)定律.
+\end{enumerate}
+
+我们将在上述假定下来导出弦振动方程.先讨论不受外力作用时弦振动的情形.根据牛顿第二定律知
+$$
+\text{作用在物体上的力} = \text{该物体的质量} \times \text{该物体的加速度}
+$$
+
+于是在每一个时间段内
+$$
+\text{作用在物体上的冲量} = \text{ 该物体的动量的变化}.
+$$
+
+由于弦上各点的运动规律不同, 必须对弦的各个片段分别进行考察.
+为此, 我们选择坐标系, 将弦的两端固定在 $x$ 轴的 $A,B$ 两点上 $(AB=l)$ .
+由基本假设, 可以用 $u(x, t)$ 表示
+弦上各点在时刻 $t$ 沿垂直于 $x$ 方向的位移.当 $t$ 固定时 $u(x, t)$ 即表示弦在该时刻所处的位置.
 
 
-\subsection{数学物理方程的分类}
+在这弦上任取一弦段 $(x, x+\Delta x)$, 它的弧长为
+$$
+\Delta s=\int_x^{x+\Delta x} \sqrt{1+\left(\frac{\partial u}{\partial x}\right)^2} d x,
+$$
 
+由基本假设2知 $\frac{\partial u}{\partial x}$ 很小,于是 $\left(\frac{\partial u}{\partial x}\right)^2$ 与 1 相比可以忽略不计, 从而
+$$
+\Delta s \approx \int_x^{x+\Delta x} d x=\Delta x
+$$
+
+这样, 可以认为这段弦在振动过程中并未伸长, 因此由胡克定律知道, 弦上每一点所受张力在运动过程中保持不变, 
+即张力与时间无关.我们把在 $x$ 点处的张力记为 $\boldsymbol{T}(x)$, 它表示在 $x$ 
+点处弦的左边部分对右边部分的拉力与弦的右边部分对左边部分的拉力大小均为 $T(x)$. 
+由基本假设 3 知,张力 $\boldsymbol{T}(x)$ 的方向总是沿着弦在 $x$ 点处的切线方向.
+ 在 $x$ 点处作用于弦段 $(x, x+\Delta x)$ 的张力在 $x$, $u$ 两个方向上的分力分别为
+$$
+-T(x) \cos \alpha_1, \quad-T(x) \sin \alpha_1,
+$$
+这里 $\alpha_1$ 是张力 $\boldsymbol{T}(x)$ 的方向与水平线的夹角, 
+负号表示力的方向取与坐标轴相反的方向. 在弦段的另一端 $x+\Delta x$ 点处作用于弦段 $(x, x+\Delta x)$ 
+的张力在 $x$, $u$两个方向的分力分别为
+$$
+T(x+\Delta x) \cos \alpha_2, \quad T(x+\Delta x) \sin \alpha_2,
+$$
+
+其中 $\alpha_2$ 是张力 $\boldsymbol{T}(x+\Delta x)$ 与水平线的夹角.
+由于弦只在 $x$ 轴的垂直方向作横振动, 所以水平方向的合力为零, 即
+$$
+T(x+\Delta x) \cos \alpha_2-T(x) \cos \alpha_1=0 .
+$$
+
+由于假设弦仅在平衡位置附近作微小振动, 所以
+$$
+\begin{aligned}
+& \cos \alpha_1=\frac{1}{\sqrt{1+\left[\frac{\partial u(x, t)}{\partial x}\right]^2}} \approx 1, \\
+& \cos \alpha_2=\frac{1}{\sqrt{1+\left[\frac{\partial u(x+\Delta x, t)}{\partial x}\right]^2}} \approx 1,
+\end{aligned}
+$$
+
+$$
+T(x+\Delta x)-T(x)=0,
+$$
+
+故 $T(x+\Delta x)=T(x)=T$, 也就是说, $T$ 是一个常数.又由基本假设 2 知
+$$
+\begin{aligned}
+& \sin \alpha_1 \approx \tan \alpha_1=\frac{\partial u(x, t)}{\partial x}, \\
+& \sin \alpha_2 \approx \tan \alpha_2=\frac{\partial u(x+\Delta x, t)}{\partial x},
+\end{aligned}
+$$
+
+所以张力在 $x$ 轴的垂直方向的合力为
+$$
+T \sin \alpha_2-T \sin \alpha_1=T\left[\frac{\partial u(x+\Delta x, t)}{\partial x}-\frac{\partial u(x, t)}{\partial x}\right],
+$$
+
+从而在时间段 $(t, t+\Delta t)$ 中该合力产生的冲量为
+$$
+\int_t^{t+\Delta t} T\left[\frac{\partial u(x+\Delta x, t)}{\partial x}-\frac{\partial u(x, t)}{\partial x}\right] d t .
+$$
+
+另一方面, 在时刻 $t$ 弦段 $(x, x+\Delta x)$ 的动量为
+$$
+\int_x^{x+\Delta} \rho \frac{\partial u(x, t)}{\partial t} d x,
+$$
+
+在时刻 $t+\Delta t$ 该弦段的动量为
+$$
+\int_x^{x+\Delta} \rho \frac{\partial u(x, t+\Delta t)}{\partial t} d x,
+$$
+
+所以从时刻 $t$ 到时刻 $t+\Delta t$, 弦段 $(x, x+\Delta x)$ 的动量增加量为
+$$
+\int_x^{x+\Delta x} \rho\left[\frac{\partial u(x, t+\Delta t)}{\partial t}-\frac{\partial u(x, t)}{\partial t}\right] d x .
+$$
+
+由于在 $(t, t+\Delta t)$ 时间段内的冲量应等于动量的增加, 故
+$$
+\int_t^{t+\Delta t} T\left[\frac{\partial 
+u(x+\Delta x, t)}{\partial x}-\frac{\partial u(x, t)}{\partial x}\right] d t
+=\int_{x}^{\Delta+x} \rho\left[\frac{\partial u(x, t+\Delta t)}{\partial t}-
+\frac{\partial u(x, t)}{\partial t}\right] d x,
+$$
+
+从而
+\begin{equation}
+\int_t^{t+\Delta t} \int_{x}^{x+ \Delta x} 
+\left[T \frac{\partial^2 u(x, t)}{\partial x^2}-\rho 
+\frac{\partial^2 u(x, t)}{\partial t^2}\right] d x d t=0 .
+\label{eq:string_vibration}
+\end{equation}
+
+由 $\Delta x, \Delta t$ 的任意性可知 式\ref{eq:string_vibration} 中的被积函数必须为零, 从而得到
+\begin{equation}
+T \frac{\partial^2 u(x, t)}{\partial x^2}-\rho \frac{\partial^2 u(x, t)}{\partial t^2}=0 .
+\end{equation}
+
+
+记 $\frac{T}{\rho}$ 为 $a^2$, 就得到不受外力作用时弦振动所满足的方程
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2}-a^2 \frac{\partial^2 u}{\partial x^2}=0 .
+\label{eq:free_vibration}
+\end{equation}
+该方程称为弦的\textbf{自由振动方程}.
+
+当存在外力作用时, 若在点 $x$ 处外力 (线) 密度为 $F(x, t)$, 其方向垂直于 $x$ 轴, 则小弦段 $(x, x+\Delta x)$ 上所受外力为
+$$
+\int_x^{x+\Delta x} F(x, t) d x,
+$$
+
+它在时间段 $(t, t+\Delta t)$ 中所产生的冲量为
+$$
+\int_t^{t+\Delta t} \int_x^{x+\Delta } F(x, t) d x d t .
+$$
+
+于是在方程 \ref{eq:string_vibration} 的左侧应添上这一项, 得到
+
+$$
+\int_t^{t+\Delta t} \int_{x}^{x+ \Delta x}  \left[T \frac{\partial^2 u(x, t)}{\partial x^2}-\rho \frac{\partial^2 u(x, t)}{\partial t^2}+F(x, t)\right] d x d t=0 .
+$$
+
+仍由 $\Delta x, \Delta t$ 的任意性知
+$$
+T \frac{\partial^2 u(x, t)}{\partial x^2}-\rho \frac{\partial^2 u(x, t)}{\partial t^2}=-F(x, t)
+$$
+
+或
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2}-a^2 \frac{\partial^2 u}{\partial x^2}=f(x, t) .
+\label{eq:forced_vibration}
+\end{equation}
+这就是外力作用下弦振动所满足的方程,该方程称为弦的\textbf{受迫振动方程}.
+其中 $f(x, t)=\frac{F(x, t)}{\rho}$ 表示单位质量在 $x$ 点处所受的外力.
+
+
+
+
+\subsection{热传导方程}
+% \textbf{热传导方程} 
+考察空间某物体 $G$ 的热传导问题. 以函数 $u(x, y, z, t)$ 表示物体 $G$ 在位置 $(x, y, z)$ 
+及时刻 $t$ 的温度.
+
+依据传热学中的傅里叶实验定律, 物体在无穷小时段 $d t$ 内沿法线方向 $\boldsymbol{n}$ 流过一个无穷小面积 $d S$ 的热量 $d Q$ 
+与物体温度沿曲面 $d S$ 法线方向的方向导数 $\frac{\partial u}{\partial n}$ 成正比, 即
+\begin{equation}
+d Q=-k(x, y, z) \frac{\partial u}{\partial n} d S d t,
+\label{eq:heat_conduct_diff}
+\end{equation}
+
+其中 $k(x, y, z)$ 称为物体在点 $(x, y, z)$ 处的热传导系数, 它应取正值. 上式\ref{eq:heat_conduct_diff}中负号的出现
+是由于热量总是从温度高的一侧流向低的一侧, 因此, $d Q$ 应和 $\frac{\partial u}{\partial n}$ 异号.
+
+在物体 $G$ 内任取一闭曲面 $\Gamma$, 它所包围的区域记为 $\Omega$, 由式\ref{eq:heat_conduct_diff}, 
+从时刻 $t_1$ 到 $t_2$ 流进此闭曲面的全部热量为
+$$
+Q=\int_{t_1}^{t_2}\left\{\iint_{\Gamma} k(x, y, z) \frac{\partial u}{\partial n} d S\right\} d t,
+$$
+这里 $\frac{\partial u}{\partial n}$ 表示 $u$ 沿 $\Gamma$ 上单位外法线方向 $\boldsymbol{n}$ 的方向导数.
+流入的热量使物体内部温度发生变化, 在时间间隔 $\left(t_1, t_2\right)$ 中物体温度从 $u(x, y, z,  t_1 )$ 变化到 $u\left(x, y, z, t_2\right)$, 它所应该吸收的热量是
+$$
+\iiint_{\Omega} c(x, y, z) \rho(x, y, z)\left[u\left(x, y, z, t_2\right)-u\left(x, y, z, t_1\right)\right] d x d y d z,
+$$
+其中 $c$ 为比热, $\rho$ 为密度. 于是,
+$$
+    \int_{t_1}^{t_2} \iint_{\Gamma} k \frac{\partial u}{\partial n} d S d t=
+    \iiint_{\Omega} c \rho\left[u\left(x, y, z, t_2\right)-u\left(x, y, z, t_1\right)\right] d x d y d z . 
+$$
+
+假设函数 $u$ 关于变量 $x, y, z$ 具有二阶连续偏导数, 关于 $t$ 具有一阶连续偏导数, 利用格林公式, 可以把上 式化为
+
+\begin{equation}
+\begin{gathered}
+\int_{t_1}^{t_2} \iiint_{\Omega}\left\{\frac{\partial}{\partial x}\left(k \frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(k \frac{\partial u}{\partial y}\right)+\frac{\partial}{\partial z}\left(k \frac{\partial u}{\partial z}\right)\right\} d x d y d z d t \\
+=\iiint_{\Omega} c \rho\left(\int_{t_1}^{t_2} \frac{\partial u}{\partial t} d t\right) d x d y d z,
+\label{eq:heat_identity}
+\end{gathered}
+\end{equation}
+
+交换积分次序,就得到
+$$
+\int_{t_1}^{t_2} \iiint_{\Omega}\left[c \rho \frac{\partial u}{\partial t}-\frac{\partial}{\partial x}
+\left(k \frac{\partial u}{\partial x}\right)-\frac{\partial}{\partial y}
+\left(k \frac{\partial u}{\partial y}\right)-\frac{\partial}{\partial z}
+\left(k \frac{\partial u}{\partial z}\right)\right] d x d y d z d t=0 .
+$$
+
+由于 $t_1, t_2$ 与区域 $\Omega$ 都是任意的,我们得到
+\begin{equation}
+c \rho \frac{\partial u}{\partial t}=\frac{\partial}{\partial x}
+\left(k \frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}
+\left(k \frac{\partial u}{\partial y}\right)+\frac{\partial}{\partial z}
+\left(k \frac{\partial u}{\partial z}\right) .
+\label{eq:heat_equation}
+\end{equation}
+\ref{eq:heat_equation}式称为非均匀的各向同性体的\textbf{热传导方程}.如果物体是均匀的, 
+此时 $k, c$ 及 $\rho$ 均为常数, 记 $\frac{k}{c \rho}=a^2$, 即得
+\begin{equation}
+\frac{\partial u}{\partial t}=a^2\left(\frac{\partial^2 u}{\partial x^2}
++\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}\right) .
+\label{eq:homo_heat_equation}
+\end{equation}
+通常我们记
+\begin{equation}
+   \Delta \equiv \left(\frac{\partial^2 }{\partial x^2}
++\frac{\partial^2 }{\partial y^2}+\frac{\partial^2 }{\partial z^2}\right) .
+    \label{eq:Delta}
+\end{equation}
+如果所考察的物体内部有热源 (例如物体中通有电流, 或有化学反应等情况), 则在热传导方程的推导中还需考虑热源的影响.
+若设在单位时间内单位体积中所产生的热量为 $F(x, y, z, t)$, 则在考虑热平衡时, \ref{eq:heat_identity}式左边应再加上一项
+$$
+\int_{t_1}^{t_2} \iiint_{\Omega} F(x, y, z, t) d x d y d z d t
+$$
+于是, 相应于方程\ref{eq:homo_heat_equation}的热传导方程应改为
+\begin{equation}
+    \frac{\partial u}{\partial t}=a^2\left(\frac{\partial^2 u}{\partial x^2}+
+    \frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}\right)+f(x, y, z, t),
+    \label{eq:sourced_heat_equation}
+\end{equation}
+其中
+$$
+f(x, y, z, t)=\frac{F(x, y, z, t)}{\rho c} .
+$$
+方程\ref{eq:heat_equation}称为\textbf{齐次热传导方程}, 而方程\ref{eq:sourced_heat_equation} 称为\textbf{非齐次热传导方程}.
+
+
+
+\subsection{调和方程}
+这一节中我们主要研究调和方程(又称拉普拉斯方程)
+\begin{equation}
+    \Delta u \equiv \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}=0
+    \label{eq:laplace_equation}
+\end{equation}
+及泊松方程
+\begin{equation}
+    \Delta u \equiv \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}=f(x, y, z)
+    \label{eq:poisson_equation}
+\end{equation}
+的基本定解问题及解的性质.
+方程\ref{eq:laplace_equation}和\ref{eq:poisson_equation}在力学、物理学问题中经常碰到.对于膜的振动问题, 
+当研究在不随时间而变化的外力 $F(x, y)$ 
+作用下膜的平衡时, 膜的位移 $u$ 和时间无关, 于是膜振动方程
+$$
+\rho \frac{\partial^2 u}{\partial t^2}=T\left(\frac{\partial^2 u}{\partial^2 x^2}
++\frac{\partial^2 u}{\partial y^2}\right)+F(x, y, t)
+$$
+
+就化为膜平衡方程
+$$
+0=T\left(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}\right)+F(x, y)
+$$
+或写为
+$$
+\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=-\frac{F(x, y)}{T},
+$$
+
+它就是二维的泊松方程.从前面的讨论我们也可看到, 
+当研究稳定状态热的传导问题时也导致泊松方程, 特别在没有热源时就得到调和方程. 
+此外, 从复变函数论中知道, 一个解析函数的实部与虚部分别满足二维的调和方程.
+
+又如静电场问题, 从电磁学知道, 静电场是有源无旋场, 电场线不闭合, 始于正电荷, 
+终于负电荷, 反映静电场基本性质的是高斯定理和电场强度的无旋性. 据此, 我们来导出描述静电场的数学物理方程.
+
+用国际单位制, 高斯定理可以表述为: 穿过闭合曲面 $\Sigma$ 向外的电场强度通量等于闭合曲面 $\Sigma$ 
+所围空间 $T$ 中电量的 $1 / \varepsilon_0$ 倍 ( $\varepsilon_0$ 为真空介电常数), 即
+$$
+\oint_{\Sigma} \bE \cdot d \bS=\frac{1}{\varepsilon_0} \int_{\Omega} \rho d V .
+$$
+
+把左边的曲面积分改为体积积分,
+$$
+\int_{\Omega} \nabla \cdot \bE \mathrm{~d} V=\frac{1}{\varepsilon_0} \int_{\Omega} \rho d V .
+$$
+
+上式对任意的空间 $\Omega$ 都成立, 这只能是由于两边的被积函数相等,
+
+\begin{equation}
+    \nabla \cdot \bE=\frac{1}{\varepsilon_0} \rho .
+    \label{eq:nabla_dot_E}
+\end{equation}
+
+此外, 静电场的电场强度 $\bE$ 是无旋的, 即
+\begin{equation}
+    \nabla \times \bE=0
+    \label{eq:nabla_cross_E}
+\end{equation}
+方程\ref{eq:nabla_dot_E}和\ref{eq:nabla_cross_E}是静电场的基本微分方程. 它们也可从微分形式的麦克斯韦方程组得到. 
+事实上, 对真空中的静电场, $\bD=\varepsilon_0 \bE, \bB=0$, 代入麦克斯韦方程 
+$\nabla \cdot \bD=\rho$ 和 $\nabla \times \bE=-\bB$ 即得.
+由\ref{eq:nabla_cross_E}式, 存在电势函数 $V(x, y, z)$, 使
+$$
+\bE=-\nabla V
+$$
+
+将上式 代入\ref{eq:nabla_dot_E}得
+\begin{equation}
+    \Delta V=-\frac{1}{\varepsilon_0} \rho .
+    \label{eq:EM_laplace}
+\end{equation}
+这就是静电场的电势函数 $V$ 应当满足的静电场方程, 它是\textbf{泊松方程}. $\bE$ 是矢量, 而 $V$ 是标量, 求解方程\ref{eq:EM_laplace} 比较方便.
+如果在静电场的某一区域里没有电荷, 即 $\rho=0$, 则电势函数 $V$ 的静电场方程在该区域上简化为\textbf{拉普拉斯方程}
+\begin{equation}
+    \Delta V=0.
+    \label{eq:EM_poisson}
+\end{equation}
