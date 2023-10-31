@@ -79,7 +79,7 @@ $$
 
 对于$\delta$函数,易知
 $$
-\mathcal{L}\left\{\delta\left(t-t_0\right)\right\}=\int_0^{\infty} e^{-s t} \delta\left(t-t_0\right) d t=e^{-s t_0},  \quad t_0>0 .
+\mathcal{L}\left\{\delta\left(t-t_0\right)\right\}=\int_0^{\infty} e^{-p t} \delta\left(t-t_0\right) d t=e^{-p t_0},  \quad t_0>0 .
 $$
 % 通过反复迭代
 % 可以验证
@@ -137,6 +137,7 @@ $$
         \begin{equation}
             f^{(n)}(t) \fallingdotseq p^n \bar{f}(p)-p^{n-1} f(0)-p^{n-2} f^{\prime}(0)-\cdots-p f^{(n-2)}(0)-f^{(n-1)}(0)
         \end{equation}
+        \label{eq:lapl_trans_derivative}
     \item 积分定理
         \begin{equation}
         \int_0^t \psi(\tau) d \tau \fallingdotseq  \frac{1}{p} \mathcal{L}[\psi(t)]

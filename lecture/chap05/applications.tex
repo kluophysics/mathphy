@@ -1,6 +1,6 @@
 \subsection{拉普拉斯积分变换的应用}
 \label{subsec:applications}
-
+拉普拉斯变换有很多应用,这里从三个方面的例子来说明.
 \subsubsection{计算级数和}
 有时,拉普拉斯变换可以用来计算某些级数的和.以下面的例子说明.
 
@@ -71,16 +71,16 @@ $$
 $$
 m \mathcal{L}\left\{\frac{d^2 X}{d t^2}\right\}+k \mathcal{L}\{X(t)\}=0
 $$
-用$x(s)$表示未知变换$\mathcal{L}\{ X(t)\}$,于是有
+用$x(p)$表示未知变换$\mathcal{L}\{ X(t)\}$,于是根据导数定理(\ref{eq:lapl_trans_derivative})有
 $$
-m s^2 x(s)-m s X_0+k x(s)=0 ,
+m p^2 x(p)-m p X_0+k x(p)=0,
 $$
 化简为
 $$
-x(s)=X_0 \frac{s}{s^2+\omega_0^2}, \quad \text { with } \omega_0^2 \equiv \frac{k}{m} .
+x(p)=X_0 \frac{p}{p^2+\omega_0^2}, \quad \omega_0^2 \equiv \frac{k}{m} .
 $$
 查表得
 $$
-X(t)=X_0 \cos \omega_0 t .
+X(t)=X_0 \cos \omega_0 t.
 $$
 % \end{examplebox}
