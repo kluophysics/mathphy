@@ -1,0 +1,571 @@
+\section{直角坐标系下的分离变量法}
+\label{sec:cartesian}
+
+
+本节先讨论齐次方程及齐次边界条件的定解问题, 随后讨论对非齐次方程及非齐次边界条件的处理,最后讨论高维的情形.
+
+\subsection{齐次方程及齐次边界条件的定解问题}
+首先通过实例说明用分离变量法解题的六个基本步骤.
+
+% \begin{examplebox}{求两端固定的弦自由振动的规律.}
+
+求两端固定的弦自由振动的规律.
+定解问题为
+\begin{equation}
+    \begin{cases}u_{t t}-a^{2} u_{x x}=0, & 0<x<l, \quad t>0 
+        \\ u(0, t)=0, \quad u(l, t)=0 & 
+        \\ u(x, 0)=\varphi(x), \quad u_{t}(x, 0)=\psi(x) & 
+    \end{cases}
+    \label{eq:string_vibration_equation}
+\end{equation}
+
+\begin{enumerate}
+  \item \textbf{分离变量}
+
+    令
+    \begin{equation}
+        u(x, t)=X(x) T(t)
+        \label{eq:uxt}
+    \end{equation}
+    将式(\ref{eq:uxt})代人泛定方程(\ref{eq:string_vibration_equation}), 可得
+    $$
+    X(x) T^{\prime \prime}(t)-a^{2} X^{\prime \prime}(x) T(t)=0
+    $$
+即
+$$
+\frac{X^{\prime \prime}(x)}{X(x)}=\frac{T^{\prime \prime}(t)}{a^{2} T(t)}
+$$
+
+由于上式右端与 $x$ 无关,左端与 $t$ 无关, 而 $x$ 与 $t$ 又是互相独立的变量, 
+因此上式只有等于常数才能成立. 令常数为 $-\lambda$, 便得到两个常微分方程
+\begin{equation}
+    \begin{aligned}
+        & X^{\prime \prime}(x)+\lambda X(x)=0 \\
+        & T^{\prime \prime}(t)+\lambda a^{2} T(t)=0
+        \end{aligned}
+        \label{eq:XT}
+\end{equation}
+
+将式(\ref{eq:uxt})代人边界条件, 可得
+$$
+u(0, t)=X(0) T(t)=0, \quad u(l, t)=X(l) T(t)=0
+$$
+若 $T(t)=0$, 代人式 (\ref{eq:uxt}) 得 $u(x, t)=0$, 是平庸解, 应略去. 由此得边界条件
+\begin{equation}
+    X(0)=0, \quad X(l)=0
+    \label{eq:boundary}
+\end{equation}
+
+\item \textbf{求解本征值问题}
+
+式(\ref{eq:XT})及式(\ref{eq:boundary})构成了常微分方程的边值问题
+$$
+\left\{\begin{array}{l}
+X^{\prime \prime}(x)+\lambda X(x)=0 \\
+X(0)=0, \quad X(l)=0
+\end{array}\right.
+$$
+这称为本征值问题. 
+可以证明, 只有当 $\lambda$ 取某些特定值时才有非零解,
+求解本征值问题就是求解本征值 $\lambda$ 与本征函数 $X(x)$.
+
+现将 $\lambda$ 的取值分三种情况讨论:
+
+\begin{itemize}
+    \item 若 $\lambda<0$, 这时方程的通解为 $X(x)=A \mathrm{e}^{\sqrt{-\lambda} x}+B \mathrm{e}^{-\sqrt{-\lambda} x}$.
+
+        由边界条件 $X(0)=X(l)=0$, 可得
+        
+        $$
+        \left\{\begin{array}{l}
+        A+B=0 \\
+        A \mathrm{e}^{\sqrt{-\lambda l}}+B \mathrm{e}^{-\sqrt{-\lambda l}}=0
+        \end{array}\right.
+        $$
+        
+        这是关于 $A 、 B$ 的线性齐次方程组, 由于系数行列式不为零, 故 $A=B=0$. 因此 $\lambda<0$ 时, $X(x)$ 无非零解.
+
+    \item 若 $\lambda=0$, 这时方程成为 $X^{\prime \prime}(x)=0$, 它的通解为 $X(x)=A x+B$.
+
+        由边界条件 $X(0)=X(l)=0$ 得 $A=B=0, X(x)$ 也无非零解.
+    
+    \item 若 $\lambda>0$, 方程的通解为 $X(x)=A \cos \sqrt{\lambda} x+B \sin \sqrt{\lambda} x$.
+
+        由边界条件 $X(0)=0$, 得 $A=0$. 由 $X(l)=0$ 得 $B \sin \sqrt{\lambda} l=0$. 非零解要求 $B \neq 0$, 故
+        
+        $$
+        \sin \sqrt{\lambda} l=0 \quad \text { 即 } \sqrt{\lambda}=\frac{n \pi}{l}, \quad n=1,2, \cdots
+        $$
+        
+        因此本征值 (加上脚标 $n$ ) 及相应的本征函数分别为
+        
+        $$
+        \lambda_{n}=\left(\frac{n \pi}{l}\right)^{2}, \quad n=1,2, \cdots
+        $$
+        
+        $$
+        X_{n}(x)=B_{n} \sin \frac{n \pi x}{l}, \quad n=1,2, \cdots
+        $$
+\end{itemize}
+
+
+
+
+
+  \item \textbf{求解 $T(t)$ 的常微分方程}
+  
+    将本征值 $\lambda_{n}=\left(\frac{n \pi}{l}\right)^{2}$ 代入式 (\ref{eq:XT}), 得到
+
+    $$
+    T^{\prime \prime}(t)+\left(\frac{n \pi a}{l}\right)^{2} T(t)=0
+    $$
+
+    它的通解为
+    $$
+    T_{n}(t)=C_{n} \cos \frac{n \pi a t}{l}+D_{n} \sin \frac{n \pi a t}{l}
+    $$
+    式中 $C_{n}$ 和 $D_{n}$ 为任意常数.
+    
+    \item \textbf{作特解的线性叠加}
+    
+    满足方程及边界条件 (\ref{eq:string_vibration_equation})的一系列特解为
+    \begin{equation}
+        u_{n}(x, t)=X_{n}(x) T_{n}(t)=\left(C_{n} \cos \frac{n \pi a t}{l}+D_{n} \sin \frac{n \pi a t}{l}\right) \sin \frac{n \pi x}{l}, 
+        \label{eq:special_solution}
+    \end{equation}
+    这里已将任意常数 $B_{n}$ 吸收到任意常数 $C_{n}$ 及 $D_{n}$ 中去了.
+    
+    特解(\ref{eq:special_solution})一般不满足初始条件, 实际上由式(\ref{eq:special_solution})可得 
+    $$
+    \begin{aligned}
+    u_{n}(x, 0) & =C_{n} \sin \frac{n \pi x}{l} \\
+    \left.\frac{\partial u_{n}(x, t)}{\partial t}\right|_{t=0} & =D_{n} \frac{n \pi a}{l} \sin \frac{n \pi x}{l}
+    \end{aligned}
+    $$
+
+    这表明, 除非 $\varphi(x)$ 和 $\psi(x)$ 同时为 $\sin \frac{n \pi x}{l}$ 的倍数,
+     否则任何一个特解不可能满足题目给定的初始条件. 
+     但考虑到方程  及边界条件(\ref{eq:string_vibration_equation})都是齐次线性的, 
+     因此将所有的特解线性叠加起来, 如果级数收玫, $u(x, t)$ 仍然满足方程 与边界条件. 由此得
+    \begin{equation}
+        u(x, t)=\sum_{n=1}^{\infty} u_{n}(x, t)=
+        \sum_{n=1}^{\infty}\left(C_{n} \cos \frac{n \pi a t}{l}+
+        D_{n} \sin \frac{n \pi a t}{l}\right) \sin \frac{n \pi x}{l}
+        \label{eq:general_solution}
+    \end{equation}
+    而待定系数 $C_{n}$ 和 $D_{n}$ 可由初始条件来确定.
+    
+
+    \item \textbf{由初始条件确定系数} 
+    
+        将式(\ref{eq:general_solution})代人初始条件, 即有
+        $$
+        \begin{gathered}
+        \varphi(x)=u(x, 0)=\sum_{n=1}^{\infty} C_{n} \sin \frac{n \pi x}{l} \\
+        \psi(x)=u_{t}(x, 0)=\sum_{n=1}^{\infty} D_{n} \frac{n \pi a}{l} \sin \frac{n \pi x}{l}
+        \end{gathered}
+        $$
+        最终系数可由前面傅里叶级数展开来确定系数$C_{n}$ 及 $D_{n}$, 即得定解问题的解.
+        $$
+        \begin{aligned}
+        & C_{n}=\frac{2}{l} \int_{0}^{l} \varphi(x) \sin \frac{n \pi x}{l} \mathrm{~d} x, \quad n=1,2, \cdots \\
+        & D_{n}=\frac{2}{n \pi a} \int_{0}^{l} \psi(x) \sin \frac{n \pi x}{l} \mathrm{~d} x, \quad n=1,2, \cdots
+        \end{aligned}
+        $$
+
+
+        \item \textbf{解的物理意义}
+        
+        先看级数 (\ref{eq:general_solution}) 的每一项 (即每一个特解)的物理意义.
+
+        \begin{equation}
+            u_{n}(x, t)=\left(C_{n} \cos \frac{n \pi a t}{l}+D_{n} \sin \frac{n \pi a t}{l}\right) \sin \frac{n \pi x}{l}
+            =E_{n} \cos \left(\omega_{n} t-\varphi_{n}\right) \sin \frac{n \pi x}{l}
+            \label{eq:solution_2}
+        \end{equation}    
+        式中
+        $$
+        E_{n}=\sqrt{C_{n}^{2}+D_{n}^{2}}, 
+            \quad \omega_{n}=\frac{n \pi a}{l}, 
+            \quad \varphi_{n}=\tan ^{-1} \frac{D_{n}}{C_{n}}
+        $$
+        
+        如果弦按式(\ref{eq:solution_2})的规律运动时, 
+        $x=0$ 及 $x=l$ 这两个端点保持不动. 
+        而弦上各点则在各自的平衡位置附近作简谐振动, 
+        其振幅分别为 $E_{n}\left|\sin \frac{n \pi x}{l}\right|$. 
+        弦的这种形式的运动称为驻波. 
+        在点 $x=\frac{m l}{n}(m=0,1, \cdots, n)$ 处, 振幅为零. 
+        这些点在整个振动过程中始终保持不动, 称为\textbf{驻波} $u_{n}(x, t)$ 的\textbf{波节}. 
+        在点 $x=\frac{2 m+1}{2 n} l(m=0,1$, $\cdots, n-1)$ 处, 
+        $\sin \frac{n \pi x}{l}= \pm 1$, 这些点的振幅最大,称为驻波的\textbf{波腹}.
+         驻波的\textbf{角频率} $\omega_{n}=\frac{n \pi}{l}$, 
+         其中 $n=1$ 的项 $u_{1}(x, t)$ 称为\textbf{基波}, 
+         而 $n>1$ 的项 $u_{n}(x, t)$ 称为 \textbf{$n$ 次谐波}, 
+         这些驻波也称为两端固定弦的本征振动. 
+         因此, 有界弦的任意振动可看作一系列本征振动的叠加.
+        
+\end{enumerate}
+
+
+
+
+
+\subsection{非齐次方程及齐次边界条件的定解问题}
+对非齐次方程的定解问题，由于满足泛定方程和边界条件的特解的线性叠加,不可能满足非齐次方程, 这里用本征函数展开法求解.
+
+求两端固定弦的强迫振动的规律
+
+$$
+\left\{\begin{array}{l}
+u_{t t}-a^{2} u_{x x}=f(x, t), \quad 0<x<l, \quad t>0 \\
+u(0, t)=0, \quad u(l, t)=0 \\
+u(x, 0)=\varphi(x), \quad u_{t}(x, 0)=\psi(x)
+\end{array}\right.
+$$
+
+解 本征函数展开法的基本步骤为
+
+(1) 确定相应齐次问题的本征函数系. 本题相应的齐次方程为 $u_{t t}-a^{2} u_{x x}=0$,分离变量后得到常微分方程 $X^{\prime \prime}(x)+\lambda X(x)=0$, 边界条件为 $X(0)=0, X(l)=0$.由表 11-1 可知本征函数为
+
+$$
+\sin \frac{n \pi x}{l}, \quad n=1,2, \cdots
+$$
+
+(2) 将 $u(x, t)$ 及方程的非齐次项 $f(x, t)$ 按本征函数系 $\left\{\sin \frac{n \pi x}{l}\right\}$ 展开
+
+$$
+\begin{aligned}
+& u(x, t)=\sum_{n=1}^{\infty} T_{n}(t) \sin \frac{n \pi x}{l} \\
+& f(x, t)=\sum_{n=1}^{\infty} f_{n}(t) \sin \frac{n \pi x}{l}
+\end{aligned}
+$$
+
+显然, $u(x, t)$ 自动满足边界条件 (11.1.37). 由 $\left\{\sin \frac{n \pi x}{l}\right\}$ 的正交性可得
+
+$$
+f_{n}(t)=\frac{2}{l} \int_{0}^{l} f(x, t) \sin \frac{n \pi x}{l} \mathrm{~d} x
+$$
+
+(3) 将两级数代人泛定方程求展开系数 $T_{n}(t)$
+
+$$
+\sum_{n=1}^{\infty}\left[T_{n}^{\prime \prime}(t)+\left(\frac{n \pi a}{l}\right)^{2} T_{n}(t)\right] \sin \frac{n \pi x}{l}=\sum_{n=1}^{\infty} f_{n}(t) \sin \frac{n \pi x}{l}
+$$
+
+再次由 $\left\{\sin \frac{n \pi x}{l}\right\}$ 的正交性
+
+$$
+T_{n}^{\prime \prime}(t)+\left(\frac{n \pi a}{l}\right)^{2} T_{n}(t)=f_{n}(t), \quad n=1,2, \cdots
+$$
+
+将式(11.1.39)代人式(11.1.38)得
+
+由此得
+
+$$
+\begin{aligned}
+& \varphi(x)=u(x, 0)=\sum_{n=1}^{\infty} T_{n}(0) \sin \frac{n \pi x}{l} \\
+& \psi(x)=u_{t}(x, 0)=\sum_{n=1}^{\infty} T_{n}^{\prime \prime}(0) \sin \frac{n \pi x}{l}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& T_{n}(0)=\frac{2}{l} \int_{0}^{l} \varphi(x) \sin \frac{n \pi x}{l} \mathrm{~d} x=\varphi_{n} \\
+& T_{n}^{\prime}(0)=\frac{2}{l} \int_{0}^{l} \psi(x) \sin \frac{n \pi x}{l} \mathrm{~d} x=\psi_{n}
+\end{aligned}
+$$
+
+由于 $\varphi(x)$ 及 $\psi(x)$ 已给定, 故 $\varphi_{n}$ 及 $\psi_{n}$ 已知. 这样式(11.1.42)、式(11.1.45)、式 (11. 1.46) 就构成了常微分方程的初值问题. 由常数变易法可求得 (见附录 B)
+
+$$
+\begin{gathered}
+T_{n}(t)=\frac{l}{n \pi a} \int_{0}^{t} f_{n}(\tau) \sin \frac{n \pi a(t-\tau)}{l} \mathrm{~d} \tau+\varphi_{n} \cos \frac{n \pi a t}{l}+\frac{l}{n \pi a} \psi_{n} \sin \frac{n \pi a t}{l}, \\
+n=1,2, \cdots
+\end{gathered}
+$$
+
+将式(11.1.47)代人式(11.1.39) 即为所求.
+
+本征函数展开法是为求解非齐次方程的定解问题提出来的. 当然也可用来求解齐次方程的定解问题, 读者可用本征函数展开法重解例 11.1.1 及例 11.1.2.
+
+\section{1.3 非齐次方程及非齐次边界条件的定解问题}
+设定解问题为
+
+$$
+\begin{cases}u_{t t}-a^{2} u_{x x}=f(x, t), \quad 0<x<l, \quad t>0 \\ u(0, t)=u_{1}(t), \quad u(l, t)=u_{2}(t) \\ u(x, 0)=\varphi(x), \quad u_{t}(x, 0)=\psi(x)\end{cases}
+$$
+
+现在,采用“边界条件齐次化”的方法求解, 即把非齐次边界条件的定解问题转化为齐次边界条件的定解问题,再用本征函数展开法来求解, 它的基本步骤为:
+
+(1) 设解 $u(x, t)=v(x, t)+w(x, t)$, 为了让 $v(x, t)$ 满足齐次边界条件, 适当选取 $w(x, t)$, 使它满足 $u(x, t)$ 的边界条件
+
+$$
+w(0, t)=u_{1}(t), \quad w(l, t)=u_{2}(t)
+$$
+
+既然 $w(x, t)$ 要满足式 (11.1.51) 的两个方程, 为了确定 $w(x, t)$, 通常引人两
+个待定函数 $A(t)$ 和 $B(t)$. 两者最简单的结合就是
+
+$$
+w(x, t)=A(t) x+B(t)
+$$
+
+将 $w(x, t)$ 代人式(11.1.51), 求出 $A(t)$ 和 $B(t)$, 可得
+
+$$
+w(x, t)=\frac{x}{l}\left[u_{2}(t)-u_{1}(t)\right]+u_{1}(t)
+$$
+
+（2）求解 $v(x, t)$ 的定解问题. 将 $u=v+w$ 代人式 (11.1.48)、式(11.1.49)、式 (11.1.50) 可得
+
+$$
+\left\{\begin{array}{l}
+v_{t t}-a^{2} v_{x x}=f(x, t)-w_{t t}+a^{2} w_{x x}, \quad 0<x<l, \quad t>0 \\
+v(0, t)=0, \quad v(l, t)=0 \\
+v(x, 0)=\varphi(x)-w(x, 0), \quad v_{t}(x, 0)=\psi(x)-w_{t}(x, 0)
+\end{array}\right.
+$$
+
+利用本征函数展开法可求得 $v(x, t)$, 再由式 (11.1.53) 即可求出 $u(x, t)$.
+
+对于非齐次项比较简单的题目, 还可以让 $w(x, t)$ 同时满足 $u(x, t)$ 的方程和边界条件, 这样 $v(x, t)$ 的定解问题就可简化为齐次方程及齐次边界条件的问题了.
+
+【例 11.1.4】求定解问题
+
+$$
+\left\{\begin{array}{l}
+u_{t t}-a^{2} u_{x x}=\frac{a^{2}}{5}, \quad 0<x<l, \quad t>0 \\
+u(0, t)=0, \quad u(l, t)=\frac{l}{5} \\
+u(x, 0)=0, \quad u_{t}(x, 0)=0
+\end{array}\right.
+$$
+
+解 （1）设解 $u(x, t)=v(x, t)+w(x, t)$, 且
+
+$$
+w_{t t}-a^{2} w_{x x}=a^{2} / 5 ; \quad w(0, t)=0, \quad w(l, t)=l / 5
+$$
+
+$w(x, t)$ 要满足上述三个方程, 不妨设 $w(x, t)=f_{2} x^{2}+f_{1} x+f_{0}$ (含三个待定系数),代人上式,求出 $f_{0}, f_{1}, f_{2}$, 可得 $w(x, t)=-\frac{x^{2}}{10}+\left(\frac{1}{5}+\frac{l}{10}\right) x$.
+
+(2) $v(x, t)$ 的定解问题为
+
+$$
+\left\{\begin{array}{l}
+v_{t t}-a^{2} v_{x x}=0 \\
+v(0, t)=0, \quad v(l, t)=0 \\
+v(x, 0)=u(x, 0)-w(x, 0)=\frac{x^{2}}{10}-\left(\frac{1}{5}+\frac{l}{10}\right) x \\
+v_{t}(x, 0)=u_{t}(x, 0)-w_{t}(x, 0)=0
+\end{array}\right.
+$$
+
+这是齐次方程、齐次边界条件的定解问题, 解出 $v(x, t)$ 后加上 $w(x, t)$ 即得 $u(x, t)$.
+
+总之,对齐次方程及齐次边界条件的定解问题,可直接用分离变量法或用本征函数展开法; 对于非齐次方程及齐次边界条件的定解问题,可用本征函数展开法;对于非齐次边界条件的定解问题,在非齐次边界条件齐次化后用本征函数展开法.
+
+上面讨论的都是一维情形的分离变量法,最后讨论二、三维情形的分离变量法.
+
+\subsection{4 高维的定解问题}
+现在用一个长方体中的热传导问题说明高维情形的分离变量法. 在电动力学讨论谐振腔和波导管的问题时, 将要用类似方法求解亥姆霍兹方程的边值问题(1).
+
+【例 11.1.5】求边长分别为 $a, b, c$ 的长方体中的温度分布, 设物体表面温度保持零度, 初始温度分布为 $u(x, y, z, 0)=\varphi(x, y, z)$ 。
+
+解 定解问题为
+
+$$
+\left\{\begin{array}{l}
+u_{t}-k\left(u_{x x}+u_{y y}+u_{z z}\right)=0, \quad 0<x<a, 0<y<b, 0<z<c, t>0 \\
+u(0, y, z, t)=u(a, y, z, t)=0 \\
+u(x, 0, z, t)=u(x, b, z, t)=0 \\
+u(x, y, 0, t)=u(x, y, c, t)=0 \\
+u(x, y, z, 0)=\varphi(x, y, z)
+\end{array}\right.
+$$
+
+（1）时空变量的分离. 令 $u(x, y, z, t)=v(x, y, z) T(t)$, 代人式(11.1.57) 可得
+
+$$
+\begin{gathered}
+T^{\prime}(t)+\lambda^{2} k T(t)=0 \\
+v_{x x}+v_{y y}+v_{z z}+\lambda^{2} v=0
+\end{gathered}
+$$
+
+（2）空间变量的分离. 令 $v(x, y, z)=X(x) w(y, z)$, 代人式 (11.1.63) 及式 (11. 1.58) 可得关于 $X(x)$ 的常微分方程及边界条件, 构成本征值问题
+
+$$
+\left\{\begin{array}{l}
+X^{\prime \prime}(x)+\left(\lambda^{2}-\mu^{2}\right) X(x)=0 \\
+X(0)=0, \quad X(a)=0
+\end{array}\right.
+$$
+
+同时, $w(x, y)$ 遵守
+
+$$
+w_{y y}+w_{z z}+\mu^{2} w=0
+$$
+
+再令 $w(y, z)=Y(y) Z(z)$ 代人式(11.1.66)及式(11.1.59)、式(11.1.60)可得另外两个本征值问题
+
+$$
+\begin{aligned}
+& \left\{\begin{array}{l}
+Y^{\prime \prime}(y)+\left(\mu^{2}-\nu^{2}\right) Y(y)=0 \\
+Y(0)=0, \quad Y(b)=0
+\end{array}\right. \\
+& \left\{\begin{array}{l}
+Z^{\prime \prime}(z)+\nu^{2} Z(z)=0 \\
+Z(0)=0, \quad Z(c)=0
+\end{array}\right.
+\end{aligned}
+$$
+
+(3) 求解本征值问题. 这三个本征值问题的本征值与本征函数分别为
+
+$$
+\begin{aligned}
+\nu^{2} & =\frac{n^{2} \pi^{2}}{c^{2}}, \quad Z_{n}(z)=\sin \frac{n \pi z}{c}, \quad n=1,2, \cdots \\
+\mu^{2}-\nu^{2} & =\frac{m^{2} \pi^{2}}{b^{2}}, \quad Y_{m}(y)=\sin \frac{m \pi y}{b}, \quad m=1,2, \cdots \\
+\lambda^{2}-\mu^{2} & =\frac{p^{2} \pi^{2}}{a^{2}}, \quad X_{p}(x)=\sin \frac{p \pi x}{a}, \quad p=1,2, \cdots
+\end{aligned}
+$$
+
+把上面三个式子相加, 得到关于 $v$ 的本征值问题的本征值及相应的本征函数
+
+$$
+\begin{gathered}
+\lambda_{p m n}^{2}=\pi^{2}\left(\frac{p^{2}}{a^{2}}+\frac{m^{2}}{b^{2}}+\frac{n^{2}}{c^{2}}\right) \\
+v_{p m n}(x, y, z)=\sin \frac{p \pi x}{a} \sin \frac{m \pi y}{b} \sin \frac{n \pi z}{c}
+\end{gathered}
+$$
+
+(4) 求解关于 $T(t)$ 的常微分方程. 将式 (11.1.74) 代人式 (11.1.62), 可求得 $T(t)$ 的通解
+
+$$
+T_{p m n}(t)=A_{p m n} \mathrm{e}^{-\lambda_{p m n}^{2} k t}
+$$
+
+（5）作特解的线性叠加. 满足方程及边界条件的一系列特解为
+
+$$
+u_{p m n}(x, y, z, t)=A_{p m n} \sin \frac{p \pi x}{a} \sin \frac{m \pi y}{b} \sin \frac{n \pi z}{c} \mathrm{e}^{-\lambda_{p m n}^{2} k t}
+$$
+
+由此得特解的线性叠加
+
+$$
+u(x, y, z, t)=\sum_{p=1}^{\infty} \sum_{m=1}^{\infty} \sum_{n=1}^{\infty} A_{p m n} \sin \frac{p \pi x}{a} \sin \frac{m \pi y}{b} \sin \frac{n \pi z}{c} \mathrm{e}^{-\lambda_{p m n}^{2} k t}(11.1 .78)
+$$
+
+(6) 由初始条件确定系数. 将式(11.1.74)代人式(11.1.62)可得
+
+$$
+\varphi(x, y, z)=u(x, y, z, 0)=\sum_{p=1}^{\infty} \sum_{m=1}^{\infty} \sum_{n=1}^{\infty} A_{p m n} \sin \frac{p \pi x}{a} \sin \frac{m \pi y}{b} \sin \frac{n \pi z}{c}
+$$
+
+这是三重傅里叶级数. 由本征函数系的正交性可得
+
+$$
+A_{p m n}=\frac{8}{a b c} \int_{0}^{a} \int_{0}^{b} \int_{0}^{c} \varphi(x, y, z) \sin \frac{p \pi x}{a} \sin \frac{m \pi y}{b} \sin \frac{n \pi z}{c} \mathrm{~d} x \mathrm{~d} y \mathrm{~d} z
+$$
+
+将式(11.1.80)代人式(11.1.78)即得本定解问题的解.
+
+\section{习 题 11.1}
+11.1.1 引人 $n$ 次谐波的波数 $k_{n}=\frac{2 \pi}{\lambda_{n}}=\frac{2 \pi}{2 l / n}=\frac{n \pi}{l}$, 并利用角频率 $\omega_{n}$, 波数 $k_{n}$, 相速 $a$ 的关系 $\omega_{n}=k_{n} a$, 讨论式(11.1.14) 与达朗贝尔公式的关系.
+
+11.1.2 一直径均匀的细管, 一端封闭, 另一端开放, 试求管内空气柱的本征振动, 即求解:
+
+$$
+\left\{\begin{array}{l}
+u_{t t}-a^{2} u_{x x}=0 \\
+u(0, t)=0, \quad u_{x}(l, t)=0
+\end{array}\right.
+$$
+
+11.1.3 一根均匀弦两端分别在 $x=0$ 及 $x=l$ 处固定, 设初速度为零, 初始时刻弦的形状是一抛物线, 抛物线的顶点为 $\left(\frac{l}{2}, h\right)$, 求弦振动的位移.
+
+11.1.4 长为 $l$ 的杆, 一端固定, 另一端受力 $F_{0}$ 而被拉长, 求杆在去掉力 $F_{0}$ 后的振动. 设杆的截面积为 $S$, 杨氏模量为 $Y$.
+
+11.1.5 长为 $l$ 的均匀杆, 两端受压从而长度缩为 $l(1-2 \varepsilon)$, 放手后任其自由振动, 求解杆的振动.
+
+11.1.6 长为 $l$ 的杆, 上端固定在太空宇宙飞船的天花板上,杆身坚直向下,下端自由. 当
+飞船以速度 $v_{0}$ 下降时突然停止,求解杆的振动, 该处引力场可忽略.
+
+11.1.7 长为 $l$ 、杆身与外界绝热的均匀细杆, 杆的两端温度保持为 $0^{\circ} \mathrm{C}$, 已知其初始温度分布 $\varphi(x)=x(l-x)$, 求在 $t>0$ 时杆上的温度分布.
+
+11.1.8 长为 $l$ 的杆两端绝热, 初始时 $u(x, 0)=x$, 求其温度变化的规律.
+
+11.1.9 长为 $l$ 的均匀细杆, 杆身绝热, 初始温度为 $u_{0}$ (常量), 让其一端温度保持为 $0^{\circ} \mathrm{C}$ 不变,另一端绝热,求杆的温度分布.
+
+11.1.10 在铀块中, 除中子的扩散运动外, 还有中子的增殖过程, 每秒在单位体积中产生的中子数正比于该处的中子浓度, 从而可表示为 $\beta u$ ( $\beta$ 反映增殖快慢). 研究厚度为 $l$ 的层状铀块, 求中子浓度不随时间增加的最大厚度 (称临界厚度).
+
+11.1.11 求解定解问题
+
+$$
+\left\{\begin{array}{l}
+u_{t}-a^{2} u_{x x}=A \mathrm{e}^{-\alpha x}, \quad 0<x<l, \quad t>0 \\
+u(0, t)=0, \quad u(l, t)=0 \\
+u(x, 0)=T_{0} \text { (常量) }
+\end{array}\right.
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item 1.12 求解定解问题
+\end{enumerate}
+
+$$
+\left\{\begin{array}{l}
+u_{t t}-a^{2} u_{x x}=A \cos \frac{\pi x}{l} \sin \omega t, \quad 0<x<l, \quad t>0 \\
+u_{x}(0, t)=0, \quad u_{x}(l, t)=0 \\
+u(x, 0)=0, \quad u_{t}(x, 0)=0
+\end{array}\right.
+$$
+
+11.1.13 均匀细导线, 单位长的电阻为 $r$, 通以恒定的电流 $I$, 导线表面跟周围温度为零的介质进行热交换, 试求导线上温度的变化规律, 设初始温度及两端温度均为零, 热交换系数为 $h$ 。
+
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item 1.14 求下列定解问题
+\end{enumerate}
+
+$$
+\begin{cases}u_{t t}-a^{2} u_{x x}=A, & 0<x<l, \\ u(0, t)=0, & u(l, t)=B \\ u(x, 0)=0, & u_{t}(x, 0)=0\end{cases}
+$$
+
+11.1.15 求下列定解问题
+
+$$
+\left\{\begin{array}{l}
+u_{t}-2 u_{x x}=0 \\
+u(0, t)=10, \\
+u(x, 0)=25
+\end{array}\right.
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item 1.16 求矩形膜的横振动问题
+\end{enumerate}
+
+$$
+\left\{\begin{array}{l}
+u_{t t}-u_{x x}-u_{y y}=0, \quad 0<x<a, \quad 0<y<b, \quad t>0 \\
+u(0, y, t)=u(a, y, t)=u(x, 0, t)=u(x, b, t)=0 \\
+u(x, y, 0)=\varphi(x, y), \quad u_{t}(x, y, 0)=\psi(x, y)
+\end{array}\right.
+$$
+
+11.1.17 散热片的横截面为矩形 $0 \leqslant x \leqslant a, 0 \leqslant y \leqslant b$, 它的一边 $(y=b)$ 保持较高的温度 $u_{2}$,其他三边保持较低的温度 $u_{1}$, 求这横截面上的稳定温度分布.
+
+11.1.18一个长、宽各为 $b$ 的方形膜, 边界固定, 膜的振动方程为
+
+$$
+u_{t t}-a^{2}\left(u_{x x}+u_{y y}\right)=0, \quad 0<x<b, \quad 0<y<b
+$$
+
+求方形膜振动的本征频率.
