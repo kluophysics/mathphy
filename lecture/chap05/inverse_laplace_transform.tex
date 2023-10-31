@@ -12,7 +12,7 @@
 由于像函数$\bar{f}(p)$是解析函数是$p$的解析函数,上述积分可以通过留数定理求得.这里需要用到推广的
 约旦定理(具体证明略去).
 
-\textbf{推广的约当引理} 设 $C_R$ 是以 $p=0$ 为圆心, 以 $R$ 为半径的圆周在直线 $\operatorname{Re} p=a(>0)$ 左侧的圆弧. 若当 $|p| \rightarrow \infty$ 时, $\bar{f}(p)$ 在 $\frac{\pi}{2}-\delta \leqslant \operatorname{Arg} p \leqslant \frac{3}{2} \pi+\delta$ 中一致趋于零 ( $\delta$ 是小于 $\frac{\pi}{2}$ 的任意正数), 则
+\textbf{推广的约当引理} 设 $C_R$ 是以 $p=0$ 为圆心, 以 $R$ 为半径的圆周在直线 $\Re p=a(>0)$ 左侧的圆弧. 若当 $|p| \rightarrow \infty$ 时, $\bar{f}(p)$ 在 $\frac{\pi}{2}-\delta \leqslant \operatorname{Arg} p \leqslant \frac{3}{2} \pi+\delta$ 中一致趋于零 ( $\delta$ 是小于 $\frac{\pi}{2}$ 的任意正数), 则
 $$
 \lim _{R \rightarrow \infty} \int_{C_R} \bar{f}(p) e^{p t} d p=0 \quad(t>0) .
 $$
@@ -90,8 +90,8 @@ $$
 这样, 本题给的像函数可以看作 $e^{-\alpha p} / p$ 与 $1 /(p+b)$ 的乘积, 应用卷积定理,即得
 $$
 \begin{aligned}
-\frac{e^{-\alpha p}}{p(p+b)} & \risingdotseq \int_\alpha^t \Theta(\tau-\alpha) e^{-b(t-\tau)} \mathrm{d} \tau \\
-& =\Theta(t-\alpha) \int_\alpha^t e^{-b(t-\tau)} \mathrm{d} \tau \\
+\frac{e^{-\alpha p}}{p(p+b)} & \risingdotseq \int_0^t \Theta(\tau-\alpha) e^{-b(t-\tau)} d \tau \\
+& =\Theta(t-\alpha) \int_\alpha^t e^{-b(t-\tau)} d \tau \\
 & =\Theta(t-\alpha)\left[\frac{1}{b} e^{-b(t-\tau)}\right]_\alpha^t \\
 & =\frac{1}{b}\left[1-e^{-b(t-\tau)}\right] \Theta(t-\alpha) .
 \end{aligned}

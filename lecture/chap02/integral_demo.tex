@@ -51,10 +51,10 @@ $$
 
     \item 计算菲涅耳积分(Fresnel integrals)
     $$
-    I_1=\int_0^{\infty} \sin \left(x^2\right) \mathrm{d} x \text { 及 } I_2=\int_0^{\infty} \cos \left(x^2\right) \mathrm{d} x \text {. }
+    I_1=\int_0^{\infty} \sin \left(x^2\right) d x \text { 及 } I_2=\int_0^{\infty} \cos \left(x^2\right) d x \text {. }
     $$
 
-    解 由于 $\sin \left(x^2\right)=\operatorname{Im} e^{\imath x^2}$, 而 $\cos \left(x^2\right)=\operatorname{Re} e^{\imath x^2}$, 所以
+    解 由于 $\sin \left(x^2\right)=\operatorname{Im} e^{\imath x^2}$, 而 $\cos \left(x^2\right)=\Re e^{\imath x^2}$, 所以
 $$
 I_2+\imath I_1=\int_0^{\infty} e^{\imath x^2} d x .
 $$
@@ -73,7 +73,7 @@ $$
 $$
 可以证明第二个积分成为零. 为此, 先作一次分部积分,
 $$
-\int_{C_R} e^{\imath z^2} d z=\left.\frac{e^{\imath z^2}}{2 \imath z}\right|_{z=R} ^{R e^{\imath \pi / 4}}+\int_{C_R} e^{\imath z^2} \frac{\mathrm{d} z}{2 \imath z^2},
+\int_{C_R} e^{\imath z^2} d z=\left.\frac{e^{\imath z^2}}{2 \imath z}\right|_{z=R} ^{R e^{\imath \pi / 4}}+\int_{C_R} e^{\imath z^2} \frac{d z}{2 \imath z^2},
 $$
 其中已积出部分的模
 $$

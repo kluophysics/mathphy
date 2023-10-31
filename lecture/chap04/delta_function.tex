@@ -13,7 +13,7 @@ m / l & (|x| \leqslant l / 2),
 $$
 将 $\rho_l(x)$ 对 $x$ 积分, 则得到总质量
 $$
-\int_{-\infty}^{\infty} \rho_l(x) d x=\int_{-\frac{l}{2}}^{\frac{l}{2}} \frac{m}{l} \mathrm{~d} x=m
+\int_{-\infty}^{\infty} \rho_l(x) d x=\int_{-\frac{l}{2}}^{\frac{l}{2}} \frac{m}{l} d x=m
 $$
 
 如果让上述线段的长度 $l \rightarrow 0$, 我们将得到位于坐标原点质量为 $m$ 的质点, 而线密度函数就成为质点的线密度函数. 将它记为 $\rho(x)$, 则
@@ -81,15 +81,15 @@ $\delta$函数是一种广义函数，常常可以看作是以下函数的极限
 \subsection{其他}
 $\delta$ 函数的傅里叶变换: 用复数形式的傅里叶积分表示$\delta$函数,
 \begin{equation}
-\delta(x)=\int_{-\infty}^{\infty} C(\omega) e^{\imath\omega x} \mathrm{~d} \omega,
+\delta(x)=\int_{-\infty}^{\infty} C(\omega) e^{\imath\omega x} d \omega,
 \end{equation}
 其中变换
 $$
-C(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \delta(x) e^{-\imath\omega x} \mathrm{~d} x=\frac{1}{2 \pi} e^{-\imath\omega \cdot 0}=\frac{1}{2 \pi} .
+C(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \delta(x) e^{-\imath\omega x} d x=\frac{1}{2 \pi} e^{-\imath\omega \cdot 0}=\frac{1}{2 \pi} .
 $$
 因此，有$\delta$函数的傅里叶积分为
 \begin{equation}
-\delta(x)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i \omega x} \mathrm{~d} \omega .
+\delta(x)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i \omega x} d \omega .
 \end{equation}
 
 多维的 $\delta$ 函数:
