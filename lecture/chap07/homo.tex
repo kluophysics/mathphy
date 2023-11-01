@@ -1,0 +1,212 @@
+\section{齐次方程齐次边界条件}
+\label{sec:homo}
+本节先讨论齐次方程及齐次边界条件的定解问题,
+
+% 本节先讨论齐次方程及齐次边界条件的定解问题, 随后讨论对非齐次方程及非齐次边界条件的处理,最后讨论高维的情形.
+
+% \subsection{齐次方程及齐次边界条件的定解问题}
+我们通过实例说明用分离变量法解题的六个基本步骤.
+
+% \begin{examplebox}{求两端固定的弦自由振动的规律.}
+
+求两端固定的弦自由振动的规律.
+定解问题为
+\begin{equation}
+    \begin{cases}u_{t t}-a^{2} u_{x x}=0, & 0<x<l, \quad t>0 
+        \\ u(0, t)=0, \quad u(l, t)=0 & 
+        \\ u(x, 0)=\varphi(x), \quad u_{t}(x, 0)=\psi(x) & 
+    \end{cases}
+    \label{eq:string_vibration_equation}
+\end{equation}
+
+\begin{enumerate}
+  \item \textbf{分离变量}
+
+    令
+    \begin{equation}
+        u(x, t)=X(x) T(t)
+        \label{eq:uxt}
+    \end{equation}
+    将式(\ref{eq:uxt})代人泛定方程(\ref{eq:string_vibration_equation}), 可得
+    $$
+    X(x) T^{\prime \prime}(t)-a^{2} X^{\prime \prime}(x) T(t)=0
+    $$
+即
+$$
+\frac{X^{\prime \prime}(x)}{X(x)}=\frac{T^{\prime \prime}(t)}{a^{2} T(t)}
+$$
+
+由于上式右端与 $x$ 无关,左端与 $t$ 无关, 而 $x$ 与 $t$ 又是互相独立的变量, 
+因此上式只有等于常数才能成立. 令常数为 $-\lambda$, 便得到两个常微分方程
+\begin{equation}
+    \begin{aligned}
+        & X^{\prime \prime}(x)+\lambda X(x)=0 \\
+        & T^{\prime \prime}(t)+\lambda a^{2} T(t)=0
+        \end{aligned}
+        \label{eq:XT}
+\end{equation}
+
+将式(\ref{eq:uxt})代人边界条件, 可得
+$$
+u(0, t)=X(0) T(t)=0, \quad u(l, t)=X(l) T(t)=0
+$$
+若 $T(t)=0$, 代人式 (\ref{eq:uxt}) 得 $u(x, t)=0$, 是平庸解, 应略去. 由此得边界条件
+\begin{equation}
+    X(0)=0, \quad X(l)=0
+    \label{eq:boundary}
+\end{equation}
+
+\item \textbf{求解本征值问题}
+
+式(\ref{eq:XT})及式(\ref{eq:boundary})构成了常微分方程的边值问题
+$$
+\left\{\begin{array}{l}
+X^{\prime \prime}(x)+\lambda X(x)=0 \\
+X(0)=0, \quad X(l)=0
+\end{array}\right.
+$$
+这称为本征值问题. 
+可以证明, 只有当 $\lambda$ 取某些特定值时才有非零解,
+求解本征值问题就是求解本征值 $\lambda$ 与本征函数 $X(x)$.
+
+现将 $\lambda$ 的取值分三种情况讨论:
+
+\begin{itemize}
+    \item 若 $\lambda<0$, 这时方程的通解为 $X(x)=A \mathrm{e}^{\sqrt{-\lambda} x}+B \mathrm{e}^{-\sqrt{-\lambda} x}$.
+
+        由边界条件 $X(0)=X(l)=0$, 可得
+        
+        $$
+        \left\{\begin{array}{l}
+        A+B=0 \\
+        A \mathrm{e}^{\sqrt{-\lambda l}}+B \mathrm{e}^{-\sqrt{-\lambda l}}=0
+        \end{array}\right.
+        $$
+        
+        这是关于 $A 、 B$ 的线性齐次方程组, 由于系数行列式不为零, 故 $A=B=0$. 因此 $\lambda<0$ 时, $X(x)$ 无非零解.
+
+    \item 若 $\lambda=0$, 这时方程成为 $X^{\prime \prime}(x)=0$, 它的通解为 $X(x)=A x+B$.
+
+        由边界条件 $X(0)=X(l)=0$ 得 $A=B=0, X(x)$ 也无非零解.
+    
+    \item 若 $\lambda>0$, 方程的通解为 $X(x)=A \cos \sqrt{\lambda} x+B \sin \sqrt{\lambda} x$.
+
+        由边界条件 $X(0)=0$, 得 $A=0$. 由 $X(l)=0$ 得 $B \sin \sqrt{\lambda} l=0$. 非零解要求 $B \neq 0$, 故
+        
+        $$
+        \sin \sqrt{\lambda} l=0 \quad \text { 即 } \sqrt{\lambda}=\frac{n \pi}{l}, \quad n=1,2, \cdots
+        $$
+        
+        因此本征值 (加上脚标 $n$ ) 及相应的本征函数分别为
+        
+        $$
+        \lambda_{n}=\left(\frac{n \pi}{l}\right)^{2}, \quad n=1,2, \cdots
+        $$
+        
+        $$
+        X_{n}(x)=B_{n} \sin \frac{n \pi x}{l}, \quad n=1,2, \cdots
+        $$
+\end{itemize}
+
+
+
+
+
+  \item \textbf{求解 $T(t)$ 的常微分方程}
+  
+    将本征值 $\lambda_{n}=\left(\frac{n \pi}{l}\right)^{2}$ 代入式 (\ref{eq:XT}), 得到
+
+    $$
+    T^{\prime \prime}(t)+\left(\frac{n \pi a}{l}\right)^{2} T(t)=0
+    $$
+
+    它的通解为
+    $$
+    T_{n}(t)=C_{n} \cos \frac{n \pi a t}{l}+D_{n} \sin \frac{n \pi a t}{l}
+    $$
+    式中 $C_{n}$ 和 $D_{n}$ 为任意常数.
+    
+    \item \textbf{作特解的线性叠加}
+    
+    满足方程及边界条件 (\ref{eq:string_vibration_equation})的一系列特解为
+    \begin{equation}
+        u_{n}(x, t)=X_{n}(x) T_{n}(t)=\left(C_{n} \cos \frac{n \pi a t}{l}+D_{n} \sin \frac{n \pi a t}{l}\right) \sin \frac{n \pi x}{l}, 
+        \label{eq:special_solution}
+    \end{equation}
+    这里已将任意常数 $B_{n}$ 吸收到任意常数 $C_{n}$ 及 $D_{n}$ 中去了.
+    
+    特解(\ref{eq:special_solution})一般不满足初始条件, 实际上由式(\ref{eq:special_solution})可得 
+    $$
+    \begin{aligned}
+    u_{n}(x, 0) & =C_{n} \sin \frac{n \pi x}{l} \\
+    \left.\frac{\partial u_{n}(x, t)}{\partial t}\right|_{t=0} & =D_{n} \frac{n \pi a}{l} \sin \frac{n \pi x}{l}
+    \end{aligned}
+    $$
+
+    这表明, 除非 $\varphi(x)$ 和 $\psi(x)$ 同时为 $\sin \frac{n \pi x}{l}$ 的倍数,
+     否则任何一个特解不可能满足题目给定的初始条件. 
+     但考虑到方程  及边界条件(\ref{eq:string_vibration_equation})都是齐次线性的, 
+     因此将所有的特解线性叠加起来, 如果级数收玫, $u(x, t)$ 仍然满足方程 与边界条件. 由此得
+    \begin{equation}
+        u(x, t)=\sum_{n=1}^{\infty} u_{n}(x, t)=
+        \sum_{n=1}^{\infty}\left(C_{n} \cos \frac{n \pi a t}{l}+
+        D_{n} \sin \frac{n \pi a t}{l}\right) \sin \frac{n \pi x}{l}
+        \label{eq:general_solution}
+    \end{equation}
+    而待定系数 $C_{n}$ 和 $D_{n}$ 可由初始条件来确定.
+    
+
+    \item \textbf{由初始条件确定系数} 
+    
+        将式(\ref{eq:general_solution})代人初始条件, 即有
+        $$
+        \begin{gathered}
+        \varphi(x)=u(x, 0)=\sum_{n=1}^{\infty} C_{n} \sin \frac{n \pi x}{l} \\
+        \psi(x)=u_{t}(x, 0)=\sum_{n=1}^{\infty} D_{n} \frac{n \pi a}{l} \sin \frac{n \pi x}{l}
+        \end{gathered}
+        $$
+        最终系数可由前面傅里叶级数展开来确定系数$C_{n}$ 及 $D_{n}$, 即得定解问题的解.
+        $$
+        \begin{aligned}
+        & C_{n}=\frac{2}{l} \int_{0}^{l} \varphi(x) \sin \frac{n \pi x}{l} \mathrm{~d} x, \quad n=1,2, \cdots \\
+        & D_{n}=\frac{2}{n \pi a} \int_{0}^{l} \psi(x) \sin \frac{n \pi x}{l} \mathrm{~d} x, \quad n=1,2, \cdots
+        \end{aligned}
+        $$
+
+
+        \item \textbf{解的物理意义}
+        
+        先看级数 (\ref{eq:general_solution}) 的每一项 (即每一个特解)的物理意义.
+
+        \begin{equation}
+            u_{n}(x, t)=\left(C_{n} \cos \frac{n \pi a t}{l}+D_{n} \sin \frac{n \pi a t}{l}\right) \sin \frac{n \pi x}{l}
+            =E_{n} \cos \left(\omega_{n} t-\varphi_{n}\right) \sin \frac{n \pi x}{l}
+            \label{eq:solution_2}
+        \end{equation}    
+        式中
+        $$
+        E_{n}=\sqrt{C_{n}^{2}+D_{n}^{2}}, 
+            \quad \omega_{n}=\frac{n \pi a}{l}, 
+            \quad \varphi_{n}=\tan ^{-1} \frac{D_{n}}{C_{n}}
+        $$
+        
+        如果弦按式(\ref{eq:solution_2})的规律运动时, 
+        $x=0$ 及 $x=l$ 这两个端点保持不动. 
+        而弦上各点则在各自的平衡位置附近作简谐振动, 
+        其振幅分别为 $E_{n}\left|\sin \frac{n \pi x}{l}\right|$. 
+        弦的这种形式的运动称为驻波. 
+        在点 $x=\frac{m l}{n}(m=0,1, \cdots, n)$ 处, 振幅为零. 
+        这些点在整个振动过程中始终保持不动, 称为\textbf{驻波} $u_{n}(x, t)$ 的\textbf{波节}. 
+        在点 $x=\frac{2 m+1}{2 n} l(m=0,1$, $\cdots, n-1)$ 处, 
+        $\sin \frac{n \pi x}{l}= \pm 1$, 这些点的振幅最大,称为驻波的\textbf{波腹}.
+         驻波的\textbf{角频率} $\omega_{n}=\frac{n \pi}{l}$, 
+         其中 $n=1$ 的项 $u_{1}(x, t)$ 称为\textbf{基波}, 
+         而 $n>1$ 的项 $u_{n}(x, t)$ 称为 \textbf{$n$ 次谐波}, 
+         这些驻波也称为两端固定弦的本征振动. 
+         因此, 有界弦的任意振动可看作一系列本征振动的叠加.
+        
+\end{enumerate}
+
+
+
+

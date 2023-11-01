@@ -1,0 +1,157 @@
+\section{$\Gamma$函数和$B$函数}
+$\Gamma$函数是特殊函数里最常见的. 对于整数变量,作为阶乘,它出现在每一个泰勒展开里.对于半整数变量,
+许多函数的展开也会用上.
+
+\subsection{$\Gamma$函数定义和性质}
+
+$\Gamma$函数的第一个定义由欧拉给出
+
+\begin{equation}
+    \Gamma(z) \equiv \lim _{n \rightarrow \infty} \frac{1 \cdot 2 \cdot 3 \cdots n}{z(z+1)(z+2) \cdots(z+n)} n^{z}, \quad z \neq 0,-1,-2,-3, \ldots
+    \label{eq:gamma_def_euler}
+\end{equation}
+这里的$z$可以是实数也可以是复数. 于是我们有最基本的递推关系
+\begin{equation}
+\begin{aligned}
+\Gamma(z+1) & =\lim _{n \rightarrow \infty} \frac{1 \cdot 2 \cdot 3 \cdots n}{(z+1)(z+2)(z+3) \cdots(z+n+1)} n^{z+1} \\
+& =\lim _{n \rightarrow \infty} \frac{n z}{z+n+1} \cdot \frac{1 \cdot 2 \cdot 3 \cdots n}{z(z+1)(z+2) \cdots(z+n)} n^{z} \\
+& =z \Gamma(z) .
+\end{aligned}
+\end{equation}
+由定义可得
+\begin{equation}
+    \Gamma(1)=\lim _{n \rightarrow \infty} \frac{1 \cdot 2 \cdot 3 \cdots n}{1 \cdot 2 \cdot 3 \cdots n(n+1)} n=1
+\end{equation}
+进而得到阶乘的表达式
+\begin{equation}
+    \Gamma(n)=1 \cdot 2 \cdot 3 \cdots(n-1)=(n-1) ! .
+\end{equation}
+
+$\Gamma$函数的第二个定义也由欧拉给出,以第二类欧拉积分的形式给出
+\begin{equation}
+    \Gamma(z) \equiv \int_{0}^{\infty} e^{-t} t^{z-1} d t, \quad \Re z>0 .
+\end{equation}
+这里的$z$的限制是为了避免积分发散. 当变量代换的时候,常常可以化成以下两个形式
+$$
+\Gamma(z)=2 \int_{0}^{\infty} e^{-t^{2}} t^{2 z-1} d t, \quad \Re z>0
+$$
+和
+$$
+\Gamma(z)=\int_{0}^{1}\left[\ln \left(\frac{1}{t}\right)\right]^{z-1} d t, \quad \Re z>0
+$$
+
+当$z=\half$, 可以利用高斯积分求得
+$$
+\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}
+$$
+
+
+$\Gamma$函数的第三个定义也由Weierstrass给出,以无穷乘积形式给出
+\begin{equation}
+\frac{1}{\Gamma(z)} \equiv z e^{\gamma z} \prod_{n=1}^{\infty}\left(1+\frac{z}{n}\right) e^{-z / n}
+\end{equation}
+其中$\gamma$为Euler-Mascheroni常数
+$$
+\gamma=0.5772156619 \cdots
+$$
+
+$\Gamma$函数有以下性质:
+% \subsection{$\Gamma$函数性质}
+\begin{enumerate}
+    \item $\Gamma(z)$函数在全平面解析(除$z=0, -1, -2, \cdots$).
+    \item 反射公式
+    $$
+        \Gamma(z) \Gamma(1-z)=\frac{\pi}{\sin z \pi}
+    $$ 证明见后. $\Gamma(\half) = \sqrt{\pi}$.
+    \item 倍乘公式
+    $$
+    \Gamma(1+z) \Gamma\left(z+\frac{1}{2}\right)=2^{-2 z} \sqrt{\pi} \Gamma(2 z+1)
+    $$
+    \item 单极点$z=-n$处的留数
+    $$
+    \begin{aligned}
+    Res \Gamma(z=-n) & =\lim _{\varepsilon \rightarrow 0}(\varepsilon \Gamma(-n+\varepsilon))=\lim _{\varepsilon \rightarrow 0} \frac{\varepsilon \Gamma(-n+1+\varepsilon)}{-n+\varepsilon}=\lim _{\varepsilon \rightarrow 0} \frac{\varepsilon \Gamma(-n+2+\varepsilon)}{(-n+\varepsilon)(-n+1+\varepsilon)} \\
+    & =\lim _{\varepsilon \rightarrow 0} \frac{\varepsilon \Gamma(1+\varepsilon)}{(-n+\varepsilon) \cdots(\varepsilon)}=\frac{(-1)^{n}}{n !},
+    \end{aligned}
+    $$
+\end{enumerate}
+
+\begin{examplebox}{Maxwell-Boltzmann分布}
+    经典统计物理中, Maxwell-Boltzmann分布能量为$E$的状态被占据的概率正比于
+    $e^{-E/kT}$, $k$为玻尔兹曼常数, $T$为绝对温度. 常记$\beta=1 / k T$
+    在$E$到$E+dE$区间内的状态数目为$n(E) dE$, 由归一化条件得
+    $$
+    1=C \int n(E) e^{-\beta E} d E
+    $$
+    体系能量可以由下式求得
+    $$
+    \langle E\rangle=C \int E n(E) e^{-\beta E} d E
+    $$
+
+
+    对于理想气体来说态密度函数$n(E)$正比于$E^{1/2}$, 因此可得到归一化系数
+    $$
+    1=C \int_0^{\infty} E^{1 / 2} e^{-\beta E} d E=C \frac{\Gamma\left(\frac{3}{2}\right)}{\beta^{3 / 2}}=C \frac{\sqrt{\pi}}{2 \beta^{3 / 2}}, \quad \text { or } C=\frac{2 \beta^{3 / 2}}{\sqrt{\pi}}
+    $$
+    进而得到平均能量为
+    $$
+    \langle E\rangle=C \int_{0}^{\infty} E^{3 / 2} e^{-\beta E} d E=C \frac{\Gamma\left(\frac{5}{2}\right)}{\beta^{5 / 2}}=\left(\frac{2 \beta^{3 / 2}}{\sqrt{\pi}}\right) \frac{\sqrt{\pi}}{\beta^{5 / 2}}\left(\frac{1}{2} \cdot \frac{3}{2}\right)=\frac{3}{2} k T
+    $$
+\end{examplebox}
+
+\subsection{$B$函数定义和性质}
+贝塔函数由第一类欧拉积分定义的
+\begin{equation}
+    B(p, q) = \int_0^1 t^{p -1} (1-t)^{q-1} dt, \Re p> 0, \Re q >0.
+    \label{eq:beta_def1}
+\end{equation}
+令$t=\sin^2{\theta}$, 可以得到另一种形式
+\begin{equation}
+    B(p, q)  = 2\int_{0}^{\pi/2} \sin ^{2p -1}{\theta} \cos^{2q -1}{\theta} d\theta.
+    \label{eq:beta_def2}
+\end{equation}
+
+我们可以通过$\Gamma$函数表达$B$函数
+\begin{equation}
+B(p, q)=\frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}
+\label{eq:beta_gamma_relation}
+\end{equation}
+上式证明如下.
+$$
+\Gamma(p) \Gamma(q)=4 \int_{0}^{\infty} s^{2 p-1} e^{-s^{2}} d s \int_{0}^{\infty} t^{2 q-1} e^{-t^{2}} d t
+$$
+利用极坐标代换
+ $s=r \cos \theta, t=r \sin \theta, r^{2}=s^{2}+t^{2}$,  $d s d t=r d r d \theta$.
+ 得到
+ $$
+ \begin{aligned}
+ \Gamma(p) \Gamma(q) & =4 \int_{0}^{\infty} r^{2 p+2 q-1} e^{-r^{2}} d r \int_{0}^{\pi / 2} \cos ^{2 p-1} \theta \sin ^{2 q-1} \theta d \theta \\
+ & =2 \Gamma(p+q) \int_{0}^{\pi / 2} \cos ^{2 p-1} \theta \sin ^{2 q-1} \theta d \theta,
+ \end{aligned}
+ $$
+ 由\ref{eq:beta_def2}式可得\ref{eq:beta_gamma_relation}.
+
+令$p=z, q=1-z$可以得到$\Gamma$函数的反射公式
+\begin{equation}
+    B(z, 1-z) = \int_0^{1} t^{z-1} (1-t)^{-z} dt 
+     = \int_0^{\infty} \frac{x^{z-1}}{1+x} dx
+     = \frac{\pi}{\sin{\pi z} }, 
+\end{equation}
+上式做了$x = t/(1-t)$的代换,并利用留数定理的例题.
+
+
+利用B函数可以倍乘公式. 事实上,
+
+\begin{equation}
+\begin{aligned}
+\frac{\Gamma(z) \Gamma(z)}{\Gamma(2 z)} & =B(z, z)=\int_{0}^{1} t^{z-1}(1-t)^{z-1} d t \\
+& =2 \int_{0}^{\frac{1}{2}} t^{z-1}(1-t)^{z-1} d t
+\end{aligned}
+\end{equation}
+作变量代换 $t=\frac{1-\sqrt{\xi}}{2}$, 得到
+$$
+\begin{aligned}
+\frac{\Gamma(z) \Gamma(z)}{\Gamma(2 z)} & =2^{1-2 z} \int_{0}^{1}(1-\xi)^{z-1} \xi^{-\frac{1}{2}} d \xi \\
+& =2^{1-2 z} \mathrm{~B}\left(z, \frac{1}{2}\right)=2^{1-2 z} \frac{\Gamma(z) \Gamma\left(\frac{1}{2}\right)}{\Gamma\left(z+\frac{1}{2}\right)}
+\end{aligned}
+$$
