@@ -1,0 +1,138 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{11.13}
+\pagestyle{fancy}
+
+% \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\CTEXthesection\quad #1}}
+% \renewcommand{\sectionmark}[1]{\markleft{\CTEXthesection\quad #1}}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法11044102}
+\fancyhead[R]{课后习题}
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+
+
+% \title{习题01}
+% \author{截止日期: }
+% \author{罗凯\\
+% 数学物理方法}
+% \date{截止日期:}
+% \maketitle
+ 
+% \begin{problem}{1.1}
+% 找出满足方程\[z - 2 = 3 \frac{1+ \imath t}{1-\imath t}, -\infty < t <\infty\]的所有点$z$.
+% \end{problem}
+
+
+
+
+\begin{problem}{6.1}
+  计算下列表达式的拉普拉斯变换的像函数
+  \begin{enumerate}
+    \item $$
+    \frac{1}{t}\left(\mathrm{e}^{\beta t}-\mathrm{e}^{\alpha t}\right) ;
+    $$
+    \item $$
+    \int_0^t \frac{\sin u}{u} \mathrm{~d} u;
+    $$
+    \item 
+    $$
+    \frac{1}{\sqrt{\pi t}}.
+    $$
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}{6.2}
+  计算下列表达式的拉普拉斯变换的原函数
+  \begin{enumerate}
+    \item $$
+    \bar{f}(p)=\frac{3 p}{p^2-1} ;
+    $$
+    \item $$
+    \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}
+    $$
+  \end{enumerate}
+\end{problem}
+  
+\begin{problem}{6.3}
+  利用拉普拉斯变换计算:  $$\int_0^{\infty} \frac{\sin x t}{t} dt. $$
+\end{problem}
+   
+\begin{problem}{6.4}
+用Bromwich积分求
+$$
+\frac{p}{p^2 - \omega^2}
+$$
+的原函数.
+\end{problem}
+
+\begin{problem}{6.5}
+  利用拉普拉斯变换求解积分方程
+  $$
+  y(t)=a \sin t-2 \int_0^t y(\tau) \cos (t-\tau) d \tau .
+  $$
+\end{problem}
+
+\begin{problem}{6.6}
+  用Bromwich积分求
+  $$
+  \frac{p}{p^2 - \omega^2}
+  $$
+  的原函数.
+\end{problem}
+
+
+\end{document}
