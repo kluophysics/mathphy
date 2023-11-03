@@ -141,14 +141,14 @@ $$
 
 \begin{enumerate}
     \item \textbf{双曲型方程}
+特征线方程的解为$\xi(x, y)=$ 常数, $\eta(x, y)=$ 常数.
+取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)$ 作为新的自变数, 则 $A_{11}=0, A_{22}=0$. 从而自变数代换后的方程\ref{eq:two_variable_transformed_diff_equation} 成为
+\begin{equation}
+    u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right]
+    \label{eq:semi_standard_elliptic}
+\end{equation}
 
-$\xi(x, y)=$ 常数, $\eta(x, y)=$ 常数.
-取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)$ 作为新的自变数, 则 $A_{11}=0, A_{22}=0$. 从而自变数代换后的方程 (7.3.6) 成为
-$$
-u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right]
-$$
-
-或者, 在作自变数代换
+或者, 再作自变数代换
 $$
 \left\{\begin{array} { l } 
 { \xi = \alpha + \beta , } \\
@@ -159,11 +159,13 @@ $$
 \end{array}\right.\right.
 $$
 
-则方程 (7.3.14) 化为
-$$
-u_{\alpha \alpha}-u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\left(B_1-B_2\right) u_\beta+2 C u+2 F\right] .
-$$
-(7.3.14) 或 (7.3.15) 是双曲型方程的标准形式. 一维波动方程, 如弦振动方程 (7.1.6) 和 (7.1.7), 杆的纵振动方程 (7.1.9), 电报方程 (7.1.13) 和 (7.1.14) 等, 都是标准形式的双曲型方程.
+则方程 \ref{eq:semi_standard_elliptic} 化为
+\begin{equation}
+    u_{\alpha \alpha}-u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\left(B_1-B_2\right) u_\beta+2 C u+2 F\right] .
+    \label{eq:standard_elliptic}
+\end{equation}
+(\ref{eq:semi_standard_elliptic}) 或 (\ref{eq:standard_elliptic}) 是双曲型方程的标准形式. 
+一维波动方程, 如弦振动方程和, 杆的纵振动方程, 电报方程等, 都是标准形式的双曲型方程.
 
 
 \item \textbf{抛物型方程}
