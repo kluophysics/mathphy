@@ -3,14 +3,14 @@
 \begin{equation}
     \int_{0}^{2\pi} R(\cos{x}, \sin{x}) dx,
 \end{equation}
-当实变数 $x$ 从 0 变到 $2 \pi$ 时, 复变数 $z=e^{\mathrm{i} x}$ 从 $z=1$ 出发沿单位圆 $|z|=1$ 逆时针 走一圈又回到 $z=1$,
+当实变数 $x$ 从 0 变到 $2 \pi$ 时, 复变数 $z=e^{\imath x}$ 从 $z=1$ 出发沿单位圆 $|z|=1$ 逆时针 走一圈又回到 $z=1$,
 实变定积分化为复变回路积分, 就可以应用留数定理了. 至于实变定积分里的 $\cos x, \sin x$ 和 $d x$, 作如下变换:
 $$
-\cos x=\frac{1}{2}\left(z+z^{-1}\right), \quad \sin x=\frac{1}{2 \mathrm{i}}\left(z-z^{-1}\right), \quad d x=\frac{1}{\mathrm{i} z} d z .
+\cos x=\frac{1}{2}\left(z+z^{-1}\right), \quad \sin x=\frac{1}{2 \imath}\left(z-z^{-1}\right), \quad d x=\frac{1}{\imath z} d z .
 $$
 于是, 原积分化为
 $$
-I=\oint_{|z|=1} R\left(\frac{z+z^{-1}}{2}, \frac{z-z^{-1}}{2 \mathrm{i}}\right) \frac{d z}{\mathrm{i} z}
+I=\oint_{|z|=1} R\left(\frac{z+z^{-1}}{2}, \frac{z-z^{-1}}{2 \imath}\right) \frac{d z}{\imath z}
 $$
 利用留数定理即可求得.
 

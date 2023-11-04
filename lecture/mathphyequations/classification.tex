@@ -71,7 +71,7 @@
         \end{aligned}\right.
         \label{eq:uxx_uxy_uyy}
 \end{equation}
-把\eqref{eq:ux_uy}和\eqref{eq:uxx_uxy_uyy}代人\eqref{eq:two_variable_diff_equation}得到采用新自变数 $\xi$ 和 $\eta$ 后的方程
+把\eqref{eq:ux_uy}和\eqref{eq:uxx_uxy_uyy}代入\eqref{eq:two_variable_diff_equation}得到采用新自变数 $\xi$ 和 $\eta$ 后的方程
 \begin{equation}
     A_{11} u_{\xi \xi}+2 A_{12} u_{\xi \eta}+A_{22} u_{\eta \eta}+B_1 u_{\xi}+B_2 u_\eta+C u+F=0 \text {, }
     \label{eq:two_variable_transformed_diff_equation}
@@ -113,7 +113,7 @@ $$
 \label{eq:trait_equation}
 \end{equation}
 常微分方程\eqref{eq:trait_equation}叫作二阶线性偏微分方程\eqref{eq:two_variable_diff_equation}的\textbf{特征方程}, 
-特征方程的一般积分 "$\xi(x, y)= C_1 $"和“$\eta(x, y)=C_2$”叫做\textbf{特征线}.
+特征方程的一般积分$\xi(x, y)= C_1$和$\eta(x, y)=C_2$叫做\textbf{特征线}.
 
 特征方程\eqref{eq:trait_equation}可分为两个方程
 \begin{equation}
@@ -142,90 +142,98 @@ $$
 
 \begin{enumerate}
     \item \textbf{双曲型方程}
-特征线方程的解为$\xi(x, y)=$ 常数, $\eta(x, y)=$ 常数.
-取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)$ 作为新的自变数, 则 $A_{11}=0, A_{22}=0$. 从而自变数代换后的方程\eqref{eq:two_variable_transformed_diff_equation} 成为
-\begin{equation}
-    u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right]
-    \label{eq:semi_standard_elliptic}
-\end{equation}
+    
+    特征线方程的解为$\xi(x, y)=$ 常数, $\eta(x, y)=$ 常数.
+    取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)$ 作为新的自变数, 则 $A_{11}=0, A_{22}=0$. 从而自变数代换后的方程\eqref{eq:two_variable_transformed_diff_equation} 成为
+    \begin{equation}
+        u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right]
+        \label{eq:semi_standard_parabolic}
+    \end{equation}
 
-或者, 再作自变数代换
-$$
-\left\{\begin{array} { l } 
-{ \xi = \alpha + \beta , } \\
-{ \eta = \alpha - \beta , }
-\end{array} \quad \text { 即 } \left\{\begin{array}{l}
-\alpha=\frac{1}{2}(\xi+\eta) \\
-\beta=\frac{1}{2}(\xi-\eta)
-\end{array}\right.\right.
-$$
+    或者, 再作自变数代换
+    $$
+    \left\{\begin{array} { l } 
+    { \xi = \alpha + \beta , } \\
+    { \eta = \alpha - \beta , }
+    \end{array} \quad \text { 即 } \left\{\begin{array}{l}
+    \alpha=\frac{1}{2}(\xi+\eta) \\
+    \beta=\frac{1}{2}(\xi-\eta)
+    \end{array}\right.\right.
+    $$
 
-则方程 \eqref{eq:semi_standard_elliptic} 化为
-\begin{equation}
-    u_{\alpha \alpha}-u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\left(B_1-B_2\right) u_\beta+2 C u+2 F\right] .
-    \label{eq:standard_elliptic}
-\end{equation}
-\eqref{eq:semi_standard_elliptic} 或\eqref{eq:standard_elliptic}是双曲型方程的标准形式. 
-一维波动方程, 如弦振动方程和, 杆的纵振动方程, 电报方程等, 都是标准形式的双曲型方程.
+    则方程 \eqref{eq:semi_standard_parabolic} 化为
+    \begin{equation}
+        u_{\alpha \alpha}-u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\left(B_1-B_2\right) u_\beta+2 C u+2 F\right] .
+        \label{eq:standard_parabolic}
+    \end{equation}
+    \eqref{eq:semi_standard_parabolic} 或\eqref{eq:standard_parabolic}是双曲型方程的标准形式. 
+    一维波动方程, 如弦振动方程和, 杆的纵振动方程, 电报方程等, 都是标准形式的双曲型方程.
 
 
-\item \textbf{抛物型方程}
-由于 $a_{12}^2-a_{11} a_{22}=0$, 特征方程 (7.3.12) 和 (7.3.13) 变成同一个方程:
-$$
-\frac{d y}{d x}=\frac{a_{12}}{a_{11}},
-$$
+    \item \textbf{抛物型方程}
 
-它们只能给出一族实的特征线
-$$
-\xi(x, y)=\text { 常数, }
-$$
+    由于 $a_{12}^2-a_{11} a_{22}=0$, 特征方程\eqref{eq:trait_eq_dual}和变成一个方程:
+    $$
+    \frac{d y}{d x}=\frac{a_{12}}{a_{11}},
+    $$
 
-则 $\xi=\xi(x, y)$ 是 (7.3.9) 的解. 取 $\xi$ 作为新的自变数, 取与 $\xi(x, y)$ 无关的函数 $\eta=\eta(x, y)$ 作为另一新的自变数. 采用新自变数后, 将 $\xi_x / \xi_y=-d y / d x=$ $-a_{12} / a_{11}$ 和 $a_{12}= \pm \sqrt{a_{11} \cdot a_{22}}$ 代人 (7.3.7), 得方程的前三个系数为
-$$
-\begin{aligned}
-A_{11} & =\xi_y^2\left[a_{11}\left(\frac{\xi_x}{\xi_y}\right)^2+2 a_{12} \frac{\xi_x}{\xi_y}+a_{22}\right]=-\frac{\xi_y^2}{a_{11}}\left[a_{12}^2-a_{11} \cdot a_{22}\right]=0 \\
-A_{12} & =\xi_y\left[a_{11}\left(\frac{\xi_x}{\xi_y}\right)^2 \eta_y+a_{12}\left(\frac{\xi_x}{\xi_y} \eta_y+\eta_x\right)+a_{22} \eta_y\right] \\
-& =-\frac{\xi_y \eta_y}{a_{11}}\left[a_{12}^2-a_{11} \cdot a_{22}\right]=0 \\
-A_{22} & =\eta_y^2\left[a_{11}\left(\frac{\eta_x}{\eta_y}\right)^2+2 a_{12} \frac{\eta_x}{\eta_y}+a_{22}\right]=\eta_y^2\left[\sqrt{a_{11}}\left(\frac{\eta_x}{\eta_y}\right) \pm \sqrt{a_{22}}\right]^2 .
-\end{aligned}
-$$
+    它们只能给出一族实的特征线
+    $$
+    \xi(x, y)=\text { 常数, }
+    $$
 
-可见, 只要取 $\eta(x, y)$ 使 $\eta_x / \eta_y \neq \sqrt{a_{22}} / \sqrt{a_{11}}$, 即 $\eta$ 不满足特征方程 (7.3.16), 则 $A_{22} \neq 0$, 从而自变数代换后的方程 (7.3.6) 成为
-$$
-u_{\eta \eta}=-\frac{1}{A_{22}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right] .
-$$
+    则 $\xi=\xi(x, y)$ 是\eqref{eq:trait_equation}的解. 
+    取 $\xi$ 作为新的自变数, 取与 $\xi(x, y)$ 无关的函数 $\eta=\eta(x, y)$ 作为另一新的自变数. 
+    采用新自变数后, 将 $\xi_x / \xi_y=-d y / d x=$ $-a_{12} / a_{11}$ 和 
+    $a_{12}= \pm \sqrt{a_{11} \cdot a_{22}}$ 代入\eqref{eq:transformed_coeff}, 得方程的前三个系数为
+    $$
+    \begin{aligned}
+    A_{11} & =\xi_y^2\left[a_{11}\left(\frac{\xi_x}{\xi_y}\right)^2+2 a_{12} \frac{\xi_x}{\xi_y}+a_{22}\right]=-\frac{\xi_y^2}{a_{11}}\left[a_{12}^2-a_{11} \cdot a_{22}\right]=0 \\
+    A_{12} & =\xi_y\left[a_{11}\left(\frac{\xi_x}{\xi_y}\right)^2 \eta_y+a_{12}\left(\frac{\xi_x}{\xi_y} \eta_y+\eta_x\right)+a_{22} \eta_y\right] \\
+    & =-\frac{\xi_y \eta_y}{a_{11}}\left[a_{12}^2-a_{11} \cdot a_{22}\right]=0 \\
+    A_{22} & =\eta_y^2\left[a_{11}\left(\frac{\eta_x}{\eta_y}\right)^2+2 a_{12} \frac{\eta_x}{\eta_y}+a_{22}\right]=\eta_y^2\left[\sqrt{a_{11}}\left(\frac{\eta_x}{\eta_y}\right) \pm \sqrt{a_{22}}\right]^2 .
+    \end{aligned}
+    $$
 
-这是抛物型方程的标准形式. 一维输运方程, 如扩散方程 (7.1.26), 热传导方程 (7.1.33) 等, 都是标准形式的抛物型方程.
+    可见, 只要取 $\eta(x, y)$ 使 $\eta_x / \eta_y \neq \sqrt{a_{22}} / \sqrt{a_{11}}$, 即 $\eta$ 不满足特征方程\eqref{eq:trait_equation}, 
+    则 $A_{22} \neq 0$, 从而自变数代换后的方程成为
+    $$
+    u_{\eta \eta}=-\frac{1}{A_{22}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right] .
+    $$
+    这是抛物型方程的标准形式. 一维输运方程, 如扩散方程, 热传导方程等, 都是标准形式的抛物型方程.
 
 
 \item \textbf{椭圆型方程}
-(7.3.12) 和 (7.3.13) 各给出一族复数的特征线
+
+\eqref{eq:trait_eq_dual}各给出一族复数的特征线
 $$
 \xi(x, y)=\text { 常数, } \eta(x, y)=\text { 常数, }
 $$
 
-而且 $\eta=\xi^*$. 取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)=\xi^*(x, y)$ 作为新的自变数, 则 $A_{11}=0, A_{22}=0$, 从而自变数代换后的方程 (7.3.6) 成为
-$$
-u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right] .
-$$
-
-这方程不同于 (7.3.14), 因为这里的 $\xi$ 和 $\eta$ 是复变数. 一般说来, 这是不方便的. 通常又作代换
+而且 $\eta=\xi^*$. 取 $\xi=\xi(x, y)$ 和 $\eta=\eta(x, y)=\xi^*(x, y)$ 作为新的自变数, 
+则 $A_{11}=0, A_{22}=0$, 从而自变数代换后的方程成为
+\begin{equation}
+    u_{\xi \eta}=-\frac{1}{2 A_{12}}\left[B_1 u_{\xi}+B_2 u_\eta+C u+F\right] .
+    \label{eq:standard_elliptic_semi}
+\end{equation}
+注意这里的 $\xi$ 和 $\eta$ 是复变数. 通常又作代换
 $$
 \left\{\begin{array} { l } 
-{ \xi = \alpha + \mathrm { i } \beta , } \\
-{ \eta = \alpha - \mathrm { i } \beta , }
+{ \xi = \alpha + \imath \beta , } \\
+{ \eta = \alpha - \imath \beta , }
 \end{array} \quad \text { 即 } \left\{\begin{array}{l}
 \alpha=\Re \xi=\frac{1}{2}(\xi+\eta), \\
-\beta=\operatorname{Im} \xi=\frac{1}{2 \mathrm{i}}(\xi-\eta) .
+\beta=\operatorname{Im} \xi=\frac{1}{2 \imath}(\xi-\eta) .
 \end{array}\right.\right.
 $$
 
-则方程 (7.3.18) 化为
-$$
-u_{\alpha \alpha}+u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\mathrm{i}\left(B_2-B_1\right) u_\beta+2 C u+F\right] .
-$$
-(7.3.18) 或 (7.3.19) 是椭圆型方程的标准形式. 平面稳定场方程, 如稳定浓度分布 (7.1.39), 稳定温度分布 (7.1.41), 静电场方程 (7.1.46) 和 (7.1.47), 无旋恒定电流场方程 (7.1.54) 和 (7.1.56), 无旋定常流动方程 (7.1.61) 和
-在二维情况下, 都是 (7.3.19)形式的椭圆型方程.
+则方程\eqref{eq:two_variable_transformed_diff_equation}化为
+\begin{equation}
+    u_{\alpha \alpha}+u_{\beta \beta}=-\frac{1}{A_{12}}\left[\left(B_1+B_2\right) u_\alpha+\imath\left(B_2-B_1\right) u_\beta+2 C u+F\right] .
+    \label{eq:standard_elliptic}
+\end{equation}
+\eqref{eq:standard_elliptic_semi} 或 \eqref{eq:standard_elliptic} 是椭圆型方程的标准形式. 
+平面稳定场方程, 如稳定浓度分布, 稳定温度分布, 静电场方程, 无旋恒定电流场方程, 无旋定常流动方程等都是标准形式的椭圆型方程.
 \end{enumerate}
 
 
