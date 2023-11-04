@@ -79,14 +79,14 @@
 
 
 
-\begin{problem}{6.1}
+\begin{problem}{7.1}
   计算下列表达式的拉普拉斯变换的像函数
   \begin{enumerate}
     \item $$
-    \frac{1}{t}\left(\mathrm{e}^{\beta t}-\mathrm{e}^{\alpha t}\right) ;
+    \frac{1}{t}\left(e^{\beta t}-e^{\alpha t}\right) ;
     $$
     \item $$
-    \int_0^t \frac{\sin u}{u} \mathrm{~d} u;
+    \int_0^t \frac{\sin u}{u} d u;
     $$
     \item 
     $$
@@ -95,44 +95,55 @@
   \end{enumerate}
 \end{problem}
 
-\begin{problem}{6.2}
+\begin{problem}{7.2}
   计算下列表达式的拉普拉斯变换的原函数
   \begin{enumerate}
     \item $$
     \bar{f}(p)=\frac{3 p}{p^2-1} ;
     $$
     \item $$
-    \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}
+    \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}.
     $$
   \end{enumerate}
 \end{problem}
   
-\begin{problem}{6.3}
+\begin{problem}{7.3}
   利用拉普拉斯变换计算:  $$\int_0^{\infty} \frac{\sin x t}{t} dt. $$
 \end{problem}
    
-\begin{problem}{6.4}
-用Bromwich积分求
+\begin{problem}{7.4}
+用拉普拉斯反变换中的Bromwich(又称黎曼-梅林)积分求
 $$
 \frac{p}{p^2 - \omega^2}
 $$
 的原函数.
 \end{problem}
 
-\begin{problem}{6.5}
-  利用拉普拉斯变换求解积分方程
+\begin{problem}{7.5}
+  利用拉普拉斯变换求解微分方程
+  % $$
+  % y(t)=a \sin t-2 \int_0^t y(\tau) \cos (t-\tau) d \tau .
+  % $$
   $$
-  y(t)=a \sin t-2 \int_0^t y(\tau) \cos (t-\tau) d \tau .
+    \frac{d^3 y}{d t^3}+3 \frac{d^2 y}{d t^2}+3 \frac{d y}{d t}+y=6 e^{-t}, 
+    \quad y(0)=\left.\frac{d y}{d t}\right|_{t=0}=\left.\frac{d^2 y}{d t^2}\right|_{t=0}=0 .
   $$
 \end{problem}
 
-\begin{problem}{6.6}
-  用Bromwich积分求
-  $$
-  \frac{p}{p^2 - \omega^2}
-  $$
-  的原函数.
-\end{problem}
 
+\begin{problem}{7.6}
+  用$\Gamma$函数求积分
+  $$
+  \int_0^\infty x^{\alpha -1 } e^{-x \cos{\theta}} \cos\left( x \sin(\theta) \right) dx,
+  $$
+  其中$\alpha > 0, -\frac{\pi}{2} < \theta < \frac{\pi}{2}$.
+\end{problem} 
+
+\begin{problem}{7.7}
+  用$B$函数求积分
+  $$
+  \int_0^{\frac{\pi}{2}} \tan^\alpha{\theta} \,  d\theta, \quad  -1 < \alpha < 1.
+  $$
+\end{problem} 
 
 \end{document}
