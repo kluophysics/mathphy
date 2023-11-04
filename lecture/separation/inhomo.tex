@@ -63,12 +63,12 @@ $$
 $$
 \begin{aligned}
 & \left\{\begin{array}{l}
-T_{0}(0)=\varphi_{0}=\frac{1}{l} \int_{0}^{l} \varphi(\xi) \mathrm{d} \xi, \\
-T_{0}^{\prime}(0)=\psi_{0}=\frac{1}{l} \int_{0}^{l} \psi(\xi) \mathrm{d} \xi ;
+T_{0}(0)=\varphi_{0}=\frac{1}{l} \int_{0}^{l} \varphi(\xi) d \xi, \\
+T_{0}^{\prime}(0)=\psi_{0}=\frac{1}{l} \int_{0}^{l} \psi(\xi) d \xi ;
 \end{array}\right. \\
 & \left\{\begin{array}{l}
-T_{n}(0)=\varphi_{n}=\frac{2}{l} \int_{0}^{l} \varphi(\xi) \cos \frac{n \pi \xi}{l} \mathrm{~d} \xi, \\
-T_{n}^{\prime}(0)=\psi_{n}=\frac{2}{l} \int_{0}^{l} \psi(\xi) \cos \frac{n \pi \xi}{l} \mathrm{~d} \xi,
+T_{n}(0)=\varphi_{n}=\frac{2}{l} \int_{0}^{l} \varphi(\xi) \cos \frac{n \pi \xi}{l} d \xi, \\
+T_{n}^{\prime}(0)=\psi_{n}=\frac{2}{l} \int_{0}^{l} \psi(\xi) \cos \frac{n \pi \xi}{l} d \xi,
 \end{array}\right.
 \end{aligned}
 $$
@@ -149,45 +149,45 @@ $$
 
 $$
 \begin{aligned}
-F(x, t) & =\int_{0}^{t} F(x, \tau) \delta(t-\tau) \mathrm{d} \tau=\rho f(x, t) \\
-& =\int_{0}^{t} \rho f(x, \tau) \delta(t-\tau) \mathrm{d} \tau,
+F(x, t) & =\int_{0}^{t} F(x, \tau) \delta(t-\tau) d \tau=\rho f(x, t) \\
+& =\int_{0}^{t} \rho f(x, \tau) \delta(t-\tau) d \tau,
 \end{aligned}
 $$
 
-其中 $F(x, \tau) \delta(t-\tau) \mathrm{d} \tau$ 为作用在很短的时间区间 $(\tau, \tau+\mathrm{d} \tau)$ 上而冲量为 $F(x, \tau) \mathrm{d} \tau$ 的 “瞬时” 力. 把该瞬时力引起的振动记为 $u^{(\tau)}(x, t)$, 则 $u^{(\tau)}(x, t)$的定解问题为
+其中 $F(x, \tau) \delta(t-\tau) d \tau$ 为作用在很短的时间区间 $(\tau, \tau+d \tau)$ 上而冲量为 $F(x, \tau) d \tau$ 的 “瞬时” 力. 把该瞬时力引起的振动记为 $u^{(\tau)}(x, t)$, 则 $u^{(\tau)}(x, t)$的定解问题为
 
 $$
 \begin{gathered}
-u_{t u}^{(\tau)}-a^{2} u_{x x}^{(\tau)}=\frac{F(x, \tau)}{\rho} \delta(t-\tau) \mathrm{d} \tau=f(x, \tau) \delta(t-\tau) \mathrm{d} \tau \\
+u_{t u}^{(\tau)}-a^{2} u_{x x}^{(\tau)}=\frac{F(x, \tau)}{\rho} \delta(t-\tau) d \tau=f(x, \tau) \delta(t-\tau) d \tau \\
 \left.u^{(\tau)}\right|_{x=0}=0,\left.u^{(\tau)}\right|_{x=l}=0, \\
 \left.u^{(\tau)}\right|_{t=0}=0,\left.u_{t}^{(\tau)}\right|_{t=0}=0
 \end{gathered}
 $$
 
-由于瞬时力 $F(x, \tau) \delta(t-\tau) \mathrm{d} \tau$ 作用在时间区间 $(\tau, \tau+\mathrm{d} \tau)$ 上, 从时刻零直到时刻 $\tau-0$, 它尚未起作用, 弦仍然是静止的, $\left.u^{(\tau)}\right|_{t=\tau-0}=0,\left.u_{t}^{(\tau)}\right|_{t=\tau-0}=$ 0 . 时刻 $\tau$, 该瞬时力开始作用, 至时刻 $\tau+\mathrm{d} \tau$ 结束. 由于 $\mathrm{d} \tau$ 很短, 弦上各质点 “来不及” 位移, 故在时刻 $\tau+\mathrm{d} \tau$, 位移 $\left.u^{(\tau)}\right|_{t=\tau+\mathrm{d} \tau}=0$. 再看时刻 $\tau+\mathrm{d} \tau$的速度 $u_{t}^{(\tau)}$, 根据冲量定理, 从 $\tau-0$ 时刻到 $\tau+\mathrm{d} \tau$ 时刻, 单位长度弦的动量变化等于瞬时力 $F(x, \tau) \delta(t-\tau) \mathrm{d} \tau$ 的冲量, 故有
+由于瞬时力 $F(x, \tau) \delta(t-\tau) d \tau$ 作用在时间区间 $(\tau, \tau+d \tau)$ 上, 从时刻零直到时刻 $\tau-0$, 它尚未起作用, 弦仍然是静止的, $\left.u^{(\tau)}\right|_{t=\tau-0}=0,\left.u_{t}^{(\tau)}\right|_{t=\tau-0}=$ 0 . 时刻 $\tau$, 该瞬时力开始作用, 至时刻 $\tau+d \tau$ 结束. 由于 $d \tau$ 很短, 弦上各质点 “来不及” 位移, 故在时刻 $\tau+d \tau$, 位移 $\left.u^{(\tau)}\right|_{t=\tau+d \tau}=0$. 再看时刻 $\tau+d \tau$的速度 $u_{t}^{(\tau)}$, 根据冲量定理, 从 $\tau-0$ 时刻到 $\tau+d \tau$ 时刻, 单位长度弦的动量变化等于瞬时力 $F(x, \tau) \delta(t-\tau) d \tau$ 的冲量, 故有
 
 $$
-\left.\rho u_{t}^{(\tau)}\right|_{t=\tau+\mathrm{d} \tau}-\left.\rho u_{t}^{(\tau)}\right|_{t=\tau-0}=F(x, \tau) \mathrm{d} \tau=\rho f(x, \tau) \mathrm{d} \tau
+\left.\rho u_{t}^{(\tau)}\right|_{t=\tau+d \tau}-\left.\rho u_{t}^{(\tau)}\right|_{t=\tau-0}=F(x, \tau) d \tau=\rho f(x, \tau) d \tau
 $$
 
 从而得到
 
 $$
-\left.u_{t}^{(\tau)}\right|_{t=\tau+\mathrm{d} \tau}=f(x, \tau) \mathrm{d} \tau
+\left.u_{t}^{(\tau)}\right|_{t=\tau+d \tau}=f(x, \tau) d \tau
 $$
 
-如果改取 $\tau+\mathrm{d} \tau$ 时刻作为初始时刻, 考察瞬时力 $F(x, \tau) \delta(t-\tau) \mathrm{d} \tau$ 在 $\tau+$
-$\mathrm{d} \tau$ 时刻以后引起的振动 $u^{(\tau)}(x, t)$, 由于该瞬时力已经作用过了, 弦上不受外力, $u^{(r)}(x, t)$ 满足齐次方程, 其定解问题为
+如果改取 $\tau+d \tau$ 时刻作为初始时刻, 考察瞬时力 $F(x, \tau) \delta(t-\tau) d \tau$ 在 $\tau+$
+$d \tau$ 时刻以后引起的振动 $u^{(\tau)}(x, t)$, 由于该瞬时力已经作用过了, 弦上不受外力, $u^{(r)}(x, t)$ 满足齐次方程, 其定解问题为
 
 $$
 \begin{gathered}
 u_{t t}^{(\tau)}-a^{2} u_{x x}^{(\tau)}=0, \\
 \left.u^{(\tau)}\right|_{x=0}=0,\left.u^{(\tau)}\right|_{x=l}=0, \\
-\left.u^{(\tau)}\right|_{t=\tau+\mathrm{d} \tau}=0,\left.u_{t}^{(\tau)}\right|_{t=\tau+\mathrm{d} \tau}=f(x, \tau) \mathrm{d} \tau .
+\left.u^{(\tau)}\right|_{t=\tau+d \tau}=0,\left.u_{t}^{(\tau)}\right|_{t=\tau+d \tau}=f(x, \tau) d \tau .
 \end{gathered}
 $$
 
-定解问题 (8.2.19) (8.2.20) 与定解问题 (8.2.16) (8.2.18) 是等价的. 从 (8.2.20) 可以看出 $u^{(\tau)}$ 必含有因子 $\mathrm{d} \tau$, 若记 $u^{(\tau)}(x, t)=v(x, t ; \tau) \mathrm{d} \tau$,则 $v(x, t ; \tau)$ 满足定解问题
+定解问题 (8.2.19) (8.2.20) 与定解问题 (8.2.16) (8.2.18) 是等价的. 从 (8.2.20) 可以看出 $u^{(\tau)}$ 必含有因子 $d \tau$, 若记 $u^{(\tau)}(x, t)=v(x, t ; \tau) d \tau$,则 $v(x, t ; \tau)$ 满足定解问题
 
 $$
 \begin{aligned}
@@ -207,17 +207,17 @@ v_{t t}-a^{2} v_{x x}=0, \\
 \end{gathered}
 $$
 
-由于 $\mathrm{d} \tau$ 很短, 在 (8.2.25) 中已将 $\tau+\mathrm{d} \tau$ 时刻记为 $\tau$ 时刻, 定解问题 (8.2.24) (8.2.25) 为齐次方程问题, 可用前面的分离变数法或傅里叶级数法求解. 只是要注意, 前面两种方法中初始时刻为零时刻, 这里初始时刻为 $\tau$ 时刻, 因此前两种方法解中的 $t$ (表示距初始时刻零时刻的时间间隔), 在这里应换成 $t-\tau$.
+由于 $d \tau$ 很短, 在 (8.2.25) 中已将 $\tau+d \tau$ 时刻记为 $\tau$ 时刻, 定解问题 (8.2.24) (8.2.25) 为齐次方程问题, 可用前面的分离变数法或傅里叶级数法求解. 只是要注意, 前面两种方法中初始时刻为零时刻, 这里初始时刻为 $\tau$ 时刻, 因此前两种方法解中的 $t$ (表示距初始时刻零时刻的时间间隔), 在这里应换成 $t-\tau$.
 
 定解问题 (8.2.12) (8.2.14) 是线性的, 适用叠加原理, 既然外加力是一系列瞬时力的叠加, 则定解问题 (8.2.12) (8.2.14) 的解也应是瞬时力所引起的振动的叠加. 计及所有瞬时力的影响, 就有
 
 $$
-u(x, t)=\sum_{\tau=0}^{t} u^{(\tau)}(x, t)=\int_{0}^{t} v(x, t ; \tau) \mathrm{d} \tau
+u(x, t)=\sum_{\tau=0}^{t} u^{(\tau)}(x, t)=\int_{0}^{t} v(x, t ; \tau) d \tau
 $$
 
 $u(x, t)$ 就是定解问题 (8.2.12) (8.2.14) 的解. 这就从物理上给出了求解非齐次振动方程定解问题 (8.2.12) (8.2.14) 的方法, 因为利用了冲量定理,故称为冲量定理法.
 
-回顾一下求解步骤, 为了求解非齐次振动方程定解问题 (8.2.12) (8.2.14), 把持续作用的力 $\rho f(x, t)$ 看作一系列前后相继的脉冲力 $\rho f(x, t)$ $\delta(t-\tau) \mathrm{d} \tau$, 改为求解脉冲力 $\rho f(x, t) \delta(t-\tau) \mathrm{d} \tau$ 从 $\tau$ 时刻起所引起的振动 $v(x$, $t ; \tau) \mathrm{d} \tau, v(x, t ; \tau)$ 满足齐次振动方程定解问题 (8.2.24) (8.2.25), 解出 $v(x, t ; \tau)$ 后, 代人 $(8.2 .26)$, 对 $\tau$ 积分, 就能得到所求的解.
+回顾一下求解步骤, 为了求解非齐次振动方程定解问题 (8.2.12) (8.2.14), 把持续作用的力 $\rho f(x, t)$ 看作一系列前后相继的脉冲力 $\rho f(x, t)$ $\delta(t-\tau) d \tau$, 改为求解脉冲力 $\rho f(x, t) \delta(t-\tau) d \tau$ 从 $\tau$ 时刻起所引起的振动 $v(x$, $t ; \tau) d \tau, v(x, t ; \tau)$ 满足齐次振动方程定解问题 (8.2.24) (8.2.25), 解出 $v(x, t ; \tau)$ 后, 代人 $(8.2 .26)$, 对 $\tau$ 积分, 就能得到所求的解.
 
 $u(x, t)$ 和 $u^{(\tau)}(x, t)$ 的量纲为 $[x], v(x, t ; \tau)$ 的量纲为 $[x] /[t]$. 只要注意 $\delta(t-\tau)$ 的量纲为 $1 /[t]$, 不难检验, 方程 (8.2.12) 和 (8.2.16) 中每一项的量纲均为 $[x] /[t]^{2}$, 而方程 (8.2.21) 中每一项的量纲同是 $[x] /[t]^{3}$. 因此, 从
 量纲来分析, 方程 (8.2.12)、(8.2.16)、(8.2.19)、(8.2.21) 和 (8.2.24) 在物理上都是正确的, 这从另一个侧面, 证明冲量定理法在物理上是行得通的.
@@ -229,7 +229,7 @@ $u(x, t)$ 和 $u^{(\tau)}(x, t)$ 的量纲为 $[x], v(x, t ; \tau)$ 的量纲为
 首先验证边界条件. 由于 $\left.v\right|_{x=0}=0 ;\left.v\right|_{x=l}=0$, 因此,
 
 $$
-\left.u\right|_{x=0}=\left.\int_{0}^{t} v\right|_{x=0} \mathrm{~d} \tau=0,\left.u\right|_{x=l}=\left.\int_{0}^{t} v\right|_{x=l} \mathrm{~d} \tau=0
+\left.u\right|_{x=0}=\left.\int_{0}^{t} v\right|_{x=0} d \tau=0,\left.u\right|_{x=l}=\left.\int_{0}^{t} v\right|_{x=l} d \tau=0
 $$
 
 $u(x, t)$ 满足齐次边界条件 (8.2.13).
@@ -237,30 +237,30 @@ $u(x, t)$ 满足齐次边界条件 (8.2.13).
 其次验证初始条件. 由 (8.2.26) 知初始位移
 
 $$
-\left.u\right|_{t=0}=\left.\int_{0}^{0} v\right|_{t=0} \mathrm{~d} \tau=0
+\left.u\right|_{t=0}=\left.\int_{0}^{0} v\right|_{t=0} d \tau=0
 $$
 
 为验证初始速度, 需利用积分号下求导的公式
 
 $$
 \begin{aligned}
-\frac{\mathrm{d}}{\mathrm{d} t} \int_{\alpha(t)}^{\beta(t)} g(t ; \tau) \mathrm{d} \tau= & \int_{\alpha(t)}^{\beta(t)} \frac{\partial g(t ; \tau)}{\partial t} \mathrm{~d} \tau+g[t ; \beta(t)] \frac{\mathrm{d} \beta(t)}{\mathrm{d} t} \\
-& -g[t ; \alpha(t)] \frac{\mathrm{d} \alpha(t)}{\mathrm{d} t}
+\frac{d}{d t} \int_{\alpha(t)}^{\beta(t)} g(t ; \tau) d \tau= & \int_{\alpha(t)}^{\beta(t)} \frac{\partial g(t ; \tau)}{\partial t} d \tau+g[t ; \beta(t)] \frac{d \beta(t)}{d t} \\
+& -g[t ; \alpha(t)] \frac{d \alpha(t)}{d t}
 \end{aligned}
 $$
 
 这个公式在微积分教本中可以找到. 把这个公式应用于 (8.2.26), 有
 
 $$
-u_{t}(x, t)=\int_{0}^{t} v_{\iota}(x, t ; \tau) \mathrm{d} \tau+v(x, t ; t)
+u_{t}(x, t)=\int_{0}^{t} v_{\iota}(x, t ; \tau) d \tau+v(x, t ; t)
 $$
 
 按 $(8.2 .25), v(x, \tau ; \tau)=0 \quad(0 \leqslant \tau \leqslant t)$. 所以,
 
 $$
 \begin{aligned}
-& u_{t}(x, t)=\int_{0}^{t} v_{t}(x, t ; \tau) \mathrm{d} \tau, \\
-& \left.u_{t}\right|_{\imath=0}=\left.\int_{0}^{0} v_{t}\right|_{\imath=0} \mathrm{~d} \tau=0 .
+& u_{t}(x, t)=\int_{0}^{t} v_{t}(x, t ; \tau) d \tau, \\
+& \left.u_{t}\right|_{\imath=0}=\left.\int_{0}^{0} v_{t}\right|_{\imath=0} d \tau=0 .
 \end{aligned}
 $$
 
@@ -269,20 +269,20 @@ $$
 最后验证非齐次方程. 对 (8.2.28) 应用求导公式(8.2.27),
 
 $$
-u_{t t}=\int_{0}^{t} \dot{v}_{t u}(x, t ; \tau) \mathrm{d} \tau+v_{t}(x, t ; t)
+u_{t t}=\int_{0}^{t} \dot{v}_{t u}(x, t ; \tau) d \tau+v_{t}(x, t ; t)
 $$
 
 按 (8.2.25), $v_{t}(x, \tau ; \tau)=f(x, \tau)(0 \leqslant \tau \leqslant t)$. 所以,
 
 $$
-u_{t t}=\int_{0}^{t} v_{t t}(x, t ; \tau) \mathrm{d} \tau+f(x, t)
+u_{t t}=\int_{0}^{t} v_{t t}(x, t ; \tau) d \tau+f(x, t)
 $$
 
 以(8.2.26) 和 (8.2.29) 代人非齐次方程 (8.2.12) 的左边, 则
 
 $$
 \begin{aligned}
-u_{t u}-a^{2} u_{x x} & =\int_{0}^{t}\left(v_{t t}-a^{2} v_{x x}\right) \mathrm{d} \tau+f(x, t)=\int_{0}^{t} 0 \mathrm{~d} \tau+f(x, t) \\
+u_{t u}-a^{2} u_{x x} & =\int_{0}^{t}\left(v_{t t}-a^{2} v_{x x}\right) d \tau+f(x, t)=\int_{0}^{t} 0 d \tau+f(x, t) \\
 & =f(x, t)
 \end{aligned}
 $$
@@ -373,7 +373,7 @@ $$
 $$
 \begin{aligned}
 u(x, t) & =\int_{0}^{t} v(x, t ; \tau) \\
-& =\frac{A l}{\pi a} \cos \frac{\pi x}{l} \int_{0}^{l} \sin \omega \tau \sin \frac{\pi a(t-\tau)}{l} \mathrm{~d} \tau \\
+& =\frac{A l}{\pi a} \cos \frac{\pi x}{l} \int_{0}^{l} \sin \omega \tau \sin \frac{\pi a(t-\tau)}{l} d \tau \\
 & =\frac{A l}{\pi a} \frac{1}{\omega^{2}-\pi^{2} a^{2} / l^{2}}\left(\omega \sin \frac{\pi a}{l} t-\frac{\pi a}{l} \sin \omega t\right) \cos \frac{\pi x}{l} .
 \end{aligned}
 $$
@@ -390,7 +390,7 @@ $$
 
 非齐次泛定方程 (8.2.30) 表明, 每单位长度上的热源强度为 $c \rho f(x, t)$. 这热源从时刻零一直延续到时刻 $t$, 现在求解的是热源强度 $c \rho f(x, t)$ 的影响下,在时刻 $t$ 的温度分布.
 
-仿照冲量定理法对非齐次振动方程定解问题的处理，这里按照 (5.3.9),将持续作用的热源看作许许多多前后相继的 “瞬时” 热源 $c \rho f(x, t) \delta(t-\tau) \mathrm{d} \tau$的叠加, “瞬时” 热源 $c \rho f(x, \tau) \delta(t-\tau) \mathrm{d} \tau$ 作用于时间区间 $(\tau, \tau+\mathrm{d} \tau)$, 提供的热量为 $c \rho f(x, \tau) \mathrm{d} \tau$, 记它所产生的温度分布为 $v(x, t ; \tau) \mathrm{d} \tau$, 类似地可导出 $v(x, t ; \tau)$ 的定解问题为
+仿照冲量定理法对非齐次振动方程定解问题的处理，这里按照 (5.3.9),将持续作用的热源看作许许多多前后相继的 “瞬时” 热源 $c \rho f(x, t) \delta(t-\tau) d \tau$的叠加, “瞬时” 热源 $c \rho f(x, \tau) \delta(t-\tau) d \tau$ 作用于时间区间 $(\tau, \tau+d \tau)$, 提供的热量为 $c \rho f(x, \tau) d \tau$, 记它所产生的温度分布为 $v(x, t ; \tau) d \tau$, 类似地可导出 $v(x, t ; \tau)$ 的定解问题为
 
 $$
 \begin{gathered}
@@ -401,19 +401,19 @@ v_{t}-a^{2} v_{x x}=f(x, \tau) \delta(t-\tau) \\
 $$
 
 直到 $\tau-0$ 时刻, 瞬时热源尚未起作用, 从初始条件 $\left.v\right|_{t=0}=0$ 得 $\left.v\right|_{t=\tau-0}$
-$=0 . \tau$ 时刻, 瞬时热源 $c \rho f(x, \tau) \delta(t-\tau) \mathrm{d} \tau$ 开始起作用, 至 $\tau+\mathrm{d} \tau$ 时刻, 作用结束, 瞬时热源放出的热量, 使 $\tau+\mathrm{d} \tau$ 时刻的温度增加到 $\left.v\right|_{t=\tau+\mathrm{d} \tau}$, 于是
+$=0 . \tau$ 时刻, 瞬时热源 $c \rho f(x, \tau) \delta(t-\tau) d \tau$ 开始起作用, 至 $\tau+d \tau$ 时刻, 作用结束, 瞬时热源放出的热量, 使 $\tau+d \tau$ 时刻的温度增加到 $\left.v\right|_{t=\tau+d \tau}$, 于是
 
 $$
-c \rho\left(\left.v\right|_{t=\tau+\mathrm{d} \tau}-\left.v\right|_{t=\tau-0}\right) \mathrm{d} \tau=c \rho f(x, \tau) \mathrm{d} \tau
+c \rho\left(\left.v\right|_{t=\tau+d \tau}-\left.v\right|_{t=\tau-0}\right) d \tau=c \rho f(x, \tau) d \tau
 $$
 
 从而
 
 $$
-\left.v\right|_{t=\tau+\mathrm{d} \tau}=f(x, \tau) .
+\left.v\right|_{t=\tau+d \tau}=f(x, \tau) .
 $$
 
-这是 $\tau+\mathrm{d} \tau$ 时刻的温度分布, 如果把 $\tau+\mathrm{d} \tau$ 时刻作为初始时刻, 研究瞬时热源在 $\tau+\mathrm{d} \tau$ 时刻以后产生的温度分布 $v(x, t ; \tau) \mathrm{d} \tau$ ，则 $v(x, t ; \tau)$ 的定解问题为
+这是 $\tau+d \tau$ 时刻的温度分布, 如果把 $\tau+d \tau$ 时刻作为初始时刻, 研究瞬时热源在 $\tau+d \tau$ 时刻以后产生的温度分布 $v(x, t ; \tau) d \tau$ ，则 $v(x, t ; \tau)$ 的定解问题为
 
 $$
 \begin{gathered}
@@ -423,12 +423,12 @@ v_{t}-a^{2} v_{x x}=0, \\
 \end{gathered}
 $$
 
-因为瞬时热源已经作用过了, 故 (8.2.36) 为齐次方程. 由于 $\mathrm{d} \tau$ 很短, (8.2.37) 中将初始时刻 $\tau+\mathrm{d} \tau$ 记为 $\tau$ 时刻. 定解问题 (8.2.36)、(8.2.34)、 (8.2.37) 与定解问题 (8.2.33) (8.2.35) 等价, 已是齐次泛定方程、齐次边界条件, 可用分离变数法或傅里叶级数法求解, 不过要注意, 原来求解公式中的 $t$ 这里应换为 $t-\tau$.
+因为瞬时热源已经作用过了, 故 (8.2.36) 为齐次方程. 由于 $d \tau$ 很短, (8.2.37) 中将初始时刻 $\tau+d \tau$ 记为 $\tau$ 时刻. 定解问题 (8.2.36)、(8.2.34)、 (8.2.37) 与定解问题 (8.2.33) (8.2.35) 等价, 已是齐次泛定方程、齐次边界条件, 可用分离变数法或傅里叶级数法求解, 不过要注意, 原来求解公式中的 $t$ 这里应换为 $t-\tau$.
 
 定解问题 (8.2.30) (8.2.32) 是线性的, 叠加原理也适用. 考虑所有瞬时热源产生的影响, 把这些影响叠加起来, 就得到此定解问题的解 $u(x, t)$,于是有
 
 $$
-u(x, t)=\int_{0}^{t} v(x, t ; \tau) \mathrm{d} \tau
+u(x, t)=\int_{0}^{t} v(x, t ; \tau) d \tau
 $$
 
 同样, 可从数学上验证这样得到的 $u(x, t)$ 确实满足定解问题 (8.2.30) (8.2.32), 请读者去完成, 这里不赘述了.

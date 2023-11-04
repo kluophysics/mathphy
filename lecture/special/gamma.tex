@@ -79,7 +79,8 @@ $\Gamma$函数有以下性质:
 \begin{examplebox}{Maxwell-Boltzmann分布}
     经典统计物理中, Maxwell-Boltzmann分布能量为$E$的状态被占据的概率正比于
     $e^{-E/kT}$, $k$为玻尔兹曼常数, $T$为绝对温度. 常记$\beta=1 / k T$
-    在$E$到$E+dE$区间内的状态数目为$n(E) dE$, 由归一化条件得
+    在$E$到$E+dE$区间内的占据概率为$C n(E) e^{-\beta E} dE$, 其中$n(E)dE$为
+    状态数目. 归一化条件要求
     $$
     1=C \int n(E) e^{-\beta E} d E
     $$
@@ -94,9 +95,17 @@ $\Gamma$函数有以下性质:
     1=C \int_0^{\infty} E^{1 / 2} e^{-\beta E} d E=C \frac{\Gamma\left(\frac{3}{2}\right)}{\beta^{3 / 2}}=C \frac{\sqrt{\pi}}{2 \beta^{3 / 2}}, \quad \text { or } C=\frac{2 \beta^{3 / 2}}{\sqrt{\pi}}
     $$
     进而得到平均能量为
-    $$
-    \langle E\rangle=C \int_{0}^{\infty} E^{3 / 2} e^{-\beta E} d E=C \frac{\Gamma\left(\frac{5}{2}\right)}{\beta^{5 / 2}}=\left(\frac{2 \beta^{3 / 2}}{\sqrt{\pi}}\right) \frac{\sqrt{\pi}}{\beta^{5 / 2}}\left(\frac{1}{2} \cdot \frac{3}{2}\right)=\frac{3}{2} k T
-    $$
+    \begin{eqnarray*}
+        \langle E\rangle
+        &=&C \int_{0}^{\infty} E^{3 / 2} e^{-\beta E} d E 
+        \\
+        &=&C \frac{\Gamma\left(\frac{5}{2}\right)}{\beta^{5 / 2}}
+        \\
+        &=&\left(\frac{2 \beta^{3 / 2}}{\sqrt{\pi}}\right) 
+        \frac{\sqrt{\pi}}{\beta^{5 / 2}}\left(\frac{1}{2} \cdot \frac{3}{2}\right)
+        \\
+        &=&\frac{3}{2} k T.
+    \end{eqnarray*}
 \end{examplebox}
 
 \subsection{$B$函数定义和性质}
@@ -129,7 +138,7 @@ $$
  & =2 \Gamma(p+q) \int_{0}^{\pi / 2} \cos ^{2 p-1} \theta \sin ^{2 q-1} \theta d \theta,
  \end{aligned}
  $$
- 由\ref{eq:beta_def2}式可得\ref{eq:beta_gamma_relation}.
+ 由\eqref{eq:beta_def2}式可得\eqref{eq:beta_gamma_relation}.
 
 令$p=z, q=1-z$可以得到$\Gamma$函数的反射公式
 \begin{equation}

@@ -136,7 +136,7 @@ $$
 \label{eq:string_vibration}
 \end{equation}
 
-由 $\Delta x, \Delta t$ 的任意性可知 式\ref{eq:string_vibration} 中的被积函数必须为零, 从而得到
+由 $\Delta x, \Delta t$ 的任意性可知 式\eqref{eq:string_vibration} 中的被积函数必须为零, 从而得到
 \begin{equation}
 T \frac{\partial^2 u(x, t)}{\partial x^2}-\rho \frac{\partial^2 u(x, t)}{\partial t^2}=0 .
 \end{equation}
@@ -159,7 +159,7 @@ $$
 \int_t^{t+\Delta t} \int_x^{x+\Delta } F(x, t) d x d t .
 $$
 
-于是在方程 \ref{eq:string_vibration} 的左侧应添上这一项, 得到
+于是在方程 \eqref{eq:string_vibration} 的左侧应添上这一项, 得到
 
 $$
 \int_t^{t+\Delta t} \int_{x}^{x+ \Delta x}  \left[T \frac{\partial^2 u(x, t)}{\partial x^2}-\rho \frac{\partial^2 u(x, t)}{\partial t^2}+F(x, t)\right] d x d t=0 .
@@ -192,10 +192,10 @@ $$
 d Q=-k(x, y, z) \frac{\partial u}{\partial n} d S d t,
 \label{eq:heat_conduct_diff}
 \end{equation}
-其中 $k(x, y, z)$ 称为物体在点 $(x, y, z)$ 处的热传导系数, 它应取正值. 上式\ref{eq:heat_conduct_diff}中负号的出现
+其中 $k(x, y, z)$ 称为物体在点 $(x, y, z)$ 处的热传导系数, 它应取正值. 上式\eqref{eq:heat_conduct_diff}中负号的出现
 是由于热量总是从温度高的一侧流向低的一侧, 因此, $d Q$ 应和 $\frac{\partial u}{\partial n}$ 异号.
 
-在物体 $G$ 内任取一闭曲面 $\Gamma$, 它所包围的区域记为 $\Omega$, 由式\ref{eq:heat_conduct_diff}, 
+在物体 $G$ 内任取一闭曲面 $\Gamma$, 它所包围的区域记为 $\Omega$, 由式\eqref{eq:heat_conduct_diff}, 
 从时刻 $t_1$ 到 $t_2$ 流进此闭曲面的全部热量为
 $$
 Q=\int_{t_1}^{t_2}\left\{\iint_{\Gamma} k(x, y, z) \frac{\partial u}{\partial n} d S\right\} d t,
@@ -237,7 +237,7 @@ c \rho \frac{\partial u}{\partial t}=\frac{\partial}{\partial x}
 \left(k \frac{\partial u}{\partial z}\right) .
 \label{eq:heat_equation}
 \end{equation}
-\ref{eq:heat_equation}式称为非均匀的各向同性体的\textbf{热传导方程}.如果物体是均匀的, 
+\eqref{eq:heat_equation}式称为非均匀的各向同性体的\textbf{热传导方程}.如果物体是均匀的, 
 此时 $k, c$ 及 $\rho$ 均为常数, 记 $\frac{k}{c \rho}=a^2$, 即得
 \begin{equation}
 \frac{\partial u}{\partial t}=a^2\left(\frac{\partial^2 u}{\partial x^2}
@@ -251,11 +251,11 @@ c \rho \frac{\partial u}{\partial t}=\frac{\partial}{\partial x}
     \label{eq:Delta}
 \end{equation}
 如果所考察的物体内部有热源 (例如物体中通有电流, 或有化学反应等情况), 则在热传导方程的推导中还需考虑热源的影响.
-若设在单位时间内单位体积中所产生的热量为 $F(x, y, z, t)$, 则在考虑热平衡时, \ref{eq:heat_identity}式左边应再加上一项
+若设在单位时间内单位体积中所产生的热量为 $F(x, y, z, t)$, 则在考虑热平衡时, \eqref{eq:heat_identity}式左边应再加上一项
 $$
 \int_{t_1}^{t_2} \iiint_{\Omega} F(x, y, z, t) d x d y d z d t
 $$
-于是, 相应于方程\ref{eq:homo_heat_equation}的热传导方程应改为
+于是, 相应于方程\eqref{eq:homo_heat_equation}的热传导方程应改为
 \begin{equation}
     \frac{\partial u}{\partial t}=a^2\left(\frac{\partial^2 u}{\partial x^2}+
     \frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}\right)+f(x, y, z, t),
@@ -265,23 +265,23 @@ $$
 $$
 f(x, y, z, t)=\frac{F(x, y, z, t)}{\rho c} .
 $$
-方程\ref{eq:heat_equation}称为\textbf{齐次热传导方程}, 而方程\ref{eq:sourced_heat_equation} 称为\textbf{非齐次热传导方程}.
+方程\eqref{eq:heat_equation}称为\textbf{齐次热传导方程}, 而方程\eqref{eq:sourced_heat_equation} 称为\textbf{非齐次热传导方程}.
 
 
 
-\subsection{调和方程}
-这一小节中我们主要研究调和方程(又称拉普拉斯方程)
+\subsection{稳定场方程}
+这一小节中我们主要研究稳定场方程,包括拉普拉斯方程
 \begin{equation}
     \Delta u \equiv \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}=0
     \label{eq:laplace_equation}
 \end{equation}
-及泊松方程
+和泊松方程
 \begin{equation}
     \Delta u \equiv \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}=f(x, y, z)
     \label{eq:poisson_equation}
 \end{equation}
 的基本定解问题及解的性质.
-方程\ref{eq:laplace_equation}和\ref{eq:poisson_equation}在力学、物理学问题中经常碰到.对于膜的振动问题, 
+方程\eqref{eq:laplace_equation}和\eqref{eq:poisson_equation}在力学、物理学问题中经常碰到.对于膜的振动问题, 
 当研究在不随时间而变化的外力 $F(x, y)$ 
 作用下膜的平衡时, 膜的位移 $u$ 和时间无关, 于是膜振动方程
 $$
@@ -328,20 +328,20 @@ $$
     \nabla \times \bE=0
     \label{eq:nabla_cross_E}
 \end{equation}
-方程\ref{eq:nabla_dot_E}和\ref{eq:nabla_cross_E}是静电场的基本微分方程. 它们也可从微分形式的麦克斯韦方程组得到. 
+方程\eqref{eq:nabla_dot_E}和\eqref{eq:nabla_cross_E}是静电场的基本微分方程. 它们也可从微分形式的麦克斯韦方程组得到. 
 事实上, 对真空中的静电场, $\bD=\varepsilon_0 \bE, \bB=0$, 代入麦克斯韦方程 
 $\nabla \cdot \bD=\rho$ 和 $\nabla \times \bE=-\bB$ 即得.
-由\ref{eq:nabla_cross_E}式, 存在电势函数 $V(x, y, z)$, 使
+由\eqref{eq:nabla_cross_E}式, 存在电势函数 $V(x, y, z)$, 使
 $$
 \bE=-\nabla V
 $$
 
-将上式 代入\ref{eq:nabla_dot_E}得
+将上式 代入\eqref{eq:nabla_dot_E}得
 \begin{equation}
     \Delta V=-\frac{1}{\varepsilon_0} \rho .
     \label{eq:EM_laplace}
 \end{equation}
-这就是静电场的电势函数 $V$ 应当满足的静电场方程, 它是\textbf{泊松方程}. $\bE$ 是矢量, 而 $V$ 是标量, 求解方程\ref{eq:EM_laplace} 比较方便.
+这就是静电场的电势函数 $V$ 应当满足的静电场方程, 它是\textbf{泊松方程}. $\bE$ 是矢量, 而 $V$ 是标量, 求解方程\eqref{eq:EM_laplace} 比较方便.
 如果在静电场的某一区域里没有电荷, 即 $\rho=0$, 则电势函数 $V$ 的静电场方程在该区域上简化为\textbf{拉普拉斯方程}
 \begin{equation}
     \Delta V=0.
