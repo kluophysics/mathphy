@@ -18,7 +18,7 @@
 \raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
 
 
-\newcommand{\duedate}{11.02}
+\newcommand{\duedate}{11.20}
 \pagestyle{fancy}
 
 % \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
@@ -79,76 +79,76 @@
 
 
 
-\begin{problem}{6.1}
+\begin{problem}{8.1}
+  一长为 $\ell$ 的均匀金属细杆 (可近似看作一维的), 
+  通有恒定电流。设杆的一端 $(x=0$ )温度恒为 0 , 另一端 $(x=\ell)$ 恒为 $T_0$, 
+  初始时温度分布为 $\frac{T_0}{\ell} x$.
+  试写出杆中温度场所满足的方程, 边界条件与初始条件。
+\end{problem}
+
+\vspace{2em}
+
+\begin{problem}{8.2}
+ 将下面的偏微分方程化成标准形式.
+ \begin{itemize}
+  \item [(1)] $
+  u_{x x}+4 u_{x y}+5 u_{y y}+u_x+2 u_y=0;
+  $
+  \item [(2)]
+  $
+  u_{x x}+x u_{y y}=0.
+  $
+
+
+ \end{itemize}
+
+\end{problem}
   
-计算矩形波$$
-\begin{aligned}
-& f(x)=0, \quad-\pi<x<0, \\
-& f(x)=h, \quad 0<x<\pi .
-\end{aligned}
+
+\vspace{2em}
+
+\begin{problem}{8.3}
+  整数$m$阶贝塞尔方程(Bessel's equation)
+  $$
+    x^2 y^{\prime \prime}+x y^{\prime}+\left(x^2-m^2\right) y = 0, 
+  $$
+的Laplace变换($m = 0$)为一阶常微分方程
+  $$
+   (p^2 + 1) f'(p) + pf(p) = 0.
+  $$
+   试求解$f(p)$.
+\end{problem}
+
+
+\vspace{2em}
+
+
+\begin{problem}{8.4}
+试求解常系数常微分方程
 $$
-的傅里叶级数展开.注意观察级数展开在间断点的取值是否为预期.
-\end{problem}
-
-\begin{problem}{6.2}
-  将 $\delta(x)$ 展为实数形式的傅里叶积分.
-\end{problem}
-  
-\begin{problem}{6.3}
-证明傅里叶变换$\mathcal{F}[f(x)] = F(\omega)$ 满足以下定理.
-\begin{enumerate}
-  \item 导数定理
-  $$
-      \mathcal{F} [f'(x)] = \imath \omega F(\omega)
-  $$
-
-  \item 积分定理
-  $$
-      \mathcal{F} [ \int^{x} f(x) dx ] = \frac{1}{\imath \omega} F(\omega)
-  $$
-  \item 位移定理
-  $$
-      \mathcal{F} [ e^{\imath \omega_0 x} f(x) ] = F(\omega - \omega_0),
-  $$
-  \item 卷积定理
-  $$
-      \mathcal{F} [f_1(x)\star f_2(x) ] = F_1(\omega) F_2(\omega).
-  $$
-\end{enumerate}
-\end{problem}
-   
-\begin{problem}{6.4}
-对于屏蔽效应的描述可以使用Yukawa势来表示
+y^{\prime \prime \prime}-2 y^{\prime \prime}+y^{\prime}-2 y=0 .
 $$
-V(\mathbf{r}) = \frac{e^{-\alpha r}}{r}
-$$
-其中$\alpha$描述屏蔽的强弱.
-\begin{enumerate}
-  \item 试在球坐标系下求出三维傅里叶变换;
-  \item 当$\alpha=Z$时, 函数$e^{-Zr}$可描述类氢原子的$1s$轨道, 对其傅里叶变换关于$Z$求偏导
-  $-\frac{\partial}{\partial Z} \mathcal{F} \left[ \frac{e^{-Z r}}{r}\right]$;
-  \item 若是三维高斯形式$V(\mathbf{r}) = e^{-\alpha r^2}$,求其傅里叶变换.
-\end{enumerate}
 \end{problem}
 
-\begin{problem}{6.5}
-  \begin{enumerate}
-  \item 验证$f(x)=x^{-1 / 2}$ 在Fourier傅里叶余弦和正弦变换下互易;即
-  $$
-  \begin{aligned}
-  & \sqrt{\frac{2}{\pi}} \int_0^{\infty} x^{-1 / 2} \cos {x t} \, dx=t^{-1 / 2} \\
-  & \sqrt{\frac{2}{\pi}} \int_0^{\infty} x^{-1 / 2} \sin {x t} \, dx=t^{-1 / 2}
-  \end{aligned}
-  $$
-  \item 使用上述结果计算菲涅耳积分(Fresnel integrals)
-  $$
-  \int_0^{\infty} \cos \left(y^2\right) d y \text { , } \int_0^{\infty} \sin \left(y^2\right) d y
-  $$
-\end{enumerate}
+\vspace{2em}
 
+\begin{problem}{8.5}
+  在 $x_0=0$ 的邻域上用级数求解整数$m$阶贝塞尔方程.
 \end{problem}
 
+\vspace{2em}
 
+\begin{problem}{8.6}
+在 $x_0=0$ 的邻域上求解高斯方程 (超几何级数微分方程) 
+$$x(x-1) y^{\prime \prime}+[(1+\alpha+\beta) x-\gamma] y^{\prime}+\alpha \beta y=0,$$
+其中$\alpha, \beta, \gamma$为常数.
+\end{problem} 
 
+% \begin{problem}{8.7}
+%   用$B$函数求积分
+%   $$
+%   \int_0^{\frac{\pi}{2}} \tan^\alpha{\theta} \,  d\theta, \quad  -1 < \alpha < 1.
+%   $$
+% \end{problem} 
 
 \end{document}
