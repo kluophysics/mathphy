@@ -1,5 +1,5 @@
 \chapter{偏微分方程}
-起过一个独立变量的称为,偏微分方程, partial differential equation (PDE). 有且仅有一个独立变量的称为常微分方程, 
+超过一个独立变量的称为偏微分方程, partial differential equation (PDE). 有且仅有一个独立变量的称为常微分方程, 
 ordinary differential equation (ODE).
 
 线性算子
@@ -39,10 +39,10 @@ $$
 \end{array}\right.
 $$
 若 $\varphi$ 满足上式,则 $\varphi(x, y)=C$.
-当且仅当$\frac{\partial P(x, y)}{\partial y} \fallingdotseq \frac{\partial Q(x, y)}{\partial x}$
+当且仅当$\frac{\partial P(x, y)}{\partial y} = \frac{\partial Q(x, y)}{\partial x}$
 $$
 \begin{gathered}
-\varphi(x, y)=\int_{x_0}^x P(x, y) d x+\int_{y_0}^y Q(x, y) \\
+\varphi(x, y)=\int_{x_0}^x P(x, y) d x+\int_{y_0}^y Q(x_0, y) \\
 \equiv C .
 \end{gathered}
 $$
@@ -50,7 +50,7 @@ $$
 $$
 \begin{aligned}
     & \text { 可分离 } \Rightarrow \text { 全微分 } \\
-    & \text { 但全微分} \Rightarrow \text{可分离} \\
+    & \text { 但全微分} \nRightarrow \text{可分离} \\
 \end{aligned}
 $$
 % \subsection{}
@@ -81,17 +81,17 @@ $\Rightarrow \varphi=\int_{x_0}^x(x+y) d x+\int_{y_0}^y x_0 d y$
 \end{examplebox}
 
 
-今 $y=x^{m v}$
+今 $y=x^{m}v$
 $$
 \begin{aligned}
 & \left(x^2-y\right) d x+x d y=0 . \\
-& x \text { 权重为 } 1, y, m \\
+& x \text { 权重为 } 1, y\text { 权重为 }m \\
 & x^2 d x \text { 权重为 } 3:
 \end{aligned}
 $$
--ydx: $x d y$ 权重为 $1+m$.
+$-ydx,  x d y$ 权重为 $1+m$.为了配平权重
 $$
-\text { 会 } 1+m=3 \Rightarrow m=2 \text { . }
+1+m=3 \Rightarrow m=2 \text { . }
 $$
 
 
@@ -102,10 +102,12 @@ $$
 & \frac{d x}{x}+\frac{d v}{v+1}=0 . \\
 & \Rightarrow \ln x+\ln (v+1)=c \\
 & \Rightarrow x(v+1)=c \\
-& y=x^2 v=x^2\left(\frac{c}{x}-1\right) \\
-& =-x^2+c x .
 \end{aligned}
 $$
+得到最终解
+\begin{equation*}
+    y=x^2 v=x^2\left(\frac{c}{x}-1\right) = -x^2+c x 
+\end{equation*}
 
 
 一般一阶线性常微分方程.
@@ -123,9 +125,9 @@ $$
 使左式是一个全微分
 $$
 \begin{aligned}
-& \frac{d \alpha}{d x}=\alpha P\cdot \Rightarrow \\
-& \frac{d \alpha}{\alpha}=P d x \\
-& \Rightarrow \quad \alpha(x)=e^{\int P(x) d x}
+& \frac{d \alpha}{d x}=\alpha P \\
+\Rightarrow & \frac{d \alpha}{\alpha}=P d x \\
+\Rightarrow  &  \alpha(x)=e^{\int P(x) d x}
 \end{aligned}
 $$
 
@@ -135,7 +137,12 @@ $$
 & \frac{d}{d x}(\alpha y)=\alpha Q \\
 & \alpha y=\int^x \alpha(x) Q(x) d x+c \\
 & y=\frac{1}{\alpha(x)}\left[\int^x \alpha(y) Q(y) d y+c\right] \\
-& =y_1(x)+y_2(x) \\
+& \equiv y_1(x)+y_2(x) \\
+\end{aligned}
+$$
+可以分成两个解
+$$
+\begin{aligned}
 & y_1(x)=\frac{1}{\alpha(x)} \int^x \alpha(y) Q(y) d y \\
 & y_2(x)=\frac{c}{\alpha(x)}
 \end{aligned}
@@ -150,13 +157,10 @@ $y_2(x)=\frac{c}{\alpha(x)}$是齐次方程的通解,
 
 
 (2) 常系数的常微分方程 (ODE).
-$$
-\begin{aligned}
-& \frac{d^n y}{d x^n}+\frac{d^{n-1} x_{n-1}}{d x^{n-1}} y \\
-& +a_{-1} \frac{d}{d x} y+a_0 y=F(x) \\
-&
-\end{aligned}
-$$
+\begin{equation}
+\frac{d^n y}{d x^n}+a_{n-1}\frac{d^{n-1} }{d x^{n-1}} y  + \cdots +a_{-1} \frac{d}{d x} y+a_0 y=F(x)
+\end{equation}
+
 $$
 \Rightarrow \text { 解的形式为 } y=e^{m x}
 $$
@@ -317,7 +321,7 @@ $$
 此方法称为Frobenius方法,上面关于$x_0$上展开的,一般的
 我们可以在 $x_0$处展开
 $$
-y(x)=\sum_{j=0'}^{\infty} a_j\left(x-x_0\right)^{s+j}, a_0 \neq 0 .
+y(x)=\sum_{j=0}^{\infty} a_j\left(x-x_0\right)^{s+j}, a_0 \neq 0 .
 $$
 
 
@@ -326,7 +330,7 @@ $$
 \begin{aligned}
 y_1(z) & =\sum_{k=-\infty}^{\infty} a_k\left(z-z_0\right)^{s_1+k} \cdot \\
 y_2(z) & =\sum_{k=-\infty}^{\infty} b_k\left(z-z_0\right)^{s_2+k} . \\
-x_0 y_2(x) & =A y_1(z) \dot{l n}\left(z-z_0\right) \\
+\text{或} y_2(x) & =A y_1(z) \ln \left(z-z_0\right) \\
 & +\sum_{k=\infty}^{\infty} b_k\left(z-z_0\right)^{s_2+k}
 \end{aligned}
 $$
@@ -335,23 +339,23 @@ $$
 级数解有限个负幂项称为正则奇点 $P(z): \sum_{k=-1}^{\infty}$
 $Q(z) : \sum_{k=-2}^{\infty}$
 
-有判定方程. $s_1, s_2$ 为两根($s_1> s_2$).
+有判定方程,
 $$
 s(s-1)+s p_{-1}+q_{-2}=0
 $$
-
+其中$s_1, s_2$ 为两根($s_1> s_2$).
 朗斯基行列式(Wronskian)
 $$
 \Delta(z)=\left|\begin{array}{ll}
 y_1(z) & y_2(z) \\
 y_1'(z) & y_2'(z)
-\end{array}\right|=-y_1(z) y_2'(z)
+\end{array}\right|= y_1(z) y_2'(z) - y_2(z) y_1'(z)
 $$
 
 $$
 \begin{aligned}
 & \left(y_1 y_2''-y_1'' 
-y_2\right)+P\left(y_1 y_2''-y_2'' y_2\right) = 0\\
+y_2\right)+P\left(y_1 y_2'-y_1' y_2\right) = 0\\
 & \frac{d \Delta}{d z} - P \Delta(z)=0
 \end{aligned}
 $$
