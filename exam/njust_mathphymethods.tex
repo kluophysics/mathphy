@@ -10,7 +10,7 @@
 \renewcommand{\course}{数学物理方法}                          %课程名
 \renewcommand{\duration}{100}                                            %考试时长
 \renewcommand{\credit}{5}                                                   %学分
-\renewcommand{\syllabus}{}                               %教学大纲编号
+\renewcommand{\syllabus}{11044102}                               %教学大纲编号
 \renewcommand{\fullmark}{100}                                            %满分分值
 \renewcommand{\composer}{罗凯}            %组卷教师
 \renewcommand{\composedate}{2023年12月01日}                   %组卷日期
@@ -22,7 +22,7 @@
 
 \makehead % 生成试卷表头
 
-\makepart{填空题}{共~6~小题，每小题~3~分，共~18~分}
+\makepart{填空题}{共~11~小题，每空~1~分，共~30~分}
 
 \begin{problem}
  复数 $e^{1+\imath}$的实部为\fillout{$e\cos{1}$}, 虚部为\fillout{$e\sin{1}$}, 
@@ -49,9 +49,13 @@ $f(z)=z^2$的奇点数有\fillout{0或零}个,而$f(z)=|z|^2$的奇点数有\fil
 
 
 \begin{problem}
-某解析函数实部为$u(x,y) = x^2 - y^2$,则该解析函数的虚部为\fillout{$2xy+C$}.
+某解析函数实部为$u(x,y) = x^2 - y^2$,则该解析函数的虚部为\fillout{$2xy$}加一常数$c$.
 \end{problem}
 
+\begin{problem}
+  级数$\sum \frac{n !}{n^n} z^n$的收敛半径为\fillout{e};
+  级数$\sum n^{\ln{n}} z^n$的收敛半径为\fillout{1}.
+ \end{problem}
 
 \begin{problem}
  $ f(z) = \frac{1}{z( z- 2)^3}$, $z=0$是\fillout{1}阶极点,此处留数为 \fillout{$-\frac{1}{8}$},
@@ -64,112 +68,313 @@ $f(z)=z^2$的奇点数有\fillout{0或零}个,而$f(z)=|z|^2$的奇点数有\fil
 \end{problem}
 
 \begin{problem}
+  定解问题由\fillout{泛定}方程和\fillout{定解}条件组成,后者分为\fillout{初始}条件和\fillout{边界}条件.
+\end{problem}
+
+\begin{problem}
 $\Gamma(z)$的取值: $\Gamma(n)=$\fillout{$(n-1)!$}, 
-$\Gamma(\frac{1}{2})=$\fillout{$\sqrt{\pi}$}, $\Gamma(5)=$\fillout{$24$},
+% $\Gamma(\frac{1}{2})=$\fillout{$\sqrt{\pi}$}, %,,
+$\Gamma(5)=$\fillout{$24$},
  $\Gamma(\frac{3}{2})=$\fillout{$\frac{\sqrt{\pi}}{2}$}.
 \end{problem}
 
 \begin{problem}
-连带勒让德函数$P_\ell^m(x)$中$m$最大可取的值为\fillout{$\ell$},最小可取值为\fillout{$-\ell$};
+连带勒让德函数$P_\ell^m(x)$中$m$%最大可取的值为\fillout{$\ell$},
+最小可取值为\fillout{$-\ell$},
 $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
-\makepart{单选题}{共~6~小题，每小题~3~分，共~18~分}
+% \begin{problem}
+% 部分三类柱函数的渐近行为
+% $\lim_{x\to 0} J_0(x)=$ \fillout{1},
+%  $\lim_{x\to 0} J_\nu(x)=$ \fillout{0}($\nu>0$),
+%  $\lim_{x\to 0} N_\nu(x)=$ \fillout{$\infty$}.
+% \end{problem}
+
+% \begin{problem}
+% 球谐函数$Y_l^m(\theta, \varphi)$的常见表达式,
+% $Y_0^0(\theta, \varphi)=$\fillout{}, 
+% $Y_1^0(\theta, \varphi)=$\fillout{},
+% $Y_1^1(\theta, \varphi)=$\fillout{}.
+% \end{problem}
+  
+
+\makepart{选择题}{共~13~小题，每题~2~分，共~26~分}
 
 \begin{problem}
-在下列等式中，正确的结果是\pickout{C}
+下面哪一个笑话{\bf{是}}课上同学分享的 \pickout{B}
+  \begin{abcd}
+  \item 为什么复数很容易感到孤独？因为他们总是在二维空间里，而我们生活在三维世界。   
+  \item 为什么实变函数不喜欢参加派对？因为它们只会带着实数！没有虚情假意！
+  \item 有一天，i和-1在草地上漫步。i说：“我觉得今天很平凡。” -1回答：“是的，真实又实在。”
+  \item 复数和实数一起比赛跑步，结果实数总是赢。为什么？因为复数总是在原地转圈（虚部）。
+  \end{abcd}
+  \end{problem}
+
+  % 留数定理的基本表达式：
+
+% 留数定理的基本表达式是：
+
+% \item $\oint_C f(z) ,dz = 2\pi i \text{Res}[f(z), z_0]$
+
+% \item $\oint_C f(z) ,dz = \frac{2\pi}{i} \text{Res}[f(z), z_0]$
+
+% \item $\oint_C f(z) ,dz = \pi i \text{Res}[f(z), z_0]$
+
+% \item $\oint_C f(z) ,dz = \frac{\pi}{i} \text{Res}[f(z), z_0]$
+
+\begin{problem}
+  下面哪一个网址与我们学习的数学物理方法息息相关? \pickout{A}
+  \begin{abcd}
+    \item https://mathworld.wolfram.com/
+    \item https://dlmf.nist.gov
+    \item https://csrc.nist.gov
+    \item https://projecteuclid.org/
+  \end{abcd}
+
+\end{problem}
+
+\begin{problem}
+  如果$f(z)$在$z_0$处有一个一阶极点，其留数为：
+  \pickout{A}
 \begin{abcd}
-\item $\int f'(x)\dx=f(x)$
-\item $\int \d f(x)=f(x)$
-\item $\frac{\d}{\dx}\big(\int f(x)\dx\big)=f(x)$
-\item $\d\big(\int f(x)\dx\big)=f(x)$
+  \item $\text{Res}[f(z), z_0] = \lim_{z \to z_0} (z - z_0)f(z)$
+  \item $\text{Res}[f(z), z_0] = \frac{1}{\lim_{z \to z_0} (z - z_0)f(z)}$
+  \item $\text{Res}[f(z), z_0] = \frac{1}{f'(z_0)}$
+  \item $\text{Res}[f(z), z_0] = f'(z_0)$
+\end{abcd}
+\end{problem}
+% 极点和留数关系：
+
+
+
+% 留数定理的应用：
+
+% 使用留数定理计算积分$\int_{-\infty}^{\infty} \frac{1}{1+x^2} ,dx$的结果是：
+
+% \item $\frac{\pi}{2}$
+
+% \item $\pi$
+
+% \item $2\pi$
+
+% \item $0$
+
+
+
+% \begin{problem}
+% 在描述扩散现象时，哪个方程最适合描述非稳态情况？ \pickout{C}
+% \begin{abcd}
+%   \item Laplace方程   
+%   \item Poisson方程
+%   \item 热传导方程
+%   \item 波动方程
+%   \end{abcd}
+% \end{problem}
+
+\begin{problem}
+  对于一根固定边界的弦上的波动，哪个方程描述波函数$u(x, t)$的行为？
+  \pickout{C}
+  \begin{abcd}
+    \item 热传导方程 
+    \item 泊松方程
+    \item 波动方程
+    \item Laplace方程
+    \end{abcd}
+\end{problem}
+
+\begin{problem}
+  在信号处理中，哪个方法常常用于将一个信号从时域转换到频域？
+  \pickout{A}
+  \begin{abcd}
+    \item Fourier变换 
+    \item Laplace变换
+    \item 小波变换
+    \item 保角变换
+  \end{abcd}
+\end{problem}
+
+\begin{problem}
+  对于函数$F(\omega)$的傅里叶变换表示为$f(t) = \mathcal{F}^{-1}[F(\omega)]$，其中$\mathcal{F}^{-1}$表示傅里叶逆变换。下面哪个等式是正确的？
+  \pickout{D}
+  \begin{abcd}
+    \item  $f(t) = \int_{-\infty}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
+
+    \item  $f(t) = \frac{1}{2\pi} \int_{0}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
+
+    
+    \item $f(t) = \mathcal{F}^{-1}[F(t)]$
+    
+    \item $f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
+
+  \end{abcd}
+
+\end{problem}
+
+
+\begin{problem}
+  单位阶跃函数$\Theta(t)$的拉普拉斯变换是：
+  \pickout{A}
+  \begin{abcd}
+    \item $\frac{1}{s}$
+    \item $\frac{1}{s^2}$
+    \item $\frac{1}{s^2} + \frac{1}{s}$
+    \item $\frac{1}{s} - \frac{1}{s^2}$
+  \end{abcd}
+
+\end{problem}
+
+\begin{problem}
+复数$z$可以写成幅度和相位的形式$z = re^{i\theta}$，其中$r$是幅度，$\theta$是相位。
+如果要展开$\sin(\theta)$，下面哪个级数是正确的？ \pickout{D}
+\begin{abcd}
+  \item $\sum_{n=0}^{\infty} \frac{(-1)^n \theta^{2n}}{(2n)!}$
+  \item $\sum_{n=1}^{\infty} \frac{(-1)^n \theta^n}{n!}$
+  \item $\sum_{n=1}^{\infty} \frac{(-1)^n \theta^{n+1}}{n!}$
+  \item $\sum_{n=0}^{\infty} \frac{(-1)^n \theta^{2n+1}}{(2n+1)!}$
+
 \end{abcd}
 \end{problem}
 
-\bigskip
+
+% 伽玛函数的性质：
+
+% 伽玛函数$\Gamma(z)$的性质中，以下哪个是正确的？
+
+% \item $\Gamma(z+1) = z\Gamma(z)$
+
+% \item $\Gamma(z+1) = \frac{\Gamma(z)}{z}$
+
+% \item $\Gamma(z+1) = \frac{1}{z\Gamma(z)}$
+
+% \item $\Gamma(z+1) = z+\Gamma(z)$
 
 \begin{problem}
-假设$F(x)$是连续函数$f(x)$的一个原函数，则必有\pickout{A}
+  关于贝塔函数$B(p, q)$的说法正确的是：
+  \pickout{C}
 \begin{abcd}
-\item $F(x)$是偶函数 $\Leftrightarrow$ $f(x)$是奇函数
-\item $F(x)$是奇函数 $\Leftrightarrow$ $f(x)$是偶函数
-\item $F(x)$是周期函数 $\Leftrightarrow$ $f(x)$是周期函数
-\item $F(x)$是单调函数 $\Leftrightarrow$ $f(x)$是单调函数
-\end{abcd}
-\end{problem}
-
-\bigskip
-
-\begin{problem}
-设矩阵 $A = \left(\begin{array}{ccc}
-  1 & 1 & 0\\
-  1 & x & 0\\
-  0 & 0 & 1
-\end{array}\right)$ 其中两个特征值为 $\lambda_1 = 1$ 和 $\lambda_2
-= 2$，则 $x=$ \pickout{B}
-\begin{abcd}
-\item $2$
-\item $1$
-\item $0$
-\item $-1$
-\end{abcd}
-\end{problem}
-
-\bigskip
-
-\begin{problem}
-二次型 $f = 4 x_1^2 - 2 x_1 x_2 + 6 x_2^2$ 对应的矩阵等于 \pickout{C}
-\begin{abcd}
-\item $\left(\begin{array}{cc}
-  4 & - 2\\
-  - 2 & 6
-\end{array}\right)$
-\item $\left(\begin{array}{cc}
-  2 & - 2\\
-  - 2 & 3
-\end{array}\right)$
-\item $\left(\begin{array}{cc}
-  4 & - 1\\
-  - 1 & 6
-\end{array}\right)$
-\item $\left(\begin{array}{cc}
-  2 & - 1\\
-  - 1 & 3
-\end{array}\right)$
-\end{abcd}
-\end{problem}
-
-\bigskip
-
-\begin{problem}
-下列说法\CJKunderline{不正确}的是\pickout{B}
-\begin{abcd}
-\item 大数定律说明了大量相互独立且同分布的随机变量的均值的稳定性
-\item 大数定律说明大量相互独立且同分布的随机变量的均值近似于正态分布
-\item 中心极限定理说明了大量相互独立且同分布的随机变量的和的稳定性
-\item 中心极限定理说明大量相互独立且同分布的随机变量的和近似于正态分布
-\end{abcd}
-\end{problem}
-
-\bigskip
-
-\begin{problem}
-对总体$X$和样本$(X_1,\cdots,X_n)$的说法哪个是\CJKunderline{不正确}的\pickout{D}
-\begin{abcd}
-\item 总体是随机变量
-\item 样本是$n$元随机变量
-\item $X_1, \cdots, X_n$相互独立
-\item $X_1 = X_2 =\cdots = X_n$
+  \item $B(p, q) = \int_{0}^{\infty} t^{p+q-1}e^{-t} dt$
+  \item $B(p, q) = \int_{0}^{1} t^{p-1}(1-t)^{q-1} dt$
+  \item $B(p, q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
+  \item $B(p, q) = \frac{\Gamma(p+q)}{\Gamma(p)\Gamma(q)}$
 \end{abcd}
 \end{problem}
 
 
-\makepart{计算题}{共~6~小题，每小题~8~分，共~48~分}
+% 伽玛函数和贝塔函数的关系：
+
+% 伽玛函数$\Gamma(z)$和贝塔函数$B(p, q)$之间的关系是：
+
+% \item $\Gamma(z) = \frac{B(z, 1)}{z}$
+
+% \item $\Gamma(z) = \frac{B(z, 1)}{z-1}$
+
+% \item $\Gamma(z) = \frac{B(z, 1)}{z+1}$
+
+% \item $\Gamma(z) = \frac{B(z, 1)}{z+2}$
+
 
 \begin{problem}
-求不定积分$\displaystyle\int\e^{2x}\,(\tan x+1)^2\dx$。
+  对于非负整数$n$，哪个是贝塞尔函数$J_n(x)$的递推关系？
+  \pickout{C}
+  \begin{abcd}
+    \item  $J_{n+1}(x) = J_n(x) - \frac{2n}{x} J_{n-1}(x)$
+    \item  $J_{n+1}(x) = 2 J_n(x) - J_{n-1}(x)$
+    \item  $J_{n+1}(x) = \frac{2n}{x} J_n(x) - J_{n-1}(x)$
+    \item  $J_{n+1}(x) = J_n(x) + \frac{2n}{x} J_{n-1}(x)$
+  \end{abcd}
 \end{problem}
 
+\begin{problem}
+  勒让德多项式$P_n(x)$的正交性质可以表示为：
+  \pickout{B}
+  \begin{abcd}
+    \item $\int_{-1}^{1} P_n(x) dx = 1$
+
+    \item $\int_{-1}^{1} P_n(x) P_m(x) dx = 0$，对于$n \neq m$
+    
+    \item $\int_{0}^{\pi} P_n(x) dx = 0$
+    
+    \item $\int_{-1}^{1} P_n(x) P_m(x) dx = \delta_{nm}$
+  \end{abcd}
+\end{problem}
+
+\begin{problem}
+  $Y_{1}^{0}(\theta, \phi)$的表达式是：
+  \pickout{A}
+\begin{abcd}
+  \item $\sqrt{\frac{3}{4\pi}} \cos \theta$
+  \item $\sqrt{\frac{3}{4\pi}} \sin \theta$
+  \item $\sqrt{\frac{3}{8\pi}} \sin \theta e^{i\phi}$
+  \item $\sqrt{\frac{3}{8\pi}} \cos \theta e^{i\phi}$
+\end{abcd}
+\end{problem}
+
+% \begin{problem}
+% 对于$x$趋于无穷大时，第一类贝塞尔函数$J_n(x)$的渐近行为是：
+% \begin{abcd}
+%   \item $J_n(x) \sim \sqrt{\frac{2}{\pi n}} \cos\left(x - \frac{\pi}{4}n - \frac{\pi}{2}\right)$
+%   \item $J_n(x) \sim \sqrt{\frac{2}{\pi n}} \cos\left(x - \frac{\pi}{4}n + \frac{\pi}{4}\right)$
+%   \item $J_n(x) \sim \sqrt{\frac{1}{\pi n}} \cos\left(x - \frac{\pi}{4}n + \frac{\pi}{4}\right)$
+%   \item $J_n(x) \sim \sqrt{\frac{1}{2\pi n}} \cos\left(x - \frac{\pi}{4}n + \frac{\pi}{4}\right)$
+% \end{abcd}
+% \end{problem}
+
+
+\begin{problem}
+  对于$n$为正整数时，$x$趋于零时，第一类贝塞尔函数$J_n(x)$的极限是：
+  \pickout{A}
+
+  \begin{abcd}
+\item $\lim_{x \to 0} J_n(x) = 0$
+
+\item $\lim_{x \to 0} J_n(x) = (-1)^n$
+
+\item $\lim_{x \to 0} J_n(x) = 1$
+
+\item $\lim_{x \to 0} J_n(x) = \infty$
+ \end{abcd}
+\end{problem}
+
+% \item $J_n(x) \sim \frac{x^n}{n!}$
+
+% \item $J_n(x) \sim \frac{x^n}{\sqrt{n}}$
+
+% \item $J_n(x) \sim (-1)^n\frac{x^{2n}}{(2n)!}$
+
+% \item $J_n(x) \sim \frac{(-1)^n}{n!}x^n$
+
+\makepart{计算证明题}{共~44~分}%共~6~小题，每小题~8~分，共~48~分}
+
+% \begin{problem}{(6分)}
+%   证明
+%   $$
+%   |\sinh{y}| \leq |\sin(x+\imath y)| \leq |\cosh{y}|.
+%   $$
+% \end{problem}
+
+% \renewcommand{\solutionname}{证} % 将“解”字改为“证”字
+% \begin{solution}
+%   \everymath{\displaystyle}%
+%   原式 \? $=\int\e^{2x}\,\sec^2 x\dx+2\int\e^{2x}\,\tan x\dx$ \score{2}
+%   \+ $=\int\e^{2x}\,\d(\tan x)+ 2\int\e^{2x}\,\tan x\dx$ \score{4}
+%   \+ $=\e^{2x}\,\tan x - 2\int\e^{2x}\,\tan x\dx+ 2\int\e^{2x}\,\tan x\dx$ \score{6}
+%   \+ $=\e^{2x}\,\tan x + C$ \score{8}
+% \end{solution}
+
+% \begin{problem}{(6分)}
+%   设 $\Psi(t, x)=e^{ 2 t x-t^2 }$, $t$是复变数, 证明: 
+%   $$
+%   \left.\frac{\partial^n \Psi(t, x)}{\partial t^n}\right|_{t=0}=(-1)^n e^{x^2} \frac{d^n}{d x^n} e^{-x^2}
+%   $$
+%   % 提示: 对回路积分进行积分变数的代换 $\xi=z-x$.
+% \end{problem}
+
+\begin{problem}{(6分)}
+  计算下面的围道积分
+  $$\oint_{C} \frac{\sin \frac{\pi z}{4}}{z^2-1} dz, $$
+   其中$C$为$|z-1|=1$.
+\end{problem}
 \smallskip
 
 \begin{solution}
@@ -182,8 +387,51 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 
 \bigskip
 
-\begin{problem}
-求过点$A(1,2,-1), B(2,3,0),C(3,3,2)$ 的三角形$\triangle ABC$ 的面积和它们确定的平面方程.
+
+\bigskip
+
+% \begin{problem}{(6分)}
+%   求 $|\sin z|$ 在闭区域 $0 \leq \Re z \leq 2 \pi, 0 \leq \Im z \leq 2 \pi$ 中的最大值.
+% \end{problem}
+
+
+
+
+\begin{problem}{(6分)}
+将函数$$f(z) = \frac{1}{(z-1)(z-3)}$$ 
+在 $|z|>3$的环域展开为洛朗级数.
+\end{problem}
+
+
+
+% \begin{problem}
+% 计算矩形波$$
+% \begin{aligned}
+% & f(x)=0, \quad-\pi<x<0, \\
+% & f(x)=h, \quad 0<x<\pi .
+% \end{aligned}
+% $$
+% 的傅里叶级数展开.
+% \end{problem}
+
+\begin{problem}{(6分)}
+  计算拉普拉斯(Laplace)变换的原函数
+  $$
+    % \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}.
+    \bar{f}(p)=\frac{2 p}{p^2-1}.
+  $$
+\end{problem}
+
+\begin{problem}{(6分)}
+  用$\Gamma$函数求积分
+  $$
+  \int_0^\infty x^{\alpha -1 } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx,
+  $$
+  其中$\alpha > 0, -\frac{\pi}{2} < \theta < \frac{\pi}{2}$.
+\end{problem} 
+
+\begin{problem}{(8分)}
+  计算积分 $$\int_0^{2 \pi} \frac{d x}{(a+b \cos x)^2}, \quad a>b>0$$.
 \end{problem}
 
 \smallskip
@@ -200,311 +448,38 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 所求平面的方程为$2(x-2)-(y-3)-z=0$, 即$2x-y-z-1=0$ \score{8}			
 \end{solution}
 
-\bigskip
-
-\begin{problem}
-计算四阶行列式 $A = \left|\begin{array}{cccc}
-  0 & 1 & 2 & 3\\
-  1 & 2 & 3 & 0\\
-  2 & 3 & 0 & 1\\
-  3 & 0 & 1 & 2
-\end{array}\right|$ 的值．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-$A \? = \left|\begin{array}{cccc}
-    0 & 1 & 2 & 3\\
-    1 & 2 & 3 & 0\\
-    2 & 3 & 0 & 1\\
-    3 & 0 & 1 & 2
-  \end{array}\right| = \left|\begin{array}{cccc}
-    0 & 1 & 2 & 3\\
-    1 & 2 & 3 & 0\\
-    0 & - 1 & - 6 & 1\\
-    0 & - 6 & - 8 & 2
-  \end{array}\right| = 1 \cdot (- 1)^{2 + 1} \left|\begin{array}{ccc}
-    1 & 2 & 3\\
-    - 1 & - 6 & 1\\
-    - 6 & - 8 & 2
-  \end{array}\right|$ \score{4}
-\+ $= -\left|\begin{array}{ccc}
-    1 & 2 & 3\\
-    0 & - 4 & 4\\
-    0 & 4 & 20
-  \end{array}\right| = - \left|\begin{array}{cc}
-    - 4 & 4\\
-    4 & 20
-  \end{array}\right| = -(-4\cdot20-4\cdot4) = 96$ \score{8}
-\end{solution}
+\begin{problem}{(12分)}
+  求解下列定解问题: 
+  $\left\{\begin{array}{l}
+    \nabla^2 u=0, a<r<b \\ 
+    \left.u\right|_{r=a}=u_0,\left.u\right|_{r=b}=u_0 \cos ^2 \theta.
+  \end{array}\right.$
+\end{problem} 
 
 \bigskip
 
-\begin{problem}
-利用配方法，将二次型 $f = x_1^2 + 2 x_1 x_2 - 6 x_1 x_3 + 2 x_2^2 - 12
-x_2 x_3 + 9 x^2_3$ 化为标准形 $f = d_1 y^2_1 + d_2 y^2_2 + d_3 y^2_3$ ．
-\end{problem}
+\makedata{可能用到的数据和公式} %附录数据
+柯西公式(Cauchy's formula)
+\begin{equation}
+  f^{(n)}(z) = \frac{n!}{2\pi \imath} \oint_C \frac{f(\zeta)}{(\zeta - z)^{n+1}} d \zeta.
+  \label{eq:cauchy_formula_nth_derivative}
+\end{equation}
 
-\smallskip
-
-\begin{solution}
-$f \? = x_1^2 + 2 x_1 x_2 - 6 x_1 x_3 + 2 x_2^2 - 12 x_2 x_3 + 9 x^2_3$ \par
-  \+ $= x_1^2 + 2 x_1 (x_2 - 3 x_3) + (x_2 - 3 x_3)^2 + x_2^2 - 6 x_2 x_3 $ \par
-  \+ $= (x_1 + x_2 - 3 x_3)^2 + x_2^2 - 6 x_2 x_3$ \score{3}
-  \+ $= (x_1 + x_2 - 3 x_3)^2 + x_2^2 - 2 x_2 \cdot 3 x_3 + (3 x_3)^2 - 9x_3^2$ \par
-  \+ $= (x_1 + x_2 - 3 x_3)^2 + (x_2 - 3 x_3)^2 - 9 x_3^2$ \score{6}
-令$y_1 = x_1 + x_2 - 3 x_3, y_2 = x_2 - 3 x_3, y_3 = x_3$, \newline
-则$f = y_1^2 + y_2^2 - 9y_3^2$为标准形．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设每发炮弹命中飞机的概率是0.2且相互独立，现在发射100发炮弹．\par
-(1) 用切贝谢夫不等式估计命中数目$\xi$在10发到30发之间的概率．\par
-(2) 用中心极限定理估计命中数目$\xi$在10发到30发之间的概率．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-$E\xi = n p = 100 \cdot 0.2 = 20, D\xi = n p q = 100 \cdot 0.2 \cdot 0.8 = 16$. \score{2}
-(1) $P (10 < \xi < 30) = P (|\xi - E\xi| < 10) \ge 1 - \frac{D\xi}{10^2}
-     = 1 - \frac{16}{100} = 0.84$. \score{4}
-(2) $P (10 < \xi < 30) \? \approx \Phi_0\left(\frac{30 - 20}{\sqrt{16}}\right)
-         - \Phi_0\left(\frac{10 - 20}{\sqrt{16}}\right)$ \score{6}
-      \+ $= 2 \Phi_0(2.5) - 1 = 2 \cdot 0.9938 - 1 =0.9876$ \score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-从正态总体$N(\mu,\sigma^2)$中抽出样本容量为16的样本，算得其平均数为3160，标准差为100．
-试检验假设$H_0:\mu=3140$是否成立($\alpha = 0.01$)．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 待检假设 $H_0 : \mu = 3140$. \score{1}
-(2) 选取统计量 $T = \frac{\widebar{X}-\mu}{S / \sqrt{n}} \sim t(n-1)$. \score{3}
-(3) 查表得到 $t_{\alpha} = t_{\alpha} (n - 1) = t_{0.01} (15) =2.947$. \score{5}
-(4) 计算统计值 $t = \frac{\widebar{x} - \mu_0}{s/\sqrt{n}} =\frac{3160-3140}{100/4} = 0.8$.\score{7}
-(5) 由于 $| t | < t_{\alpha}$, 故接受 $H_0$, 即假设成立. \score{8}
-\end{solution}
-
-\bigskip
+双曲正余函数(hyperbolic sine/cosine function)表达为
+\begin{align}
+    \cosh \theta &= \frac{e^{\theta} + e^{ - \theta} }{2}
+    \\
+    \sinh \theta &= \frac{e^{\theta} - e^{ - \theta} }{2} .
+\end{align}
 
 
-\makepart{证明题}{共~2~小题，每小题~8~分，共~16~分}
-
-\renewcommand{\solutionname}{证} % 将“解”字改为“证”字
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设数列$\{x_n\}$满足$x_1=\sqrt2$，$x_{n+1}=\sqrt{2+x_n}$．证明数列收敛，并求出极限．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-(1) 事实上，由于$x_1<2$，且$x_k<2$时
-$$x_{k+1}=\sqrt{2+x_k}<\sqrt{2+2}=2,$$
-由数学归纳法知对所有$n$都有$x_n<2$，即数列有上界．
-又由于
-$$\frac{x_{n+1}}{x_n}=\sqrt{\frac{2}{x_n^2}+\frac{1}{x_n}}>\sqrt{\frac{2}{2^2}+\frac{1}{2}}=1,$$
-所以数列单调增加．由极限存在准则II，数列必定收敛．\score{4}
-(2) 设数列的极限为$A$，对递推公式两边同时取极限得到
-$$A=\sqrt{2+A}.$$
-解得$A=2$，即数列$\{x_n\}$的极限为$2$．\score{8}
-\end{solution}
-
-\bigskip
-
-\begin{problem}
-设事件$A$和$B$相互独立，证明$A$和$\widebar{B}$相互独立．
-\end{problem}
-
-\smallskip
-
-\begin{solution}
-\? $P (A \cdot \widebar{B}) = P (A - B) = P (A - A B)$ \score{2}
-\< $= P (A) - P (A B) = P (A) - P (A) P (B)$ \score{4}
-\< $= P (A) (1 - P (B)) = P (A) P (\widebar{B})$ \score{6}
-所以$A$和$\widebar{B}$相互独立．\score{8}
-\end{solution}
-
-\bigskip
-
-\makedata{一些可能用到的数据} %附录数据
-
-\begin{tabularx}{\linewidth}{*{4}{>{$}X<{$}}}
-\hline
-\Phi_0(0.5)=0.6915 & \Phi_0(1)=0.8413 & \Phi_0(2)=0.9773 & \Phi_0(2.5)=0.9938 \\
-t_{0.01}(8)=3.355 & t_{0.01}(9)=3.250 & t_{0.01}(15)=2.947 & t_{0.01}(16)=2.921 \\
-\chi_{0.005}^2(8)=22.0 & \chi_{0.005}^2(9)=23.6 & \chi_{0.005}^2(15)=32.8 & \chi_{0.005}^2(16)=34.3 \\
-\chi_{0.995}^2(8)=1.34 & \chi_{0.995}^2(9)=1.73 & \chi_{0.995}^2(15)=4.60 & \chi_{0.995}^2(16)=5.14 \\
-\hline
-\end{tabularx}
+% \begin{tabularx}{\linewidth}{*{4}{>{$}X<{$}}}
+% \hline
+% \Phi_0(0.5)=0.6915 & \Phi_0(1)=0.8413 & \Phi_0(2)=0.9773 & \Phi_0(2.5)=0.9938 \\
+% t_{0.01}(8)=3.355 & t_{0.01}(9)=3.250 & t_{0.01}(15)=2.947 & t_{0.01}(16)=2.921 \\
+% \chi_{0.005}^2(8)=22.0 & \chi_{0.005}^2(9)=23.6 & \chi_{0.005}^2(15)=32.8 & \chi_{0.005}^2(16)=34.3 \\
+% \chi_{0.995}^2(8)=1.34 & \chi_{0.995}^2(9)=1.73 & \chi_{0.995}^2(15)=4.60 & \chi_{0.995}^2(16)=5.14 \\
+% \hline
+% \end{tabularx}
 
 \end{document}
