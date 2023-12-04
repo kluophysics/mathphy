@@ -2,27 +2,27 @@
 % !TEX program = xelatex
 \documentclass{njustexam}
 
-%注意：注释掉这条命令则显示答案，为存档用，交教务处。使用这条命令则为学生考试用，交印刷厂印刷
+%注意:注释掉这条命令则显示答案,为存档用,交教务处。使用这条命令则为学生考试用,交印刷厂印刷
 % \answerfalse 
 
 \begin{document}
 %%%%%%%%%%%%%%%%% 以下内容根据需要更改%%%%%%%%%%%
 \renewcommand{\course}{数学物理方法}                          %课程名
-\renewcommand{\duration}{100}                                            %考试时长
+\renewcommand{\duration}{120}                                            %考试时长
 \renewcommand{\credit}{5}                                                   %学分
 \renewcommand{\syllabus}{11044102}                               %教学大纲编号
 \renewcommand{\fullmark}{100}                                            %满分分值
 \renewcommand{\composer}{罗凯}            %组卷教师
 \renewcommand{\composedate}{2023年12月01日}                   %组卷日期
 \renewcommand{\validator}{}                                        %审定人
-\renewcommand{\coursetype}{1}                                            % 1 为必修，0 为选修
-\renewcommand{\exammethod}{1}                                         % 1 为闭卷，0 为开卷
+\renewcommand{\coursetype}{1}                                            % 1 为必修,0 为选修
+\renewcommand{\exammethod}{1}                                         % 1 为闭卷,0 为开卷
 \renewcommand{\testpaper}{A}                                              % A 或 B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \makehead % 生成试卷表头
 
-\makepart{填空题}{共~11~小题，每空~1~分，共~30~分}
+\makepart{填空题}{共~11~小题,每空~1~分,共~30~分}
 
 \begin{problem}
  复数 $e^{1+\imath}$的实部为\fillout{$e\cos{1}$}, 虚部为\fillout{$e\sin{1}$}, 
@@ -57,7 +57,7 @@ $f(z)=z^2$的奇点数有\fillout{零}个,而$f(z)=|z|^2$的奇点数有\fillout
   级数$\sum \frac{n !}{n^n} z^n$的收敛半径为\fillout{e}.
   % 级数$\sum \frac{n !}{n^n} z^n$的收敛半径为\fillout{e};
   % 级数$\sum n^{\ln{n}} z^n$的收敛半径为\fillout{1}.
-  % 如果复幂级数$\sum_{n=0}^{\infty} d_n z^n$的收敛半径为$R = 3$，
+  % 如果复幂级数$\sum_{n=0}^{\infty} d_n z^n$的收敛半径为$R = 3$,
   % 那么它在复平面上的绝对收敛区域是 $\{z \in \mathbb{C} \mid |z| < \fillout{} \}$。
  \end{problem}
 
@@ -103,21 +103,21 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 % \end{problem}
   
 
-\makepart{选择题}{共~13~小题，每题~2~分，共~26~分}
+\makepart{选择题}{共~15~小题,每题~2~分,共~30~分}
 
 \begin{problem}
 下面哪一个笑话{\bf{是}}课上同学分享的 \pickout{B}
   \begin{abcd}
-  \item 为什么复数很容易感到孤独？因为他们总是在二维空间里，而我们生活在三维世界。   
+  \item 为什么复数很容易感到孤独？因为他们总是在二维空间里,而我们生活在三维世界。   
   \item 为什么实变函数不喜欢参加派对？因为它们只会带着实数！没有虚情假意！
-  \item 有一天，i和-1在草地上漫步。i说：“我觉得今天很平凡。” -1回答：“是的，真实又实在。”
-  \item 复数和实数一起比赛跑步，结果实数总是赢。为什么？因为复数总是在原地转圈（虚部）。
+  \item 有一天,i和-1在草地上漫步。i说:“我觉得今天很平凡。” -1回答:“是的,真实又实在。”
+  \item 复数和实数一起比赛跑步,结果实数总是赢。为什么？因为复数总是在原地转圈（虚部）。
   \end{abcd}
   \end{problem}
 
-  % 留数定理的基本表达式：
+  % 留数定理的基本表达式:
 
-% 留数定理的基本表达式是：
+% 留数定理的基本表达式是:
 
 % \item $\oint_C f(z) ,dz = 2\pi i \text{Res}[f(z), z_0]$
 
@@ -128,7 +128,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 % \item $\oint_C f(z) ,dz = \frac{\pi}{i} \text{Res}[f(z), z_0]$
 
 \begin{problem}
-  下面哪一个网址与我们学习的数学物理方法息息相关? \pickout{A}
+  下面哪一个网址与我们学习的数学物理方法特殊函数息息相关? \pickout{B}
   \begin{abcd}
     \item https://mathworld.wolfram.com/
     \item https://dlmf.nist.gov
@@ -139,7 +139,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 \begin{problem}
-  如果$f(z)$在$z_0$处有一个一阶极点，其留数为：
+  如果$f(z)$在$z_0$处有一个一阶极点,其留数为:
   \pickout{A}
 \begin{abcd}
   \item $\text{Res}[f(z), z_0] = \lim_{z \to z_0} (z - z_0)f(z)$
@@ -148,13 +148,13 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
   \item $\text{Res}[f(z), z_0] = f'(z_0)$
 \end{abcd}
 \end{problem}
-% 极点和留数关系：
+% 极点和留数关系:
 
 
 
-% 留数定理的应用：
+% 留数定理的应用:
 
-% 使用留数定理计算积分$\int_{-\infty}^{\infty} \frac{1}{1+x^2} ,dx$的结果是：
+% 使用留数定理计算积分$\int_{-\infty}^{\infty} \frac{1}{1+x^2} ,dx$的结果是:
 
 % \item $\frac{\pi}{2}$
 
@@ -167,9 +167,9 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 
 
 % \begin{problem}
-% 在描述扩散现象时，哪个方程最适合描述非稳态情况？ \pickout{C}
+% 在描述扩散现象时,哪个方程最适合描述非稳态情况？ \pickout{C}
 % \begin{abcd}
-%   \item Laplace方程   
+%   \item 拉普拉斯方程   
 %   \item Poisson方程
 %   \item 热传导方程
 %   \item 波动方程
@@ -177,29 +177,29 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 % \end{problem}
 
 \begin{problem}
-  对于一根固定边界的弦上的波动，哪个方程描述波函数$u(x, t)$的行为？
+  对于一根固定边界的弦上的波动,哪个方程描述波函数$u(x, t)$的行为？
   \pickout{C}
   \begin{abcd}
     \item 热传导方程 
     \item 泊松方程
     \item 波动方程
-    \item Laplace方程
+    \item 拉普拉斯方程
     \end{abcd}
 \end{problem}
 
 \begin{problem}
-  在信号处理中，哪个方法常常用于将一个信号从时域转换到频域？
+  在信号处理中,哪个方法常常用于将一个信号从时域转换到频域？
   \pickout{A}
   \begin{abcd}
-    \item Fourier变换 
-    \item Laplace变换
+    \item 傅里叶变换 
+    \item 拉普拉斯变换
     \item 小波变换
     \item 保角变换
   \end{abcd}
 \end{problem}
 
 % \begin{problem}
-%   对于函数$F(\omega)$的傅里叶变换表示为$f(t) = \mathcal{F}^{-1}[F(\omega)]$，其中$\mathcal{F}^{-1}$表示傅里叶逆变换。下面哪个等式是正确的？
+%   对于函数$F(\omega)$的傅里叶变换表示为$f(t) = \mathcal{F}^{-1}[F(\omega)]$,其中$\mathcal{F}^{-1}$表示傅里叶逆变换。下面哪个等式是正确的？
 %   \pickout{D}
 %   \begin{abcd}
 %     \item  $f(t) = \int_{-\infty}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
@@ -217,7 +217,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 
 
 \begin{problem}
-  单位阶跃函数$\Theta(t)$的拉普拉斯变换是：
+  单位阶跃函数$\Theta(t)$的拉普拉斯变换是:
   \pickout{A}
   \begin{abcd}
     \item $\frac{1}{s}$
@@ -229,8 +229,8 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 \begin{problem}
-复数$z$可以写成幅度和相位的形式$z = re^{i\theta}$，其中$r$是幅度，$\theta$是相位。
-如果要展开$\sin(\theta)$，下面哪个级数是正确的？ \pickout{D}
+复数$z$可以写成幅度和相位的形式$z = re^{i\theta}$,其中$r$是幅度,$\theta$是相位。
+如果要展开$\sin(\theta)$,下面哪个级数是正确的？ \pickout{D}
 \begin{abcd}
   \item $\sum_{n=0}^{\infty} \frac{(-1)^n \theta^{2n}}{(2n)!}$
   \item $\sum_{n=1}^{\infty} \frac{(-1)^n \theta^n}{n!}$
@@ -241,9 +241,9 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 
-% 伽玛函数的性质：
+% 伽玛函数的性质:
 
-% 伽玛函数$\Gamma(z)$的性质中，以下哪个是正确的？
+% 伽玛函数$\Gamma(z)$的性质中,以下哪个是正确的？
 
 % \item $\Gamma(z+1) = z\Gamma(z)$
 
@@ -254,20 +254,20 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 % \item $\Gamma(z+1) = z+\Gamma(z)$
 
 \begin{problem}
-  关于贝塔函数$B(p, q)$的说法正确的是：
+  关于贝塔函数$B(p, q)$的说法正确的是:
   \pickout{C}
 \begin{abcd}
-  \item $B(p, q) = \int_{0}^{\infty} t^{p+q-1}e^{-t} dt$
-  \item $B(p, q) = \int_{0}^{1} t^{p-1}(1-t)^{q-1} dt$
+  \item $B(p, q) = \int_{0}^{\infty} t^{p+q-1}e^{-t} \dt$
+  \item $B(p, q) = \int_{0}^{1} t^{p-1}(1-t)^{q-1} \dt$
   \item $B(p, q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
   \item $B(p, q) = \frac{\Gamma(p+q)}{\Gamma(p)\Gamma(q)}$
 \end{abcd}
 \end{problem}
 
 
-% 伽玛函数和贝塔函数的关系：
+% 伽玛函数和贝塔函数的关系:
 
-% 伽玛函数$\Gamma(z)$和贝塔函数$B(p, q)$之间的关系是：
+% 伽玛函数$\Gamma(z)$和贝塔函数$B(p, q)$之间的关系是:
 
 % \item $\Gamma(z) = \frac{B(z, 1)}{z}$
 
@@ -279,7 +279,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 
 
 \begin{problem}
-  对于非负整数$n$，哪个是贝塞尔函数$J_n(x)$的递推关系？
+  对于非负整数$n$,哪个是贝塞尔函数$J_n(x)$的递推关系？
   \pickout{C}
   \begin{abcd}
     \item  $J_{n+1}(x) = J_n(x) - \frac{2n}{x} J_{n-1}(x)$
@@ -290,12 +290,12 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 \begin{problem}
-  勒让德多项式$P_n(x)$的正交性质可以表示为：
+  勒让德多项式$P_n(x)$的正交性质可以表示为:
   \pickout{B}
   \begin{abcd}
     \item $\int_{-1}^{1} P_n(x) dx = 1$
 
-    \item $\int_{-1}^{1} P_n(x) P_m(x) dx = 0$，对于$n \neq m$
+    \item $\int_{-1}^{1} P_n(x) P_m(x) dx = 0$,对于$n \neq m$
     
     \item $\int_{0}^{\pi} P_n(x) dx = 0$
     
@@ -304,7 +304,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 \begin{problem}
-  $Y_{1}^{0}(\theta, \phi)$的表达式是：
+  $Y_{1}^{0}(\theta, \phi)$的表达式是:
   \pickout{A}
 \begin{abcd}
   \item $\sqrt{\frac{3}{4\pi}} \cos \theta$
@@ -315,7 +315,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 % \begin{problem}
-% 对于$x$趋于无穷大时，第一类贝塞尔函数$J_n(x)$的渐近行为是：
+% 对于$x$趋于无穷大时,第一类贝塞尔函数$J_n(x)$的渐近行为是:
 % \begin{abcd}
 %   \item $J_n(x) \sim \sqrt{\frac{2}{\pi n}} \cos\left(x - \frac{\pi}{4}n - \frac{\pi}{2}\right)$
 %   \item $J_n(x) \sim \sqrt{\frac{2}{\pi n}} \cos\left(x - \frac{\pi}{4}n + \frac{\pi}{4}\right)$
@@ -326,20 +326,75 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 
 
 \begin{problem}
-  对于$n$为正整数时，$x$趋于零时，第一类贝塞尔函数$J_n(x)$的极限是：
-  \pickout{A}
+  对于$n$为正整数时,$x$趋于零时,第一类贝塞尔函数$J_n(x)$的极限是:
+  \pickout{B}
 
   \begin{abcd}
+\item $\lim_{x \to 0} J_n(x) = 1$
+
 \item $\lim_{x \to 0} J_n(x) = 0$
 
 \item $\lim_{x \to 0} J_n(x) = (-1)^n$
-
-\item $\lim_{x \to 0} J_n(x) = 1$
 
 \item $\lim_{x \to 0} J_n(x) = \infty$
  \end{abcd}
 \end{problem}
 
+
+\begin{problem}
+  球贝塞尔函数满足哪个微分方程？ 
+  \pickout{B}
+
+  \begin{abcd}
+    \item 热传导方程
+    \item 亥姆霍兹方程
+    \item 薛定谔方程
+    \item 泊松方程
+  \end{abcd}
+\end{problem}
+
+\begin{problem}
+  在一个球对称的电场中,电势 $V(r, \theta)$ 的分布可以用球谐函数展开表示.
+  若电场满足拉普拉斯方程.
+  此时,电势 $V(r, \theta)$ 的展开系数中,与角度 $\theta$ 有关的部分应当包含: \pickout{D}
+  \begin{abcd}
+  \item 虚宗量贝塞尔函数 $i^l J_l(kr)$
+  \item 贝塞尔函数 $J_l(kr)$
+  \item 球谐函数 $Y_{lm}(\theta, \phi)$
+  \item 勒让德函数 $P_l(\cos\theta)$
+
+  \end{abcd}
+\end{problem}
+
+% \begin{problem}
+%   在一个照明公司,设计师们希望通过调整灯具的灯罩形状来实现更均匀的光照分布。他们发现球谐函数可以描述灯罩的光照分布。如果他们希望获得最均匀的照明效果,最可能使用的球谐函数是:
+%   \pickout{A}
+%   \begin{abcd}
+%   \item $Y_{0}^0(\theta, \phi)$
+  
+%   \item $Y_{1}^{-1}(\theta, \phi)$
+  
+%   \item $Y_{2}^2(\theta, \phi)$
+  
+%   \item $Y_{3}^1(\theta, \phi)$
+%   \end{abcd}
+%   \end{problem}
+
+  \begin{problem}
+    光学工程师设计了一种用于薄膜涂层的新材料，以改善透明度和折射率。为了最佳地控制光的传播，他们最可能使用的球谐函数是：
+    \pickout{D}
+    \begin{abcd}
+
+    \item $Y_{1}^0(\theta, \phi)$
+    
+    \item $Y_{1}^{-1}(\theta, \phi)$
+    
+    \item $Y_{3}^1(\theta, \phi)$
+    
+    \item $Y_{3}^2(\theta, \phi)$
+   \end{abcd}
+
+  \end{problem}
 % \item $J_n(x) \sim \frac{x^n}{n!}$
 
 % \item $J_n(x) \sim \frac{x^n}{\sqrt{n}}$
@@ -348,7 +403,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 
 % \item $J_n(x) \sim \frac{(-1)^n}{n!}x^n$
 
-\makepart{计算证明题}{共~44~分}%共~6~小题，每小题~8~分，共~48~分}
+\makepart{计算证明题}{共~40~分}%共~6~小题,每小题~8~分,共~48~分}
 
 % \begin{problem}{(6分)}
 %   证明
@@ -369,7 +424,7 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 % \begin{problem}{(6分)}
 %   设 $\Psi(t, x)=e^{ 2 t x-t^2 }$, $t$是复变数, 证明: 
 %   $$
-%   \left.\frac{\partial^n \Psi(t, x)}{\partial t^n}\right|_{t=0}=(-1)^n e^{x^2} \frac{d^n}{d x^n} e^{-x^2}
+%   \left.\frac{\partial^n \Psi(t, x)}{\partial t^n}\right|_{t=0}=(-1)^n e^{x^2} \frac{d^n}{\dx^n} e^{-x^2}
 %   $$
 %   % 提示: 对回路积分进行积分变数的代换 $\xi=z-x$.
 % \end{problem}
@@ -383,13 +438,12 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 
 \begin{solution}
 \everymath{\displaystyle}%
-原式 \? $=\int\e^{2x}\,\sec^2 x\dx+2\int\e^{2x}\,\tan x\dx$ \score{2}
-\+ $=\int\e^{2x}\,\d(\tan x)+ 2\int\e^{2x}\,\tan x\dx$ \score{4}
-\+ $=\e^{2x}\,\tan x - 2\int\e^{2x}\,\tan x\dx+ 2\int\e^{2x}\,\tan x\dx$ \score{6}
-\+ $=\e^{2x}\,\tan x + C$ \score{8}
+\? 被积函数$f(z) = \frac{\sin \frac{\pi z}{4}}{z^2-1}$含两个奇点$z_1=1, z_2=-1$.\\ 
+\+ 路径$C$只包含其中$z_1=1$这一奇点. \score{2}
+\+ 不难得到$f(z)$在$z=z_1$处的留数为 $$\text{Res} f(z) |_ {z\to z_1} = \lim_{z \to z_1} (z-z_1) f(z) =\frac{\sqrt{2}}{4}\score{4}$$
+\+ 因此根据留数定理,最终结果为
+$$ 2\pi \imath \frac{\sqrt{2}}{4} = \frac{\pi\imath}{\sqrt{2}}\score{6}$$ 
 \end{solution}
-
-\bigskip
 
 
 \bigskip
@@ -406,7 +460,21 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 在 $|z|>3$的环域展开为洛朗级数.
 \end{problem}
 
-
+\begin{solution}
+  \everymath{\displaystyle}%
+  \? 函数$f(z)$可以写成
+  $$
+  \frac{1}{(z-2)(z-3)}=\frac{1}{(z-3)}-\frac{1}{(z-2)} \score{1}
+  $$
+  \+由 $|z|>3$ 得到 $\left|\frac{3}{z}\right|<1,\left|\frac{2}{z}\right|<1$ \score{2}
+  \+ $$\frac{1}{z-3} = \frac{1}{z} \frac{1}{1-\frac{3}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{3}{z}\right)^n \score{3} $$
+  \+类似的可以得到 $$\frac{1}{z-2} = \frac{1}{z} \frac{1}{1-\frac{2}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{2}{z}\right)^n \score{4}$$
+  \+ 最终我们有 
+  $$f(z) = \sum_{n=0}^{\infty}\left(3^n-2^n\right) z^{-n-1}. \score{6}$$
+\end{solution}
+  
+  
+  \bigskip
 
 % \begin{problem}
 % 计算矩形波$$
@@ -419,14 +487,30 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 % \end{problem}
 
 \begin{problem}{(6分)}
-  计算拉普拉斯(Laplace)变换的原函数
+  计算拉普拉斯变换的原函数
   $$
     % \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}.
     \bar{f}(p)=\frac{2 p}{p^2-1}.
   $$
 \end{problem}
 
-\begin{problem}{(6分)}
+\begin{solution}
+  函数$\bar{f}(p)$可以写成
+  $$
+  \bar{f}(p) = \frac{3}{2} \left[ \frac{1}{p+1} + \frac{1}{p-1}  \right] \score{2}
+  $$
+  由拉普拉斯变换的定义不难得到$$\mathcal{L}^{-1} \left[ \frac{1}{p-s} \right] = e^{st},$$
+  故$\mathcal{L}^{-1} \left[ \frac{1}{p+1}\right] = e^{-t} $
+  并且$\mathcal{L}^{-1} \left[ \frac{1}{p-1}\right] = e^{+t} $\score{4} 
+  最终我们有 原函数
+  $$f(t) =\mathcal{L}^{-1} \left[ \bar{f}(p) \right] = 3\cosh t. \score{6}$$
+\end{solution}
+  
+  
+  \bigskip
+
+
+\begin{problem}{(8分)}
   用$\Gamma$函数求积分
   $$
   \int_0^\infty x^{\alpha -1 } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx,
@@ -434,23 +518,61 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
   其中$\alpha > 0, -\frac{\pi}{2} < \theta < \frac{\pi}{2}$.
 \end{problem} 
 
-\begin{problem}{(8分)}
-  计算积分 $$\int_0^{2 \pi} \frac{d x}{(a+b \cos x)^2}, \quad a>b>0$$.
-\end{problem}
-
-\smallskip
-
 \begin{solution}
-由题设$\overrightarrow{AB}=(1,1,1),\overrightarrow{AC}=(2,1,3)$, \score{2}
-故$\overrightarrow{AB}\times \overrightarrow{AC}=\begin{vmatrix}
-\vec{i}&\vec{j} &\vec{k}\\
-1&1&1\\
-2&1&3\\
-\end{vmatrix}=(2,-1,-1)$, \score{4}
-三角形$\triangle ABC$ 的面积为$S_{\triangle ABC}=\dfrac{1}{2}\big|\overrightarrow{AB}\times
-\overrightarrow{AC}\big|=\dfrac{1}{2}\sqrt{6}.$ \score{6}
-所求平面的方程为$2(x-2)-(y-3)-z=0$, 即$2x-y-z-1=0$ \score{8}			
+ 
+$ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
+   \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+   \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+  \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
+ 令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
+ 于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
+       \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+       \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+       \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
 \end{solution}
+
+\bigskip
+
+% \begin{problem}{(8分)}
+%   计算积分 $$\int_0^{2 \pi} \frac{\dx}{(a+b \cos x)^2}, \quad a>b>0$$.
+% \end{problem}
+
+% \begin{solution}
+ 
+%   $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
+%      \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+%      \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+%     \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
+%    令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
+%    于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
+%          \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+%          \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+%          \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
+% \end{solution}
+% \bigskip
+
+\begin{problem}{(8分)}
+  将下面的偏微分方程化成标准形式,
+   $$
+  %  u_{x x}+4 u_{x y}+5 u_{y y}+u_x+2 u_y=0.
+   u_{x x}+4 u_{x y}+5 u_{y y}=0.
+   $$
+
+ \end{problem}
+   \begin{solution}
+ 
+  $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
+     \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+     \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
+   令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
+   于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
+         \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+         \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+         \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
+\end{solution}
+
+ \bigskip
 
 \begin{problem}{(12分)}
   求解下列定解问题: 
@@ -460,24 +582,51 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
   \end{array}\right.$
 \end{problem} 
 
-\bigskip
+\begin{solution}
+ 
+  $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
+     \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+     \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
+   令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
+   于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
+         \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+         \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+         \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
+\end{solution}
 
+% \bigskip
+\newpage
 \makedata{可能用到的数据和公式} %附录数据
 柯西公式(Cauchy's formula)
-\begin{equation}
+\begin{equation*}
   f^{(n)}(z) = \frac{n!}{2\pi \imath} \oint_C \frac{f(\zeta)}{(\zeta - z)^{n+1}} d \zeta.
   \label{eq:cauchy_formula_nth_derivative}
-\end{equation}
+\end{equation*}
+
+函数$f(t)$的拉普拉斯变换$\bar{f}(p)$为
+\begin{equation*}
+    \bar{f}(p) = \mathcal{L} \{ f(t) \} = \int_0 ^{\infty} e^{-pt} f(t) \dt .
+\end{equation*}
 
 双曲正余函数(hyperbolic sine/cosine function)表达为
-\begin{align}
-    \cosh \theta &= \frac{e^{\theta} + e^{ - \theta} }{2}
+\begin{align*}
+    \cosh \theta &= \frac{e^{\theta} + e^{ - \theta} }{2} ,
     \\
     \sinh \theta &= \frac{e^{\theta} - e^{ - \theta} }{2} .
-\end{align}
+\end{align*}
 
+伽玛函数
+\begin{equation*}
+  \Gamma(z) \equiv \int_{0}^{\infty} e^{-t} t^{z-1} d t, \quad \Re z>0 .
+\end{equation*}
 
-% \begin{tabularx}{\linewidth}{*{4}{>{$}X<{$}}}
+贝塔函数
+\begin{equation*}
+    B(p, q) = \int_0^1 t^{p -1} (1-t)^{q-1} \dt, \Re p> 0, \Re q >0.
+    \label{eq:beta_def1}
+\end{equation*}
+% \begin{tabularx}{\linewi\dth}{*{4}{>{$}X<{$}}}
 % \hline
 % \Phi_0(0.5)=0.6915 & \Phi_0(1)=0.8413 & \Phi_0(2)=0.9773 & \Phi_0(2.5)=0.9938 \\
 % t_{0.01}(8)=3.355 & t_{0.01}(9)=3.250 & t_{0.01}(15)=2.947 & t_{0.01}(16)=2.921 \\
@@ -486,4 +635,9 @@ $P_1^0(x) = $\fillout{x}, $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 % \hline
 % \end{tabularx}
 
+两个自变数 $x$ 和 $y$ 的二阶线性偏微分方程的通用形式
+\begin{equation*}
+    a_{11} u_{x x}+2 a_{12} u_{x y}+a_{22} u_{y y}+b_1 u_x+b_2 u_y+c u+f=0.
+    \label{eq:two_variable_diff_equation}
+\end{equation*}
 \end{document}
