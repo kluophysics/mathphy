@@ -451,41 +451,6 @@ $$ 2\pi \imath \frac{\sqrt{2}}{4} = \frac{\pi\imath}{\sqrt{2}}\score{6}$$
 % \begin{problem}{(6分)}
 %   求 $|\sin z|$ 在闭区域 $0 \leq \Re z \leq 2 \pi, 0 \leq \Im z \leq 2 \pi$ 中的最大值.
 % \end{problem}
-
-
-
-
-\begin{problem}{(6分)}
-将函数$$f(z) = \frac{1}{(z-1)(z-3)}$$ 
-在 $|z|>3$的环域展开为洛朗级数.
-\end{problem}
-
-\begin{solution}
-  \everymath{\displaystyle}%
-  \? 函数$f(z)$可以写成
-  $$
-  \frac{1}{(z-2)(z-3)}=\frac{1}{(z-3)}-\frac{1}{(z-2)} \score{1}
-  $$
-  \+由 $|z|>3$ 得到 $\left|\frac{3}{z}\right|<1,\left|\frac{2}{z}\right|<1$ \score{2}
-  \+ $$\frac{1}{z-3} = \frac{1}{z} \frac{1}{1-\frac{3}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{3}{z}\right)^n \score{3} $$
-  \+类似的可以得到 $$\frac{1}{z-2} = \frac{1}{z} \frac{1}{1-\frac{2}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{2}{z}\right)^n \score{4}$$
-  \+ 最终我们有 
-  $$f(z) = \sum_{n=0}^{\infty}\left(3^n-2^n\right) z^{-n-1}. \score{6}$$
-\end{solution}
-  
-  
-  \bigskip
-
-% \begin{problem}
-% 计算矩形波$$
-% \begin{aligned}
-% & f(x)=0, \quad-\pi<x<0, \\
-% & f(x)=h, \quad 0<x<\pi .
-% \end{aligned}
-% $$
-% 的傅里叶级数展开.
-% \end{problem}
-
 \begin{problem}{(6分)}
   计算拉普拉斯变换的原函数
   $$
@@ -507,31 +472,67 @@ $$ 2\pi \imath \frac{\sqrt{2}}{4} = \frac{\pi\imath}{\sqrt{2}}\score{6}$$
 \end{solution}
   
   
+\bigskip
+  
+\begin{problem}{(6分)}
+    用$\Gamma$函数求积分
+    $$
+    \int_0^\infty x^{\alpha -1 } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx,
+    $$
+    其中$\alpha > 0, -\frac{\pi}{2} < \theta < \frac{\pi}{2}$.
+  \end{problem} 
+  
+  \begin{solution}
+   
+  $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
+     \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+     \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{2}
+   令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{4}\newline
+   于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
+         \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+         \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+         \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{6}
+  \end{solution}
+  
   \bigskip
 
 
 \begin{problem}{(8分)}
-  用$\Gamma$函数求积分
-  $$
-  \int_0^\infty x^{\alpha -1 } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx,
-  $$
-  其中$\alpha > 0, -\frac{\pi}{2} < \theta < \frac{\pi}{2}$.
-\end{problem} 
+将函数$$f(z) = \frac{1}{(z-1)(z-3)}$$ 
+在 $|z|>3$的环域展开为洛朗级数.
+\end{problem}
 
 \begin{solution}
- 
-$ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
-   \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
-   \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
-  \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
- 令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
- 于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
-       \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
-       \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
-       \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
+  \everymath{\displaystyle}%
+  \? 函数$f(z)$可以写成
+  $$
+  \frac{1}{(z-2)(z-3)}=\frac{1}{(z-3)}-\frac{1}{(z-2)} \score{2}
+  $$
+  \+由 $|z|>3$ 得到 $\left|\frac{3}{z}\right|<1,\left|\frac{2}{z}\right|<1$, \score{3}
+  \+ $$\frac{1}{z-3} = \frac{1}{z} \frac{1}{1-\frac{3}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{3}{z}\right)^n, \score{5} $$
+  \+类似的可以得到 $$\frac{1}{z-2} = \frac{1}{z} \frac{1}{1-\frac{2}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{2}{z}\right)^n, \score{7}$$
+  \+ 最终我们有 
+  $$f(z) = \sum_{n=0}^{\infty}\left(3^n-2^n\right) z^{-n-1}. \score{8}$$
 \end{solution}
+  
+  
+  \bigskip
 
-\bigskip
+% \begin{problem}
+% 计算矩形波$$
+% \begin{aligned}
+% & f(x)=0, \quad-\pi<x<0, \\
+% & f(x)=h, \quad 0<x<\pi .
+% \end{aligned}
+% $$
+% 的傅里叶级数展开.
+% \end{problem}
+
+
+
+
+
 
 % \begin{problem}{(8分)}
 %   计算积分 $$\int_0^{2 \pi} \frac{\dx}{(a+b \cos x)^2}, \quad a>b>0$$.
@@ -551,48 +552,55 @@ $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ 
 % \end{solution}
 % \bigskip
 
-\begin{problem}{(8分)}
-  将下面的偏微分方程化成标准形式,
-   $$
-  %  u_{x x}+4 u_{x y}+5 u_{y y}+u_x+2 u_y=0.
-   u_{x x}+4 u_{x y}+5 u_{y y}=0.
-   $$
+% \begin{problem}{(8分)}
+%   将下面的偏微分方程化成标准形式,
+%    $$
+%   %  u_{x x}+4 u_{x y}+5 u_{y y}+u_x+2 u_y=0.
+%    u_{x x}+4 u_{x y}+5 u_{y y}=0.
+%    $$
 
- \end{problem}
-   \begin{solution}
+%  \end{problem}
+%    \begin{solution}
  
-  $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
-     \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
-     \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
-    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
-   令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
-   于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
-         \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
-         \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
-         \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
-\end{solution}
+%   $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
+%      \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+%      \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+%     \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
+%    令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
+%    于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
+%          \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+%          \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+%          \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
+% \end{solution}
 
- \bigskip
+% \bigskip
 
-\begin{problem}{(12分)}
+\begin{problem}{(10分)}
   求解下列定解问题: 
   $\left\{\begin{array}{l}
-    \nabla^2 u=0, a<r<b \\ 
-    \left.u\right|_{r=a}=u_0,\left.u\right|_{r=b}=u_0 \cos ^2 \theta.
+    \nabla^2 u=0, \quad 0\leq r < a \\ 
+    \left.u\right|_{r=a}=u_0 \cos^2 \theta, \\
+    \left.u\right|_{r=0} \text{有限}.
+    %\left.u\right|_{r=b}=u_0 \cos ^2 \theta.
   \end{array}\right.$
 \end{problem} 
 
 \begin{solution}
- 
-  $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
-     \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
-     \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
-    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{3}
-   令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y, \dx=e^{i \theta} \dy$  \score{5}\newline
-   于是, $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
-         \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
-         \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
-         \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{8}
+由边界条件可知该问题为轴对称情况
+通解形式为
+$$  u(r, \theta) = \sum_{l=0}^{\infty} \left( A_l r^l + \frac{B_l}{r^{l+1}} \right) P_{l} (\cos \theta).
+$$
+由$r=0$处有限的边界条件可知$B_l=0$. \score{2}\\
+因此,对$r=a$处的边界条件带入,得
+$\sum_{l=0}^{\infty}  A_l r^l  P_{l} (\cos \theta) = u_0 \cos^2 \theta = u_0 x^2$ \score{4} \\
+勒让德多项式中$P_0(x) = 1, P_1(x) = x, P_2 (x) = \frac{1}{2}(3x^2 - 1)$, \score{6} \\
+其中 $x^2 = \frac{2}{3} P_2(x) + \frac{1}{3} P_0(x)$,  \score{8}\\
+比较两边系数,得
+$A_0 = \frac{u_0}{3}, A_2 = \frac{2 u_0}{3a^2}, A_l = 0 (l\neq 0, 2)$. \score{10} \\
+
+这样,
+$$u(r,\theta) = \frac{u_0}{3} + \frac{2 u_0}{3a^2} r^2 P_2(\cos \theta). $$ 
+\score{10}
 \end{solution}
 
 % \bigskip
@@ -640,4 +648,19 @@ $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ 
     a_{11} u_{x x}+2 a_{12} u_{x y}+a_{22} u_{y y}+b_1 u_x+b_2 u_y+c u+f=0.
     \label{eq:two_variable_diff_equation}
 \end{equation*}
+
+球坐标系下的拉普拉斯算符
+\begin{equation*}
+ \Delta = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial }{\partial r} \right)
+  + \frac{1}{r^2\sin \theta} \frac{\partial}{\partial \theta} \left( \sin\theta \frac{\partial}{\partial \theta} \right)
+  + \frac{1}{r^2\sin^2 \theta} \frac{\partial^2}{\partial^2 \varphi}
+\end{equation*}
+分离变量得到轴对称
+解的形式为
+\begin{equation*}
+  u(r, \theta) = \sum_{l=0}^{\infty} \left( A_l r^l + \frac{B_l}{r^{l+1}} \right) P_{l} (\cos \theta)
+\end{equation*}
+
+$n$ 阶勒让德多项式的表达式 
+$$P_n(x)=\frac{1}{2^n n !} \frac{d^n}{d x^n}\left(x^2-1\right)^n$$
 \end{document}
