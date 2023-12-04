@@ -3,7 +3,7 @@
 \documentclass{njustexam}
 
 %注意:注释掉这条命令则显示答案,为存档用,交教务处。使用这条命令则为学生考试用,交印刷厂印刷
-\answerfalse 
+% \answerfalse 
 
 \begin{document}
 %%%%%%%%%%%%%%%%% 以下内容根据需要更改%%%%%%%%%%%
@@ -579,22 +579,22 @@ $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ 
 
 
 \begin{solution}
-由边界条件可知该问题为轴对称情况
-通解形式为
-$$  u(r, \theta) = \sum_{l=0}^{\infty} \left( A_l r^l + \frac{B_l}{r^{l+1}} \right) P_{l} (\cos \theta).
-$$
-由$r=0$处有限的边界条件可知$B_l=0$. \score{2}\\
-因此,对$r=a$处的边界条件带入,得
-$\sum_{l=0}^{\infty}  A_l r^l  P_{l} (\cos \theta) = u_0 \cos^2 \theta = u_0 x^2$ \score{4} \\
-勒让德多项式中$P_0(x) = 1, P_1(x) = x, P_2 (x) = \frac{1}{2}(3x^2 - 1)$ \\
-其中 $x^2 = \frac{2}{3} P_2(x) + \frac{1}{3} P_0(x)$,  \score{6}\\
-比较两边系数,得
-$A_0 = \frac{u_0}{3}, A_2 = \frac{2 u_0}{3a^2}, A_l = 0 (l\neq 0, 2)$. \score{8} \\
-
-这样,
-$$u(r,\theta) = \frac{u_0}{3} + \frac{2 u_0}{3a^2} r^2 P_2(\cos \theta). \score{10} $$ 
-\end{solution}
-
+  由边界条件可知该问题为轴对称情况
+  通解形式为
+  $$  u(r, \theta) = \sum_{l=0}^{\infty} \left( A_l r^l + \frac{B_l}{r^{l+1}} \right) P_{l} (\cos \theta).
+  $$
+  由$r=0$处有限的边界条件可知$B_l=0$. \score{2}\\
+  因此,对$r=a$处的边界条件带入,得
+  $\sum_{l=0}^{\infty}  A_l r^l  P_{l} (\cos \theta) = u_0 \cos^2 \theta = u_0 x^2$ \score{4} \\
+  勒让德多项式中$P_0(x) = 1, P_1(x) = x, P_2 (x) = \frac{1}{2}(3x^2 - 1)$ \\
+  其中 $x^2 = \frac{2}{3} P_2(x) + \frac{1}{3} P_0(x)$,  \score{6}\\
+  比较两边系数,得
+  $A_0 = \frac{u_0}{3}, A_2 = \frac{2 u_0}{3a^2}, A_l = 0 (l\neq 0, 2)$. \score{8} \\
+  
+  这样,
+  $$u(r,\theta) = \frac{u_0}{3} + \frac{2 u_0}{3a^2} r^2 P_2(\cos \theta). \score{10} $$ 
+  \end{solution}
+  
 % \vfill
 \newpage
 \makedata{可能用到的数据和公式} %附录数据
