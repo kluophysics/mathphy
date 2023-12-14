@@ -314,7 +314,7 @@ $P_1^0(x) = $\fillout{x},  $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 \begin{problem}
-  $Y_{1}^{0}(\theta,  \phi)$的表达式是:
+  $Y_{10}(\theta,  \phi)$的表达式是:
   \pickout{A}
 \begin{abcd}
   \item $\sqrt{\frac{3}{4\pi}} \cos \theta$
@@ -364,7 +364,7 @@ $P_1^0(x) = $\fillout{x},  $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \end{problem}
 
 \begin{problem}
-  在一个球对称的电场中, 电势 $V(r,  \theta)$ 的分布可以用球谐函数展开表示. 
+  在一个轴对称的电场中, 电势 $V(r,  \theta)$ 的分布可以用球谐函数展开表示. 
   若电场满足拉普拉斯方程, 
   此时, 电势 $V(r,  \theta)$ 的展开系数中, 与角度 $\theta$ 有关的部分应当包含: \pickout{D}
   \begin{abcd}
@@ -397,13 +397,13 @@ $P_1^0(x) = $\fillout{x},  $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
     \pickout{D}
     \begin{abcd}
 
-    \item $Y_{1}^0(\theta,  \phi)$
+    \item $Y_{10}(\theta,  \phi)$
     
-    \item $Y_{1}^{-1}(\theta,  \phi)$
+    \item $Y_{11}(\theta,  \phi)$
     
-    \item $Y_{3}^1(\theta,  \phi)$
+    \item $Y_{21}(\theta,  \phi)$
     
-    \item $Y_{3}^2(\theta,  \phi)$
+    \item $Y_{32}(\theta,  \phi)$
    \end{abcd}
 
   \end{problem}
@@ -449,7 +449,7 @@ $P_1^0(x) = $\fillout{x},  $P_1^1(x) = $\fillout{$\sqrt{1-x^2}$}.
 \vfill
 
 \begin{solution}
-\everymath{\displaystyle}%
+% \everymath{\displaystyle}%
 \? 被积函数$f(z) = \frac{\sin \frac{\pi z}{4}}{z^2-1}$含两个奇点$z_1=1,  z_2=-1$. \\ 
 \+ 路径$C$只包含其中$z_1=1$这一奇点.  \score{2}
 \+ 不难得到$f(z)$在$z=z_1$处的留数为 $$\text{Res} f(z) |_ {z\to z_1} = \lim_{z \to z_1} (z-z_1) f(z) =\frac{\sqrt{2}}{4}\score{4}$$
@@ -458,12 +458,10 @@ $$ 2\pi \imath \frac{\sqrt{2}}{4} = \frac{\pi\imath}{\sqrt{2}}\score{6}$$
 \end{solution}
 
 
-
-
 % \begin{problem}{(6分)}
-%   求 $|\sin z|$ 在闭区域 $0 \leq \Re z \leq 2 \pi,  0 \leq \Im z \leq 2 \pi$ 中的最大值. 
+%   求 $|\sin z|$ 在闭区域 $0 \leq \operatorname{Re} z \leq 2 \pi,  0 \leq \Im z \leq 2 \pi$ 中的最大值. 
 % \end{problem}
-\begin{problem}{(6分)}
+\begin{problem}{(7分)}
   计算拉普拉斯变换的原函数
   $$
     % \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}. 
@@ -475,53 +473,24 @@ $$ 2\pi \imath \frac{\sqrt{2}}{4} = \frac{\pi\imath}{\sqrt{2}}\score{6}$$
 \begin{solution}
   函数$\bar{f}(p)$可以写成
   $$
-  \bar{f}(p) = \frac{3}{2} \left[ \frac{1}{p+1} + \frac{1}{p-1}  \right] \score{2}
+  \bar{f}(p) = \frac{3}{2} \left[ \frac{1}{p+1} + \frac{1}{p-1}  \right] \score{3}
   $$
   由拉普拉斯变换的定义不难得到$$\mathcal{L}^{-1} \left[ \frac{1}{p-s} \right] = e^{st}, $$
-  故$\mathcal{L}^{-1} \left[ \frac{1}{p+1}\right] = e^{-t} $
-  并且$\mathcal{L}^{-1} \left[ \frac{1}{p-1}\right] = e^{+t} $\score{4} 
-  最终我们有 原函数
-  $$f(t) =\mathcal{L}^{-1} \left[ \bar{f}(p) \right] = 3\cosh t.  \score{6}$$
+  故得到
+  $$\mathcal{L}^{-1} \left[ \frac{1}{p+1}\right] = e^{-t} $$
+  和
+  $$\mathcal{L}^{-1} \left[ \frac{1}{p-1}\right] = e^{+t} \score{5}  $$
+  根据双曲余弦函数的定义, 最终我们有原函数
+  $$f(t) =\mathcal{L}^{-1} \left[ \bar{f}(p) \right] = 3\cosh t.  \score{7}$$
 \end{solution}
   
-
-  
-\begin{problem}{(6分)}
-    用$\Gamma$函数求积分
-    $$
-    \int_0^\infty x^{\alpha -1 } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx, 
-    $$
-    其中$\alpha > 0,  -\frac{\pi}{2} < \theta < \frac{\pi}{2}$. 
-  \end{problem} 
-    
-\vfill
-
-\begin{solution}
-  
-$ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
-    \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
-    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
-  \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \score{2}
-  令 $x e^{-i \theta}=y$ 做变量代换$\Rightarrow$ $x=e^{i \theta} y,  \dx=e^{i \theta} \dy$  \score{4}\newline
-  于是,  $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
-        \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
-        \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
-        \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha)  $\score{6}
-\end{solution}
-
-
-
-
 \begin{problem}{(8分)}
-将函数$$f(z) = \frac{1}{(z-2)(z-3)}$$ 
-在 $|z|>3$的环域展开为洛朗级数. 
+  将函数$$f(z) = \frac{1}{(z-2)(z-3)}$$ 
+  在 $|z|>3$的环域展开为洛朗级数. 
 \end{problem}
-  
-  
-\vfill
-
+  \vfill
 \begin{solution}
-  \everymath{\displaystyle}%
+  % \everymath{\displaystyle}%
   \? 函数$f(z)$可以写成
   $$
   \frac{1}{(z-2)(z-3)}=\frac{1}{(z-3)}-\frac{1}{(z-2)} \score{2}
@@ -532,6 +501,33 @@ $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ 
   \+ 最终我们有 
   $$f(z) = \sum_{n=0}^{\infty}\left(3^n-2^n\right) z^{-n-1}.  \score{8}$$
 \end{solution}
+  
+\begin{problem}{(9分)}
+    用$\Gamma$函数求积分
+    $$
+    \int_0^\infty x^{ -\frac{1}{2} } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx, 
+    $$
+    % 其中$\alpha > 0,  -\frac{\pi}{2} < \theta < \frac{\pi}{2}$. 
+    其中$ -\frac{\pi}{2} < \theta < \frac{\pi}{2}$. 
+\end{problem} 
+  
+\vfill
+
+\begin{solution}
+  对一般的$\alpha$, 依习题解答,\\
+  $I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
+    \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+  \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx .$ \score{3}
+  作变量代换, 令 $x e^{-i \theta}=y$ $\Rightarrow$ $x=e^{i \theta} y,  \dx=e^{i \theta} \dy$  \score{5}\newline
+  于是,  $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \score{6}\par
+        \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+        \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+        \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha).  $\score{8}
+  将$\alpha = \frac{1}{2}$ 代入得
+  $$I = \sqrt{\pi} \cos{(\frac{\theta}{2})}.\score{9}$$
+\end{solution}
+
 
 
 % \begin{problem}
@@ -581,7 +577,7 @@ $ I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ 
 \begin{problem}{(10分)}
   求解下列定解问题: 
   $\left\{\begin{array}{l}
-    \nabla^2 u=0,  \quad 0\leq r < a \\ 
+    \nabla^2 u=0,  \quad 0\leq r \leq a \\ 
     \left. u\right|_{r=a}=u_0 \cos^2 \theta,  \\
     \left. u\right|_{r=0} \text{有限}. 
     %\left. u\right|_{r=b}=u_0 \cos ^2 \theta. 
@@ -601,16 +597,17 @@ $$
 \sum_{l=0}^{\infty}  A_l r^l  P_{l} (\cos \theta) 
 = u_0 \cos^2 \theta = u_0 x^2 \score{4} 
 $$ 
-勒让德多项式中$P_0(x) = 1,  P_1(x) = x,  P_2 (x) = \frac{1}{2}(3x^2 - 1)$ \\
-其中 $x^2 = \frac{2}{3} P_2(x) + \frac{1}{3} P_0(x)$,   \score{6}\\
+勒让德多项式中$$P_0(x) = 1,  P_1(x) = x,  P_2 (x) = \frac{1}{2}(3x^2 - 1)$$ \\
+不难得到 $$x^2 = \frac{2}{3} P_2(x) + \frac{1}{3} P_0(x), \score{6}$$  \\
 比较两边系数, 得
-$A_0 = \frac{u_0}{3},  A_2 = \frac{2 u_0}{3a^2},  A_l = 0 (l\neq 0,  2)$.  \score{8} \\
-
+$$A_0 = \frac{u_0}{3}, \\
+ A_2 = \frac{2 u_0}{3a^2}, \\
+  A_l = 0 (l\neq 0,  2).  \score{8} $$ 
 这样, 
 $$u(r, \theta) = \frac{u_0}{3} + \frac{2 u_0}{3a^2} r^2 P_2(\cos \theta).  \score{10} $$ 
 \end{solution}
 
-% \vfill
+\vfill
 \newpage
 \makedata{可能用到的数据和公式} %附录数据
 柯西公式(Cauchy's formula)
@@ -637,13 +634,13 @@ $$u(r, \theta) = \frac{u_0}{3} + \frac{2 u_0}{3a^2} r^2 P_2(\cos \theta).  \scor
 
 伽玛函数(Gamma function)
 \begin{equation*}
-  \Gamma(z) \equiv \int_{0}^{\infty} e^{-t} t^{z-1} d t,  \quad \Re z>0 . 
+  \Gamma(z) \equiv \int_{0}^{\infty} e^{-t} t^{z-1} d t,  \quad \operatorname{Re} z>0 . 
 \end{equation*}
 \bigskip
 
 贝塔函数(Beta function)
 \begin{equation*}
-    B(p,  q) = \int_0^1 t^{p -1} (1-t)^{q-1} \dt,  \Re p> 0,  \Re q >0. 
+    B(p,  q) = \int_0^1 t^{p -1} (1-t)^{q-1} \dt,  \operatorname{Re} p> 0,  \operatorname{Re} q >0. 
     \label{eq:beta_def1}
 \end{equation*}
 \bigskip
