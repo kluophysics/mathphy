@@ -1,0 +1,95 @@
+\documentclass[lang=cn,10pt,mode=simple]{elegantbook}
+
+\usepackage{wrapfig} %Wrapping text around figures
+\usepackage{import}
+\usepackage{hyperref}   % bookmarks
+\usepackage{url}        % hyperlinks
+\usepackage{graphicx}% Include figure files
+\usepackage{braket}% Dirac notations
+\usepackage{import}
+\usepackage{txfonts} % for \ointctrclockwise
+
+\usepackage{tikz}
+
+
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary{decorations.markings}
+
+\title{数学物理方法}
+% \subtitle{}
+
+\author{罗凯}
+% \institute{Elegant\LaTeX{} Program}
+\institute{南京理工大学}
+\date{March 1, 2024}
+\version{1.0}
+% \bioinfo{自定义}{信息}
+
+% \extrainfo{不要以为抹消过去，重新来过，即可发生什么改变。—— 比企谷八幡}
+
+\setcounter{tocdepth}{3}
+
+% \logo{logo-blue.png}
+\cover{julia_3.jpg}
+% \cover{mandelbrot.jpg}
+% \cover{\input{tikz/cover.tex}}
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+% 修改标题页的橙色带
+% \definecolor{customcolor}{RGB}{32,178,170}
+% \colorlet{coverlinecolor}{customcolor}
+
+% http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=527&i=1
+\let\oldjuhao=。
+\catcode`\。=\active
+\newcommand{。}{\ifmmode\text{\oldjuhao}\else\oldjuhao\fi}
+
+\let\olddouhao=，
+\catcode`\，=\active
+\newcommand{，}{\ifmmode\text{\olddouhao}\else\olddouhao\fi}
+
+\newtcolorbox{examplebox}[1]{
+  colbacktitle=yellow!50!white,
+  coltitle=black,
+  colback=white,
+  colframe=yellow!75!black,
+  fonttitle=\bfseries,
+  title={例:#1}
+}
+
+\include{macro}
+
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+\tableofcontents
+
+\mainmatter
+
+
+\subimport{complex/}{complex.tex}
+\subimport{integral/}{integral.tex}
+\subimport{calculus_variation/}{calculus_variation.tex}
+\subimport{fourier/}{fourier.tex}
+\subimport{laplace/}{laplace.tex}
+\subimport{special/}{special.tex}
+\subimport{mathphyequations/}{mathphyequations.tex}
+\subimport{diffeq/}{diffeq.tex}
+\subimport{separation/}{separation.tex}
+
+
+
+
+\nocite{*}
+\printbibliography[heading=bibintoc, title=\ebibname]
+\appendix
+
+
+
+\end{document}

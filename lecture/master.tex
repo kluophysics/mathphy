@@ -1,27 +1,25 @@
 \documentclass[lang=cn,10pt, mode=simple]{elegantbook}
 
-
 \usepackage{tikz}
 \usepackage{graphicx}% Include figure files
 \usepackage{braket}% Dirac notations
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{fontspec}
-\usepackage{titlesec}
-\usepackage{titletoc}  
-\usepackage{fourier-orns} % 
-\usepackage{hyperref}   % bookmarks
-\usepackage{url}        % hyperlinks
-\usepackage{amssymb,amsmath,mathtools}
-\usepackage{amsthm}
+% \usepackage{enumitem}
+% \usepackage{fancyhdr}
+% \usepackage{fontspec}
+% \usepackage{titlesec}
+% \usepackage{titletoc}  
+% \usepackage{fourier-orns} % 
+% \usepackage{hyperref}   % bookmarks
+% \usepackage{url}        % hyperlinks
+% \usepackage{amssymb,amsmath,mathtools}
+% \usepackage{amsthm}
 
-\usepackage{framed}
-\usepackage{tcolorbox}
+% \usepackage{framed}
+% \usepackage{tcolorbox}
 
 \usepackage{wrapfig} %Wrapping text around figures
 
 \usepackage{import}
-% \usepackage{natbib}
 \usepackage{txfonts} % for \ointctrclockwise
 \usepackage{appendix} %加入附录需使用appendix宏包
 % \usepackage{zhnumber}
@@ -40,20 +38,20 @@
 \usetikzlibrary {arrows.meta}
 \usetikzlibrary{decorations.markings}
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    pdftitle={},
-    pdfpagemode=FullScreen,
-    }
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     filecolor=magenta,      
+%     urlcolor=cyan,
+%     pdftitle={},
+%     pdfpagemode=FullScreen,
+%     }
 
 
 
-\renewcommand{\headrule}{%
-\vspace{-8pt}\hrulefill
-\raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+% \renewcommand{\headrule}{%
+% \vspace{-8pt}\hrulefill
+% \raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
 
 
 \newtcolorbox{examplebox}[1]{
@@ -76,9 +74,9 @@
 \catcode`\，=\active
 \newcommand{，}{\ifmmode\text{\olddouhao}\else\olddouhao\fi}
 
-\title{\zihao{1}\heiti 数学物理方法讲义}
+\title{数学物理方法}
 \subtitle{}
-\author{\zihao{3}\kaishu 罗凯\\
+\author{ 罗凯\\
 kluo@njust.edu.cn}
 \date{\fangsong \zhdigits{2023},\zhganzhinian{2023}年秋}
 \version{1.0}
@@ -92,15 +90,6 @@ kluo@njust.edu.cn}
 
 \begin{document}
 
-\pagestyle{fancy}
-
-%... then configure it.
-\fancyhead{} % clear all header fields
-\fancyhead[LE]{\textbf{\leftmark}}
-\fancyhead[RO]{\textbf{\rightmark}}
-\fancyfoot{} % clear all footer fields
-
-\fancyfoot[C]{\thepage}
 
 
 
