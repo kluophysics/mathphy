@@ -1,16 +1,5 @@
-\documentclass[
-    %twoside,
-]{ctexbook}
-\usepackage[
-% paperheight=16cm, 
-% paperwidth=12cm,% Set the height and width of the paper
-includehead,
-% nomarginpar,% We don't want any margin paragraphs
-% % textwidth=10cm,% Set \textwidth to 10cm
-headheight=14pt,% Set \headheight to 10mm
-]{geometry}
-% \usepackage{ctex}
-\usepackage{xcolor}
+\documentclass[lang=cn,10pt, mode=simple]{elegantbook}
+
 
 \usepackage{tikz}
 \usepackage{graphicx}% Include figure files
@@ -32,10 +21,18 @@ headheight=14pt,% Set \headheight to 10mm
 \usepackage{wrapfig} %Wrapping text around figures
 
 \usepackage{import}
-\usepackage{natbib}
+% \usepackage{natbib}
 \usepackage{txfonts} % for \ointctrclockwise
 \usepackage{appendix} %加入附录需使用appendix宏包
-\raggedbottom
+% \usepackage{zhnumber}
+
+\usepackage{titling} % to customize \maketitle
+\usepackage{cases} 
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+
+% \raggedbottom
 
 
 
@@ -52,10 +49,7 @@ headheight=14pt,% Set \headheight to 10mm
     pdfpagemode=FullScreen,
     }
 
-% \usepackage{zhnumber}
 
-\usepackage{titling} % to customize \maketitle
-\usepackage{cases} 
 
 \renewcommand{\headrule}{%
 \vspace{-8pt}\hrulefill
@@ -70,155 +64,63 @@ headheight=14pt,% Set \headheight to 10mm
   fonttitle=\bfseries,
   title={例:#1}
 }
-% \newtheorem{Definition}{\hspace{2em}定义}[subsection]
-% \newtheorem{Definition}{\hspace{2em}定义}[section]
-% \newtheorem{Definition}{\hspace{2em}定义}[chapter]
-\newtheorem{Definition}{\hspace{2em}定义}[]
-\renewcommand{\proofname}{\indent\bf 证明:}
-\renewcommand{\qedsymbol}{$\blacksquare$}    % 证毕符号改成黑色的正方形
-
-\newenvironment{solution}{\begin{proof}[\indent\bf 解]}{\end{proof}}
 
 
-\newcommand{\solutionbox}[1]{
-  \begin{framed}
-    \setlength{\fboxrule}{2pt}
-    \setlength{\fboxsep}{10pt}
-    \setlength{\FrameSep}{20pt}
-    % \setlength{\cornersize}{0.3cm}
-    \noindent\textbf{解}: #1
-  \end{framed}
-}
 
+% http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=527&i=1
+\let\oldjuhao=。
+\catcode`\。=\active
+\newcommand{。}{\ifmmode\text{\oldjuhao}\else\oldjuhao\fi}
+
+\let\olddouhao=，
+\catcode`\，=\active
+\newcommand{，}{\ifmmode\text{\olddouhao}\else\olddouhao\fi}
+
+\title{\zihao{1}\heiti 数学物理方法讲义}
+\subtitle{}
+\author{\zihao{3}\kaishu 罗凯\\
+kluo@njust.edu.cn}
+\date{\fangsong \zhdigits{2023},\zhganzhinian{2023}年秋}
+\version{1.0}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% \logo{logo-blue.png}
+\cover{julia_3.jpg}
 
 
 \begin{document}
 
 \pagestyle{fancy}
 
-% \renewcommand{\chaptermark}[1]{\markboth{\CTEXthechapter\quad #1}{}}
-% \renewcommand{\sectionmark}[1]{\markright{\CTEXthesection\quad #1}}
-% \renewcommand{\sectionmark}[1]{\markleft{\CTEXthesection\quad #1}}
-
-% \fancyhf{}
-% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
-% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
-
 %... then configure it.
 \fancyhead{} % clear all header fields
-% \fancyhead[LE]{\textbf{PHYS}}
-% \fancyhead[L]{\textbf{\leftmark}}
-% \fancyhead[L]{\chaptermark{}}
-% \fancyhead[L]{\sectionmark{}}
 \fancyhead[LE]{\textbf{\leftmark}}
 \fancyhead[RO]{\textbf{\rightmark}}
-
-% \fancyhead[LO]{\textbf{Kai Luo}}
-% \fancyhead[LO]{罗凯}
-
-% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
-% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
-
 \fancyfoot{} % clear all footer fields
-% \fancyfoot[CE,CO]{\rightmark}
-% \fancyfoot[LO,CE]{}
-% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
-\fancyfoot[C]{\thepage}
-% \fancyfoot[CE,O]{\thechapter}
 
-% \ctexset{
-%     part={
-%         % format+ = \zihao{-2} \heiti \raggedright,
-%         % format+ = \zihao{-1} \heiti,
-%         % format+ =  \heiti  \centering,
-%         name = {},
-%         number = 第\chinese{part}篇,
-%         % beforeskip = 1.0ex plus 0.2ex minus .2ex,
-%         % afterskip = 1.0ex plus 0.2ex minus .2ex,
-%         % aftername = \hspace{15pt}
-%     },
-%     chapter={
-%         % format+ = \zihao{-2} \heiti \raggedright,
-%         % format+ = \zihao{-2} \heiti,
-%         name = {},
-%         number = 第\chinese{chapter}章,
-% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% aftername = \hspace{10pt}
-%     },
-% 	section={
-% 		%format用于设置章节标题全局格式,作用域为标题和编号
-% 		%字号为小三,字体为黑体,左对齐
-% 		%+号表示在原有格式下附加格式命令
-% 		% format+ = \zihao{-3} \heiti, %\raggedright,
-% 		%name用于设置章节编号前后的词语
-% 		%前、后词语用英文状态下,分开
-% 		%如果没有前或后词语可以不填
-% 		% name = {},
-% 		%number用于设置章节编号数字输出格式
-% 		%输出section编号为中文
-% 		number = 第\chinese{section}节
-% 		% %beforeskip用于设置章节标题前的垂直间距
-% 		% %ex为当前字号下字母x的高度
-% 		% %基础高度为1.0ex,可以伸展到1.2ex,也可以收缩到0.8ex
-% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% %afterskip用于设置章节标题后的垂直间距
-% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% %aftername用于控制编号和标题之间的格式
-% 		% %\hspace用于增加水平间距
-% 		% aftername = \hspace{10pt}
-% 	},
-% 	subsection={
-% 		% format + = \centering,
-% 		% format+ = \zihao{5} \kaishu \raggedright,
-% 		% format+ = \zihao{4}, %\raggedright,
-% 		%仅输出subsection编号且为中文
-% 		% number = \arabic{subsection}, %\chinese{subsection},
-%         number = 第\arabic{section}.\arabic{subsection}讲,
-% 		% name = {,.},
-% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% aftername = \hspace{3pt}
-% 	},
-% 	subsubsection={
-% 		%设置对齐方式为居中对齐
-% 		% format+ = \zihao{5} \fangsong \centering,
-% 		% format + = \centering,
-% 		%仅输出subsubsection编号,格式为阿拉伯数字,打字机字体
-% 		% number = \ttfamily\arabic{subsubsection},
-%         % number = 第\arabic{section}.\arabic{subsection}.\arabic{subsubsection}点,
-%         number = 第\arabic{section}.\arabic{subsection}.\arabic{subsubsection}条,
-% 		% name = {},
-% 		% beforeskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% afterskip = 1.0ex plus 0.2ex minus .2ex,
-% 		% aftername = \hspace{0pt}
-% 	}
-% }
+\fancyfoot[C]{\thepage}
 
 
 
 \include{macro}
-\include{cover}
+% \include{cover}
+
+
+
 % \include{cover.tex}
 % \include{macro.tex}
 
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-% \newpage
+
+
+\maketitle
+\frontmatter
+
 \tableofcontents
-% \newpage
-% \end{enumerate}
-% \include{prerequiste.tex}
 
-% \def\input@path{{./chap01/}}
+\mainmatter
 
-% \include{chap01.tex}
-% \include{complex_function.tex}
-
-% \input{lec1.tex}
-% \input{lec2.tex}
-% \input{lec3.tex}
-% \part{复变函数论}
 
 \subimport{complex/}{complex.tex}
 \subimport{integral/}{integral.tex}
@@ -227,7 +129,7 @@ headheight=14pt,% Set \headheight to 10mm
 \subimport{laplace/}{laplace.tex}
 \subimport{special/}{special.tex}
 \subimport{mathphyequations/}{mathphyequations.tex}
-\subimport{diffeq}{diffeq.tex}
+\subimport{diffeq/}{diffeq.tex}
 \subimport{separation/}{separation.tex}
 
 % \part{数学物理方程}
