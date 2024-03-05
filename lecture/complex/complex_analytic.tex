@@ -7,12 +7,15 @@
  称其为{\bf 完全函数}(entire function).
  若$f(z)$在某点$z_0$不可导,$z_0$称为$f(z)$的一个{\bf 奇点}(singular point).
 
- \begin{examplebox}{说明$f(z)=z^2$是完全函数,而$f(z)=|z|^2$的奇点数有无数个.}
+ \begin{example}
+说明$f(z)=z^2$是完全函数,而$f(z)=|z|^2$的奇点数有无数个.
+\end{example}
+\begin{solution}
     首先,$f(z) =z^2 = (x^2 + y ^2) + \imath 2 x y$,实部和虚部分别为$u(x,y) = x^2+ y^2, v(x,y)=2x y$,
 连续条件和柯西-黎曼条件在全实数域均满足,可知$f(z)$在全复平面每点均可导.因此,$f(z)=z^2$是完全函数.
 类似的,我们可以知道$f(z)=z^n, n\in N$的也是完全函数.\\
     接着,我们来看$f(z) = |z|^2 = (x^2 + y ^2)$,可以知道只有在$(0,0)$处满足可导条件,其他点均不解析.因此,$f(z)=|z|^2$的奇点数有无数个.
- \end{examplebox}
+ \end{solution}
 
  解析函数实际上有着深刻的内涵.其中要义之一就是其实部和虚部(统一用$\psi$来表示)都必须满足二维的拉普拉斯方程即
  \begin{equation}
@@ -40,7 +43,10 @@ $$
 $$
 可知, $dv$是一全微分, $v = \int dv$.
 
-\begin{examplebox}{解析函数实部为$u(x,y) = x^2 - y^2$,求解该解析函数.}
+\begin{example}
+解析函数实部为$u(x,y) = x^2 - y^2$,求解该解析函数.
+\end{example}
+\begin{solution}
 首先,可以验证$u$为调和函数.然后,利用柯西-黎曼条件可得
 \begin{equation}
     \frac{\partial u}{\partial x } = 2x, \; \frac{\partial u}{\partial y } = -2y  ,
@@ -50,5 +56,5 @@ $$
     d v = \frac{\partial v}{\partial x } dx + \frac{\partial v}{\partial y } dy = 2y dx + 2x dy .
 \end{equation}
 该积分与路径无关,可以用几种方法得到.容易得到$v(x,y) = 2xy + C$, $C$为积分常数.解析函数为$f(z)=x^2 - y^2 + \imath (2x y + C) = z^2 + \imath C$.
-\end{examplebox}
+\end{solution}
     

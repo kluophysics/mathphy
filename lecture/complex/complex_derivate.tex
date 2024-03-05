@@ -57,18 +57,18 @@ $(f+g)' = f' + g', (fg)' =f'g + fg'$等.与实变函数求导不同的是,复变
 下面我们证明:若$u(x,y), v(x,y)$偏微分存在且连续,并满足柯西-黎曼条件,则$f(z)$可导.
 \begin{proof}
     由于$u,v$偏微分连续,可得
-    \begin{equation*}
+    \[
         \Delta f=\left(\frac{\partial u}{\partial x}+\imath \frac{\partial v}{\partial x}\right) \Delta x+\left(\frac{\partial u}{\partial y}+ \imath \frac{\partial v}{\partial y}\right) \Delta y
-    \end{equation*}
+    \]
     利用柯西-黎曼方程,将上式转换为
-    \begin{equation*}
+    \[
         \begin{aligned}
         \Delta f & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \Delta x+\left(-\frac{\partial v}{\partial x}+ \imath\frac{\partial u}{\partial x}\right) \Delta y \\
         & =\left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right)(\Delta x+ \imath \Delta y) 
         \\
         & = \left(\frac{\partial u}{\partial x}+ \imath \frac{\partial v}{\partial x}\right) \Delta z
         \end{aligned}
-    \end{equation*}
+    \]
 可以看到右式与$\Delta z\to 0$的方式无关,因此根据可导的定义判断$f(z)$可导.
 \end{proof}
 对于极坐标系,我们也可以得到相应的柯西-黎曼方程,

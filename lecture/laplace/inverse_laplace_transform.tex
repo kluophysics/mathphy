@@ -21,7 +21,10 @@ $$
     f(t) = \sum_{p_j \in \text{全平面}} Res [ \bar{f}(p_j) e^{p_j t}].
 \end{equation}
 
-\begin{examplebox}{利用Bromwich积分求解$1/\sqrt{p}$的拉普拉斯变换原函数.}
+\begin{example}
+利用Bromwich积分求解$1/\sqrt{p}$的拉普拉斯变换原函数.
+\end{example}
+\begin{solution}
     求解参考梁昆淼书.
     被积函数有唯一的奇点 $p=0$, 这是极点型支点, 在考虑回路积分时, 
     不能像简单地加上圆弧 $C_R$, 因为在函数的多值区域不能作积分运算及应用留数定理. 
@@ -52,7 +55,7 @@ f(t) & =\frac{1}{\pi} \int_{\infty}^0 e^{-y^2} \frac{\sqrt{t}}{y}\left(-\frac{2 
 & =\frac{2}{\pi \sqrt{t}} \int_0^{\infty} e^{-y^2} d y=\frac{2}{\pi \sqrt{t}} \cdot \frac{\sqrt{\pi}}{2}=\frac{1}{\sqrt{\pi t}} .
 \end{aligned}
 $$
-\end{examplebox}
+\end{solution}
 
 很多时候,我们并不总需要用上述方法求解,对于有些问题,可以使用利用拉普拉斯变换的性质结合常见函数的表达式来求解.
 对于像函数的导数, $f(t)$是满足Laplace变换的充分条件,那么$\bar{f}(p)$在
@@ -81,7 +84,10 @@ $$
     \end{aligned}
 $$
 
-\begin{examplebox}{求 $\frac{e^{-\alpha p}}{p(p+b)}$ 的原函数.}
+\begin{example}
+求 $\frac{e^{-\alpha p}}{p(p+b)}$ 的原函数.
+\end{example}
+\begin{solution}
     $\frac{1}{p} \risingdotseq \Theta(t)$, 应用延迟定理,
     $$
 e^{-\alpha p} / p \risingdotseq \Theta(t-\alpha) \text {. 又 } 1 /(p+b) \risingdotseq e^{-b t} \text {. }
@@ -97,5 +103,5 @@ $$
 \end{aligned}
 $$
 读者也可以运用裂项分解分母来求解验证.
-\end{examplebox}
+\end{solution}
 

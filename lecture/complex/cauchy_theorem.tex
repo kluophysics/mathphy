@@ -37,7 +37,10 @@
 就是说,外边界逆时针方向积分等于所有内边界逆时针方向积分之和.只要积分起点和终点固定,当积分路径连续变形时(即不跳过奇点),函数的积分值不变.
 
 下面给出一个重要的例题.
-\begin{examplebox}{计算积分\[ I = \oint_\ell (z-\alpha)^n dz, \]其中$n$为整数.}
+\begin{example}
+计算积分\[ I = \oint_\ell (z-\alpha)^n dz, \]其中$n$为整数.
+\end{example}
+\begin{solution}
 首先,有柯西定理易知,若回路$\ell$不包含$\alpha$,则被积函数在$\ell$所围区域上是解析的,故积分值为零.下面讨论$\ell$包围$\alpha$的情形.
 如果$n\geq 0$,被积函数在$\ell$所围区域是解析的,积分为零.若$n<0$,则有一个奇点$\alpha$.取以$\alpha$为圆心半径为$R$的圆周$C$,$R$大小任意.
 于是圆周上有$z-\alpha = Re^{\imath \theta}$.
@@ -59,4 +62,4 @@ $$
         & \frac{1}{2 \pi \imath} \oint_l(z-\alpha)^n d z=0 \quad(n \neq-1) .
         \end{aligned}
 $$
-\end{examplebox}
+\end{solution}

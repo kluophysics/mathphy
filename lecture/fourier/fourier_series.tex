@@ -120,7 +120,7 @@ $$
   \braket{ e^{\imath \frac{n\pi}{\ell} x } | e^{\imath \frac{m\pi}{\ell} x } } = 2\ell \delta_{mn} .
 $$
 
-\begin{examplebox}{
+\begin{example}
 对于锯齿函数
 $$  
 f(x)= \begin{cases}
@@ -130,7 +130,8 @@ f(x)= \begin{cases}
 \end{cases}
 $$
 求其傅里叶级数.
-}
+\end{example}
+\begin{solution}
 不难判定通过解析延拓,该函数为奇函数,根据傅里叶展开系数公式,可以得
 \begin{align}
 b_n &=   \frac{1}{\ell} \int_{0}^{2\ell} f(x) \sin {  \left( \frac{n\pi}{\ell} x \right) } dx \nonumber
@@ -172,7 +173,7 @@ $$
 上式可以通过等式
 $\int_0^1 \frac{d x}{1+x^2}=\left.\tan ^{-1} x\right|_0 ^1=\frac{\pi}{4}$,和被积函数的级数展开验证.
 其实,这里的锯齿函数可以直接用$f(x) = x, -\ell < x < \ell$来表示,相应的间断点则被移到$\pm \ell$处.
-\end{examplebox}
+\end{solution}
 
 
 \subsection{能量定理}

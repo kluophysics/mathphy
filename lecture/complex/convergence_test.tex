@@ -17,9 +17,12 @@
 这可以利用柯西判据进行证明.相反的, 若同发散级数$\sum_{k} a_k$比较有,$0 \leq a_k  \leq w_k$, 那么可以判定$\sum_k w_k$发散.
 对于复数项级数,比较判据可以表示为$0 \leq |w_k| \leq a_k$.
 
-\begin{examplebox}{试判定级数$\sum_{k=1} k^{-p}, p\leq 1$收敛还是发散.}
+\begin{example}
+试判定级数$\sum_{k=1} k^{-p}, p\leq 1$收敛还是发散.
+\end{example}
+\begin{solution}
     已知调和级数$\sum_{k=1}1/k$是发散的,而 $k^{-p} > k^{-1}$, 根据比较判定法,可知该级数发散.
-\end{examplebox}
+\end{solution}
 
 \subsubsection{达朗贝尔判据}
 % 级数$\sum_{n} w_n$,对足够大的$N$和与$N$无关的常数$r$,若满足条件$w_{n+1} / w_{n} \leq r < 1$,那么该级数收敛.反之,若$w_{n+1} / w_{n} \geq >= 1$,
@@ -35,7 +38,10 @@ $$
     \item 当 $q=1$ 时, 此方法无效,需要其他方法判定.
 \end{enumerate}
 
-\begin{examplebox}{试判断级数$\sum_{k=1} k/2^k$的收敛性.}
+\begin{example}
+试判断级数$\sum_{k=1} k/2^k$的收敛性.
+\end{example}
+\begin{solution}
     利用比值判定法
     \[ 
         \lim_{k\to \infty} \frac{w_{k+1}}{w_k}=\lim_{k\to \infty} \frac{k+1}{2^{k+1}} / \frac{k}{2^{k}}=\frac{1}{2} 
@@ -43,7 +49,7 @@ $$
         = \half < 1
     \]
     可见该级数是收敛的.
-\end{examplebox}
+\end{solution}
 % $\frac{w_{k+1}}{w_k}=r , r 5 k$ 死关,
 % 世東 $r<1$ ,那昍数收斂.
 % 当 $r=1$ ,榇弅

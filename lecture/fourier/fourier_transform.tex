@@ -95,14 +95,15 @@ F(\omega)=\mathcal{F}[f(x)], \quad f(x)=\mathcal{F}^{-1}[F(\omega)] .
 $$
 $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textbf{像函数}.
 
-\begin{examplebox}{
+\begin{example}
 求以下函数的复数傅里叶变换.
 \begin{enumerate}
     \item $f(x) = e^{-\alpha |x|}, \alpha > 0$;
     \item $f(x) = \delta (x)$;
     \item $f(x) = e^{-\alpha x^2}, \alpha > 0$.
 \end{enumerate}
-}
+\end{example}
+\begin{solution}
 \begin{enumerate}
     \item 对$x$分段进行处理,利用对称形式的傅里叶变换有
     \begin{align}
@@ -148,7 +149,7 @@ $f(x)$ 和 $F(\omega)$ 分别称为傅里叶变换的\textbf{原函数}和\textb
     \end{align}
     上式用了变量代换$t = x - \imath \omega /2 \alpha$,高斯函数的像函数还是高斯函数.
 \end{enumerate}
-\end{examplebox}
+\end{solution}
 
 
 \subsection{傅里叶变换基本性质}
@@ -202,10 +203,11 @@ $$
 为 $F\left(k_1, k_2\right)$ 的逆变换.
 $f(x, y)$ 和 $F\left(k_1, k_2\right)$ 称为傅里叶变换对.
 
-\begin{examplebox}{
+\begin{example}
     求函数 $f(x, y)= \begin{cases}A, & |x| \leq X,|y| \leq Y \\ 0, & |x|>X,|y|>Y\end{cases}$ 的傅里叶变换 (矩孔费琅和夫衍射).
-}
-由傅里叶变换关系
+\end{example}
+\begin{solution}
+    由傅里叶变换关系
 $$
 F\left(k_1, k_2\right)=\frac{1}{(2 \pi)^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y) e^{-i\left(k_1 x+k_2 y\right)} d x d y
 $$
@@ -218,7 +220,7 @@ F\left(k_1, k_2\right) & =\frac{A}{2 \pi} \int_{-X}^X e^{-i k_1 x} d x \int_{-Y}
 & =\frac{2A X Y}{\pi} \frac{\sin \left(k_1 X\right)}{k_1 X} \frac{\sin \left(k_2 Y\right)}{k_2 Y}
 \end{aligned}
 $$
-\end{examplebox}
+\end{solution}
 
 对于三维情况,$\vec{k}=\left(k_1, k_2, k_3\right), \vec{r}=(x, y, z)$,
 \begin{equation}
