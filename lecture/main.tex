@@ -1,4 +1,9 @@
-\documentclass[lang=cn,10pt,mode=simple]{elegantbook}
+\documentclass[
+  lang=cn,
+  10pt,
+  mode=simple,
+  color=blue, %green,
+  ]{elegantbook}
 
 \usepackage{wrapfig} %Wrapping text around figures
 \usepackage{import}
@@ -8,6 +13,7 @@
 \usepackage{braket}% Dirac notations
 \usepackage{import}
 \usepackage{txfonts} % for \ointctrclockwise
+\usepackage{fourier-orns} % 
 
 \usepackage{tikz}
 
@@ -17,21 +23,23 @@
 \usetikzlibrary{decorations.markings}
 
 \title{数学物理方法}
-% \subtitle{}
+\subtitle{学数学工具，探物理真谛}
 
 \author{罗凯}
 % \institute{Elegant\LaTeX{} Program}
-\institute{南京理工大学}
-\date{March 1, 2024}
-\version{1.0}
+% \institute{南京理工大学}
+% \date{March 1, 2024}
+% \version{1.0}
 % \bioinfo{自定义}{信息}
 
 % \extrainfo{不要以为抹消过去，重新来过，即可发生什么改变。—— 比企谷八幡}
 
+\extrainfo{业精于勤，荒于嬉；行成于思，毁于随。—— 苏轼}
+
 \setcounter{tocdepth}{3}
 
 % \logo{logo-blue.png}
-\cover{julia_3.jpg}
+\cover{julia.jpg}
 % \cover{mandelbrot.jpg}
 % \cover{\input{tikz/cover.tex}}
 % 本文档命令
@@ -42,6 +50,11 @@
 % \definecolor{customcolor}{RGB}{32,178,170}
 % \colorlet{coverlinecolor}{customcolor}
 
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
 % http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=527&i=1
 \let\oldjuhao=。
 \catcode`\。=\active
@@ -51,14 +64,10 @@
 \catcode`\，=\active
 \newcommand{，}{\ifmmode\text{\olddouhao}\else\olddouhao\fi}
 
-\newtcolorbox{examplebox}[1]{
-  colbacktitle=yellow!50!white,
-  coltitle=black,
-  colback=white,
-  colframe=yellow!75!black,
-  fonttitle=\bfseries,
-  title={例:#1}
-}
+% \definecolor{structurecolor}{RGB}{0,0,0}
+% \definecolor{main}{RGB}{70,70,70}
+% \definecolor{second}{RGB}{115,45,2}
+% \definecolor{third}{RGB}{0,80,80}
 
 \include{macro}
 

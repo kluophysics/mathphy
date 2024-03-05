@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Draw square
+    \draw[fill=blue!30] (0,0) rectangle (2,2);
+    
+    % Draw Cauchy integral path
+    \draw[line width=1.5pt, red, domain=0:360, smooth, variable=\t] plot ({1 + 0.5*cos(\t)}, {1 + 0.5*sin(\t)});
+    
+    % Add text
+    \node at (1,1) {\(\oint\)};
+    \node[align=center, text=red] at (1, -0.5) {Cauchy\\Integral};
+    
+    % Optional: Add your company name or additional elements
+    \node[text=blue!80!black] at (1,2.3) {\textbf{Your Company Name}};
+\end{tikzpicture}
+
+\end{document}
