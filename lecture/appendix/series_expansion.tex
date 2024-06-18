@@ -1,0 +1,95 @@
+% \begin{aligned}
+%     \tan x & =\sum_{n=0}^{\infty} \frac{U_{2 n+1}}{(2 n+1) !} x^{2 n+1} \\
+%     & =\sum_{n=1}^{\infty} \frac{(-1)^{n-1} 2^{2 n}\left(2^{2 n}-1\right) B_{2 n}}{(2 n) !} x^{2 n-1} \\
+%     & =x+\frac{1}{3} x^3+\frac{2}{15} x^5+\frac{17}{315} x^7+\cdots, \quad \text { for }|x|<\frac{\pi}{2} . \\
+%     \csc x & =\sum_{n=0}^{\infty} \frac{(-1)^{n+1} 2\left(2^{2 n-1}-1\right) B_{2 n}}{(2 n) !} x^{2 n-1} \\
+%     & =x^{-1}+\frac{1}{6} x+\frac{7}{360} x^3+\frac{31}{15120} x^5+\cdots, \quad \text { for } 0<|x|<\pi . \\
+%     \sec x & =\sum_{n=0}^{\infty} \frac{U_{2 n}}{(2 n) !} x^{2 n}=\sum_{n=0}^{\infty} \frac{(-1)^n E_{2 n}}{(2 n) !} x^{2 n} \\
+%     & =1+\frac{1}{2} x^2+\frac{5}{24} x^4+\frac{61}{720} x^6+\cdots, \quad \text { for }|x|<\frac{\pi}{2} . \\
+%     \cot x & =\sum_{n=0}^{\infty} \frac{(-1)^n 2^{2 n} B_{2 n}}{(2 n) !} x^{2 n-1} \\
+%     & =x^{-1}-\frac{1}{3} x-\frac{1}{45} x^3-\frac{2}{945} x^5-\cdots, \quad \text { for } 0<|x|<\pi .
+% \end{aligned}
+
+
+% $$
+% \begin{aligned}
+% \tan x & =\sum_{n=0}^{\infty} \frac{U_{2 n+1}}{(2 n+1) !} x^{2 n+1} \\
+% & =\sum_{n=1}^{\infty} \frac{(-1)^{n-1} 2^{2 n}\left(2^{2 n}-1\right) B_{2 n}}{(2 n) !} x^{2 n-1} \\
+% & =x+\frac{1}{3} x^3+\frac{2}{15} x^5+\frac{17}{315} x^7+\cdots, \quad \text { for }|x|<\frac{\pi}{2} . \\
+% \csc x & =\sum_{n=0}^{\infty} \frac{(-1)^{n+1} 2\left(2^{2 n-1}-1\right) B_{2 n}}{(2 n) !} x^{2 n-1} \\
+% & =x^{-1}+\frac{1}{6} x+\frac{7}{360} x^3+\frac{31}{15120} x^5+\cdots, \quad \text { for } 0<|x|<\pi . \\
+% \sec x & =\sum_{n=0}^{\infty} \frac{U_{2 n}}{(2 n) !} x^{2 n}=\sum_{n=0}^{\infty} \frac{(-1)^n E_{2 n}}{(2 n) !} x^{2 n} \\
+% & =1+\frac{1}{2} x^2+\frac{5}{24} x^4+\frac{61}{720} x^6+\cdots, \quad \text { for }|x|<\frac{\pi}{2} . \\
+% \cot x & =\sum_{n=0}^{\infty} \frac{(-1)^n 2^{2 n} B_{2 n}}{(2 n) !} x^{2 n-1} \\
+% & =x^{-1}-\frac{1}{3} x-\frac{1}{45} x^3-\frac{2}{945} x^5-\cdots, \quad \text { for } 0<|x|<\pi .
+% \end{aligned}
+% $$
+
+\section{三角函数级数}
+
+% \begin{equation}
+% \begin{aligned}
+%     \sin x & =x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots & -\infty<x<\infty \\
+%     \cos x & =1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots & -\infty<x<\infty \\
+%     \tan x & =x+\frac{x^3}{3}+\frac{2 x^5}{15}+\cdots+\frac{2^{2 n}\left(2^{2 n}-1\right) B_n x^{2 n-1}}{(2 n)!}+\cdots & |x|<\frac{\pi}{2} \\
+%     \cot x & =\frac{1}{x}-\frac{x}{3}-\frac{x^3}{45}-\cdots-\frac{2^{2 n} B_n x^{2 n-1}}{(2 n)!}-\cdots & 0<|x|<\pi \\
+%     \arcsin x & =x+\frac{1}{2} \frac{x^3}{3}+\frac{1 \cdot 3}{2 \cdot 4} \frac{x^5}{5}+\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{x^7}{7}+\cdots & |x|<1
+%     \arccos x &=\frac{\pi}{2}-\arcsin x & \\
+%     \arctan x &=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7} & |x| \geq 1 \\
+%     \arctan x &= \pm \frac{\pi}{2}-\frac{1}{x}+\frac{1}{3 x^3}-\frac{1}{5 x^5}+\cdots & x \gtrless 0,|x| \geq 1 \\
+%     \operatorname{arccot} x &=\frac{\pi}{2}-\arctan x &   
+% \end{aligned}
+% \end{equation}
+
+\begin{eqnarray}
+    \sin x & = & x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots \quad -\infty<x<\infty \\
+    \cos x & = & 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots \quad -\infty<x<\infty \\
+    \tan x & = & x+\frac{x^3}{3}+\frac{2 x^5}{15}+\cdots+\frac{2^{2 n}\left(2^{2 n}-1\right) B_n x^{2 n-1}}{(2 n)!}+\cdots \quad |x|<\frac{\pi}{2} \\
+    \cot x & = & \frac{1}{x}-\frac{x}{3}-\frac{x^3}{45}-\cdots-\frac{2^{2 n} B_n x^{2 n-1}}{(2 n)!}-\cdots \quad 0<|x|<\pi \\
+    \arcsin x & = & x+\frac{1}{2} \frac{x^3}{3}+\frac{1 \cdot 3}{2 \cdot 4} \frac{x^5}{5}+\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{x^7}{7}+\cdots \quad |x|<1 \\
+    \arccos x & = & \frac{\pi}{2}-\arcsin x \\
+    \arctan x & = & x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7} \quad |x| < 1 \\
+    \arctan x & = & \pm \frac{\pi}{2}-\frac{1}{x}+\frac{1}{3 x^3}-\frac{1}{5 x^5}+\cdots \quad x \gtrless 0, |x| \geq 1 \\
+    \operatorname{arccot} x & = & \frac{\pi}{2}-\arctan x
+\end{eqnarray}
+
+\section{双曲函数级数}
+
+% \begin{equation}
+%     \begin{aligned}
+%     & \sinh x=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots \\
+%     & -\infty<x<\infty \\
+%     & \cosh x=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots \\
+%     & -\infty<x<\infty \\
+%     & \tanh x=x-\frac{x^3}{3}+\cdots+\frac{(-1)^{n-1} 2^{2 n}\left(2^{2 n}-1\right) B_n x^{2 n-1}}{(2 n)!}+\cdots \\
+%     & |x|<\frac{\pi}{2} \\
+%     & \operatorname{coth} x=\frac{1}{x}+\frac{x}{3}-\cdots+\frac{(-1)^{n-1} 2^{2 n} B_n x^{2 n-1}}{(2 n)!}-\cdots \\
+%     & 0<|x|<\pi \\
+%     & \operatorname{arcsinh} x=x-\frac{1}{2} \frac{x^3}{3}+\frac{1 \cdot 3}{2 \cdot 4} \frac{x^5}{5}-\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{x^7}{7}+\cdots \quad|x|<1 \\
+%     & \operatorname{arcsinh} x=\ln (2 x)+\frac{1}{2} \frac{1}{2 x^2}-\frac{1 \cdot 3}{2 \cdot 4} \frac{1}{4 z^4}+\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{1}{6 z^6}-\cdots \quad x>1 \\
+%     & \operatorname{arccosh} x=\ln (2 x)-\frac{1}{2} \frac{1}{2 x^2}-\frac{1 \cdot 3}{2 \cdot 4} \frac{1}{4 z^4}-\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{1}{6 z^6}-\cdots \quad x>1 \\
+%     & \operatorname{arctanh} x=x+\frac{x^3}{3}+\frac{x^5}{5}+\frac{x^7}{7}+\cdots \\
+%     & |x|<1 \\
+%     & \operatorname{arccoth} x=\frac{1}{x}+\frac{1}{3 x^3}+\frac{1}{5 x^5}+\frac{1}{7 x^7}+\cdots \\
+%     & |x|>1 \\
+%     &
+%     \end{aligned}
+% \end{equation}
+
+\begin{eqnarray}
+    \sinh x & = & x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots \\
+    & & -\infty<x<\infty \\
+    \cosh x & = & 1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots \\
+    & & -\infty<x<\infty \\
+    \tanh x & = & x-\frac{x^3}{3}+\cdots+\frac{(-1)^{n-1} 2^{2 n}\left(2^{2 n}-1\right) B_n x^{2 n-1}}{(2 n)!}+\cdots \\
+    & & |x|<\frac{\pi}{2} \\
+    \operatorname{coth} x & = & \frac{1}{x}+\frac{x}{3}-\cdots+\frac{(-1)^{n-1} 2^{2 n} B_n x^{2 n-1}}{(2 n)!}-\cdots \\
+    & & 0<|x|<\pi \\
+    \operatorname{arcsinh} x & = & x-\frac{1}{2} \frac{x^3}{3}+\frac{1 \cdot 3}{2 \cdot 4} \frac{x^5}{5}-\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{x^7}{7}+\cdots \quad |x|<1 \\
+    \operatorname{arcsinh} x & = & \ln (2 x)+\frac{1}{2} \frac{1}{2 x^2}-\frac{1 \cdot 3}{2 \cdot 4} \frac{1}{4 x^4}+\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{1}{6 x^6}-\cdots \quad x>1 \\
+    \operatorname{arccosh} x & = & \ln (2 x)-\frac{1}{2} \frac{1}{2 x^2}-\frac{1 \cdot 3}{2 \cdot 4} \frac{1}{4 x^4}-\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \frac{1}{6 x^6}-\cdots \quad x>1 \\
+    \operatorname{arctanh} x & = & x+\frac{x^3}{3}+\frac{x^5}{5}+\frac{x^7}{7}+\cdots \quad |x|<1 \\
+    \operatorname{arccoth} x & = & \frac{1}{x}+\frac{1}{3 x^3}+\frac{1}{5 x^5}+\frac{1}{7 x^7}+\cdots \quad |x|>1 \\
+\end{eqnarray}
+
+
