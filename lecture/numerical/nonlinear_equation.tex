@@ -181,7 +181,18 @@ $$
 \subsection{牛顿法 (Newton's method)}
 \label{sub:newton_method}
 
-
+\begin{theorem}[Taylor Theorem]
+    若函数$f:\mathbb{R} \to \mathbb{R}$二阶连续可微，
+    有
+    \begin{equation}
+        f(x+p) = f(x) + f'(x) p + \half f''(x + t p) p^2
+    \end{equation}
+    其中$t\in (0,1)$。
+\end{theorem}
+若$x^*$是$f(x)$的零点，即取$x=x^*$, $p$足够小, 则有
+$$
+f(x^*+p) = f(x^*) + f'(x^*) p + \half f''(x^* + t p) p^2
+$$
 
 
 

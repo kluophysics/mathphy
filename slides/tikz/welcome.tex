@@ -1,0 +1,32 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage{fontspec}
+
+\begin{document}
+\begin{tikzpicture}
+    % Define different fonts and sizes for variety
+    \newcommand\welcomefontA{\fontsize{50}{60}\selectfont}
+    \newcommand\welcomefontB{\fontsize{40}{50}\selectfont}
+    \newcommand\welcomefontC{\fontsize{30}{40}\selectfont}
+    \newcommand\welcomefontD{\fontsize{20}{30}\selectfont}
+
+    % Place words at different positions
+    \node[rotate=15] at (0, 0) {\welcomefontA Welcome};
+    \node[rotate=-20] at (-2, 3) {\welcomefontB Bienvenue}; % French
+    \node[rotate=30] at (3, 2) {\welcomefontC Bienvenido}; % Spanish
+    \node[rotate=-15] at (-3, -2) {\welcomefontD Willkommen}; % German
+    \node[rotate=10] at (2, -3) {\welcomefontB Benvenuto}; % Italian
+    \node[rotate=-5] at (0, -5) {\welcomefontC 欢迎}; % Chinese
+    \node[rotate=25] at (0, 5) {\welcomefontD ようこそ}; % Japanese
+    \node[rotate=-10] at (-5, 0) {\welcomefontB Добро пожаловать}; % Russian
+    \node[rotate=20] at (5, 0) {\welcomefontC 환영합니다}; % Korean
+    \node[rotate=-25] at (-4, -4) {\welcomefontD مرحبا}; % Arabic
+    \node[rotate=15] at (4, 4) {\welcomefontB स्वागत हे}; % Hindi
+    \node[rotate=-20] at (2, -4.5) {\welcomefontC Bem-vindo}; % Portuguese
+    \node[rotate=10] at (-4, 2.5) {\welcomefontD Selamat datang}; % Indonesian
+    \node[rotate=-15] at (4, -2.5) {\welcomefontB Witaj}; % Polish
+    \node[rotate=20] at (-2, -3.5) {\welcomefontC Karibu}; % Swahili
+    \node[rotate=-10] at (3, -4) {\welcomefontD स्वागत}; % Nepali
+    \node[rotate=5] at (-3, 4) {\welcomefontB Velkommen}; % Danish
+\end{tikzpicture}
+\end{document}
