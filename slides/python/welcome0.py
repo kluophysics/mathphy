@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 import numpy as np
+
 from PIL import Image, ImageDraw
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
@@ -14,11 +16,22 @@ def create_oval_mask(width, height):
 
 # Generate the oval mask
 width, height = 1920, 1080  # You can change the dimensions as needed
-oval_mask = create_oval_mask(width, height)
+mask = create_oval_mask(width, height)
 
+# x, y = np.ogrid[:1920, :1080]
+# print(x,y)
+# mask = ((x - 960)/480) ** 2 + ((y - 540)/270) ** 2 > 100
+# mask = 255 * mask.astype(int)
 
 # List of "Welcome" in different languages
 words = [
+  #   "Welcome", "Bienvenue", "Bienvenido", "Willkommen", "Benvenuto",
+  #   "欢迎", "ようこそ", "Добро пожаловать", "환영합니다", "Bem-vindo", "Selamat datang", "Witaj", "Karibu",
+  #     "Velkommen", "Välkommen", "Tervetuloa",
+  #   "Welkom", "Recepción", "Witamy", "Bine ati venit",
+  #   "Bienvenidos",  "Добро пожаловать", "Herzlich willkommen", "Velkomin" "Ласкаво просимо",
+  #   "Üdvözöljük", "Selamat datang", "Aloha", "Dobrodosao",
+  #  "Добредојдовте", "Haere mai", "Croeso", "Fáilte", "Mabuhay", "Benvingut", "Chào mừng", 
     "Welcome",
     "欢迎",        # Chinese (Simplified)
     # "歡迎",        # Chinese (Traditional)
@@ -65,38 +78,26 @@ words = [
   #  "ཕེབས་བཞུགས། "
 ]
 
-
-# Generate fake frequencies based on Gaussian distribution
-# np.random.seed(0)  # Setting seed for reproducibility
-# mu, sigma = len(words), len(words)/4  # Mean and standard deviation
-# fake_frequencies = {word: int(np.random.normal(mu, sigma)) for word in words}
-
-# # # Adjust any negative frequencies to zero
-# fake_frequencies = {word: max(0, freq) for word, freq in fake_frequencies.items()}
-
-fake_frequencies = {word: 5*int(np.log(len(words) - idx))+2 for idx, word in enumerate(words)}
-# fake_frequencies = {word: int(np.exp(freq)) for word, freq in fake_frequencies.items()}
-
-print(fake_frequencies)
-text = ''
-for i, word in enumerate(words):
-    text = text + fake_frequencies[word] * (word + ',') 
-
-print(text)
+# words = [
+#     r"Welcome", r"Bienvenue", r"Bienvenido", r"Willkommen", r"Benvenuto",
+#     r"\foreignlanguage{sanskrit}{आपका स्वागत है}", r"\foreignlanguage{sanskrit}{स्वागत}",
+#     r"Bienvenue", r"\foreignlanguage{hindi}{नमस्ते}", r"Добро пожаловать",
+#     r"ようこそ", r"환영합니다", r"مرحبا", r"Karibu", r"خوش آمدید",
+#     r"\foreignlanguage{sanskrit}{स्वागत हे}", r"Bem-vindo", r"Selamat datang", r"Witaj", r"Velkommen",
+#     r"Καλώς ήρθατε", r"Välkommen", r"Tervetuloa", r"Recepción", r"Hoşgeldiniz",
+#     r"Bienvenidos", r"Καλωσόρισμα", r"Dobrodošli", r"Herzlich willkommen", r"Karşılama",
+#     r"Welkom", r"Croeso", r"Fáilte", r"Mabuhay", r"Benvingut"
+# ]
 
 # Create a string of words with frequencies (higher frequency for central word)
-#word_freq = ",".join(words * 5)  # Increasing frequency for mimport matplotlib.pyplot as plt
-# fake_frequencies = {word: len(words) - idx for idx, word in enumerate(words)}
-
-# word_freq = len(words)
-
-# learn from this https://stackoverflow.com/questions/58286251/how-can-i-group-multi-word-terms-when-creating-a-python-wordcloud
-# d = dict(zip(words, fake_frequencies))
-
-
+word_freq = ",".join(words * 5)  # Increasing frequency for more prominence
+# print(word_freq)
 # Path to a font that supports multiple languages (adjust the path as necessary)
 # font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+# font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+# font_path = "/usr/share/fonts/truetype/noto/*.ttf"
 font_path="/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
+# font_path="/usr/share/fonts/wps-office/DejaVuMathTeXGyre.ttf"
 
 # Generate the word cloud
 wordcloud = WordCloud(
@@ -104,16 +105,14 @@ wordcloud = WordCloud(
     height=1080, 
     background_color='white', 
     colormap='viridis', 
-    mask = oval_mask,
+    # mask = mask,
     font_path=font_path
-).generate(text)
-# ).generate_from_frequencies(d)
+).generate(word_freq)
 
 # Display the word cloud
-# plt.figure(figsize=(19.20, 10.80))
 plt.figure(figsize=(10, 6))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 # plt.title('Welcome in Many Languages')
 # plt.show()
-plt.savefig("welcome.png")
+plt.savefig("welcome0.png")
