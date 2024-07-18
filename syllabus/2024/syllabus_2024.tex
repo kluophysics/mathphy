@@ -1,0 +1,317 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{ctex}
+%\usepackage{geometry}
+\usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{Course Name} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{数学物理方法}}
+\end{center}
+\begin{center}
+2024秋季学期
+\end{center}
+%\date{September 26, 2014}
+
+\begin{center}
+\rule{6in}{0.4pt}
+\begin{minipage}[t]{.75\textwidth}
+\begin{tabular}{llcccll}
+\textbf{授课者:} & 罗凯 & & &  & \textbf{时间:} & 周二、周四 15:50 -- 18:15 \\
+\textbf{邮箱:} &  \href{mailto:kluo@njust.edu.cn}{kluo@njust.edu.cn} & & & & \textbf{地点:} & II-422.
+\end{tabular}
+\end{minipage}
+\rule{6in}{0.4pt}
+\end{center}
+\vspace{.5cm}
+\setlength{\unitlength}{1in}
+\renewcommand{\arraystretch}{2}
+
+\noindent\textbf{课程网址:} 
+\begin{itemize}
+\item \url{https://kluophysics.github.io/teaching/fall-2024/}
+% \item \url{https://dlmf.nist.gov/}
+\end{itemize}
+
+% \vskip.15in
+% \noindent\textbf{Office Hours:} 
+% After class, or by appointment, 
+% or post your questions in the forum provided 
+% for this purpose on AeLP.
+
+\vskip.15in
+\noindent\textbf{主要参考书目:} %\footnotemark
+This is a  restricted list of various interesting and useful books that will be touched during the course. You need to consult them occasionally.
+\begin{itemize}
+\item 梁昆淼，\textit{《数学物理方法（第五版）》},高等教育出版社, 2020, ISBN:978-7-04-051457-5
+
+\item George B. Arfken, Hans J. Weber, Frank E. Harris, \textit{
+ Mathematical Methods for Physicists, 7th Edition
+}, Academic Press, 2013, ISBN:978-0-12-384654-9
+\item 王竹溪, 郭敦仁, \textit{《特殊函数概论》},北京大学出版社, 2000, ISBN:978-7-30-104530-5
+\item NIST Digital Library of Mathematical Functions, \url{https://dlmf.nist.gov/}
+\item 
+\end{itemize} 
+
+% \footnotetext{Downloadable ebook versions are available on AeLP.}
+
+\vskip.15in
+\noindent\textbf{课程目标:} 培养学生的逻辑思维能力，物理建模能力，提升感受数学物理美感的能力。帮助学生树立科学的终身学习观，培养学生的自学能力和调研能力，
+使学生初步具备解决简单常见物理和工程实际问题的素养。
+\begin{itemize}
+	\item 树立实事求是的科学态度和辩证唯物主义的世界观;
+	\item 将具体物理工程问题抽象为数学问题的能力;
+	\item 利用复变函数论知识理解常见物理工程问题的分析和解决方案，并习得相应的技巧。掌握常见数学物理方程的推导和求解，了解特殊函数的性质和使用;
+	\item 自学和调研能力。
+\end{itemize}
+\vskip.15in
+\noindent\textbf{课程介绍:} 数学物理方法是大学理工学科的一门重要基础课程，也是物理专业核心课。本课程的主要内容以复变函数论和数学物理方程两大部分为主，在此基础上增添了一些物理学前沿问题中的常见技巧和方法。其中，复变函数论部分主要包括复变函数、复平面上的路积分、洛朗级数展开与留数定理及其应用等章节，数学物理方程部分主要包括正交级数展开、偏微分方程与定解问题、柱坐标系与球坐标系定解问题以及格林函数方法等章节。通过本课程的学习，使学生掌握有关复变函数的基本理论,积分变换及数理方程的定解问题及其求解方法,
+为进一步学习电动力学、量子力学等理论物理课程提供必要的数学基础。
+\vskip.15in
+\noindent\textbf{预备知识:}
+高等数学中的微积分，向量分析等内容。
+
+\vspace*{.15in}
+
+\noindent \textbf{大致课程内容概要:}
+\begin{center} 
+\begin{minipage}{5in}
+\begin{flushleft}
+%Chapter 1 \dotfill ~$\approx$ 3 days \\
+{\color{darkgreen}{\Rectangle}} 复数的定义
+复数的运算 	
+\\
+{\color{darkgreen}{\Rectangle}} 区域的定义, 复变函数定义, 三角函数和双曲函数
+\\
+{\color{darkgreen}{\Rectangle}}
+导数,解析函数,多值函数 
+\\
+{\color{red}{\Rectangle}}
+复变函数积分定义和性质, 柯西积分定理  
+\\
+{\color{darkgreen}{\Rectangle}}
+柯西积分公式,
+例题和作业讲解 
+\\
+{\color{darkgreen}{\Rectangle}}
+复数级数基本性质,
+复数级数收敛判定方法
+\\
+{\color{red}{\Rectangle}}
+幂级数,
+泰勒级数,洛朗级数
+\\
+{\color{darkgreen}{\Rectangle}}
+奇点的分类,
+留数定理,
+例题和作业讲解  
+\\
+{\color{red}{\Rectangle}}
+留数定理的应用, 三角函数的积分,
+积分上下限为正负无穷,
+带复指数的定积分  
+\\
+{\color{darkgreen}{\Rectangle}}
+费曼技巧,
+复变量代换,
+参数微分 ,
+被积函数添加函数因子
+\\
+{\color{darkgreen}{\Rectangle}}
+积分求解实例,
+例题和作业讲解 
+\\
+{\color{darkgreen}{\Rectangle}}
+变分法,
+泛函,
+泛函的极值,
+哈密顿方程,
+约束问题
+\\
+{\color{red}{\Rectangle}}
+傅里叶级数,
+傅里叶定理,
+能量定理
+\\
+{\color{red}{\Rectangle}}
+傅里叶变换,
+傅里叶变换的基本性质,
+高维傅里叶变换
+\\
+{\color{darkgreen}{\Rectangle}}
+δ函数的概念,
+δ函数性质,
+其他,
+例题和作业讲解
+\\
+{\color{darkgreen}{\Rectangle}}
+拉普拉斯变换,
+拉普拉斯变换的性质,
+拉普拉斯反变换,
+\\
+{\color{darkgreen}{\Rectangle}}
+拉普拉斯变换的应用,
+求解定积分,
+求解微分方程
+\\
+{\color{darkgreen}{\Rectangle}}
+数学物理方程 ,
+推导和分类,
+弦振动方程，
+热传导方程，
+调和方程
+\\
+{\color{red}{\Rectangle}}
+定解条件,
+定解问题,
+达朗贝尔公式
+\\
+{\color{red}{\Rectangle}}
+分离变量法,
+振动方程和输运方程
+\\
+{\color{darkgreen}{\Rectangle}}
+非齐次边界条件的处理,
+泊松方程
+\\
+{\color{red}{\Rectangle}}
+特殊常微分方程,
+常点邻域上的级数解法
+\\
+{\color{darkgreen}{\Rectangle}}
+正则奇点邻域上的级数解法,
+Sturm-Liouville问题
+\\
+{\color{red}{\Rectangle}}
+特殊函数,轴对称球函数，连带勒让德函数 
+\\
+{\color{darkgreen}{\Rectangle}}
+例题和作业讲解,
+一般球函数
+\\
+{\color{red}{\Rectangle}}
+三类柱函数，
+贝塞尔方程，虚宗量贝塞尔方程
+\\
+{\color{darkgreen}{\Rectangle}}
+泊松方程的格林函数法,
+镜像法求格林函数
+\\
+{\color{darkgreen}{\Rectangle}}
+推广的格林公式及其应用,
+冲量定理法求格林函数
+
+\end{flushleft}
+\end{minipage}
+\end{center}
+
+\vspace*{.15in}
+\noindent\textbf{考核方式:} 
+课堂考勤和表现 (15\%),  
+平时作业 (30\%), 
+随堂测验 (15\%), 
+期末考试 (40\%) 
+%Four Projects (40\% = 4 * 10\%)
+
+\vskip.15in
+\noindent\textbf{重要日期提醒:}
+\begin{center} \begin{minipage}{3.8in}
+\begin{flushleft}
+第四周， 国庆节放假      \dotfill 10月1-7日 没有课 \\
+期末考试 (待教务处通知)   \dotfill ~ \\
+%Project Deadline \dotfill ~Month Day \\
+% Final Exam       \dotfill ~Dey 18, 1393  \\
+\end{flushleft}
+\end{minipage}
+\end{center}
+
+\vskip.15in
+\noindent\textbf{注意事项:}
+\begin{itemize}
+	\item 请添加课程QQ群（通过搜索群号：700246241，或扫描下方二维码），
+	进群后务必将备注改成实名，方便交流; 课程讲义和作业禁止外传;
+	\item 有情况请假提前告知，不随意迟到, 禁止旷课;
+	\item 不定期点名，课堂随机提问；
+	\item 独立高质量完成作业是学习本门课程的关键。
+\end{itemize}
+
+\begin{center} \begin{minipage}{3in}
+\begin{flushleft}
+	\includegraphics[width=\textwidth]{qrcode.jpg}
+\end{flushleft}
+\end{minipage}
+\end{center}
+
+
+% \vskip.15in
+% \noindent\textbf{注意事项:}  
+% \begin{itemize}
+% \item Regular attendance is essential and expected.
+% \end{itemize}
+
+% \vskip.15in
+% \noindent\textbf{Academic Honesty:}   Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation.
+
+
+%%%%%% THE END 
+\end{document} 
