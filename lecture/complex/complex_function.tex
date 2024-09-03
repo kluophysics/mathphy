@@ -159,6 +159,70 @@ $f(z)$的复共轭为$u(x,y) - \imath \; v(x,y)$.取决于$f(z)$,二者可能相
     \sin(2\theta) = 2\sin\theta \cos\theta, \quad \cos (2\theta) = \cos^2\theta - \sin^2\theta .
 \end{align}
 
+\begin{example}
+    应用de Moivre定理计算 $\sin(5\theta)$.
+\end{example}
+\begin{solution}
+    考虑复数 $z = \cos\theta + i\sin\theta$。根据de Moivre定理，计算 $z^5$：
+    \[
+    z^5 = (\cos\theta + i\sin\theta)^5 = \cos(5\theta) + i\sin(5\theta)
+    \]
+    
+    展开 $(\cos\theta + i\sin\theta)^5$ 使用二项式定理：
+    
+    \[
+    (\cos\theta + i\sin\theta)^5 = \sum_{k=0}^{5} \binom{5}{k} (\cos\theta)^{5-k} (i\sin\theta)^k
+    \]
+    
+    \[
+    = \binom{5}{0} \cos^5\theta + \binom{5}{1} \cos^4\theta(i\sin\theta) + \binom{5}{2} \cos^3\theta(i\sin\theta)^2 + \binom{5}{3} \cos^2\theta(i\sin\theta)^3 + \binom{5}{4} \cos\theta(i\sin\theta)^4 + \binom{5}{5}(i\sin\theta)^5
+    \]
+    
+    简化每一项：
+    
+    \[
+    = \cos^5\theta + 5i\cos^4\theta \sin\theta - 10\cos^3\theta \sin^2\theta - 10i\cos^2\theta \sin^3\theta + 5\cos\theta \sin^4\theta + i\sin^5\theta
+    \]
+    
+    将实部和虚部分离：
+    
+    \[
+    \cos(5\theta) = \cos^5\theta - 10\cos^3\theta \sin^2\theta + 5\cos\theta \sin^4\theta
+    \]
+    
+    \[
+    \sin(5\theta) = 5\cos^4\theta \sin\theta - 10\cos^2\theta \sin^3\theta + \sin^5\theta
+    \]
+    
+    利用幂次公式，$\cos^2\theta = 1 - \sin^2\theta$ 和 $\sin^2\theta = 1 - \cos^2\theta$，我们可以将 $\sin(5\theta)$ 表示为 $\sin\theta$ 和 $\cos\theta$ 的函数：
+
+    \[
+    \sin(5\theta) = 5\cos^4\theta \sin\theta - 10\cos^2\theta \sin^3\theta + \sin^5\theta
+    \]
+    
+    进一步化简 $\cos^4\theta = (1 - \sin^2\theta)^2$ 和 $\cos^2\theta = 1 - \sin^2\theta$，我们得到：
+    
+    \[
+    \sin(5\theta) = 5(1 - \sin^2\theta)^2\sin\theta - 10(1 - \sin^2\theta)\sin^3\theta + \sin^5\theta
+    \]
+    
+    这就是 $\sin(5\theta)$ 以 $\sin\theta$ 的表示形式。
+    
+    最终，简化表达式：
+    
+    \[
+    \sin(5\theta) = 5\sin\theta - 20\sin^3\theta + 16\sin^5\theta
+    \]
+    
+    因此，$\sin(5\theta)$ 通过de Moivre定理可以表示为 $\sin\theta$ 的函数：
+    \[
+    \sin(5\theta) = 5\sin\theta - 20\sin^3\theta + 16\sin^5\theta.
+    \]
+    
+\end{solution}
+
+
+
 利用$\cos \theta = \sqrt{1 - \sin ^2 \theta }$(取正),可以得到
 \begin{equation}
   e^{\imath \theta} = \sqrt{ 1 - \sin ^2 \theta } + \imath \sin \theta .  
