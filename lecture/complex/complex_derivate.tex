@@ -79,3 +79,22 @@ $(f+g)' = f' + g', (fg)' =f'g + fg'$等.与实变函数求导不同的是,复变
     \end{array}\right.
     \end{equation}
 其中两种推导作为习题.
+
+利用$z,\bar{z}$的关于$x,y$的定义,不难有
+\begin{equation}
+    d z=d x+i d y, \quad d \bar{z}=d x-i d y
+\end{equation}
+可得到
+\begin{equation}
+    \frac{\partial}{\partial z}=\frac{1}{2}\left(\frac{\partial}{\partial x}-i \frac{\partial}{\partial y}\right), \quad \frac{\partial}{\partial z}=\frac{1}{2}\left(\frac{\partial}{\partial x}+i \frac{\partial}{\partial y}\right)
+\end{equation}
+因此, 柯西黎曼方程意味着
+\begin{equation}
+    \frac{\partial f}{\partial \bar{z}}=0.
+\end{equation}
+$f$的全微分 仅由关于 $z$的微分给出, 即
+\begin{equation}
+\mathrm{d}f \equiv \frac{\partial f}{\partial z} \mathrm{~d} z+\frac{\partial f}{\partial \bar{z}} \mathrm{~d} \bar{z}=\frac{\partial f}{\partial z} \mathrm{~d} z
+\end{equation}
+这实际上就是解析的本质.
+
