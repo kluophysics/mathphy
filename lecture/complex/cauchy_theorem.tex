@@ -33,12 +33,14 @@
 若用逆时针方向积分表示,并考虑多个内边界$\ell_{i}$,我们有
 \begin{equation}
     \ointctrclockwise_{\ell_{out}} f(z) dz = \sum_{i=1}^{n} \ointctrclockwise_{\ell_{in}} f(z) dz .
+    \label{eq:cauchy_integral_summation}
 \end{equation}
 就是说,外边界逆时针方向积分等于所有内边界逆时针方向积分之和.只要积分起点和终点固定,当积分路径连续变形时(即不跳过奇点),函数的积分值不变.
 
 下面给出一个重要的例题.
 \begin{example}
 计算积分\[ I = \oint_\ell (z-\alpha)^n dz, \]其中$n$为整数.
+\label{ex:integral}
 \end{example}
 \begin{solution}
 首先,有柯西定理易知,若回路$\ell$不包含$\alpha$,则被积函数在$\ell$所围区域上是解析的,故积分值为零.下面讨论$\ell$包围$\alpha$的情形.

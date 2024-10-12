@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=1.5]
+    % 画复平面
+    \draw[->] (-3,0) -- (3,0) node[right] {$\Re(z)$};
+    \draw[->] (0,-3) -- (0,3) node[above] {$\Im(z)$};
+    
+    % 画半径为2的圆
+    \draw[blue, thick] (0,0) circle (2);
+    \node[blue] at (2.2,0) {$\gamma$};
+    
+    % 标出极点
+    \filldraw[red] (1,0) circle (0.05) node[below right] {$z=1$};
+    \filldraw[red] (-1,0) circle (0.05) node[below left] {$z=-1$};
+    
+    % 指示方向
+    \draw[->, blue, thick] (1.5,0.5) -- (1.6,0.6);
+\end{tikzpicture}

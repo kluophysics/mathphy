@@ -34,7 +34,7 @@
 \raisebox{-2.0pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
 
 
-\newcommand{\duedate}{\zhdate{2024/10/15}}
+\newcommand{\duedate}{\zhdate{2024/10/22}}
 \pagestyle{fancy}
 
 % \fancyhf{}
@@ -87,65 +87,89 @@
  
 
 \begin{problem}
-  证明
+  设 $\Psi(t, x)=e^{ \left(2 t x-t^2\right)}$, $t$是复变数, 试证: 
   $$
-  |\sinh{y}| \leq |\sin(x+\imath y)| \leq |\cosh{y}|.
+  \left.\frac{\partial^n \Psi(t, x)}{\partial t^n}\right|_{t=0}=(-1)^n e^{x^2} \frac{d^n}{d x^n} e^{-x^2}.
   $$
-  提示: $\cosh^2{x} = 1+\sinh^2{x}$.
-  \end{problem}
-
-\begin{problem}
-  求解方程
-  $$
-  2 \cosh^2 z - 3\cosh z +1 = 0.
-  $$
-  \end{problem}
-
-\begin{problem}
-  验证解析函数的实部和虚部满足二维拉普拉斯方程. 若将解析函数$f(z)$写成极坐标的形式$f(z) = R(r,\theta) e^{\imath \Theta(r,\theta)}$,
-验证
-\begin{itemize}
-\item $\frac{\partial R}{\partial r}=\frac{R}{r} \frac{\partial \Theta}{\partial \theta}$,
-\item $\frac{1}{r} \frac{\partial R}{\partial \theta}=-R \frac{\partial \Theta}{\partial r}$.
-\end{itemize}
+  提示: 对回路积分进行积分变数的代换 $\xi=z-x$.
 \end{problem}
 
 \begin{problem}
-  若将复变函数$f(z)=u+\imath v$看成是$x,y$的二元函数.再看成是$z=x+\imath y, z^*= x-\imath y$,的二元函数,试证明Cauchy-Riemann方程等价于
+  根据模最大原理,
+  求 $|\sin z|$ 在闭区域 $0 \leq \Re z \leq 2 \pi, 0 \leq \Im z \leq 2 \pi$ 中的最大值.
+\end{problem}
+
+\begin{problem}
+  $f(z)$ 在全平面解析, 且 $|f(z)| \geq 1$, 证明 $f(z)$ 为常数.
+  \\
+  提示:考虑$F(z) = \frac{1}{f(z)}$.
+\end{problem}
+
+\begin{problem}
+  设 $f(z)$ 在区域 $B$ 内解析, $C$ 为 $B$ 内任一简单闭曲线, 证明对于 $G$ 内, 
+  但不在 $C$ 上的 任一点 $z$, 
   $$
-  \frac{\partial f}{\partial z^{*}} = 0.
+  \oint_C \frac{f^{\prime}(\xi)}{\xi-z} d \xi=\oint_C \frac{f(\xi)}{(\xi-z)^2} d \xi.
   $$ 
-  提示: 利用$x=(z+z^*)/2, y=(z-z^*)/(2\imath)$.
 \end{problem}
 
 \begin{problem}
-  证明:若函数 $f ( z )$ 在区域 $B$内解析,其模为一常数,则函数 $f ( z )$ 本身也必为一常数.
+  计算:
+  \begin{itemize}
+    \item 
+    (i) $\int_{|z|=1} \frac{d z}{z}$;
+    (ii) $\int_{|z|=1} \frac{d z}{|z|}$;
+    (iii) $\int_{|z|=1} \frac{|d z|}{z}$;
+    (iv) $\int_{|z|=1}\left|\frac{d z}{z}\right|$ .
+
+    \item  $\oint_C \frac{\sin \frac{\pi z}{4}}{z^2-1} d z, C$ 分别为
+
+    (i) $|z|=\frac{1}{2}$,
+    (ii) $|z-1|=1$,
+    (iii) $|z|=3$.
+    
+  \end{itemize}
 \end{problem}
 
 \begin{problem}
-  若 $f(z)$ 和 $g(z)$ 在 $z=a$ 点解析, 且 $f(a)=g(a)=0$, 而 $g^{\prime}(a) \neq 0$, 试证:
-  $$
-\lim _{z \rightarrow a} \frac{f(z)}{g(z)}=\frac{f^{\prime}(a)}{g^{\prime}(a)}.
-$$
-\end{problem}
-
-\begin{problem}
-  找出下列函数的支点,并讨论$z$绕各支点一周回到原处函数值的变化.
+  判断下列级数的收敛性及绝对收敛性:
   \begin{enumerate}
-    \item $\sqrt[3]{1-z^3}$,
-    \item $\sqrt{\frac{z-a}{z-b}}$,
-    \item $\ln{(z^2 + 1)}$.
+    \item $\sum \frac{i^n}{\ln n}$;
+    \item $\sum \frac{i^n}{n}$;
+    \item  交错调和级数(除此之外，求其值).
   \end{enumerate}
 \end{problem}
 
-\begin{problem}
-  验证
-  $$\oint_C \frac{d z}{z^2+z}=0,
-  $$
-  路径$C$由$|z|=R>1$确定的圆.\\
 
-  提示: 直接应用柯西定理是错误的,需要分解因式裂项.
+\begin{problem}
+  确定下列级数的收敛半径（或收敛区域):
+  \begin{enumerate}
+    \item $\sum z^n$;
+    \item $\sum \frac{1}{2^n n^n} z^n$;
+    \item $\sum \frac{n !}{n^n} z^n$;
+    \item $\sum n^{\ln{n}} z^n$;
+    \item $\sum 2^n \sin \frac{z}{3^n}$;
+    \item $\sum \frac{\ln \left(n^n\right)}{n !} z^n$.
+  \end{enumerate}
 \end{problem}
+
+% \begin{problem}
+%   找出下列函数的支点,并讨论$z$绕各支点一周回到原处函数值的变化.
+%   \begin{enumerate}
+%     \item $\sqrt[3]{1-z^3}$,
+%     \item $\sqrt{\frac{z-a}{z-b}}$,
+%     \item $\ln{(z^2 + 1)}$.
+%   \end{enumerate}
+% \end{problem}
+
+% \begin{problem}
+%   验证
+%   $$\oint_C \frac{d z}{z^2+z}=0,
+%   $$
+%   路径$C$由$|z|=R>1$确定的圆.\\
+
+%   提示: 直接应用柯西定理是错误的,需要分解因式裂项.
+% \end{problem}
 
 % \begin{problem}
 % \end{problem}
