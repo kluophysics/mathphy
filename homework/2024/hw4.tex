@@ -1,0 +1,152 @@
+\documentclass[11pt]{article}
+% \documentclass{assignment}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+
+% http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=527&i=1
+% \let\oldjuhao=。
+% \catcode`\。=\active
+% \newcommand{。}{\ifmmode\text{\oldjuhao}\else\oldjuhao\fi}
+
+% \let\olddouhao=，
+% \catcode`\，=\active
+% \newcommand{，}{\ifmmode\text{\olddouhao}\else\olddouhao\fi}
+
+% \setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti]{STSong}
+% \setCJKsansfont[BoldFont=STHeiti]{STXihei}
+% \setCJKmonofont{STFangsong}
+% \setCJKfamilyfont{song}{SimSun}                           
+% \newcommand{\song}{\CJKfamily{song}}  
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\theoremstyle{remark}
+\newtheorem{problem}{}
+
+
+% \newenvironment{problem}[2][]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.0pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{\zhdate{2024/10/30}}
+\pagestyle{fancy}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法}
+\zhnumsetup{style={Traditional,Financial}}
+\fancyhead[R]{课后习题肆} 
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+
+
+% \title{习题01}
+% \author{截止日期: }
+% \author{罗凯\\
+% 数学物理方法}
+% \date{截止日期:}
+% \maketitle
+ 
+
+\begin{problem}
+  在指定的点 $z_0$ 的邻域上将下列函数展开为泰勒级数.
+  \begin{enumerate}
+    \item $\arctan z$的主值, 在 $z_0=0$;(提示:试着利用级数展开然后逐项积分.)
+    \item $\ln z$ 在 $z_0=\imath$;
+    \item $\ln \left(1+e^z\right)$ 在 $z_0=0$.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  在指定环域上(或可去除奇点$z_0$处)将下列函数展开为洛朗级数.
+  \begin{enumerate}
+    \item$1 / z^2(z-1)$ 在 $z_0=1$;
+    \item $1 /(z-2)(z-3)$ 在 $|z|>3$;
+    \item $\ln \left(1+e^z\right)$ 在 $z_0=0$;
+    \item $\frac{1}{z(z+1)}$, 在 $1<|z-i|<\sqrt{2}$.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+ 求下列函数在指定点 $z_0$ 的留数:
+
+ \begin{enumerate}
+  \item  $\frac{e^{z^2}}{z-1}, z_0=1$;
+  \item $\frac{e^{z^2}}{(z-1)^2}, \quad z_0=1$;
+  \item $\left(\frac{z}{1-\cos z}\right)^2, z_0=0$;
+  \item  $\frac{1+e^z}{z^4}, z_0=0$;
+  \item $\frac{1}{z^2 \sin z}, z_0=0$.
+ \end{enumerate}
+
+\end{problem}
+
+
+  
+\begin{problem}
+分情况讨论 $F(z)=\frac{f^{\prime}(z)}{f(z)}=\frac{d}{d z} \ln f(z)$ 在 $z=a$ 点的性质, 
+  若 $a$ 点是 $f(z)$ 的: 
+  \\
+  (1) $m$ 阶零 点; 
+  \\
+  (2) $m$ 阶极点.
+  \\
+  如果 $z=a$ 是 $F(z)$ 的孤立奇点的话, 则求出函数 $F(z)$ 在该点的留数.
+\end{problem}
+
+
+\begin{problem}
+  计算下列积分值
+  \begin{enumerate}
+    \item $\oint_C \frac{d z}{1+z^4}, C$ 为 $|z-1|=1$;
+    \item $\oint_{|z|=2} \frac{1}{z^3\left(z^{10}-2\right)} d z$;
+    \item $\oint_{|z|=1} \frac{e^z}{z^3} d z$; 
+    \item $\int_0^{2 \pi} \frac{d x}{(a+b \cos x)^2}, \quad a>b>0$;
+    \item $\int_{-\infty}^{\infty} \frac{d x}{(x^2 + a^2)(x^2+b^2)}, \quad a>0, b>0$;
+    \item $\int_{-\infty}^{\infty} \frac{x^2 d x}{\left(x^2+1\right)\left(x^2-2 x \cos \theta+1\right)}, \theta$ 为实数, 且 $\sin \theta \neq 0$.
+  \end{enumerate}
+
+\end{problem}
+
+\end{document}
