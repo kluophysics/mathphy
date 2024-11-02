@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+% \documentclass{assignment}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+
+% http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=527&i=1
+% \let\oldjuhao=。
+% \catcode`\。=\active
+% \newcommand{。}{\ifmmode\text{\oldjuhao}\else\oldjuhao\fi}
+
+% \let\olddouhao=，
+% \catcode`\，=\active
+% \newcommand{，}{\ifmmode\text{\olddouhao}\else\olddouhao\fi}
+
+% \setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti]{STSong}
+% \setCJKsansfont[BoldFont=STHeiti]{STXihei}
+% \setCJKmonofont{STFangsong}
+% \setCJKfamilyfont{song}{SimSun}                           
+% \newcommand{\song}{\CJKfamily{song}}  
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\theoremstyle{remark}
+\newtheorem{problem}{}
+
+
+% \newenvironment{problem}[2][]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.0pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{\zhdate{2024/11/07}}
+\pagestyle{fancy}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法}
+\zhnumsetup{style={Traditional,Financial}}
+\fancyhead[R]{课后习题伍} 
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+
+
+\begin{problem}
+  计算积分
+  $$
+  \int_0^{2 \pi} \cos ^{2 n} x d x \text {. }
+  $$
+  \end{problem}
+  
+\begin{problem}
+  计算积分
+  $$
+  \int_{-\infty}^{\infty} \frac{e^{\imath m x}}{x-\imath \alpha} d x,
+  $$
+  和
+  $$
+  \int_{-\infty}^{\infty} \frac{e^{\imath m x}}{x+\imath \alpha} d x.
+  $$
+  其中$m>0, \Re \alpha > 0$.
+\end{problem}
+
+\begin{problem}
+  试推导多目标变量泛函$J\left(u_1, u_2, \cdots, u_n, u_1^{\prime}, u_2^{\prime}, \cdots, u_n^{\prime} \mid x\right)$
+  取极值的欧拉方程是
+  $$
+  \frac{\partial L}{\partial u_i}-\frac{\partial}{\partial x}\left(\frac{\partial L}{\partial u_i^{\prime}}\right)=0 .
+  $$
+  \end{problem}
+  
+  
+\begin{problem}
+  过二已知点 $\left(x_1, y_1\right),\left(x_2, y_2\right)$ 作一曲线, 使此曲线绕 $x$ 轴旋转所得曲面面积最小, 求曲线满足的微分方程.
+\end{problem}
+    
+
+\begin{problem}
+求泛函
+$$
+J[y] = \int_0^1 \left[ \left(x \frac{dy}{dx} \right)^2 + 2 y^2 \right] dx
+$$
+在边界条件为$y(0) = 0, y(1) = 1$下的最小值.
+\end{problem}
+
+\begin{problem}
+  请求解最速降线的解, 它对应的泛函表示为
+  $$
+  T[u] = \int_{x_0}^{x_1} \frac{\sqrt{1+u^{\prime 2}}}{\sqrt{2 g\left(y_0-u\right)}} d x .
+  $$
+\end{problem}
+
+\begin{problem}
+证明对于矩形波,
+$f(x)=\left\{ \begin{array}{ll}-1, & x<0 \\ +1, &  x>0\end{array}\right.$, 其傅里叶级数为
+$$
+f(x)=\frac{4}{\pi} \left[  \sin \pi x+\frac{1}{3} \sin 3 \pi+\frac{1}{5 } \sin 5 x+\cdots \right].
+$$
+\end{problem}
+
+\end{document}
