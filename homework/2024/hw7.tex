@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+% \documentclass{assignment}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\theoremstyle{remark}
+\newtheorem{problem}{}
+
+
+% \newenvironment{problem}[2][]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.0pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{\zhdate{2024/11/21}}
+\pagestyle{fancy}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法}
+\zhnumsetup{style={Traditional,Financial}}
+\fancyhead[R]{课后习题柒} 
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+\begin{problem}
+    计算下列表达式的拉普拉斯变换的像函数
+    \begin{enumerate}
+      \item $$
+      \frac{1}{t}\left(e^{\beta t}-e^{\alpha t}\right) ;
+      $$
+      \item $$
+      \int_0^t \frac{\sin u}{u} d u;
+      $$
+      \item 
+      $$
+      \frac{1}{\sqrt{\pi t}}.
+      $$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    计算下列表达式的拉普拉斯变换的原函数
+    \begin{enumerate}
+      \item $$
+      \bar{f}(p)=\frac{3 p}{p^2-1} ;
+      $$
+      \item $$
+      \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}.
+      $$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    利用拉普拉斯变换计算:  $$\int_0^{\infty} \frac{\sin x t}{t} dt. $$
+\end{problem}
+   
+\begin{problem}
+用拉普拉斯反变换中的Bromwich(又称黎曼-梅林)积分求
+$$
+\frac{p}{p^2 - \omega^2}
+$$
+的原函数.
+\end{problem}
+
+\begin{problem}
+    利用拉普拉斯变换求解微分方程
+    $$
+      \frac{d^3 y}{d t^3}+3 \frac{d^2 y}{d t^2}+3 \frac{d y}{d t}+y=6 e^{-t}, 
+      \quad y(0)=\left.\frac{d y}{d t}\right|_{t=0}=\left.\frac{d^2 y}{d t^2}\right|_{t=0}=0 .
+    $$
+\end{problem}
+  
+
+\begin{problem}
+    将 $\delta(x)$ 展为实数形式的傅里叶积分.
+\end{problem}
+
+\begin{problem}
+    用$\Gamma$函数求积分
+    $$
+    \int_0^\infty x^{\alpha -1 } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx,
+    $$
+    其中$\alpha > 0, -\frac{\pi}{2} < \theta < \frac{\pi}{2}$.  
+\end{problem}
+
+  
+  
+\begin{problem}
+用$B$函数求积分
+$$
+\int_0^{\frac{\pi}{2}} \tan^\alpha{\theta} \,  d\theta, \quad  -1 < \alpha < 1.
+$$
+\end{problem}
+    
+
+% \begin{problem}
+% \end{problem}
+
+% \begin{problem}
+% \end{problem}
+
+% \begin{problem}
+% \end{problem}
+
+\end{document}
