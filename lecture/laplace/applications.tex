@@ -25,6 +25,46 @@ $$
     \sum_{n=1} ^{\infty}  \frac{1}{n^2} = \frac{\pi^2}{6}.
 \end{equation}
 
+\begin{note}
+    Use Parseval's identity (applied to the function $f(x)=x$ ) to obtain
+
+    $$
+    \sum_{n=-\infty}^{\infty}\left|c_n\right|^2=\frac{1}{2 \pi} \int_{-\pi}^\pi x^2 d x
+    $$
+    
+    where
+    
+    $$
+    \begin{aligned}
+    c_n & =\frac{1}{2 \pi} \int_{-\pi}^\pi x e^{-i n x} d x \\
+    & =\frac{n \pi \cos (n \pi)-\sin (n \pi)}{\pi n^2} i \\
+    & =\frac{\cos (n \pi)}{n} i \\
+    & =\frac{(-1)^n}{n} i
+    \end{aligned}
+    $$
+    
+    for $n \neq 0$, and $c_0=0$. Thus,
+    
+    $$
+    \left|c_n\right|^2= \begin{cases}\frac{1}{n^2}, & \text { for } n \neq 0 \\ 0, & \text { for } n=0\end{cases}
+    $$
+    
+    and
+    
+    $$
+    \sum_{n=-\infty}^{\infty}\left|c_n\right|^2=2 \sum_{n=1}^{\infty} \frac{1}{n^2}=\frac{1}{2 \pi} \int_{-\pi}^\pi x^2 d x
+    $$
+    
+    
+    Therefore,
+    
+    $$
+    \sum_{n=1}^{\infty} \frac{1}{n^2}=\frac{1}{4 \pi} \int_{-\pi}^\pi x^2 d x=\frac{\pi^2}{6}
+    $$
+    
+    as required.
+\end{note}
+
 \subsubsection{求解定积分}
 如果 $\int_v^{\infty} \bar{f}(q) d q$ 存在, 且当$t\to 0$时, $|f(t)/t|$有界,则
 \begin{equation}
