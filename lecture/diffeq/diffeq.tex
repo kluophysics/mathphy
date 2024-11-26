@@ -13,39 +13,47 @@ L=\sum_{\nu=0}^n p_\nu(x) \frac{d^\nu}{d x^\nu}, P_\nu(x) \text { 任意 }
 $$
 类似的 $\frac{d^2}{d x^2}$ 也是线性算子.
 \section{一阶常微分方程}
-
-(1)可分离形式.
+下面讨论一阶微分方程
+\begin{equation}
+    y' = f(x,y),
+\end{equation}
+或写成对称形式的一阶微分方程
+\begin{equation}
+    p(x,y) dx + q(x,y) dy = 0,
+\end{equation}
+这里$f(x,y), p(x,y), q(x,y)$均表示含$x,y$两个变量的解析表达式. 当微分方程写为这种对称形式时,
+变量$x,y$处于平等地位, 可将$x$或$y$看成是未知函数.
+\subsection{可分离变量的方程.}
 $$
 \begin{gathered}
-\frac{d y}{d x}=-\frac{P(x)}{Q(y)} \\
-\Rightarrow P(x) d x+Q(y) d y=0 . \\
-\int_{x_0}^x P(x) d x+\int_{y_0}^y Q(y) d y=0 .
+\frac{d y}{d x}=-\frac{p(x)}{q(y)} \\
+\Rightarrow p(x) d x+q(y) d y=0 . \\
+\int p(x) d x+\int q(y) d y=C .
 \end{gathered}
 $$
-分离变是的方程其实不需要微分方程线性.
+这里的积分常数已单独写出.两个不定积分的原函数分别是$P(x), Q(y)$, 则上式的通解为
+$P(x) + Q(y) = C$.
 
-全该分分形式.
+分离变量的方程其实不需要微分方程线性.
+考虑全微分形式
 $$
 \begin{aligned}
-& p(x, y) d x+Q(x, y) d y=0 \\
+& p(x, y) d x+q(x, y) d y=0 \\
 & d \varphi=\frac{\partial \varphi}{\partial x} d x+\frac{\partial \varphi}{\partial y} d y=0 .
 \end{aligned}
 $$
 
 $$
 \left\{\begin{array}{l}
-\frac{\partial \varphi}{\partial x}=P(x, y) . \\
-\frac{\partial \varphi}{\partial y}=Q(x, y) .
+\frac{\partial \varphi}{\partial x}=p(x, y) . \\
+\frac{\partial \varphi}{\partial y}=q(x, y) .
 \end{array}\right.
 $$
 若 $\varphi$ 满足上式,则 $\varphi(x, y)=C$.
-当且仅当$\frac{\partial P(x, y)}{\partial y} = \frac{\partial Q(x, y)}{\partial x}$
-$$
-\begin{gathered}
-\varphi(x, y)=\int_{x_0}^x P(x, y) d x+\int_{y_0}^y Q(x_0, y) \\
-\equiv C .
-\end{gathered}
-$$
+当且仅当$\frac{\partial p(x, y)}{\partial y} = \frac{\partial q(x, y)}{\partial x}$
+\begin{equation}
+\varphi(x, y)=\int_{x_0}^x p(x, y) d x+\int_{y_0}^y q(x_0, y) \equiv C  
+\end{equation}
 
 $$
 \begin{aligned}
@@ -65,7 +73,7 @@ $$
 \Rightarrow(x+y) d x+x d y=0
 $$
 $$
-\text { 由于 } \frac{\partial P}{\partial y}=1, \frac{\partial Q}{\partial x}=1
+\text { 由于 } \frac{\partial p}{\partial y}=1, \frac{\partial q}{\partial x}=1
 $$
 
 可得 $d \varphi=0$
@@ -80,8 +88,22 @@ $\Rightarrow \varphi=\int_{x_0}^x(x+y) d x+\int_{y_0}^y x_0 d y$
     \end{equation}
 \end{solution}
 
+下面考虑可以换元法解决的方程, 它的形式为
+\begin{equation}
+    \frac{dy}{dx} = f(a x + by + c), b\neq 0
+\end{equation}
+我们可以采用换元$u = ax + by$, 将$u$作为未知函数,有$a dx + b dy = du $,
+可以化为
+\begin{equation}
+    du  = ( a + b f(u+c) ) dx,
+\end{equation}
+变成了可分离变量形式. 我们可得$u  = \varphi (x, C)$, 原方程解为
+\begin{equation}
+    y = \frac{1}{b} \left(\varphi(x, C) - a x \right).
+\end{equation}
 
-今 $y=x^{m}v$
+\subsection{权重法}
+令 $y=x^{m}v$
 $$
 \begin{aligned}
 & \left(x^2-y\right) d x+x d y=0 . \\
@@ -109,58 +131,71 @@ $$
     y=x^2 v=x^2\left(\frac{c}{x}-1\right) = -x^2+c x 
 \]
 
-
-一般一阶线性常微分方程.
-$$
-\frac{d y}{d x}+P(x) y=Q(x)
-$$
+\subsection{一阶线性方程}
+一般一阶线性常微分方程的标准形式为
+\begin{equation}
+    \frac{d y}{d x}+p(x) y=q(x).
+\end{equation}
+当$q(x) \equiv 0$时, 上式为特殊形式
+\begin{equation}
+    \frac{d y}{d x}+p(x) y = 0.
+\end{equation}
+成为\textbf{一阶线性其次方程}
 
 两边同时乘以 $\alpha(x)$ .
-$$
-\begin{aligned}
-& \alpha \frac{d y}{d x}+\alpha Py=\alpha Q \\
-& \frac{d}{d x}(\alpha y)=\frac{d \alpha}{d x} y+\alpha \frac{d y}{d x} .
-\end{aligned}
-$$
-使左式是一个全微分
-$$
-\begin{aligned}
-& \frac{d \alpha}{d x}=\alpha P \\
-\Rightarrow & \frac{d \alpha}{\alpha}=P d x \\
-\Rightarrow  &  \alpha(x)=e^{\int P(x) d x}
-\end{aligned}
-$$
-
-
-$$
-\begin{aligned}
-& \frac{d}{d x}(\alpha y)=\alpha Q \\
-& \alpha y=\int^x \alpha(x) Q(x) d x+c \\
-& y=\frac{1}{\alpha(x)}\left[\int^x \alpha(y) Q(y) d y+c\right] \\
-& \equiv y_1(x)+y_2(x) \\
-\end{aligned}
-$$
-可以分成两个解
-$$
-\begin{aligned}
-& y_1(x)=\frac{1}{\alpha(x)} \int^x \alpha(y) Q(y) d y \\
-& y_2(x)=\frac{c}{\alpha(x)}
-\end{aligned}
-$$
-
-所以
-$y_2(x)=\frac{c}{\alpha(x)}$是齐次方程的通解,
-而 $y_1(x)=\frac{1}{\alpha(x)} \int^x \alpha(y) Q(y) d y$是方程的特解.
-
-微分方程的解为
-特解+通解.
-
-
-(2) 常系数的常微分方程 (ODE).
 \begin{equation}
-\frac{d^n y}{d x^n}+a_{n-1}\frac{d^{n-1} }{d x^{n-1}} y  + \cdots +a_{-1} \frac{d}{d x} y+a_0 y=F(x)
+     \alpha \frac{d y}{d x}+\alpha p y=\alpha q 
+\end{equation}
+而对$\alpha y$求导有
+\begin{equation}
+    \frac{d}{d x}(\alpha y)=\frac{d \alpha}{d x} y+\alpha \frac{d y}{d x} .
+\end{equation}
+为了使左式是一个全微分, 比较两式要求
+$\frac{d \alpha}{d x}=\alpha p $, 即 $\frac{d \alpha}{\alpha}=p d x $. 于是有
+\begin{equation}
+    \alpha(x)=e^{\int p(x) d x}.
 \end{equation}
 
+回到原问题,需求
+$$\frac{d}{d x}(\alpha y)=\alpha q $$
+即
+\begin{equation}
+    y=\frac{1}{\alpha(x)}\left[\int^x \alpha(t) q(t) dt+C\right] \equiv y_1(x)+y_2(x)
+\end{equation}
+这里，我们将该解分成两个部分
+\begin{equation}
+\begin{aligned}
+& y_1(x)=\frac{1}{\alpha(x)} \int^x \alpha(t) q(t) d t \\
+& y_2(x)=\frac{C}{\alpha(x)}
+\end{aligned}
+\end{equation}
+可以看出, $y_2(x)=\frac{c}{\alpha(x)}$是齐次方程的通解,
+而 $y_1(x)=\frac{1}{\alpha(x)} \int^x \alpha(t) q(t) d t$是方程的特解.
+一般地, 微分方程的解是\textbf{特解}加\textbf{通解}的形式.
+
+\subsection{几类特殊的二阶方程}
+\subsubsection{ $y'' = f(x)$ 型}
+此类方程只需要积分两次就可以得到通解
+\begin{equation}
+    y = \int F(x) dx + C_1 x + C_2
+\end{equation}
+其中$F(x) = \int f(x) dx$, $C_1, C_2$是积分常数.
+\subsubsection{ $y'' = f(x, y')$ 型}
+利用换元$u = y'$, 则有$u' = y''$, 原方程化为一阶方程
+$$ u' = f(x,u)$$
+该解为$u = \varphi(x, C_1)$, 原方程解为
+\begin{equation}
+    y = \int \varphi(x, C_1) dx  + C_2.
+\end{equation}
+% \subsubsection{ $y'' = f(y, y')$ 型}
+
+
+\subsection{ 常系数的常微分方程 (ODE)}
+常系数的常微分方程的标准形式为
+\begin{equation}
+\frac{d^n y}{d x^n}+a_{n-1}\frac{d^{n-1} }{d x^{n-1}} y  + \cdots +a_{1} \frac{d}{d x} y+a_0 y=F(x)
+\end{equation}
+其中$a_i$为常数.
 $$
 \Rightarrow \text { 解的形式为 } y=e^{m x}
 $$
@@ -170,31 +205,50 @@ $$
 m^n+a_{n-1} m^{n-1}+\cdots a_1 m+a_0=0
 $$
 
-如谐振子方程
+对于二阶常系数线性齐次方程, $$
+y'' + a y' + by = 0,
+$$
+代数方程化成
+\begin{equation}
+    m^2 + a m + b = 0
+\end{equation}
+该方程成为微分方程的\textbf{特征方程}，其解为\textbf{特征根}. 如果两根不同
+则有通解
+\begin{equation}
+    y = C_1 e^{m_1 x} +  C_2 e^{m_2 x} 
+\end{equation}
+若特征根为二重实根$m$, 则解为 
+\begin{equation}
+    y = (C_1 + C_2  x) e^{m x}
+\end{equation}
+% 如果有两个
+\begin{example}
+    谐振子方程
 $$
 \begin{aligned}
 & m \frac{d X^2}{d t^2}=-k X(t) \\
 & X''+a_0 X=0, a_0=\frac{k}{m} . \\
 & m^2+a_0=0 \\
 & \Rightarrow m= \pm i \sqrt{a_0}= \pm i \omega \quad \omega=\sqrt{\frac{k}{m}} \\
-& y(t)=c e^{+i \omega t}+D_{\infty} e^{-i \omega t} . \\
-& \text { 或 } c_1 \cos \omega t+D_1 \sin \omega t
+& y(t)=C_1 ^{+i \omega t}+D_{1} e^{-i \omega t} . \\
+& \text { 或 } C_1 \cos \omega t+D_1 \sin \omega t
 \end{aligned}
 $$
+\end{example}
 
 
 \section{二阶线性常微分方程（齐次）}
 $$
-y''+P(x) y '+Q(x) y=0
+y''+p(x) y '+q(x) y=0
 $$
-$x_0$ 时, $P\left(x_0\right), Q\left(x_0\right)$ 有限,称 $x_0$为ODE的常点
-$P\left(x_0\right), Q\left(x_0\right) \rightarrow \infty$称 $x_0$为ODE的奇点
+$x_0$ 时, $p\left(x_0\right), q\left(x_0\right)$ 有限,称 $x_0$为ODE的常点
+$p\left(x_0\right), q\left(x_0\right) \rightarrow \infty$称 $x_0$为ODE的奇点
 
 常奇点(或正则奇点) $$\left\{\begin{array}{l}
     \left(x-x_0\right) p\left(x_0\right) \text{有限}
     \\
-    \left(x-x_0\right)^2 Q(x) \text{有限}
-    \\ P\left(x_0\right), Q(x) \rightarrow \infty .\end{array}
+    \left(x-x_0\right)^2 q(x) \text{有限}
+    \\ p\left(x_0\right), q(x) \rightarrow \infty .\end{array}
     \right.$$
 其他情况为非常奇点.
 
@@ -336,8 +390,8 @@ y_2(z) & =\sum_{k=-\infty}^{\infty} b_k\left(z-z_0\right)^{s_2+k} . \\
 $$
 
 
-级数解有限个负幂项称为正则奇点 $P(z): \sum_{k=-1}^{\infty}$
-$Q(z) : \sum_{k=-2}^{\infty}$
+级数解有限个负幂项称为正则奇点 $p(z): \sum_{k=-1}^{\infty}$
+$q(z) : \sum_{k=-2}^{\infty}$
 
 有判定方程,
 $$
@@ -355,13 +409,13 @@ $$
 $$
 \begin{aligned}
 & \left(y_1 y_2''-y_1'' 
-y_2\right)+P\left(y_1 y_2'-y_1' y_2\right) = 0\\
-& \frac{d \Delta}{d z} - P \Delta(z)=0
+y_2\right)+p\left(y_1 y_2'-y_1' y_2\right) = 0\\
+& \frac{d \Delta}{d z} - p \Delta(z)=0
 \end{aligned}
 $$
 
 $$
-\Delta(z)=\Delta_0 e^{-\int P(x) d x}
+\Delta(z)=\Delta_0 e^{-\int p(x) d x}
 $$
 
 $$
