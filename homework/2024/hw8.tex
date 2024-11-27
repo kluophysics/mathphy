@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+% \documentclass{assignment}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\theoremstyle{remark}
+\newtheorem{problem}{}
+
+
+% \newenvironment{problem}[2][]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.0pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{\zhdate{2024/12/03}}
+\pagestyle{fancy}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法}
+\zhnumsetup{style={Traditional,Financial}}
+\fancyhead[R]{课后习题捌} 
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+\begin{problem}
+  一长为 $\ell$ 的均匀金属细杆 (可近似看作一维的), 
+  通有恒定电流。设杆的一端 $(x=0$ )温度恒为 0 , 另一端 $(x=\ell)$ 恒为 $T_0$, 
+  初始时温度分布为 $\frac{T_0}{\ell} x$.
+  试写出杆中温度场所满足的方程, 边界条件与初始条件。
+\end{problem}
+
+\vspace{2em}
+
+\begin{problem}
+ 将下面的偏微分方程化成标准形式.
+ \begin{itemize}
+  \item [(1)] $
+  u_{x x}+4 u_{x y}+5 u_{y y}+u_x+2 u_y=0;
+  $
+  \item [(2)]
+  $
+  u_{x x}+x u_{y y}=0.
+  $
+
+ \end{itemize}
+
+\end{problem}
+  
+
+\begin{problem}
+请利用高斯定理推导出真空中有源静电场方程,请问求解需要初始条件吗？请用文字说明.
+\end{problem}
+
+\begin{problem}
+  课堂上，我们将$x,y$变量代换成$\xi, \eta$给出了$u_{xy}$的表达式，请推导验证
+  $$
+  u_{x x} 
+  % =\left(u_{\xi \xi} \xi_x^2+u_{\xi \eta} \xi_x \eta_x+u_{\xi} \xi_{x x}\right)+\left(u_{\eta \xi} \eta_x \xi_x+u_{\eta \eta} \eta_x^2+u_\eta \eta_{x x}\right) \\
+  =u_{\xi \xi} \xi_x^2+2 u_{\xi \eta} \xi_x \eta_x+u_{\eta \eta} \eta_x^2+u_{\xi} \xi_{x x}+u_\eta \eta_{x x}.
+  $$.
+\end{problem}
+   
+\begin{problem}
+  整数$m$阶贝塞尔方程(Bessel's equation)
+  $$
+    x^2 y^{\prime \prime}+x y^{\prime}+\left(x^2-m^2\right) y = 0, 
+  $$
+的Laplace变换($m = 0$)为一阶常微分方程
+  $$
+   (p^2 + 1) f'(p) + pf(p) = 0.
+  $$
+   试求解$f(p)$.
+\end{problem}
+
+\begin{problem}
+求$$
+(2x + e^{y^2}) dx + (2xy e^{y^2} -2y ) dy = 0
+$$
+的通解.
+\end{problem}
+  
+
+
+
+  
+  
+
+
+% \begin{problem}
+% \end{problem}
+
+% \begin{problem}
+% \end{problem}
+
+% \begin{problem}
+% \end{problem}
+
+\end{document}
