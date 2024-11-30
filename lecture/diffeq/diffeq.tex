@@ -173,21 +173,7 @@ $$\frac{d}{d x}(\alpha y)=\alpha q $$
 而 $y_1(x)=\frac{1}{\alpha(x)} \int^x \alpha(t) q(t) d t$是方程的特解.
 一般地, 微分方程的解是\textbf{特解}加\textbf{通解}的形式.
 
-\subsection{几类特殊的二阶方程}
-\subsubsection{ $y'' = f(x)$ 型}
-此类方程只需要积分两次就可以得到通解
-\begin{equation}
-    y = \int F(x) dx + C_1 x + C_2
-\end{equation}
-其中$F(x) = \int f(x) dx$, $C_1, C_2$是积分常数.
-\subsubsection{ $y'' = f(x, y')$ 型}
-利用换元$u = y'$, 则有$u' = y''$, 原方程化为一阶方程
-$$ u' = f(x,u)$$
-该解为$u = \varphi(x, C_1)$, 原方程解为
-\begin{equation}
-    y = \int \varphi(x, C_1) dx  + C_2.
-\end{equation}
-% \subsubsection{ $y'' = f(y, y')$ 型}
+
 
 
 \subsection{ 常系数的常微分方程 (ODE)}
@@ -253,6 +239,11 @@ $p\left(x_0\right), q\left(x_0\right) \rightarrow \infty$称 $x_0$为ODE的奇�
 其他情况为非常奇点.
 
 
+下面给出几种重要的ODE的常奇点
+\begin{note}
+    注意这里的$\infty$为常奇点的情况具体
+    解释我们并没有给出, 它的解决需要用$z=1/x$的代换研究$z=0$时的情形, 具体讨论这里略去.
+\end{note}
 (1) 超几何(hypergeometic):
 $$
 x(x-1) y''+[(1+a+b) x+c] y'+a b y= 0
@@ -280,6 +271,28 @@ $$
 x y''+(1-x) y'+a y=0,
 $$
 常奇点 $0$.
+(6) 贝塞尔(Bessel)
+$$
+x^2 y'' + xy' + (x^2 - n^2) y = 0
+$$
+常奇点$0$.
+
+\subsection{几类特殊的二阶方程}
+\subsubsection{ $y'' = f(x)$ 型}
+此类方程只需要积分两次就可以得到通解
+\begin{equation}
+    y = \int F(x) dx + C_1 x + C_2
+\end{equation}
+其中$F(x) = \int f(x) dx$, $C_1, C_2$是积分常数.
+\subsubsection{ $y'' = f(x, y')$ 型}
+利用换元$u = y'$, 则有$u' = y''$, 原方程化为一阶方程
+$$ u' = f(x,u)$$
+该解为$u = \varphi(x, C_1)$, 原方程解为
+\begin{equation}
+    y = \int \varphi(x, C_1) dx  + C_2.
+\end{equation}
+% \subsubsection{ $y'' = f(y, y')$ 型}
+
 
 \subsection{常点邻域上的级数解}
 $\left|z-z_0\right|<R$ 上.$z_0$为常点.
@@ -287,9 +300,7 @@ $\left|z-z_0\right|<R$ 上.$z_0$为常点.
 $$
 y(z)=\sum_{k=0} a_k\left(z-z_0\right)^k, a_1, a_2, a_k \cdots \text { 待定. }
 $$
-
-
-以谐振子为例
+这里以谐振子为例
 $$
 \text { 令 } \begin{aligned}
 y(x) & =x^s\left(a_0+a_1 x+c_2 x^2+\cdots\right) \\
@@ -297,6 +308,9 @@ y(x) & =x^s\left(a_0+a_1 x+c_2 x^2+\cdots\right) \\
 \end{aligned}
 $$
 
+\begin{note}
+这里课堂上采用了直接令$s=0$的讲法.
+\end{note}
 $$
 \begin{aligned}
 & \frac{d y}{d x}=\sum_{j=0}^{\infty} a_j(j+s) x^{s+j-1} \\
@@ -382,8 +396,8 @@ $$
 \subsection{奇点邻域上的级数求解}
 $$
 \begin{aligned}
-y_1(z) & =\sum_{k=-\infty}^{\infty} a_k\left(z-z_0\right)^{s_1+k} \cdot \\
-y_2(z) & =\sum_{k=-\infty}^{\infty} b_k\left(z-z_0\right)^{s_2+k} . \\
+y_1(z) & =\sum_{k=0}^{\infty} a_k\left(z-z_0\right)^{s_1+k} \cdot \\
+y_2(z) & =\sum_{k=0}^{\infty} b_k\left(z-z_0\right)^{s_2+k} . \\
 \text{或} y_2(x) & =A y_1(z) \ln \left(z-z_0\right) \\
 & +\sum_{k=\infty}^{\infty} b_k\left(z-z_0\right)^{s_2+k}
 \end{aligned}
@@ -398,6 +412,8 @@ $$
 s(s-1)+s p_{-1}+q_{-2}=0
 $$
 其中$s_1, s_2$ 为两根($s_1> s_2$).
+
+Frobenius 方法并不总是能给出两个解，一般会给出一个级数解，找出第二个解的方式可以通过如下方法获得.
 朗斯基行列式(Wronskian)
 $$
 \Delta(z)=\left|\begin{array}{ll}
