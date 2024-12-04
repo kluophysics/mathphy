@@ -1,0 +1,228 @@
+
+\section{二阶线性常微分方程（齐次）}
+$$
+y''+p(x) y '+q(x) y=0
+$$
+$x_0$ 时, $p\left(x_0\right), q\left(x_0\right)$ 有限,称 $x_0$为ODE的常点
+$p\left(x_0\right), q\left(x_0\right) \rightarrow \infty$称 $x_0$为ODE的奇点
+
+常奇点(或正则奇点) $$\left\{\begin{array}{l}
+    \left(x-x_0\right) p\left(x_0\right) \text{有限}
+    \\
+    \left(x-x_0\right)^2 q(x) \text{有限}
+    \\ p\left(x_0\right), q(x) \rightarrow \infty .\end{array}
+    \right.$$
+其他情况为非常奇点.
+
+
+下面给出几种重要的ODE的常奇点
+\begin{enumerate}
+    \item 超几何(hypergeometic):
+    $$
+    x(x-1) y''+[(1+a+b) x+c] y'+a b y= 0
+    $$
+    常奇点 $0,1, \infty$\\
+    \item 勒让德 (Legendre):
+    $$
+    \left(1-x^2\right) y''-2 x y'+l(l+1) y=0
+    $$
+    常奇点. $-1,1, \infty$ .\\
+    \item  切比雪夫. (Chebyshev):
+    $$
+    \left(1-x^2\right) y''-x y'+n^2 y=0 
+    $$
+    常奇点 $-1,1, \infty$.\\
+
+    \item  合流超几何 (confluent hypergeometic):
+    $$
+    x y''+(c-x) y'-a y=0,
+    $$
+    \\
+    \item 拉盖尔(Laguerre)
+    $$
+    x y''+(1-x) y'+a y=0,
+    $$
+    常奇点 $0$.
+    \item 贝塞尔(Bessel)
+    $$
+    x^2 y'' + xy' + (x^2 - n^2) y = 0
+    $$
+    常奇点$0$.
+\end{enumerate}
+\begin{note}
+    注意这里的$\infty$为常奇点的情况具体
+    解释我们并没有给出, 它的解决需要用$z=1/x$的代换研究$z=0$时的情形, 具体讨论这里略去.
+\end{note}
+
+\subsection{几类特殊的二阶方程}
+\subsubsection{ $y'' = f(x)$ 型}
+此类方程只需要积分两次就可以得到通解
+\begin{equation}
+    y = \int F(x) dx + C_1 x + C_2
+\end{equation}
+其中$F(x) = \int f(x) dx$, $C_1, C_2$是积分常数.
+\subsubsection{ $y'' = f(x, y')$ 型}
+利用换元$u = y'$, 则有$u' = y''$, 原方程化为一阶方程
+$$ u' = f(x,u)$$
+该解为$u = \varphi(x, C_1)$, 原方程解为
+\begin{equation}
+    y = \int \varphi(x, C_1) dx  + C_2.
+\end{equation}
+% \subsubsection{ $y'' = f(y, y')$ 型}
+
+
+\subsection{常点邻域上的级数解}
+$\left|x-x_0\right|<R$ 上.$x_0$为常点.
+
+$$
+y(x)=\sum_{k=0} a_k\left(x-x_0\right)^k, a_1, a_2, a_k \cdots \text { 待定. }
+$$
+这里以谐振子为例
+$$
+\text { 令 } \begin{aligned}
+y(x) & =x^s\left(a_0+a_1 x+c_2 x^2+\cdots\right) \\
+& =\sum_{j=0}^{\infty} a_j x^{s+j}, a_0 \neq 0 .
+\end{aligned}
+$$
+
+\begin{note}
+这里课堂上采用了直接令$s=0$的讲法.
+\end{note}
+$$
+\begin{aligned}
+& \frac{d y}{d x}=\sum_{j=0}^{\infty} a_j(j+s) x^{s+j-1} \\
+& \frac{d^2 y}{d x^2}=\sum_{j=0}^{\infty} a_j(j+s)(j+s-1) x^{s+j-2}
+\end{aligned}
+$$
+
+代入原方程.
+$$
+\sum_{j=0}^{\infty} a_j(s+j)(s+j-1) x^{s+j-2}+\omega^2 \sum_{j=0}^{\infty} a_j x^{s+j=0} \text {. }
+$$
+
+$$
+\text { 任意阶 } x^{s+j} \text { 都满足 }
+$$
+,系数必为零.
+
+$$
+\begin{aligned}
+& x^{s-2} a_0(s)(s-1)=0 \quad\left(a_0 \neq 0\right) \\
+& x^{s-1}: a_1(s+1)(s)=0 \\
+& x^s: a_2(s+2)(s+1)+a_0 w^2=0
+\end{aligned}
+$$
+
+$\Rightarrow$ 若 $s=0, y \sim  a_0+a_1 x+\cdots$
+若 $s=1, y \sim a_0 x+a_1 x^2+\cdots$
+当 $s=1$时, $a_1=0$.
+当 $s=0$ 时, $a_1$ 任意, 因此我们取$a_1=0$.
+$$
+\begin{gathered}
+\Rightarrow a_{j+2}(s+j+2)(s+j+1)+w^2 a_j=0 \\
+\Rightarrow a_{j+2}=\frac{-w^2}{(s+j+2)(s+j+1)} a_j
+\end{gathered}
+$$
+
+递推关系.
+$$
+\begin{aligned}
+& \text { 若 } s=0 \Rightarrow a_{j+2}=\frac{-\omega^2}{(j+2)(j+1)} a_j \\
+& a_2=-\frac{w^2}{2 !} a_0 \\
+& a_4=-\frac{a_2}{3^3 4}=+\frac{w^4}{4 !} a_0 \\
+& a_6=-\frac{a_0^{3.4}}{5.6}=-\frac{w 6}{6 !} a_0 \\
+&
+\end{aligned}
+$$
+
+$$
+a_{2 n}=(-1)^n \frac{w^{2 n}}{2 n !} a_0
+$$
+
+$$
+\begin{aligned}
+y & \left.=a_0\left[1-\frac{(\omega x)^2}{2 !}+\frac{(\omega x}{4}\right)^4-\frac{\omega x x^6}{6 !}+\omega\right] \\
+& =a_0 \cos \omega x .
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& \text { 若 } s=1 . \Rightarrow \\
+& a_{j+2}=-a_j \frac{\omega^2}{(j+3) (j+2)} \\
+& \Rightarrow a_2=-a_0 \frac{\omega^2}{2 \cdot 3}=\frac{\omega^2}{3 !} a_0 \\
+& a_4=-a_2 \frac{\omega^2}{5 \cdot 4}=\frac{\omega^4}{5 !} a_0 \\
+& a_6=-a_4 \frac{\omega^2}{6\cdot 7}=\frac{w^6}{7 !} a_0 \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& \Rightarrow \quad a_0 x\left[1-\frac{(\omega x)^2}{3 !}+\frac{(\omega x)^{4}}{5 !}-\frac{(\omega x)^6}{7 !} \cdots\right] \\
+& =\frac{a_0}{\omega}\left[(\omega x)-\frac{(\omega x)^3}{3 !}+\frac{(\omega x)^5}{5 !} \cdots\right] \\
+& =\frac{a_0}{\omega} \sin \omega x
+\end{aligned}
+$$
+此方法称为Frobenius方法,上面关于$x_0$上展开的,一般的
+我们可以在 $x_0$处展开
+$$
+y(x)=\sum_{j=0}^{\infty} a_j\left(x-x_0\right)^{s+j}, a_0 \neq 0 .
+$$
+
+
+\subsection{正则奇点邻域上的级数求解}
+级数解有限个负幂项称为正则奇点 $p(x): \sum_{k=-1}^{\infty}$
+$q(x) : \sum_{k=-2}^{\infty}$
+
+有判定方程,
+$$
+s(s-1)+s p_{-1}+q_{-2}=0
+$$
+其中$s_1, s_2$ 为两根($s_1> s_2$).
+
+$$
+\begin{aligned}
+y_1(x) & =\sum_{k=0}^{\infty} a_k\left(x-x_0\right)^{s_1+k} \cdot \\
+y_2(x) & =\sum_{k=0}^{\infty} b_k\left(x-x_0\right)^{s_2+k} . \\
+\text{或} y_2(x) & =A y_1(x) \ln \left(x-x_0\right) \\
+& +\sum_{k=0}^{\infty} b_k\left(x-x_0\right)^{s_2+k}
+\end{aligned}
+$$
+
+
+$\nu$阶贝塞尔方程的级数求解参考书上.
+
+
+
+
+Frobenius 方法并不总是能给出两个解，当特征根的差为整数时,级数解法会给出两个线性相关的, 因此需要其他方法.
+一般会给出一个级数解，找出第二个解的方式可以通过如下方法获得.
+
+这里引入朗斯基行列式(Wronskian)
+$$
+\Delta(x)=\left|\begin{array}{ll}
+y_1(x) & y_2(x) \\
+y_1'(x) & y_2'(x)
+\end{array}\right|= y_1(x) y_2'(x) - y_2(x) y_1'(x)
+$$
+
+由于$y_1, y_2$满足微分方程,
+$$
+\begin{aligned}
+& \left(y_1 y_2''-y_1'' 
+y_2\right)+p\left(y_1 y_2'-y_1' y_2\right) = 0\\
+& \frac{d \Delta}{d x} - p \Delta(x)=0
+\end{aligned}
+$$
+
+$$
+\Delta(x)=\Delta_0 e^{-\int p(x) d x}
+$$
+
+$$
+\begin{aligned}
+& \frac{d}{d x}\left(\frac{y_{2}}{y_1}\right)=\frac{y_{1} y_{2}'-y_{1}' y_{2}}{y_{1}^2}=\frac{\Delta(x)}{y_{1}^2} \\
+& y_{2}=y_{1} \int \frac{\Delta(x)}{\left(y_{1}(x)\right)^2} d x
+\end{aligned}
+$$
+

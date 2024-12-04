@@ -1,0 +1,106 @@
+\section{Sturm-Liouville 理论}
+\label{sec:sturm_liouville}
+
+
+
+\section*{文件 1}
+
+\begin{align*}
+W(x)L(x) &= \frac{1}{\rho_0} \int \frac{1}{x} dx + \frac{1}{\rho} \frac{d}{dx} + \rho(x) W(x) P(x) \\
+\rho_0 &= e^{\int \frac{P(x)}{\rho(x)} dx} \\
+\rho_1 &= \frac{\rho_1}{\rho_0} e^{\int \frac{P(x)}{\rho(x)} dx} \\
+W(x)L(x) &= \frac{1}{\rho_0} e^{\int \frac{P(x)}{\rho(x)} dx} \left[ \rho(x) \frac{d^2}{dx^2} + P(x) \frac{d}{dx} + Q(x) \right] \\
+\rho_0' &= \rho_1, \quad \rho_0'' = \left( \int \frac{P(x)}{\rho(x)} dx \right)' e^{\int \frac{P(x)}{\rho(x)} dx} = \frac{P(x)}{\rho(x)} e^{\int \frac{P(x)}{\rho(x)} dx}
+\end{align*}
+
+\begin{itemize}
+    \item $WL = L'$ 是自伴的。
+    \item $\int_a^b w(x) L u \, dx = \int_a^b v^* L' u \, dx$
+    \item $= \left[ v^* u - v^* \rho u' \right]_a^b + \int_a^b w(x) (Lv)^* u \, dx$
+    \item $\Rightarrow \langle v | L u \rangle = \langle L v | u \rangle$
+\end{itemize}
+
+值得强调的是，自伴性定义对边界条件有要求。
+
+\begin{itemize}
+    \item $L = L^+$，称为厄米算符（Hermitian operator），厄米算符特征值为实。
+\end{itemize}
+
+例：考虑 $L \psi = \lambda \psi$，
+\begin{itemize}
+    \item $L = x \frac{d^2}{dx^2} + (1-x) \frac{d}{dx}$
+    \item $\psi$ 在 $0 \leq x < \infty$ 非奇异的无奇点。
+    \item $\lim_{x \to \infty} \psi(x) = 0$
+    \item $p(x) = x, \quad \rho(x) = (1-x)$ 显然 $L$ 非自伴 $p(x) \neq \rho(x)$
+\end{itemize}
+
+\section*{文件 2}
+
+\begin{itemize}
+    \item Sturm-Liouville 理论，常遇到本征值问题
+    \item $Lf = \lambda f$
+    \item $L^* y = \lambda y$
+\end{itemize}
+
+\begin{align*}
+L(x)u &= \frac{d}{dx} \left( p(x) \frac{d}{dx} u \right) + q(x) u \\
+\text{这里最关键问题在于使 } L \text{ 成为厄米算符的等价条件。}
+\end{align*}
+
+自伴算符 ODE:
+\begin{itemize}
+    \item $(v, Lu) = (Mv, u)$
+    \item $(Lu, v) = \int v^* (Lu) \, dx$
+\end{itemize}
+
+\begin{align*}
+L(x)u &= \frac{d}{dx} \left( p(x) \frac{d}{dx} u \right) + p(x) u \\
+\text{若 } p(x) &= \rho(x) \\
+\text{则 } L(x) \text{ 称为自伴算符，是解的 ODE。}
+\end{align*}
+
+\begin{itemize}
+    \item $M$ 记为 $L^+$，若 $L = L^+$ 则称 $L$ 为自伴算符。
+    \item 例：$Lu = \frac{1}{\rho(x)} \frac{d}{dx} u(a) = u(b)$
+\end{itemize}
+
+\begin{align*}
+(D, Lu) &= \int_0^\infty \frac{1}{\rho} \frac{d}{dx} u \frac{d}{dx} v \, dx \\
+(Lv, u) &= \int_0^\infty \frac{d}{dx} \left( \frac{1}{\rho} \frac{d}{dx} v \right) u \, dx \\
+&= v \frac{d}{dx} \left[ \frac{1}{\rho} \frac{d}{dx} u \right]_a^b + \int_a^b v \frac{d}{dx} \left( \frac{d}{dx} u \right) \frac{1}{\rho} \, dx \\
+&= v \frac{d}{dx} \left[ \frac{1}{\rho} \frac{d}{dx} u \right]_a^b + \int_a^b v \frac{d}{dx} u \frac{d}{dx} \frac{1}{\rho} \, dx + \int_a^b v \frac{d^2}{dx^2} u \frac{1}{\rho} \, dx
+\end{align*}
+
+\begin{itemize}
+    \item $L(x)u = (p_0(x) \frac{d}{dx} + p_1(x)) \frac{d}{dx} + p_2(x)$
+\end{itemize}
+
+\begin{align*}
+&\text{若 } p_0'(x) = p_1(x), \text{ 则 } L(x) \text{ 称为自伴算符，是解的 ODE。} \\
+&\text{若 } p_0(x) = p_1(x), \\
+&L(x)u = (p_0(x) \frac{d}{dx} + p_2(x)) \frac{d}{dx} + p_2(x)u.
+\end{align*}
+
+\begin{align*}
+&\text{若 } L(x) \text{ 满足自伴条件，} \\
+&\int_a^b y_m(x) y_n(x) w(x) dx = N_m^2 \delta_{mn}, \\
+&\Rightarrow f_m = \frac{1}{N_m^2} \int_a^b f(\xi) y_m(\xi) w(\xi) d\xi.
+\end{align*}
+
+
+\begin{align*}
+    &\text{若 } (v^* p_0 u' - v^* p_1 u) \Big|_a^b = 0 \text{ 则 } L \text{ 是自伴的。} \\
+    &\text{若 } u, v = 0 \text{ 在边界上有满足。} \\
+    &\text{若 } u'' = 0 \text{ 在边界上，第二类边界条件满足。} \\
+    &\text{若周期性，} u|_a = u|_b, v|_a = v|_b \text{ 则满足。} \\
+    &\text{自然的，} u'|_a = u'|_b, v'|_a = v'|_b. \\
+    &\text{若 } \lambda u, \lambda v \text{ 是本征函数，} L u = \lambda u, L v = \lambda v \\
+    &\Rightarrow (\lambda u - \lambda v) \int_a^b u \, dx = p(a) u'(a) - v'(a) \Big|_a^b \\
+    &\Rightarrow \text{若右边为0，则 } \int_a^b u \, dx = 0, \quad u \neq \lambda.
+    \end{align*}
+    
+    \textbf{构造的伴随 ODE (若 $p_0(x) \neq p_1(x)$):}
+    \begin{align*}
+    w(x) L y(x) &= \lambda w(x) y(x), \\
+    w(x) &= \frac{1}{\rho_0} e^{\int \frac{p_1(x)}{p_0(x)} dx}.
+    \end{align*}
