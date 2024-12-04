@@ -1,2 +1,58 @@
 \section{柱坐标系下的分离变量法}
 \label{sec:cylindrical}
+
+\subsection*{柱坐标系 $(\rho, \phi, z)$}
+
+由于 $r = \rho \cos \phi e_x + \rho \sin \phi e_y + z e_z$，故有
+\[
+\frac{\partial r}{\partial \rho} = \cos \phi e_x + \sin \phi e_y, \quad (9.8a)
+\]
+\[
+\frac{\partial r}{\partial \phi} = -\rho \sin \phi e_x + \rho \cos \phi e_y, \quad (9.8b)
+\]
+\[
+\frac{\partial r}{\partial z} = e_z. \quad (9.8c)
+\]
+
+由此可以立得正交性，且有
+\[
+h_\rho = 1, \quad h_\phi = \rho, \quad h_z = 1. \quad (9.9)
+\]
+
+这些度规系数的几何意义是明显的，比如沿着 $\phi$ 坐标线由 $\phi$ 到 $\phi + d\phi$ 的距离（弧长）不是 $d\phi$，而是 $h_\phi d\phi = \rho d\phi$，这正是我们所熟知的。易得柱坐标系的正交归一化矢量为
+\[
+e_\rho = \cos \phi e_x + \sin \phi e_y, \quad (9.10a)
+\]
+\[
+e_\phi = -\sin \phi e_x + \cos \phi e_y, \quad (9.10b)
+\]
+\[
+e_z = e_z. \quad (9.10c)
+\]
+
+\subsection*{球坐标系 $(r, \theta, \phi)$}
+
+由于 $r = r \sin \theta \cos \phi e_x + r \sin \theta \sin \phi e_y + r \cos \theta e_z$，故有
+\[
+\frac{\partial r}{\partial r} = \sin \theta \cos \phi e_x + \sin \theta \sin \phi e_y + \cos \theta e_z, \quad (9.11a)
+\]
+\[
+\frac{\partial r}{\partial \theta} = r (\cos \theta \cos \phi e_x + \cos \theta \sin \phi e_y - \sin \theta e_z), \quad (9.11b)
+\]
+\[
+\frac{\partial r}{\partial \phi} = r \sin \theta (-\sin \phi e_x + \cos \phi e_y). \quad (9.11c)
+\]
+
+由此可以立得正交性，且有
+\[
+h_r = 1, \quad h_\theta = r, \quad h_\phi = r \sin \theta. \quad (9.12)
+\]
+
+这些度规系数的几何意义也是明显的。易得球坐标系的正交归一化矢量为
+\[
+e_r = \sin \theta \cos \phi e_x + \sin \theta \sin \phi e_y + \cos \theta e_z, \quad (9.13a)
+\]
+\[
+e_\theta
+= \cos \theta \cos \phi e_x + \cos \theta \sin \phi e_y - \sin \theta e_z, \quad (9.13b)
+\]
