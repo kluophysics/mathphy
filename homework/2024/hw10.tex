@@ -1,0 +1,143 @@
+\documentclass[11pt]{article}
+% \documentclass{assignment}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{ctex} 
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{fourier-orns} % 
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\theoremstyle{remark}
+\newtheorem{problem}{}
+
+
+% \newenvironment{problem}[2][]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.0pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+
+\newcommand{\duedate}{\zhdate{2024/12/19}}
+\pagestyle{fancy}
+
+% \fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+%... then configure it.
+\fancyhead{} % clear all header fields
+% \fancyhead[LE]{\textbf{PHYS}}
+% \fancyhead[L]{\textbf{\leftmark}}
+% \fancyhead[L]{\chaptermark{}}
+% \fancyhead[L]{\sectionmark{}}
+% \fancyhead[LR]{\textbf{\leftmark}}
+\fancyhead[L]{数学物理方法}
+\zhnumsetup{style={Traditional,Financial}}
+\fancyhead[R]{课后习题拾} 
+
+% \fancyhead[RO]{\textbf{\rightmark}}
+
+% \fancyhead[LO]{\textbf{Kai Luo}}
+% \fancyhead[LO]{罗凯}
+
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+
+\fancyfoot{} % clear all footer fields
+% \fancyfoot[CE,CO]{\rightmark}
+% \fancyfoot[LO,CE]{}
+% \fancyfoot[CO,RE]{Nanjing University of Science and Technology}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{截止日期\duedate} % clear all footer fields
+\fancyfoot[R]{任课教师:罗凯} % clear all footer fields
+
+% \fancyfoot[CE,O]{\thechapter}
+
+
+
+\begin{document}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumi}.\arabic{enumii})}
+
+\begin{problem}
+  厄米多项式(Hermite polynomials) $H_n(x)$的生成函数为
+  $$
+  e^{-t^2+2 t x}=\sum_{n=0}^{\infty} H_n(x) \frac{t^n}{n !}
+  $$
+  请利用生成函数推导出下面的递推关系式,
+  \begin{itemize}
+    \item[(1)] $2 x H_n(x)-2 n H_{n-1}(x)=H_{n+1}(x)$;
+    \item[(2)] $2 n H_{n-1}(x)=H_n^{\prime}(x)$ . 
+  \end{itemize}
+\end{problem}
+
+% \vspace{4em}
+
+\begin{problem}
+根据勒让德函数的生成函数,推导下面的递推关系式
+\begin{itemize}
+  \item[(1)] $
+  (2 \ell+1) P_\ell(x)=P_{\ell+1}^{\prime}(x)-P_{\ell-1}^{\prime}(x),
+  $
+  \item[(2)]
+  $
+  P_{\ell+1}^{\prime}(x)=(\ell+1) P_\ell(x)+x P_\ell^{\prime}(x).
+  $
+\end{itemize}
+
+\end{problem}
+  
+% \vspace{4em}
+
+\begin{problem}
+  使用递推关系(recurrence relation)或生成函数或罗德里格斯公式验证连带勒让德函数满足
+  $$
+  \begin{aligned}
+  P_{2 l}^1(0) & =0, \\
+  P_{2 l+1}^1(0) & =(-1)^{l} \frac{(2 l+1) ! !}{(2 l) ! !}.
+  \end{aligned}
+  $$
+\end{problem}
+
+
+\begin{problem}
+球谐函数的一般表达式为
+$$
+Y_l^m(\theta, \varphi) \equiv \sqrt{\frac{2 l+1}{4 \pi} \frac{(l-m) !}{(l+m) !}} P_l^m(\cos \theta) e^{i m \varphi}
+$$
+请求出确定以下的具体表达式$m$的取值范围,写出其中$m\geq 0$关于$\theta,\varphi$的表达式, 并转换成直角坐标系的形式
+\begin{itemize}
+  \item[(1)] $Y_0^m(\theta,\varphi)$
+  \item[(2)] $Y_1^m(\theta,\varphi)$
+  \item[(3)] $Y_2^m(\theta,\varphi)$
+\end{itemize}
+\end{problem}
+
+\begin{problem}
+计算下列积分
+\begin{itemize}
+  \item[(1)] $$
+  \int_{-1}^1\left(1-x^2\right) P_k^{\prime}(x) P_l^{\prime}(x) d x
+  $$
+  \item[(2)]
+  $$
+\int_{-1}^1 x P_k(x) P_{k+1}(x) d x
+$$
+\end{itemize}
+\end{problem}
+
+\begin{problem}
+  求解下列定解问题: 
+  $\left\{\begin{array}{l}
+    \nabla^2 u=0, a<r<b \\ 
+    \left.u\right|_{r=a}=u_0,\left.u\right|_{r=b}=u_0 \cos ^2 \theta
+  \end{array}\right.$
+\end{problem}
+
+\end{document}
