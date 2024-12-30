@@ -461,76 +461,78 @@ $$ 2\pi \imath \frac{\sqrt{2}}{4} = \frac{\pi\imath}{\sqrt{2}}\score{6}$$
 \end{solution}
 
 
-% \begin{problem}{(6分)}
-%   求 $|\sin z|$ 在闭区域 $0 \leq \operatorname{Re} z \leq 2 \pi,  0 \leq \Im z \leq 2 \pi$ 中的最大值. 
-% \end{problem}
-\begin{problem}{(7分)}
-  计算拉普拉斯变换的原函数
+\begin{problem}{(10分)}
+  计算积分 $$\int_{-\infty}^{\infty} \frac{d x}{(x^2 + 1)(x^2+4)}.$$
+  \end{problem}
+  \vspace{1em}
+  \begin{solution}
+  被积函数$f(z) =\frac{1}{(z^2+1)(z^2+4)}$ 有四个一阶极点: 
+  $z_1=i, z_2=-i, z_3=2i, z_4=-2i$. 
+  不难看出, 上半平面只有 $z_1=i$ 和 $z_3=2i$ 两个极点. 
+  因此根据留数定理,
   $$
-    % \frac{4 p-1}{\left(p^2+p\right)\left(4 p^2-1\right)}. 
-    \bar{f}(p)=\frac{2 p}{p^2-1}. 
+  I=\int_{-\infty}^{\infty} \frac{d x}{(x^2+1)(x^2+4)}=
+  2 \pi i\left[\left.\operatorname{Res} f(z)\right|_{z=i}+\left.\operatorname{Res} f(z)\right|_{z=2i}\right]
   $$
-\end{problem}
-\vfill
-
-\begin{solution}
-  函数$\bar{f}(p)$可以写成
-  $$
-  \bar{f}(p) = \frac{3}{2} \left[ \frac{1}{p+1} + \frac{1}{p-1}  \right] \score{3}
-  $$
-  由拉普拉斯变换的定义不难得到$$\mathcal{L}^{-1} \left[ \frac{1}{p-s} \right] = e^{st}, $$
-  故得到
-  $$\mathcal{L}^{-1} \left[ \frac{1}{p+1}\right] = e^{-t} $$
-  和
-  $$\mathcal{L}^{-1} \left[ \frac{1}{p-1}\right] = e^{+t} \score{5}  $$
-  根据双曲余弦函数的定义, 最终我们有原函数
-  $$f(t) =\mathcal{L}^{-1} \left[ \bar{f}(p) \right] = 3\cosh t.  \score{7}$$
-\end{solution}
+  分别求上式中的留数, 
+  $$ 
+  \left.\operatorname{Res} f(z)\right|_{z=i}=\lim _{z \rightarrow i}(z-i) \frac{1}{(z^2+1)(z^2+4)}=\frac{1}{2 i} \frac{1}{3^2-1^2} 
+  $$ 
+  类似地有,
+  $$\left.\operatorname{Res} f(z)\right|_{z=2i}=\frac{1}{4 i} \frac{1}{1^2-2^2}$$ 
+  于是,我们得到
+  \begin{eqnarray*}
+    I &=&2 \pi i\left[\frac{1}{4 i} \frac{1}{(2^2-1^2)}+\frac{1}{2 i} \frac{1}{1^2-2^2}\right]   \\
+    &=&\pi \frac{1}{1^2-2^2}\left(\frac{1}{2}-\frac{1}{4}\right) \\
+    &=&\frac{\pi}{2 \cdot 1 \cdot (2+1)}  \text{ }
+  \end{eqnarray*} 
+  \end{solution}
+  
   
 \begin{problem}{(8分)}
-  将函数$$f(z) = \frac{1}{(z-2)(z-3)}$$ 
-  在 $|z|>3$的环域展开为洛朗级数. 
-\end{problem}
+  将函数$$f(z) = \frac{1}{(z-1)(z-2)}$$ 
+  在 $|z|>2$的环域展开为洛朗级数. 
+  \end{problem}
   \vfill
-\begin{solution}
-  % \everymath{\displaystyle}%
-  \? 函数$f(z)$可以写成
+  \begin{solution}
+  函数$f(z)$可以写成
   $$
-  \frac{1}{(z-2)(z-3)}=\frac{1}{(z-3)}-\frac{1}{(z-2)} \score{2}
+  \frac{1}{(z-1)(z-2)}=\frac{1}{(z-2)}-\frac{1}{(z-1)} 
   $$
-  \+由 $|z|>3$ 得到 $\left|\frac{3}{z}\right|<1, \left|\frac{2}{z}\right|<1$,  \score{3}
-  \+ $$\frac{1}{z-3} = \frac{1}{z} \frac{1}{1-\frac{3}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{3}{z}\right)^n,  \score{5} $$
-  \+类似的可以得到 $$\frac{1}{z-2} = \frac{1}{z} \frac{1}{1-\frac{2}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{2}{z}\right)^n,  \score{7}$$
-  \+ 最终我们有 
-  $$f(z) = \sum_{n=0}^{\infty}\left(3^n-2^n\right) z^{-n-1}.  \score{8}$$
-\end{solution}
+  由 $|z|>2$ 得到 $\left|\frac{2}{z}\right|<1, \left|\frac{1}{z}\right|<1$,  
+  $$
+  \frac{1}{z-2} = \frac{1}{z} \frac{1}{1-\frac{2}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{2}{z}\right)^n,  
+  $$
+  类似的可以得到 
+  $$\frac{1}{z-1} = \frac{1}{z} \frac{1}{1-\frac{1}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{1}{z}\right)^n,  
+  $$
+  最终我们有 
+  $$f(z) = \sum_{n=0}^{\infty}\left(2^n-1^n\right) z^{-n-1}.  $$
+  \end{solution}
   
-\begin{problem}{(9分)}
-    用$\Gamma$函数求积分
-    $$
-    \int_0^\infty x^{ -\frac{1}{2} } e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx, 
-    $$
-    % 其中$\alpha > 0,  -\frac{\pi}{2} < \theta < \frac{\pi}{2}$. 
-    其中$ -\frac{\pi}{2} < \theta < \frac{\pi}{2}$. 
-\end{problem} 
-  
-\vfill
-
-\begin{solution}
+\begin{problem}{(10分)}
+  用$\Gamma$函数表示积分
+  $$
+  I(\alpha, \theta) = \int_0^\infty x^{ \alpha - 1}  e^{-x \cos{\theta}} \cos\left( x \sin{\theta} \right) dx, 
+  $$
+  其中$ -\frac{\pi}{2} < \theta < \frac{\pi}{2}$. 
+  求得$I(3, \frac{\pi}{6})$的值.
+  \end{problem}  
+  \vfill
+  \begin{solution}
   对一般的$\alpha$, 依习题解答,\\
   $I\?=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \cos (x \sin \theta) \dx$ \par
-    \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
-    \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
-  \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx .$ \score{3}
-  作变量代换, 令 $x e^{-i \theta}=y$ $\Rightarrow$ $x=e^{i \theta} y,  \dx=e^{i \theta} \dy$  \score{5}\newline
-  于是,  $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \score{6}\par
-        \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
-        \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
-        \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha).  $\score{8}
-  将$\alpha = \frac{1}{2}$ 代入得
-  $$I = \sqrt{\pi} \cos{(\frac{\theta}{2})}.\score{9}$$
-\end{solution}
-
+  \+ $=\int_0^{\infty} x^{\alpha-1} e^{-x \cos \theta} \operatorname{Re}\left(e^{i x \sin \theta}\right) \dx $ \par
+  \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x(\cos \theta-i \sin \theta)} \dx$ \par
+  \+ $=\operatorname{Re} \int_0^{\infty} x^{\alpha-1} e^{-x e^{-i \theta}} \dx$ \par
+  作变量代换, 令 $x e^{-i \theta}=y$ $\Rightarrow$ $x=e^{i \theta} y,  \dx=e^{i \theta} \dy$ \par
+  于是,  $I \?=\operatorname{Re} \int_0^{\infty}\left(e^{i \theta} y\right)^{\alpha-1} e^{-y} e^{i \theta} \dy $ \par
+  \+ $ =\operatorname{Re}\left(e^{i \theta}\right)^\alpha \int_0^{\infty} y^{\alpha-1} e^{-y} \dy $ \par
+  \+ $ =\operatorname{Re}\left(e^{i \alpha \theta}\right) \Gamma(\alpha)$ \par
+  \+ $ = \cos {(\theta \alpha)} \Gamma(\alpha).  $ 
+  将$\alpha = 3, \theta = \frac{\pi}{6} $ 代入得
+  $$I(3, \frac{\pi}{6})=  \cos{ \frac{\pi}{2}}  \Gamma(3) = 0. $$
+  \end{solution}
 
 
 % \begin{problem}
