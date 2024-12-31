@@ -47,15 +47,15 @@ $f(z)=\frac{\pi}{(z-1)^2(z-2)}$的奇点数有\fillout{$2$}个, 而$f(z)=|z|^3$�
 \end{problem}
 
 
-\begin{problem}
-某解析函数实部为$u(x, y) = (x+1)^2 - y^2$, 则该解析函数的虚部为\fillout{$2xy + 2y$}加一常数$C$. 
-\end{problem}
+% \begin{problem}
+% 某解析函数实部为$u(x, y) = (x+1)^2 - y^2$, 则该解析函数的虚部为\fillout{$2xy + 2y$}加一常数$C$. 
+% \end{problem}
 
 \begin{problem}
   级数$\sum (\frac{z}{2})^n$的收敛半径为\fillout{2};
   级数$\sum \frac{n !}{n^n} z^n$的收敛半径为\fillout{e}. 
   % 级数$\sum \frac{n !}{n^n} z^n$的收敛半径为\fillout{e};
-  % 级数$\sum n^{\ln{n}} z^n$的收敛半径为\fillout{1}. 
+  级数$\sum n^{\ln{n}} z^n$的收敛半径为\fillout{1}. 
   % 如果复幂级数$\sum_{n=0}^{\infty} d_n z^n$的收敛半径为$R = 3$, 
   % 那么它在复平面上的绝对收敛区域是 $\{z \in \mathbb{C} \mid |z| < \fillout{} \}$. 
  \end{problem}
@@ -63,8 +63,8 @@ $f(z)=\frac{\pi}{(z-1)^2(z-2)}$的奇点数有\fillout{$2$}个, 而$f(z)=|z|^3$�
 
 
 \begin{problem}
- $ f(z) = \frac{1}{z( z- 2)^3}$,  $z=0$是\fillout{1}阶极点, 此处留数为 \fillout{$-\frac{1}{8}$}, 
- $z=2$是\fillout{3}阶极点,  该处留数为\fillout{$\frac{1}{8}$}. 
+ $ f(z) = \frac{1}{z( z- 2)^2}$,  $z=0$是\fillout{1}阶极点, 此处留数为 \fillout{$-\frac{1}{8}$}, 
+ $z=2$是\fillout{2}阶极点,  该处留数为\fillout{$-\frac{1}{2}$}. 
 \end{problem}
 
 % \begin{problem}
@@ -157,8 +157,7 @@ $\Gamma(4)=$\fillout{$6$},
 % \end{problem}
 
 \begin{problem}
-  如果$f(z)$在$z_0$处有一个一阶极点, 其留数为:
-  \pickout{D}
+  如果$f(z)$在$z_0$处有一个一阶极点, 其留数为: \pickout{D}
 \begin{abcd}
   \item $\text{Res}[f(z),  z_0] = \frac{1}{\lim_{z \to z_0} (z - z_0)f(z)}$
   \item $\text{Res}[f(z),  z_0] = \frac{1}{f'(z_0)}$
@@ -216,22 +215,22 @@ $\Gamma(4)=$\fillout{$6$},
 %   \end{abcd}
 % \end{problem}
 
-\begin{problem}
-  对于函数$F(\omega)$的傅里叶变换表示为$f(t) = \mathcal{F}^{-1}[F(\omega)]$, 其中$\mathcal{F}^{-1}$表示傅里叶逆变换. 下面哪个等式是正确的?
-  \pickout{D}
-  \begin{abcd}
-    \item  $f(t) = \int_{-\infty}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
+% \begin{problem}
+%   对于函数$F(\omega)$的傅里叶变换表示为$f(t) = \mathcal{F}^{-1}[F(\omega)]$, 其中$\mathcal{F}^{-1}$表示傅里叶逆变换. 下面哪个等式是正确的?
+%   \pickout{D}
+%   \begin{abcd}
+%     \item  $f(t) = \int_{-\infty}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
 
-    \item  $f(t) = \frac{1}{2\pi} \int_{0}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
+%     \item  $f(t) = \frac{1}{2\pi} \int_{0}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
 
     
-    \item $f(t) = \mathcal{F}^{-1}[F(t)]$
+%     \item $f(t) = \mathcal{F}^{-1}[F(t)]$
     
-    \item $f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
+%     \item $f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(\omega) e^{-\imath\omega t} d\omega$
 
-  \end{abcd}
+%   \end{abcd}
 
-\end{problem}
+% \end{problem}
 
 
 % \begin{problem}
@@ -271,16 +270,16 @@ $\Gamma(4)=$\fillout{$6$},
 
 % \item $\Gamma(z+1) = z+\Gamma(z)$
 
-% \begin{problem}
-%   关于贝塔函数$B(p,  q)$的说法正确的是:
-%   \pickout{C}
-% \begin{abcd}
-%   \item $B(p,  q) = \int_{0}^{\infty} t^{p+q-1}e^{-t} \dt$
-%   \item $B(p,  q) = \int_{0}^{1} t^{p-1}(1-t)^{q-1} \dt$
-%   \item $B(p,  q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
-%   \item $B(p,  q) = \frac{\Gamma(p+q)}{\Gamma(p)\Gamma(q)}$
-% \end{abcd}
-% \end{problem}
+\begin{problem}
+  关于贝塔函数$B(p,  q)$的说法正确的是:
+  \pickout{C}
+\begin{abcd}
+  \item $B(p,  q) = \int_{0}^{\infty} t^{p+q-1}e^{-t} \dt$
+  \item $B(p,  q) = \int_{0}^{1} t^{p-1}(1-t)^{q-1} \dt$
+  \item $B(p,  q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
+  \item $B(p,  q) = \frac{\Gamma(p+q)}{\Gamma(p)\Gamma(q)}$
+\end{abcd}
+\end{problem}
 
 % \begin{problem}
 %   对于二阶线性偏微分方程以下说法正确的是: \pickout{D}
@@ -307,7 +306,7 @@ $\Gamma(4)=$\fillout{$6$},
 
 
 \begin{problem}
-  若贝塞尔函数$J_n(x)$的生成函数为$e^{\frac{1}{2} x (t - \frac{1}{t})}$, 对于非负整数$n$, 其满足的递推关系是?
+   对于非负整数$n$, 其满足的递推关系是?
   \pickout{A}
   \begin{abcd}
     \item  $J_{n+1}(x) = \frac{2n}{x} J_n(x) - J_{n-1}(x)$
@@ -371,7 +370,7 @@ $\Gamma(4)=$\fillout{$6$},
 
 \begin{problem}
   球贝塞尔函数满足哪个微分方程? 
-  \pickout{B}
+  \pickout{C}
 
   \begin{abcd}
     \item 热传导方程
@@ -384,7 +383,7 @@ $\Gamma(4)=$\fillout{$6$},
 \begin{problem}
   在一个轴对称的电场中, 电势 $V(r,  \theta)$ 的分布可以用球谐函数展开表示. 
   若电场满足拉普拉斯方程, 
-  此时, 电势 $V(r,  \theta)$ 的展开系数中, 与角度 $\theta$ 有关的部分应当包含: \pickout{D}
+  此时, 电势 $V(r,  \theta)$ 的展开系数中, 与角度 $\theta$ 有关的部分应当包含: \pickout{C}
   \begin{abcd}
   % \item 虚宗量贝塞尔函数 $i^l J_l(kr)$
   % \item 贝塞尔函数 $J_l(kr)$
@@ -392,8 +391,8 @@ $\Gamma(4)=$\fillout{$6$},
   % \item 勒让德函数 $P_l(\cos\theta)$
   \item 虚宗量贝塞尔函数
   \item 贝塞尔函数 
-  \item 球谐函数 
   \item 勒让德函数
+  \item 球谐函数 
   \end{abcd}
 \end{problem}
 
@@ -482,7 +481,32 @@ $\Gamma(4)=$\fillout{$6$},
 % \begin{solution}
 % \end{solution}
 
-\begin{problem}{(10分)}
+\begin{problem}{(6分)}
+某解析函数$f(z)$的实部为$u(x, y) = (x+1)^2 - y^2$, 
+\begin{enumerate}
+\item [(1)] 验证实部满足二维拉普拉斯方程.
+\item  [(2)]求该解析函数的虚部 $v(x, y)$.
+\end{enumerate}
+\end{problem}
+\vspace{1em}
+\begin{solution}
+  \begin{enumerate}
+    \item [(1)] 首先, 二维拉普拉斯方程为$\left( \frac{\partial^2} {\partial^2 x} + \frac{\partial^2} {\partial^2 y} \right) \psi (x,y) = 0$
+    将$u(x,y)$带入满足.\score{2}
+    \item  [(2)]不难计算得到$$
+    \frac{\partial u} {\partial  x}  = 2(x+1),     \frac{\partial u} {\partial  y}  = -2y
+    $$ 
+    由柯西-黎曼条件知
+    $$
+    \frac{\partial v} {\partial  x}  = 2y,     \frac{\partial u} {\partial  y}  = 2(x+1) \score{4}
+    $$ 
+因此, 有$$d v = 2y dx + 2(x+1)dy = d(2 xy  + 2x) $$
+显然, $$v(x,y) = 2 xy  + 2x + C ,$$  \score{6}
+其中$C$为积分常数.
+  \end{enumerate}
+\end{solution}
+
+\begin{problem}{(8分)}
   利用留数定理计算积分 
  $$I = \int_{-\infty}^{\infty} \frac{d x}{(x^2 + a^2)(x^2+b^2)}, \quad a>0, b>0. $$
 \end{problem}
@@ -490,26 +514,27 @@ $\Gamma(4)=$\fillout{$6$},
 \begin{solution}
 % \everymath{\displaystyle}%
 \? 被积函数$f(z) =\frac{1}{\left(z^2+a^2\right)\left(z^2+b^2\right)}$ 有四个一阶极点: 
-\+ $$z_1=i \alpha, z_2=-i \alpha, z_3=i b, z_4=-i b,   \score{4}
+\+ $$z_1=i \alpha, z_2=-i \alpha, z_3=i b, z_4=-i b,   \score{2}
 $$其中$ a>0, b>0$. 
-\? 不难看出, 上半平面只有 $z_1=i \alpha$ 和 $z_3=i b$ 两个极点. \score{5}
+\? 不难看出, 上半平面只有 $z_1=i \alpha$ 和 $z_3=i b$ 两个极点. \score{3}
 \? 因此根据留数定理,
 $$
 I=\int_{-\infty}^{\infty} \frac{d x}{\left(x^2+a\right)\left(x+b^2\right)}=
-2 \pi i\left[\left.\operatorname{Res} f(z)\right|_{z=i a}+\left.\operatorname{Res} f(z)\right|_{z=i b}\right] \score{6}
+2 \pi i\left[\left.\operatorname{Res} f(z)\right|_{z=i a}+\left.\operatorname{Res} f(z)\right|_{z=i b}\right] \score{5}
 $$
 \? 分别求上式中的留数, 
 $$ 
  \left.\operatorname{Res} f(z)\right|_{z=i a}=\lim _{z \rightarrow i a}(z-i a) \frac{1}{\left(z^2+a^2\right)\left(z^2+b^2\right)}=\frac{1}{2 i a} \frac{1}{b^2-a^2} 
-$$ \score{7}
+$$ \score{6}
 \? 类似地有,
-$$\left.\operatorname{Res} f(z)\right|_{z=i b}=\frac{1}{2 i b} \frac{1}{a^2-b^2}$$ \score{8}
+$$\left.\operatorname{Res} f(z)\right|_{z=i b}=\frac{1}{2 i b} \frac{1}{a^2-b^2}$$ \score{7}
 于是,我们得到
 \begin{eqnarray*}
   I &=&2 \pi i\left[\frac{1}{2 i b} \frac{1}{\left(a^2-b^2\right.}+\frac{1}{2 i a} \frac{1}{b^2-a^2}\right]   \\
   &=&\pi \frac{1}{a^2-b^2}\left(\frac{1}{b}-\frac{1}{a}\right) \\
-  &=&\frac{\pi}{a b(a+b)}  \text{\score{10} }
+  &=&\frac{\pi}{a b(a+b)}
 \end{eqnarray*} 
+\score{8} 
 \end{solution}
 
 % \begin{problem}{(6分)}
@@ -578,7 +603,7 @@ $$\left.\operatorname{Res} f(z)\right|_{z=i b}=\frac{1}{2 i b} \frac{1}{a^2-b^2}
 %   $$f(z) = \sum_{n=0}^{\infty}\left(3^n-2^n\right) z^{-n-1}.  \score{8}$$
 % \end{solution}
 
-\begin{problem}{(10分)}
+\begin{problem}{(8分)}
   将函数$$f(z) = \frac{1}{(z-4)(z-5)}$$ 
   在 $|z|>5$的环域展开为洛朗级数. 
 \end{problem}
@@ -587,15 +612,46 @@ $$\left.\operatorname{Res} f(z)\right|_{z=i b}=\frac{1}{2 i b} \frac{1}{a^2-b^2}
   % \everymath{\displaystyle}%
   \? 函数$f(z)$可以写成
   $$
-  \frac{1}{(z-4)(z-5)}=\frac{1}{(z-5)}-\frac{1}{(z-4)} \score{3}
+  \frac{1}{(z-4)(z-5)}=\frac{1}{(z-5)}-\frac{1}{(z-4)} \score{2}
   $$
-  \+由 $|z|>5$ 得到 $\left|\frac{5}{z}\right|<1, \left|\frac{4}{z}\right|<1$,  \score{4}
-  \+ $$\frac{1}{z-5} = \frac{1}{z} \frac{1}{1-\frac{5}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{5}{z}\right)^n,  \score{6} $$
-  \+类似的可以得到 $$\frac{1}{z-4} = \frac{1}{z} \frac{1}{1-\frac{4}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{4}{z}\right)^n,  \score{8}$$
+  \+由 $|z|>5$ 得到 $\left|\frac{5}{z}\right|<1, \left|\frac{4}{z}\right|<1$,  \score{3}
+  \+ $$\frac{1}{z-5} = \frac{1}{z} \frac{1}{1-\frac{5}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{5}{z}\right)^n,  \score{5} $$
+  \+类似的可以得到 $$\frac{1}{z-4} = \frac{1}{z} \frac{1}{1-\frac{4}{z}} = \frac{1}{z} \sum_{n=0} \left(\frac{4}{z}\right)^n,  \score{7}$$
   \+ 最终我们有 
-  $$f(z) = \sum_{n=0}^{\infty}\left(5^n-4^n\right) z^{-n-1}.  \score{10}$$
+  $$f(z) = \sum_{n=0}^{\infty}\left(5^n-4^n\right) z^{-n-1}.  \score{8}$$
 \end{solution}
   
+
+\begin{problem}{(8分)}
+  求谐振子常微分方程$$\frac{d^2y}{d x^2 } + \omega^2 y = 0,$$
+  在$x=0$处为奇函数的级数解.
+\end{problem}
+\begin{solution}
+  由$p(x) = 1, q(x) = \omega^2$,可知$x=0$为常微分方程的常点. \score{2}
+  解可以写成
+  $y(x)=\sum_{k=0}^{\infty} a_k\left(x-x_0\right)^k$.
+其导数为
+$$y^{\prime}(x)=\sum_{k=0}^{\infty} a_k \cdot k\left(x-x_0\right)^{k-1},$$
+二阶导数为
+$$y^{\prime \prime}(x)=\sum_{k=0}^{\infty} a_k k(k-1)\left(x-x_0\right)^{k-2}$$ 
+带入原方程得到
+$$y^n+w^2 y=\sum_{k=0}^{\infty} a_k \cdot k(k-1)
+\left(x-x_0\right)^{k-2}+w^2 \sum_{k=0}^{\infty} a_k\left(x-x_0\right)^k=0. \score{4}
+$$
+下面分析各项的系数有
+\?$$x^0: \quad a_2 \cdot 2 \cdot 1+w_2 a_0=0 ,$$
+\+$$x^1: a_3 \cdot 3 \cdot 2+w^2 a_1=0,$$
+\+$$x^2: \quad a_4 \cdot 4 \cdot 3+w^1 a_2=0, $$ 
+\+$$x^3: a_5 \cdot 5.4+w^2 a_3=0.$$ \score{6}
+若 $a_0=0, a_1=1$, 只有奇数阶非零,
+$$a_1=1 . \quad a_3=-\frac{w^2}{3!} \quad a_5=\frac{w^5}{5!} \quad a_7=-\frac{w^7}{7!}$$ \score{7}
+则解为
+$$
+\frac{1}{w}\left[(w x)-\frac{(w x)^3}{3!}+\frac{(w x)^5}{5!}-\frac{(w x)^7}{7!}+\cdots\right] 
+= \frac{1}{\omega} \sin (\omega x). \score{8}
+$$
+\end{solution}
+
 \begin{problem}{(10分)}
     用$\Gamma$函数表示积分
     $$
@@ -668,34 +724,7 @@ $$\left.\operatorname{Res} f(z)\right|_{z=i b}=\frac{1}{2 i b} \frac{1}{a^2-b^2}
 %  \end{problem}
 
 
-\begin{problem}{(10分)}
-  求谐振子常微分方程$$\frac{d^2y}{d x^2 } + \omega^2 y = 0,$$
-  在$x=0$处为奇函数的级数解.
-\end{problem}
-\vspace{1em}
-\begin{solution}
-  由$p(x) = 1, q(x) = \omega^2$,可知$x=0$为常微分方程的常点. \score{2}
-  解可以写成
-  $y(x)=\sum_{k=0}^{\infty} a_k\left(x-x_0\right)^k$.
-其导数为
-$$y^{\prime}(x)=\sum_{k=0}^{\infty} a_k \cdot k\left(x-x_0\right)^{k-1},$$
-二阶导数为
-$$y^{\prime \prime}(x)=\sum_{k=0}^{\infty} a_k k(k-1)\left(x-x_0\right)^{k-2}$$ \score{4}
-带入原方程得到
-$$y^n+w^2 y=\sum_{k=0}^{\infty} a_k \cdot k(k-1)\left(x-x_0\right)^{k-2}+w^2 \sum_{k=0}^{\infty} a_k\left(x-x_0\right)^k=0. \score{6}
-$$
-下面分析各项的系数有
-\?$$x^0: \quad a_2 \cdot 2 \cdot 1+w_2 a_0=0 ,$$
-\+$$x^1: a_3 \cdot 3 \cdot 2+w^2 a_1=0,$$
-\+$$x^2: \quad a_4 \cdot 4 \cdot 3+w^1 a_2=0, $$ 
-\+$$x^3: a_5 \cdot 5.4+w^2 a_3=0.$$ \score{8}
-若 $a_0=0, a_1=1$, 只有奇数阶非零,
-$$a_1=1 . \quad a_3=-\frac{w^2}{3!} \quad a_5=\frac{w^5}{5!} \quad a_7=-\frac{w^7}{7!}$$ \score{9}
-则解为
-$$
-\frac{1}{w}\left[(w x)-\frac{(w x)^3}{3!}+\frac{(w x)^5}{5!}-\frac{(w x)^7}{7!}+\cdots\right] = \frac{1}{\omega} \sin (\omega x). \score{10}
-$$
-\end{solution}
+
 
 
 \begin{problem}{(10分)}
@@ -707,8 +736,7 @@ $$
     %\left. u\right|_{r=b}=u_0 \cos ^2 \theta. 
   \end{array}\right. $
 \end{problem} 
-\vspace{1em}
-
+\vfill
 
 
 \begin{solution}
@@ -738,6 +766,14 @@ $$u(r, \theta) = \frac{u_0}{3}  \frac{a}{r}+ \frac{2 u_0}{3}  \frac{a^3}{r^3} P_
 \vfill
 \newpage
 \makedata{可能用到的数据和公式} %附录数据
+柯西-黎曼条件
+\[
+  \begin{cases}
+      \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} ,  \\
+      \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} .
+  \end{cases}
+\]
+
 柯西公式(Cauchy's formula)
 \[
   f^{(n)}(z) = \frac{n!}{2\pi \imath} \oint_C \frac{f(\zeta)}{(\zeta - z)^{n+1}} d \zeta. 
@@ -749,15 +785,13 @@ $$u(r, \theta) = \frac{u_0}{3}  \frac{a}{r}+ \frac{2 u_0}{3}  \frac{a^3}{r^3} P_
 \[
     \bar{f}(p) = \mathcal{L} \{ f(t) \} = \int_0 ^{\infty} e^{-pt} f(t) \dt . 
 \]
-
 \bigskip
 
 双曲正余函数(hyperbolic sine/cosine function)表达为
-\begin{align*}
-    \cosh z&= \frac{e^{z} + e^{ - z} }{2} , 
-    \\
-    \sinh z &= \frac{e^{z} - e^{ - z} }{2} . 
-\end{align*}
+\begin{equation*}
+    \cosh z = \frac{e^{z} + e^{ - z} }{2} ,  \quad
+    \sinh z  = \frac{e^{z} - e^{ - z} }{2} . 
+\end{equation*}
 % \bigskip
 
 伽玛函数(Gamma function)
@@ -773,6 +807,9 @@ $$u(r, \theta) = \frac{u_0}{3}  \frac{a}{r}+ \frac{2 u_0}{3}  \frac{a^3}{r^3} P_
 \]
 \bigskip
 
+贝塞尔函数$J_n(x)$的生成函数为
+$$e^{\frac{1}{2} x (t - \frac{1}{t})}   = \sum_{n=-\infty} ^{\infty} J_n(x)t^{n}.
+$$
 % \begin{tabularx}{\linewi\dth}{*{4}{>{$}X<{$}}}
 % \hline
 % \Phi_0(0. 5)=0. 6915 & \Phi_0(1)=0. 8413 & \Phi_0(2)=0. 9773 & \Phi_0(2. 5)=0. 9938 \\
@@ -805,4 +842,5 @@ $$u(r, \theta) = \frac{u_0}{3}  \frac{a}{r}+ \frac{2 u_0}{3}  \frac{a^3}{r^3} P_
 
 $l$ 阶勒让德多项式(Legendre polynomial)的罗德里格斯表达式(Rodrigues's formula) 
 $$P_l(x)=\frac{1}{2^l l !} \frac{d^l}{d x^l}\left(x^2-1\right)^l$$
+
 \end{document}
